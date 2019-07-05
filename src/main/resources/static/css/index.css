@@ -1,0 +1,9 @@
+#div1{float:left;width: 40%;padding: 8px}
+#div2{float:right;width: 60%;padding: 8px}
+#north{overflow: hidden;height:40px;background:#B3DFDA;}
+h1{margin: 0 auto;padding: 0;    text-align: right;}
+span{    line-height: 35px;    font-size: 20px;}
+.tishi{    margin: 0;    font-size: 15px;    color: red;}
+input{    width: 50px;}
+table{    margin-left: 20%;}
+.button{    width: 130px;    height: 30px;    font-size: 20px;    text-align: center;}
