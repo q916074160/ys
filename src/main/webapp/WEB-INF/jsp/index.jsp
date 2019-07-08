@@ -43,8 +43,12 @@
                         <td><span>工&nbsp;&nbsp;资&nbsp;：&nbsp;&nbsp;</span><input type="text"/><span class="tishi">（元/月）</span></td>
                     </tr>
                     <tr>
+                        <td><span>时&nbsp;&nbsp;长&nbsp;：&nbsp;&nbsp;</span><input type="text"/><span class="tishi">&nbsp;(月）</span></td>
                         <td><span>税&nbsp;&nbsp;费&nbsp;：&nbsp;&nbsp;</span><input type="text"/><span class="tishi">&nbsp;总金额（元/月）</span></td>
-                        <td><span>人&nbsp;工&nbsp;费&nbsp;：&nbsp;&nbsp;</span><input type="text"/><span class="tishi">&nbsp;总金额（元/月）</span></td>
+                    </tr>
+                    <tr>
+                        <td><span>房&nbsp;&nbsp;租&nbsp;：&nbsp;&nbsp;</span><input type="text"/><span class="tishi">（元/月）</span></td>
+                        <td><span>外&nbsp;&nbsp;包&nbsp;：&nbsp;&nbsp;</span><input type="text"/><span class="tishi">&nbsp;总金额（元/月）</span></td>
                     </tr>
                     <tr>
                         <td><span>招&nbsp;待&nbsp;费&nbsp;：&nbsp;&nbsp;</span><input type="text"/><span class="tishi">&nbsp;总金额（元/月）</span></td>
@@ -67,10 +71,7 @@
                         <td><span>（修/洗）车费&nbsp;：&nbsp;&nbsp;</span><input type="text"/><span class="tishi">&nbsp;总金额（元/月）</span></td>
                     </tr>
                     <tr>
-                        <td><span>房&nbsp;&nbsp;租&nbsp;：&nbsp;&nbsp;</span><input type="text"/><span class="tishi">（元/月）</span></td>
-                        <td><span>外&nbsp;&nbsp;包&nbsp;：&nbsp;&nbsp;</span><input type="text"/><span class="tishi">&nbsp;总金额（元/月）</span></td>
-                    </tr>
-                    <tr>
+                        <td><span>人&nbsp;工&nbsp;费&nbsp;：&nbsp;&nbsp;</span><input type="text"/><span class="tishi">&nbsp;总金额（元/月）</span></td>
                         <td><span>（水/电）费&nbsp;：&nbsp;&nbsp;</span><input type="text"/><span class="tishi">&nbsp;总金额（元/月）</span></td>
                     </tr>
                     <tr>
@@ -102,5 +103,4 @@
 </div>
 </body>
 </html>
-
 <script type="text/javascript" src="js/index.js"></script>
