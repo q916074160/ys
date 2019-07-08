@@ -55,6 +55,8 @@ public class YuSuan {
 
     private Double shengyu;
 
+    private Double yingli;
+
     public Integer getYuid() {
         return yuid;
     }
@@ -270,4 +272,8 @@ public class YuSuan {
     public void setShengyu(Double shengyu) {
         this.shengyu = shengyu;
     }
+
+    public Double getYingli(){return yingli;}
+
+    public void setYingli(Double yingli){this.yingli=yingli;}
 }

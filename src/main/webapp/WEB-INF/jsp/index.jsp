@@ -34,6 +34,7 @@
         <!--首页tabs页-->
         <div class="easyui-layout" title="首页" style="padding:10px">
             <div id="yusuan">
+                <form action="" method="get">
                 <table>
                     <tr>
                         <td><h1>预算录入</h1><br/></td>
@@ -74,11 +75,11 @@
                         <td><span>（修/洗）车费&nbsp;：&nbsp;&nbsp;</span><input type="text" name="xiuchefei" id="xiuchefei"/><span class="tishi">&nbsp;总金额</span></td>
                     </tr>
                     <tr>
-                        <td><span>人&nbsp;工&nbsp;费&nbsp;：&nbsp;&nbsp;</span><input type="text" name="rengong" id="rengong"/><span class="tishi">&nbsp;总金额（元/月）</span></td>
+                        <td><span>人&nbsp;工&nbsp;费&nbsp;：&nbsp;&nbsp;</span><input type="text" name="rengong" id="rengong"/><span class="tishi">&nbsp;总金额</span></td>
                         <td><span>（水/电）费&nbsp;：&nbsp;&nbsp;</span><input type="text" name="shuidian" id="shuidian"/><span class="tishi">&nbsp;总金额（元/月）</span></td>
                     </tr>
                     <tr>
-                        <td><span>（火/汽）车/飞机票&nbsp;：&nbsp;&nbsp;</span><input type="text" name="chepiao" id="chepiao"/><span class="tishi">&nbsp;总金额（元/月）</span></td>
+                        <td><span>（火/汽）车/飞机票&nbsp;：&nbsp;&nbsp;</span><input type="text" name="chepiao" id="chepiao"/><span class="tishi">&nbsp;总金额</span></td>
                         <td><span>其&nbsp;&nbsp;他&nbsp;：&nbsp;&nbsp;</span><input type="text" name="qita" id="qita"/><span class="tishi">（元/月）</span></td>
                     </tr>
                     <tr>
@@ -95,15 +96,28 @@
                         <td><span>生&nbsp;育&nbsp;保&nbsp;险&nbsp;：&nbsp;&nbsp;</span><input type="text" name="shengyu" id="shengyu"/><span class="tishi">&nbsp;总金额（元/月）</span></td>
                     </tr>
                     <tr>
-                        <td><input class="button" type="button" value="预&nbsp;算&nbsp;结&nbsp;果"/></td>
-                        <td><input class="button" style="float:right;" type="button" value="信&nbsp;息&nbsp;储&nbsp;存"/></td>
+                        <td><input class="button" type="button" id="jieguo" value="预&nbsp;算&nbsp;结&nbsp;果"/><span id="jg"></span></td>
+                        <td><input class="button" style="float:right;" type="reset" value="重&nbsp;&nbsp;&nbsp;&nbsp;置"/></td>
                     </tr>
                 </table>
+                </form>
             </div>
             <div id="main2"></div>
         </div>
     </div>
 </div>
+<script type="text/javascript">
+    $("#jieguo").click(function () {
+        $.ajax({
+            type : "POST",                           //通过POST方式上传请求
+            dataType:"json",
+            url : "/add",     //请求的url。与后端@Request Mapping注解中的值一致。
+            success : function(data) {//请求成功的回调函数
+                $("#jg").text(data);
+            }
+        });
+    });
+</script>
 </body>
 </html>
 <script type="text/javascript" src="../js/index.js"></script>
