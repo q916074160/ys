@@ -2,12 +2,12 @@
 <html>
 <head>
     <title>项目预算管理系统</title>
-    <link rel="stylesheet" href="easyUi/themes/default/easyui.css">
-    <link rel="stylesheet" href="easyUi/themes/icon.css">
-    <link rel="stylesheet" href="easyUi/demo/demo.css">
-    <link rel="stylesheet" href="css/index.css">
-    <script type="text/javascript" src="easyUi/jquery.min.js"></script>
-    <script type="text/javascript" src="easyUi/jquery.easyui.min.js"></script>
+    <link rel="stylesheet" href="../easyUi/themes/default/easyui.css">
+    <link rel="stylesheet" href="../easyUi/themes/icon.css">
+    <link rel="stylesheet" href="../easyUi/demo/demo.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <script type="text/javascript" src="../easyUi/jquery.min.js"></script>
+    <script type="text/javascript" src="../easyUi/jquery.easyui.min.js"></script>
 </head>
 <body class="easyui-layout" onload="load()">
 <div data-options="region:'north',border:false" id="north">
@@ -39,36 +39,39 @@
                         <td><h1>预算录入</h1><br/></td>
                     </tr>
                     <tr>
+                        <td><span>合&nbsp;同&nbsp;名&nbsp;称&nbsp;:&nbsp;&nbsp;</span><input type="text" width="300"/></td>
+                    </tr>
+                    <tr>
                         <td><span>人&nbsp;&nbsp;数&nbsp;：&nbsp;&nbsp;</span><input type="text"/><span class="tishi">（个）</span></td>
                         <td><span>工&nbsp;&nbsp;资&nbsp;：&nbsp;&nbsp;</span><input type="text"/><span class="tishi">（元/月）</span></td>
                     </tr>
                     <tr>
                         <td><span>时&nbsp;&nbsp;长&nbsp;：&nbsp;&nbsp;</span><input type="text"/><span class="tishi">&nbsp;(月）</span></td>
-                        <td><span>税&nbsp;&nbsp;费&nbsp;：&nbsp;&nbsp;</span><input type="text"/><span class="tishi">&nbsp;总金额（元/月）</span></td>
+                        <td><span>税&nbsp;&nbsp;费&nbsp;：&nbsp;&nbsp;</span><input type="text"/><span class="tishi">&nbsp;总金额</span></td>
                     </tr>
                     <tr>
                         <td><span>房&nbsp;&nbsp;租&nbsp;：&nbsp;&nbsp;</span><input type="text"/><span class="tishi">（元/月）</span></td>
-                        <td><span>外&nbsp;&nbsp;包&nbsp;：&nbsp;&nbsp;</span><input type="text"/><span class="tishi">&nbsp;总金额（元/月）</span></td>
+                        <td><span>外&nbsp;&nbsp;包&nbsp;：&nbsp;&nbsp;</span><input type="text"/><span class="tishi">&nbsp;总金额</span></td>
                     </tr>
                     <tr>
-                        <td><span>招&nbsp;待&nbsp;费&nbsp;：&nbsp;&nbsp;</span><input type="text"/><span class="tishi">&nbsp;总金额（元/月）</span></td>
-                        <td><span>通&nbsp;讯&nbsp;费&nbsp;：&nbsp;&nbsp;</span><input type="text"/><span class="tishi">&nbsp;总金额（元/月）</span></td>
+                        <td><span>招&nbsp;待&nbsp;费&nbsp;：&nbsp;&nbsp;</span><input type="text"/><span class="tishi">&nbsp;总金额</span></td>
+                        <td><span>通&nbsp;讯&nbsp;费&nbsp;：&nbsp;&nbsp;</span><input type="text"/><span class="tishi">&nbsp;总金额</span></td>
                     </tr>
                     <tr>
-                        <td><span>日&nbsp;用&nbsp;品&nbsp;：&nbsp;&nbsp;</span><input type="text"/><span class="tishi">总金额（元/月）</span></td>
-                        <td><span>邮&nbsp;寄&nbsp;费&nbsp;：&nbsp;&nbsp;</span><input type="text"/><span class="tishi">总金额（元/月）</span></td>
+                        <td><span>日&nbsp;用&nbsp;品&nbsp;：&nbsp;&nbsp;</span><input type="text"/><span class="tishi">总金额</span></td>
+                        <td><span>邮&nbsp;寄&nbsp;费&nbsp;：&nbsp;&nbsp;</span><input type="text"/><span class="tishi">总金额</span></td>
                     </tr>
                     <tr>
-                        <td><span>租&nbsp;车&nbsp;费&nbsp;：&nbsp;&nbsp;</span><input type="text"/><span class="tishi">&nbsp;总金额（元/月）</span></td>
-                        <td><span>设备修理费&nbsp;：&nbsp;&nbsp;</span><input type="text"/><span class="tishi">&nbsp;总金额（元/月）</span></td>
+                        <td><span>租&nbsp;车&nbsp;费&nbsp;：&nbsp;&nbsp;</span><input type="text"/><span class="tishi">&nbsp;总金额</span></td>
+                        <td><span>设备修理费&nbsp;：&nbsp;&nbsp;</span><input type="text"/><span class="tishi">&nbsp;总金额</span></td>
                     </tr>
                     <tr>
-                        <td><span>高速通行费&nbsp;：&nbsp;&nbsp;</span><input type="text"/><span class="tishi">&nbsp;总金额（元/月）</span></td>
-                        <td><span>出差加油费&nbsp;：&nbsp;&nbsp;</span><input type="text"/><span class="tishi">&nbsp;总金额（元/月）</span></td>
+                        <td><span>高速通行费&nbsp;：&nbsp;&nbsp;</span><input type="text"/><span class="tishi">&nbsp;总金额</span></td>
+                        <td><span>出差加油费&nbsp;：&nbsp;&nbsp;</span><input type="text"/><span class="tishi">&nbsp;总金额</span></td>
                     </tr>
                     <tr>
-                        <td><span>市内公交出租费&nbsp;：&nbsp;&nbsp;</span><input type="text"/><span class="tishi">&nbsp;总金额（元/月）</span></td>
-                        <td><span>（修/洗）车费&nbsp;：&nbsp;&nbsp;</span><input type="text"/><span class="tishi">&nbsp;总金额（元/月）</span></td>
+                        <td><span>市内公交出租费&nbsp;：&nbsp;&nbsp;</span><input type="text"/><span class="tishi">&nbsp;总金额</span></td>
+                        <td><span>（修/洗）车费&nbsp;：&nbsp;&nbsp;</span><input type="text"/><span class="tishi">&nbsp;总金额</span></td>
                     </tr>
                     <tr>
                         <td><span>人&nbsp;工&nbsp;费&nbsp;：&nbsp;&nbsp;</span><input type="text"/><span class="tishi">&nbsp;总金额（元/月）</span></td>
@@ -103,4 +106,4 @@
 </div>
 </body>
 </html>
-<script type="text/javascript" src="js/index.js"></script>
+<script type="text/javascript" src="../js/index.js"></script>
