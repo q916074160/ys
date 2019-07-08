@@ -34,7 +34,7 @@
         <!--首页tabs页-->
         <div class="easyui-layout" title="首页" style="padding:10px">
             <div id="yusuan">
-                <form action="" method="get">
+              <%--  <form name="tijiao">--%>
                 <table>
                     <tr>
                         <td><h1>预算录入</h1><br/></td>
@@ -96,27 +96,48 @@
                         <td><span>生&nbsp;育&nbsp;保&nbsp;险&nbsp;：&nbsp;&nbsp;</span><input type="text" name="shengyu" id="shengyu"/><span class="tishi">&nbsp;总金额（元/月）</span></td>
                     </tr>
                     <tr>
-                        <td><input class="button" type="button" id="jieguo" value="预&nbsp;算&nbsp;结&nbsp;果"/><span id="jg"></span></td>
+                        <td><input class="button" type="button" onclick="javascript:;asd();" value="预&nbsp;算&nbsp;结&nbsp;果"/><span id="jg"></span></td>
                         <td><input class="button" style="float:right;" type="reset" value="重&nbsp;&nbsp;&nbsp;&nbsp;置"/></td>
                     </tr>
                 </table>
-                </form>
             </div>
             <div id="main2"></div>
         </div>
     </div>
 </div>
 <script type="text/javascript">
-    $("#jieguo").click(function () {
-        $.ajax({
-            type : "POST",                           //通过POST方式上传请求
-            dataType:"json",
-            url : "/add",     //请求的url。与后端@Request Mapping注解中的值一致。
-            success : function(data) {//请求成功的回调函数
+    function asd() {
+        var ren=document.getElementById("renshu").value;
+        var gongshang=document.getElementById("gongshang").value;
+        var yiliao=document.getElementById("").value;
+        var yanglao=document.getElementById("").value;
+        var shengyu=document.getElementById("").value;
+        var shiye=document.getElementById("").value;
+        var shi=document.getElementById("").value;
+        var chepiao=document.getElementById("").value;
+        var chuchai=document.getElementById("").value;
+        var fangzu=document.getElementById("").value;
+        var  tongxing=document.getElementById("").value;
+        var gongzi=document.getElementById("").value;
+        var qita=document.getElementById("").value;
+        var rengong=document.getElementById("").value;
+        var riyong=document.getElementById("").value;
+        var shebei=document.getElementById("").value;
+        var shuidian=document.getElementById("").value;
+        var  shuifei=document.getElementById("").value;
+        var tongxun=document.getElementById("").value;
+        var waibao=document.getElementById("").value;
+        var  gongjiao=document.getElementById("").value;
+        var  zhaodai=document.getElementById("").value;
+        var  zuche=document.getElementById("").value;
+        var xiuche=document.getElementById("").value;
+        var youji=document.getElementById("").value;
+
+        var url="add?ren="+ren+"&gongshang="+gongshang;
+        $.get(url,function (data) {
                 $("#jg").text(data);
-            }
         });
-    });
+    }
 </script>
 </body>
 </html>
