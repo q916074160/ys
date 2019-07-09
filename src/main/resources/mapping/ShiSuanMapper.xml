@@ -3,7 +3,7 @@
 <mapper namespace="com.example.demo.dao.ShiSuanMapper">
   <resultMap id="BaseResultMap" type="com.example.demo.entity.ShiSuan">
     <id column="shiid" jdbcType="INTEGER" property="shiid" />
-    <result column="zhongdui" jdbcType="INTEGER" property="zhongdui" />
+    <result column="zhongdui" jdbcType="VARCHAR" property="zhongdui" />
     <result column="xiangmuname" jdbcType="VARCHAR" property="xiangmuname" />
     <result column="renshu" jdbcType="INTEGER" property="renshu" />
     <result column="gongzi" jdbcType="DOUBLE" property="gongzi" />
@@ -60,7 +60,7 @@
       chepiao, qita, yanglao, 
       yiliao, gongshang, shiye, 
       shengyu,jieguo,kaishitime)
-    values (#{shiid,jdbcType=INTEGER}, #{zhongdui,jdbcType=INTEGER}, #{xiangmuname,jdbcType=VARCHAR}, 
+    values (#{shiid,jdbcType=INTEGER}, #{zhongdui,jdbcType=VARCHAR}, #{xiangmuname,jdbcType=VARCHAR},
       #{renshu,jdbcType=INTEGER}, #{gongzi,jdbcType=DOUBLE}, #{shichang,jdbcType=INTEGER}, 
       #{shuifei,jdbcType=DOUBLE}, #{fangzu,jdbcType=DOUBLE}, #{waibao,jdbcType=DOUBLE}, 
       #{zhaodaifei,jdbcType=DOUBLE}, #{tongxunfei,jdbcType=DOUBLE}, #{riyongpin,jdbcType=DOUBLE}, 
@@ -170,7 +170,7 @@
         #{shiid,jdbcType=INTEGER},
       </if>
       <if test="zhongdui != null">
-        #{zhongdui,jdbcType=INTEGER},
+        #{zhongdui,jdbcType=VARCHAR},
       </if>
       <if test="xiangmuname != null">
         #{xiangmuname,jdbcType=VARCHAR},
@@ -262,7 +262,7 @@
     update shisuan
     <set>
       <if test="zhongdui != null">
-        zhongdui = #{zhongdui,jdbcType=INTEGER},
+        zhongdui = #{zhongdui,jdbcType=VARCHAR},
       </if>
       <if test="xiangmuname != null">
         xiangmuname = #{xiangmuname,jdbcType=VARCHAR},
@@ -353,7 +353,7 @@
   </update>
   <update id="updateByPrimaryKey" parameterType="com.example.demo.entity.ShiSuan">
     update shisuan
-    set zhongdui = #{zhongdui,jdbcType=INTEGER},
+    set zhongdui = #{zhongdui,jdbcType=VARCHAR},
       xiangmuname = #{xiangmuname,jdbcType=VARCHAR},
       renshu = #{renshu,jdbcType=INTEGER},
       gongzi = #{gongzi,jdbcType=DOUBLE},

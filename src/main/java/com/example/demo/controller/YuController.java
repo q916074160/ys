@@ -111,6 +111,7 @@ public class YuController {
         shisuan.setZhaodaifei(zhaodai);
         shisuan.setZuchefei(zuche);
         shisuan.setKaishitime(kaishitime);
+        shisuan.setZhongdui("s");
 
         //结果
         double jieguo=sum;

@@ -5,7 +5,7 @@ import java.util.Date;
 public class ShiSuan {
     private Integer shiid;
 
-    private Integer zhongdui;
+    private String zhongdui;
 
     private String xiangmuname;
 
@@ -71,11 +71,11 @@ public class ShiSuan {
         this.shiid = shiid;
     }
 
-    public Integer getZhongdui() {
+    public String getZhongdui() {
         return zhongdui;
     }
 
-    public void setZhongdui(Integer zhongdui) {
+    public void setZhongdui(String zhongdui) {
         this.zhongdui = zhongdui;
     }
 
