@@ -97,7 +97,7 @@
                         <td><span>生&nbsp;育&nbsp;保&nbsp;险&nbsp;：&nbsp;&nbsp;</span><input type="text" name="shengyu" id="shengyu"/><span class="tishi">&nbsp;总金额（元/月）</span></td>
                     </tr>
                     <tr>
-                        <td><input class="button" type="button" id="button" value="预&nbsp;算&nbsp;结&nbsp;果"/><span id="jg"></span></td>
+                        <td><input class="button" type="button" id="button" value="预&nbsp;算&nbsp;结&nbsp;果" onclick="check()"/><span id="jg"></span></td>
                         <td><input class="button" style="float:right;" type="reset" value="重&nbsp;&nbsp;&nbsp;&nbsp;置"/></td>
                     </tr>
                 </table>
