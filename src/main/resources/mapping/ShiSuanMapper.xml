@@ -381,7 +381,7 @@
       shiye = #{shiye,jdbcType=DOUBLE},
       shengyu = #{shengyu,jdbcType=DOUBLE},
       jieguo = #{jieguo,jdbcType=DOUBLE},
-      kaishitime=#{kaishitime,jdbcType=DATA}
+      kaishitime=#{kaishitime,jdbcType=DATE}
     where shiid = #{shiid,jdbcType=INTEGER}
   </update>
 </mapper>
