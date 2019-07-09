@@ -18,7 +18,9 @@
 <div data-options="region:'west',split:true,title:'菜单'" style="width:250px;">
     <div class="easyui-accordion" data-options="fit:true,border:false,selected:false" style="background-color: #e7eaed" id="leftMenu">
         <div title="预算" class="beijing" id="Scene" data-options="selected:false">
-            <li id="li1">预算导入</li>
+            <li id="li1" onclick="addTab(this.innerHTML,'ysdr')">预算导入</li>
+            <li id="li3" onclick="addTab(this.innerHTML,'')">实算导入</li>
+            <li id="li2" onclick="addTab(this.innerHTML,'ysFind')">预算查询</li>
         </div>
         <div title="xxx" class="beijing" id="sand">
             <li onclick="addTab(this.innerHTML,'')">xx</li>
@@ -28,7 +30,7 @@
 </div>
 </div>
 <div data-options="region:'east',split:true,collapsed:true,title:'East'" style="width:100px;padding:10px;">east region</div>
-<div data-options="region:'south',border:false" style="height:50px;background:#A9FACD;padding:10px;">south region</div>
+<div data-options="region:'south',border:false" style="height:30px;background:#A9FACD;padding:10px;">south region</div>
 <div data-options="region:'center'"id="">
     <!-- 通过左边添加tabs-->
     <div id="tts" class="easyui-tabs" data-options="border:false,fit:true">

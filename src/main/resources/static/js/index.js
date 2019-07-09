@@ -25,9 +25,6 @@ function check(){
     var shengyu = document.getElementById("shengyu").value;
     var gongzi=document.getElementById("gongzi").value;
     var  shineigongjiao=document.getElementById("shineigongjiao").value;
-
-
-
     var boolean=true;
     if(xiangmuname ==  null || xiangmuname == ''){
         alert("合同名不能为空");
@@ -168,18 +165,29 @@ function check(){
                 boolean= false;
                 return false;
             }
-
-        if(boolean==true){
-            var url="add?name="+xiangmuname+"&ren="+renshu+"&gongshang="+gongshang+"&yiliao="+yiliao+"&yanglao="+yanglao+"&shengyu="+shengyu+"&shiye="+shiye+"&shi="+shichang+"&chepiao="+chepiao+"&chuchai="+chuchaijiayou+"&fangzu="+fangzu+
-                "&tongxing="+tongxunfei+"&gongzi="+gongzi+"&qita="+qita+"&rengong="+rengong+"&riyong="+riyongpin+"&shebei="+shebeixiuli+"&shuidian="+shuidian+"&shuifei="+shuifei+"&tongxun="+tongxunfei+"&waibao="+waibao+
-                "&gongjiao="+shineigongjiao+"&zhaodai="+zhaodaifei+"&zuche="+zuchefei+"&xiuche="+xiuchefei+"&youji="+youjifei;
+        if(boolean==true) {
+            var url = "add?name=" + xiangmuname + "&ren=" + renshu + "&gongshang=" + gongshang + "&yiliao=" + yiliao + "&yanglao=" + yanglao + "&shengyu=" + shengyu + "&shiye=" + shiye + "&shi=" + shichang + "&chepiao=" + chepiao + "&chuchai=" + chuchaijiayou + "&fangzu=" + fangzu +
+                "&tongxing=" + tongxunfei + "&gongzi=" + gongzi + "&qita=" + qita + "&rengong=" + rengong + "&riyong=" + riyongpin + "&shebei=" + shebeixiuli + "&shuidian=" + shuidian + "&shuifei=" + shuifei + "&tongxun=" + tongxunfei + "&waibao=" + waibao +
+                "&gongjiao=" + shineigongjiao + "&zhaodai=" + zhaodaifei + "&zuche=" + zuchefei + "&xiuche=" + xiuchefei + "&youji=" + youjifei;
             //alert(url);
-            $.get(url,function (data) {
+            $.get(url, function (data) {
                 $("#jg").text(data);
             });
+
         }
 }
 
+function addTab(title, url) {
+    if ($('#tts').tabs('exists', title)) {
+        $('#tts').tabs('select', title);
+    } else {
+        var content = '<iframe scrolling="auto" frameborder="0"  src="' + url + '" style="width:100%;height:100%;"></iframe>';
+        $('#tts').tabs('add', {
+            title: title,
+            content: content,
+            closable: true
+        });
+    }}
 
 
 

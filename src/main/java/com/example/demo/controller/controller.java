@@ -5,7 +5,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpServletRequest;
-import com.example.demo.service.YuService;
 import org.springframework.web.bind.annotation.RestController;
 
 @Controller
@@ -15,5 +14,12 @@ public class controller {
         return "index";
     }
 
-
+    @RequestMapping("/ysFind")
+    public String findYs() {
+        return "ys";
+    }
+    @RequestMapping("/ysdr")
+    public String ysdr() {
+        return "ysdr";
+    }
 }
