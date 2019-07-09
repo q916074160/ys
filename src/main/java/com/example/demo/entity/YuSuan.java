@@ -55,7 +55,7 @@ public class YuSuan {
 
     private Double shengyu;
 
-    private Double yingli;
+    private Double jieguo;
 
     public Integer getYuid() {
         return yuid;
@@ -273,7 +273,7 @@ public class YuSuan {
         this.shengyu = shengyu;
     }
 
-    public Double getYingli(){return yingli;}
+    public Double getJieguo(){return jieguo;}
 
-    public void setYingli(Double yingli){this.yingli=yingli;}
+    public void setJieguo(Double jieguo){this.jieguo=jieguo;}
 }

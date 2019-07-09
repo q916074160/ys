@@ -29,13 +29,13 @@
     <result column="gongshang" jdbcType="DOUBLE" property="gongshang" />
     <result column="shiye" jdbcType="DOUBLE" property="shiye" />
     <result column="shengyu" jdbcType="DOUBLE" property="shengyu" />
-    <result column="yingli" jdbcType="DOUBLE" property="yingli" />
+    <result column="jieguo" jdbcType="DOUBLE" property="jieguo" />
   </resultMap>
   <sql id="Base_Column_List">
     yuid, xiangmuname, renshu, gongzi, shichang, shuifei, fangzu, waibao, zhaodaifei, 
     tongxunfei, riyongpin, youjifei, zuchefei, shebeixiuli, gaosutongxing, chuchaijiayou, 
     shineigongjiao, xiuchefei, rengong, shuidian, chepiao, qita, yanglao, yiliao, gongshang, 
-    shiye, shengyu,yingli
+    shiye, shengyu,jieguo
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
@@ -56,9 +56,9 @@
       chuchaijiayou, shineigongjiao, xiuchefei, 
       rengong, shuidian, chepiao, 
       qita, yanglao, yiliao, 
-      gongshang, shiye, shengyu,yingli
+      gongshang, shiye, shengyu,jieguo
       )
-    values (#{yuid,jdbcType=INTEGER}, #{xiangmuname,jdbcType=VARCHAR}, #{renshu,jdbcType=INTEGER}, 
+    values (null, #{xiangmuname,jdbcType=VARCHAR}, #{renshu,jdbcType=INTEGER},
       #{gongzi,jdbcType=DOUBLE}, #{shichang,jdbcType=INTEGER}, #{shuifei,jdbcType=DOUBLE}, 
       #{fangzu,jdbcType=DOUBLE}, #{waibao,jdbcType=DOUBLE}, #{zhaodaifei,jdbcType=DOUBLE}, 
       #{tongxunfei,jdbcType=DOUBLE}, #{riyongpin,jdbcType=DOUBLE}, #{youjifei,jdbcType=DOUBLE}, 
@@ -66,7 +66,7 @@
       #{chuchaijiayou,jdbcType=DOUBLE}, #{shineigongjiao,jdbcType=DOUBLE}, #{xiuchefei,jdbcType=DOUBLE}, 
       #{rengong,jdbcType=DOUBLE}, #{shuidian,jdbcType=DOUBLE}, #{chepiao,jdbcType=DOUBLE}, 
       #{qita,jdbcType=DOUBLE}, #{yanglao,jdbcType=DOUBLE}, #{yiliao,jdbcType=DOUBLE}, 
-      #{gongshang,jdbcType=DOUBLE}, #{shiye,jdbcType=DOUBLE}, #{shengyu,jdbcType=DOUBLE},#{yingli,jdbcType=DOUBLE}
+      #{gongshang,jdbcType=DOUBLE}, #{shiye,jdbcType=DOUBLE}, #{shengyu,jdbcType=DOUBLE},#{jieguo,jdbcType=DOUBLE}
       )
   </insert>
   <insert id="insertSelective" parameterType="com.example.demo.entity.YuSuan">
@@ -153,8 +153,8 @@
       <if test="shengyu != null">
         shengyu,
       </if>
-      <if test="yingli != null">
-        yingli,
+      <if test="jieguo != null">
+        jieguo,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
@@ -239,8 +239,8 @@
       <if test="shengyu != null">
         #{shengyu,jdbcType=DOUBLE},
       </if>
-      <if test="yingli != null">
-        #{yingli,jdbcType=DOUBLE},
+      <if test="jieguo != null">
+        #{jieguo,jdbcType=DOUBLE},
       </if>
     </trim>
   </insert>
@@ -325,8 +325,8 @@
       <if test="shengyu != null">
         shengyu = #{shengyu,jdbcType=DOUBLE},
       </if>
-      <if test="yingli != null">
-        yingli = #{shengyu,jdbcType=DOUBLE},
+      <if test="jieguo != null">
+        jieguo = #{shengyu,jdbcType=DOUBLE},
       </if>
     </set>
     where yuid = #{yuid,jdbcType=INTEGER}
@@ -359,7 +359,7 @@
       gongshang = #{gongshang,jdbcType=DOUBLE},
       shiye = #{shiye,jdbcType=DOUBLE},
       shengyu = #{shengyu,jdbcType=DOUBLE}
-      yingli=#{yingli,jdbcType=DOUBLE}
+      jieguo=#{jieguo,jdbcType=DOUBLE}
     where yuid = #{yuid,jdbcType=INTEGER}
   </update>
 </mapper>

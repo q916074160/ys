@@ -1,20 +1,23 @@
 package com.example.demo.controller;
 
+import com.example.demo.dao.YuSuanMapper;
 import com.example.demo.entity.YuSuan;
-import com.example.demo.service.YuService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import javax.servlet.http.HttpServletRequest;
 
 @RestController
 public class YuController {
+    @Autowired
+    private YuSuanMapper yu;
+
     @RequestMapping(value = "/add",method= RequestMethod.GET)
-    public double selectAllCity(HttpServletRequest request, YuSuan yusuan,@RequestParam int ren,
+    public double selectAllCity( @RequestParam String name,@RequestParam int ren,
         @RequestParam double gongshang,@RequestParam double yiliao,@RequestParam double yanglao,@RequestParam double shengyu,@RequestParam double shiye,
-        @RequestParam double shi,@RequestParam double chepiao,@RequestParam double chuchai,@RequestParam double fangzu,@RequestParam double tongxing,
+        @RequestParam int shi,@RequestParam double chepiao,@RequestParam double chuchai,@RequestParam double fangzu,@RequestParam double tongxing,
         @RequestParam double gongzi,@RequestParam double qita,@RequestParam double rengong,@RequestParam double riyong,@RequestParam double shebei,
         @RequestParam double shuidian,@RequestParam double shuifei,@RequestParam double tongxun,@RequestParam double waibao,@RequestParam double gongjiao,
                                 @RequestParam double zhaodai,@RequestParam double zuche,@RequestParam double xiuche,@RequestParam double youji){
@@ -23,8 +26,9 @@ public class YuController {
 
         sum=sum+(gongshang+yiliao+yanglao+shengyu+shiye)*ren*shi+gongzi*ren*shi+fangzu*shi+chepiao+chuchai+tongxing+qita+rengong+riyong+shebei+shuidian*shi+shuifei+tongxun+waibao+gongjiao+zhaodai+zuche+xiuche+youji;
 
+        YuSuan yusuan=new YuSuan();
         //合同名称
-        /*yusuan.setXiangmuname(request.getParameter("xiangmuname"));
+        yusuan.setXiangmuname(name);
         yusuan.setRenshu(ren);
         yusuan.setGongshang(gongshang);
         yusuan.setShengyu(shengyu);
@@ -53,12 +57,12 @@ public class YuController {
 
 
         //盈利
-        double yingli=sum;
-        yusuan.setYingli(yingli);*/
+        double jieguo=sum;
+        yusuan.setJieguo(jieguo);
 
+        System.out.println(yusuan.getXiangmuname());
 
-        //YuService yu=new YuService();
-        //yu.insert(yusuan);
+        yu.insert(yusuan);
         return sum;
     }
 }

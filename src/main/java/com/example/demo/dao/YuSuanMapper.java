@@ -1,7 +1,9 @@
 package com.example.demo.dao;
 
 import com.example.demo.entity.YuSuan;
+import org.apache.ibatis.annotations.Mapper;
 
+@Mapper
 public interface YuSuanMapper {
     int deleteByPrimaryKey(Integer yuid);
 
