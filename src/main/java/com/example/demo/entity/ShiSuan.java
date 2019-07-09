@@ -1,5 +1,7 @@
 package com.example.demo.entity;
 
+import java.util.Date;
+
 public class ShiSuan {
     private Integer shiid;
 
@@ -56,6 +58,10 @@ public class ShiSuan {
     private Double shiye;
 
     private Double shengyu;
+
+    private Date kaishitime;
+
+    private Double jieguo;
 
     public Integer getShiid() {
         return shiid;
@@ -280,4 +286,12 @@ public class ShiSuan {
     public void setShengyu(Double shengyu) {
         this.shengyu = shengyu;
     }
+
+    public Date getKaishitime() {        return kaishitime;    }
+
+    public void setKaishitime(Date kaishitime) {        this.kaishitime = kaishitime;    }
+
+    public Double getJieguo() {        return jieguo;    }
+
+    public void setJieguo(Double jieguo) {        this.jieguo = jieguo;    }
 }
