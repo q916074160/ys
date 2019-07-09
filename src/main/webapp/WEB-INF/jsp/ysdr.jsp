@@ -11,7 +11,9 @@
         }
 
         .first {
-            background: gray;
+            background: #0000ff;
+            color: white;
+            font-weight: bold;
         }
 
         #b {
@@ -34,10 +36,17 @@
 
         #d {
             position: absolute;
-            top: 60%;
-            left: 41.5%;
-            width: 200px;
-            height: 200px;
+            top: 65%;
+            left: 35%;
+            border-style: none;
+        }
+        #e {
+            position: fixed;
+            top: 70%;
+            left: 30%;
+        }
+        #d td{
+            border-style: none;
         }
 
         input {
@@ -45,7 +54,8 @@
             background: white;
         }
 
-        table, tr, td {
+        td {
+            line-height: 30px;
             border: 1px gray solid;
             text-align: center;
         }
@@ -64,33 +74,29 @@
         }
 
         .button1 {
-          /*  position: absolute;
-            top: 70%;
-            left: 30.5%;
-            height: 3%;
-            width: 4%;*/
             background: #e0ecff;
             border-radius: 15px;
             outline: none;
             cursor: pointer;
             box-shadow: 2px 2px 5px #bbb;
-            width: 50px;
-            height: 30px;
+            width: 80px;
+            height: 35px;
+            font-weight: bold;
         }
 
         .button2 {
-          /*  position: absolute;
-            top: 70%;
-            right: 34.5%;
-            height: 3%;
-            width: 4%;*/
+            margin-left: 250px;
             background: #e0ecff;
             border-radius: 15px;
             outline: none;
             cursor: pointer;
             box-shadow: 2px 2px 5px #bbb;
-            width: 50px;
-            height: 30px;
+            width: 80px;
+            height: 35px;
+            font-weight: bold;
+        }
+        .button1:hover,.button2:hover{
+            background-color: #00bbee;
         }
     </style>
 </head>
@@ -185,8 +191,14 @@
     </table>
     <table id="d">
         <tr>
-            <td><input class="button1" type="button" id="button" value="预&nbsp;算&nbsp;结&nbsp;果" onclick="check()"/><span id="jg"></span></td>
+            <td><input class="button1" type="button" id="button" value="预&nbsp;算&nbsp;结&nbsp;果" onclick="check()"/></td>
             <td><input class="button2" type="reset" value="重&nbsp;&nbsp;&nbsp;&nbsp;置"/></td>
+        </tr>
+    </table>
+    <table id="e">
+        <tr>
+            <td class="first">预算结果</td>
+            <td><span id="jg" style="width: 300px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td>
         </tr>
     </table>
 </form>
