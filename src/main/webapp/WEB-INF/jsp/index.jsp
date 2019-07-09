@@ -429,31 +429,36 @@
 </script>
 <script type="text/javascript">
     function asd() {
+
+
+
+
+
         var ren=document.getElementById("renshu").value;
         var gongshang=document.getElementById("gongshang").value;
-        var yiliao=document.getElementById("").value;
-        var yanglao=document.getElementById("").value;
-        var shengyu=document.getElementById("").value;
-        var shiye=document.getElementById("").value;
-        var shi=document.getElementById("").value;
-        var chepiao=document.getElementById("").value;
-        var chuchai=document.getElementById("").value;
-        var fangzu=document.getElementById("").value;
-        var  tongxing=document.getElementById("").value;
-        var gongzi=document.getElementById("").value;
-        var qita=document.getElementById("").value;
-        var rengong=document.getElementById("").value;
-        var riyong=document.getElementById("").value;
-        var shebei=document.getElementById("").value;
-        var shuidian=document.getElementById("").value;
-        var  shuifei=document.getElementById("").value;
-        var tongxun=document.getElementById("").value;
-        var waibao=document.getElementById("").value;
-        var  gongjiao=document.getElementById("").value;
-        var  zhaodai=document.getElementById("").value;
-        var  zuche=document.getElementById("").value;
-        var xiuche=document.getElementById("").value;
-        var youji=document.getElementById("").value;
+        var yiliao=document.getElementById("yiliao").value;
+        var yanglao=document.getElementById("yanglao").value;
+        var shengyu=document.getElementById("shengyu").value;
+        var shiye=document.getElementById("shiye").value;
+        var shi=document.getElementById("shichang").value;
+        var chepiao=document.getElementById("chepiao").value;
+        var chuchai=document.getElementById("chuchaijiayou").value;
+        var fangzu=document.getElementById("fangzu").value;
+        var  tongxing=document.getElementById("tongxing").value;
+        var gongzi=document.getElementById("gongzi").value;
+        var qita=document.getElementById("qita").value;
+        var rengong=document.getElementById("rengong").value;
+        var riyong=document.getElementById("riyongpin").value;
+        var shebei=document.getElementById("shebeixiuli").value;
+        var shuidian=document.getElementById("shuidian").value;
+        var  shuifei=document.getElementById("shuifei").value;
+        var tongxun=document.getElementById("tongxunfei").value;
+        var waibao=document.getElementById("waibao").value;
+        var  gongjiao=document.getElementById("shineigongjiao").value;
+        var  zhaodai=document.getElementById("zhaodaifei").value;
+        var  zuche=document.getElementById("zuchefei").value;
+        var xiuche=document.getElementById("xiuchefei").value;
+        var youji=document.getElementById("youjifei").value;
 
         var url="add?ren="+ren+"&gongshang="+gongshang+"&yiliao="+yiliao+"&yanglao="+yanglao+"&shengyu="+shengyu+"&shiye="+shiye+"&shi"+shi+"&chepiao"+chepiao+"chuchai"+chuchai+"&fangzu"+fangzu+
             "&tongxing"+tongxing+"&gongzi"+gongzi+"&qita"+qita+"&rengong"+rengong+"&riyong"+riyong+"&shebei"+shebei+"&shuidian"+shuidian+"&shuifei"+shuifei+"&tongxun"+tongxun+"&waibao"+waibao+
