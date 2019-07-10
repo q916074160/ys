@@ -57,6 +57,8 @@ public class YuSuan {
 
     private Double jieguo;
 
+    private String zhongdui;
+
     public Integer getYuid() {
         return yuid;
     }
@@ -276,4 +278,12 @@ public class YuSuan {
     public Double getJieguo(){return jieguo;}
 
     public void setJieguo(Double jieguo){this.jieguo=jieguo;}
+
+    public String getZhongdui() {
+        return zhongdui;
+    }
+
+    public void setZhongdui(String zhongdui) {
+        this.zhongdui = zhongdui;
+    }
 }

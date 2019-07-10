@@ -25,6 +25,7 @@ function check(){
     var shengyu = document.getElementById("shengyu").value;
     var gongzi=document.getElementById("gongzi").value;
     var  shineigongjiao=document.getElementById("shineigongjiao").value;
+    var zhongdui=document.getElementById("zhongdui").value;
     var boolean=true;
     if(xiangmuname ==  null || xiangmuname == ''){
         alert("合同名不能为空");
@@ -165,10 +166,15 @@ function check(){
                 boolean= false;
                 return false;
             }
+    if (zhongdui == "请选择") {
+        alert("请选择一个");
+        boolean= false;
+        return false;
+    }
         if(boolean==true) {
             var url = "add?name=" + xiangmuname + "&ren=" + renshu + "&gongshang=" + gongshang + "&yiliao=" + yiliao + "&yanglao=" + yanglao + "&shengyu=" + shengyu + "&shiye=" + shiye + "&shi=" + shichang + "&chepiao=" + chepiao + "&chuchai=" + chuchaijiayou + "&fangzu=" + fangzu +
                 "&tongxing=" + tongxunfei + "&gongzi=" + gongzi + "&qita=" + qita + "&rengong=" + rengong + "&riyong=" + riyongpin + "&shebei=" + shebeixiuli + "&shuidian=" + shuidian + "&shuifei=" + shuifei + "&tongxun=" + tongxunfei + "&waibao=" + waibao +
-                "&gongjiao=" + shineigongjiao + "&zhaodai=" + zhaodaifei + "&zuche=" + zuchefei + "&xiuche=" + xiuchefei + "&youji=" + youjifei;
+                "&gongjiao=" + shineigongjiao + "&zhaodai=" + zhaodaifei + "&zuche=" + zuchefei + "&xiuche=" + xiuchefei + "&youji=" + youjifei+"&zhongdui="+zhongdui;
             //alert(url);
             $.get(url, function (data) {
                 $("#jg").text(data);
@@ -215,6 +221,7 @@ function check(){
     var shengyu = document.getElementById("shengyu").value;
     var gongzi=document.getElementById("gongzi").value;
     var  shineigongjiao=document.getElementById("shineigongjiao").value;
+
     var kaishitime=document.getElementById("kaishitime").value;
     var zhongdui=document.getElementById("zhongdui").value;
     var boolean=true;
@@ -354,6 +361,16 @@ function check(){
     }
     if (shengyu == "") {
         alert("生育保险不能为空");
+        boolean= false;
+        return false;
+    }
+    if (zhongdui == "请选择") {
+        alert("请选择一个");
+        boolean= false;
+        return false;
+    }
+    if (kaishitime == "") {
+        alert("实施时间不能为空");
         boolean= false;
         return false;
     }

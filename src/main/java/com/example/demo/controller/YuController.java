@@ -24,7 +24,7 @@ public class YuController {
     private ShiSuanMapper shiSuanMapper;
 
     @RequestMapping(value = "/add",method= RequestMethod.GET)
-    public double YuInsert( @RequestParam String name,@RequestParam int ren,
+    public double YuInsert( @RequestParam String name,@RequestParam int ren,@RequestParam String zhongdui,
         @RequestParam double gongshang,@RequestParam double yiliao,@RequestParam double yanglao,@RequestParam double shengyu,@RequestParam double shiye,
         @RequestParam int shi,@RequestParam double chepiao,@RequestParam double chuchai,@RequestParam double fangzu,@RequestParam double tongxing,
         @RequestParam double gongzi,@RequestParam double qita,@RequestParam double rengong,@RequestParam double riyong,@RequestParam double shebei,
@@ -63,6 +63,7 @@ public class YuController {
         yusuan.setYoujifei(youji);
         yusuan.setZhaodaifei(zhaodai);
         yusuan.setZuchefei(zuche);
+        yusuan.setZhongdui(zhongdui);
 
         //盈利
         double jieguo=sum;

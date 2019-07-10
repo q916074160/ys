@@ -30,12 +30,13 @@
     <result column="shiye" jdbcType="DOUBLE" property="shiye" />
     <result column="shengyu" jdbcType="DOUBLE" property="shengyu" />
     <result column="jieguo" jdbcType="DOUBLE" property="jieguo" />
+    <result column="zhongdui" jdbcType="VARCHAR" property="zhongdui" />
   </resultMap>
   <sql id="Base_Column_List">
     yuid, xiangmuname, renshu, gongzi, shichang, shuifei, fangzu, waibao, zhaodaifei, 
     tongxunfei, riyongpin, youjifei, zuchefei, shebeixiuli, gaosutongxing, chuchaijiayou, 
     shineigongjiao, xiuchefei, rengong, shuidian, chepiao, qita, yanglao, yiliao, gongshang, 
-    shiye, shengyu,jieguo
+    shiye, shengyu,jieguo,zhongdui
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
@@ -56,7 +57,7 @@
       chuchaijiayou, shineigongjiao, xiuchefei, 
       rengong, shuidian, chepiao, 
       qita, yanglao, yiliao, 
-      gongshang, shiye, shengyu,jieguo
+      gongshang, shiye, shengyu,jieguo,zhongdui
       )
     values (null, #{xiangmuname,jdbcType=VARCHAR}, #{renshu,jdbcType=INTEGER},
       #{gongzi,jdbcType=DOUBLE}, #{shichang,jdbcType=INTEGER}, #{shuifei,jdbcType=DOUBLE}, 
@@ -66,7 +67,7 @@
       #{chuchaijiayou,jdbcType=DOUBLE}, #{shineigongjiao,jdbcType=DOUBLE}, #{xiuchefei,jdbcType=DOUBLE}, 
       #{rengong,jdbcType=DOUBLE}, #{shuidian,jdbcType=DOUBLE}, #{chepiao,jdbcType=DOUBLE}, 
       #{qita,jdbcType=DOUBLE}, #{yanglao,jdbcType=DOUBLE}, #{yiliao,jdbcType=DOUBLE}, 
-      #{gongshang,jdbcType=DOUBLE}, #{shiye,jdbcType=DOUBLE}, #{shengyu,jdbcType=DOUBLE},#{jieguo,jdbcType=DOUBLE}
+      #{gongshang,jdbcType=DOUBLE}, #{shiye,jdbcType=DOUBLE}, #{shengyu,jdbcType=DOUBLE},#{jieguo,jdbcType=DOUBLE},#{zhongdui,jdbcType=VARCHAR}
       )
   </insert>
   <insert id="insertSelective" parameterType="com.example.demo.entity.YuSuan">
@@ -156,6 +157,9 @@
       <if test="jieguo != null">
         jieguo,
       </if>
+      <if test="zhongdui != null">
+        zhongdui,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="yuid != null">
@@ -241,6 +245,9 @@
       </if>
       <if test="jieguo != null">
         #{jieguo,jdbcType=DOUBLE},
+      </if>
+      <if test="zhongdui != null">
+        #{zhongdui,jdbcType=VARCHAR },
       </if>
     </trim>
   </insert>
@@ -328,6 +335,9 @@
       <if test="jieguo != null">
         jieguo = #{shengyu,jdbcType=DOUBLE},
       </if>
+      <if test="zhongdui != null">
+        zhongdui=#{zhongdui,jdbcType=VARCHAR },
+      </if>
     </set>
     where yuid = #{yuid,jdbcType=INTEGER}
   </update>
@@ -358,8 +368,10 @@
       yiliao = #{yiliao,jdbcType=DOUBLE},
       gongshang = #{gongshang,jdbcType=DOUBLE},
       shiye = #{shiye,jdbcType=DOUBLE},
-      shengyu = #{shengyu,jdbcType=DOUBLE}
-      jieguo=#{jieguo,jdbcType=DOUBLE}
+      shengyu = #{shengyu,jdbcType=DOUBLE},
+      jieguo=#{jieguo,jdbcType=DOUBLE},
+      zhongdui=#{zhongdui,jdbcType=VARCHAR }
     where yuid = #{yuid,jdbcType=INTEGER}
+
   </update>
 </mapper>
