@@ -1,6 +1,6 @@
 package com.example.demo.controller;
 
-import com.example.demo.entity.YuSuan;
+import com.example.demo.entity.Yusuan;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 

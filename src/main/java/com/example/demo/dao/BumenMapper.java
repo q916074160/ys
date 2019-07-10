@@ -1,7 +1,9 @@
 package com.example.demo.dao;
 
 import com.example.demo.entity.Bumen;
+import org.apache.ibatis.annotations.Mapper;
 
+@Mapper
 public interface BumenMapper {
     int deleteByPrimaryKey(Integer bid);
 
