@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.dao.RenyuanMapper">
+  <resultMap id="BaseResultMap" type="com.example.demo.entity.Renyuan">
+    <id column="rid" jdbcType="INTEGER" property="rid" />
+    <result column="rname" jdbcType="VARCHAR" property="rname" />
+    <result column="bid" jdbcType="INTEGER" property="bid" />
+    <result column="gongzi" jdbcType="DOUBLE" property="gongzi" />
+    <result column="gerenbaoxian" jdbcType="DOUBLE" property="gerenbaoxian" />
+    <result column="gerenshui" jdbcType="DOUBLE" property="gerenshui" />
+    <result column="jingling" jdbcType="DOUBLE" property="jingling" />
+    <result column="yanglao" jdbcType="DOUBLE" property="yanglao" />
+    <result column="yiliao" jdbcType="DOUBLE" property="yiliao" />
+    <result column="shiye" jdbcType="DOUBLE" property="shiye" />
+    <result column="shengyu" jdbcType="DOUBLE" property="shengyu" />
+    <result column="gongshang" jdbcType="DOUBLE" property="gongshang" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    rid, rname, bid, gongzi, gerenbaoxian, gerenshui, jingling, yanglao, yiliao, shiye, 
+    shengyu, gongshang
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from renyuan
+    where rid = #{rid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from renyuan
+    where rid = #{rid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.example.demo.entity.Renyuan">
+    insert into renyuan (rid, rname, bid, 
+      gongzi, gerenbaoxian, gerenshui, 
+      jingling, yanglao, yiliao, 
+      shiye, shengyu, gongshang
+      )
+    values (#{rid,jdbcType=INTEGER}, #{rname,jdbcType=VARCHAR}, #{bid,jdbcType=INTEGER}, 
+      #{gongzi,jdbcType=DOUBLE}, #{gerenbaoxian,jdbcType=DOUBLE}, #{gerenshui,jdbcType=DOUBLE}, 
+      #{jingling,jdbcType=DOUBLE}, #{yanglao,jdbcType=DOUBLE}, #{yiliao,jdbcType=DOUBLE}, 
+      #{shiye,jdbcType=DOUBLE}, #{shengyu,jdbcType=DOUBLE}, #{gongshang,jdbcType=DOUBLE}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.example.demo.entity.Renyuan">
+    insert into renyuan
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="rid != null">
+        rid,
+      </if>
+      <if test="rname != null">
+        rname,
+      </if>
+      <if test="bid != null">
+        bid,
+      </if>
+      <if test="gongzi != null">
+        gongzi,
+      </if>
+      <if test="gerenbaoxian != null">
+        gerenbaoxian,
+      </if>
+      <if test="gerenshui != null">
+        gerenshui,
+      </if>
+      <if test="jingling != null">
+        jingling,
+      </if>
+      <if test="yanglao != null">
+        yanglao,
+      </if>
+      <if test="yiliao != null">
+        yiliao,
+      </if>
+      <if test="shiye != null">
+        shiye,
+      </if>
+      <if test="shengyu != null">
+        shengyu,
+      </if>
+      <if test="gongshang != null">
+        gongshang,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="rid != null">
+        #{rid,jdbcType=INTEGER},
+      </if>
+      <if test="rname != null">
+        #{rname,jdbcType=VARCHAR},
+      </if>
+      <if test="bid != null">
+        #{bid,jdbcType=INTEGER},
+      </if>
+      <if test="gongzi != null">
+        #{gongzi,jdbcType=DOUBLE},
+      </if>
+      <if test="gerenbaoxian != null">
+        #{gerenbaoxian,jdbcType=DOUBLE},
+      </if>
+      <if test="gerenshui != null">
+        #{gerenshui,jdbcType=DOUBLE},
+      </if>
+      <if test="jingling != null">
+        #{jingling,jdbcType=DOUBLE},
+      </if>
+      <if test="yanglao != null">
+        #{yanglao,jdbcType=DOUBLE},
+      </if>
+      <if test="yiliao != null">
+        #{yiliao,jdbcType=DOUBLE},
+      </if>
+      <if test="shiye != null">
+        #{shiye,jdbcType=DOUBLE},
+      </if>
+      <if test="shengyu != null">
+        #{shengyu,jdbcType=DOUBLE},
+      </if>
+      <if test="gongshang != null">
+        #{gongshang,jdbcType=DOUBLE},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.example.demo.entity.Renyuan">
+    update renyuan
+    <set>
+      <if test="rname != null">
+        rname = #{rname,jdbcType=VARCHAR},
+      </if>
+      <if test="bid != null">
+        bid = #{bid,jdbcType=INTEGER},
+      </if>
+      <if test="gongzi != null">
+        gongzi = #{gongzi,jdbcType=DOUBLE},
+      </if>
+      <if test="gerenbaoxian != null">
+        gerenbaoxian = #{gerenbaoxian,jdbcType=DOUBLE},
+      </if>
+      <if test="gerenshui != null">
+        gerenshui = #{gerenshui,jdbcType=DOUBLE},
+      </if>
+      <if test="jingling != null">
+        jingling = #{jingling,jdbcType=DOUBLE},
+      </if>
+      <if test="yanglao != null">
+        yanglao = #{yanglao,jdbcType=DOUBLE},
+      </if>
+      <if test="yiliao != null">
+        yiliao = #{yiliao,jdbcType=DOUBLE},
+      </if>
+      <if test="shiye != null">
+        shiye = #{shiye,jdbcType=DOUBLE},
+      </if>
+      <if test="shengyu != null">
+        shengyu = #{shengyu,jdbcType=DOUBLE},
+      </if>
+      <if test="gongshang != null">
+        gongshang = #{gongshang,jdbcType=DOUBLE},
+      </if>
+    </set>
+    where rid = #{rid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.example.demo.entity.Renyuan">
+    update renyuan
+    set rname = #{rname,jdbcType=VARCHAR},
+      bid = #{bid,jdbcType=INTEGER},
+      gongzi = #{gongzi,jdbcType=DOUBLE},
+      gerenbaoxian = #{gerenbaoxian,jdbcType=DOUBLE},
+      gerenshui = #{gerenshui,jdbcType=DOUBLE},
+      jingling = #{jingling,jdbcType=DOUBLE},
+      yanglao = #{yanglao,jdbcType=DOUBLE},
+      yiliao = #{yiliao,jdbcType=DOUBLE},
+      shiye = #{shiye,jdbcType=DOUBLE},
+      shengyu = #{shengyu,jdbcType=DOUBLE},
+      gongshang = #{gongshang,jdbcType=DOUBLE}
+    where rid = #{rid,jdbcType=INTEGER}
+  </update>
+</mapper>
