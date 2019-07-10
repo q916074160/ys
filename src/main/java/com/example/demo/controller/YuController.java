@@ -10,7 +10,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import javax.xml.crypto.Data;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 
@@ -71,12 +72,21 @@ public class YuController {
         return sum;
     }
     @RequestMapping(value = "/addS",method= RequestMethod.GET)
-    public double ShiInsert(@RequestParam String name, @RequestParam Date kaishitime, @RequestParam int ren,
+    public double ShiInsert(@RequestParam String name, @RequestParam String kaishitime,@RequestParam String zhongdui, @RequestParam int ren,
                             @RequestParam double gongshang, @RequestParam double yiliao, @RequestParam double yanglao, @RequestParam double shengyu, @RequestParam double shiye,
                             @RequestParam int shi, @RequestParam double chepiao, @RequestParam double chuchai, @RequestParam double fangzu, @RequestParam double tongxing,
                             @RequestParam double gongzi, @RequestParam double qita, @RequestParam double rengong, @RequestParam double riyong, @RequestParam double shebei,
                             @RequestParam double shuidian, @RequestParam double shuifei, @RequestParam double tongxun, @RequestParam double waibao, @RequestParam double gongjiao,
                             @RequestParam double zhaodai, @RequestParam double zuche, @RequestParam double xiuche, @RequestParam double youji){
+
+        SimpleDateFormat formatter=new SimpleDateFormat("yyyy-MM-dd");
+        Date date= null;
+        try {
+            date = formatter.parse(kaishitime);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        System.out.println(date);
         //总共盈利
         double sum=0;
 
@@ -110,8 +120,8 @@ public class YuController {
         shisuan.setYoujifei(youji);
         shisuan.setZhaodaifei(zhaodai);
         shisuan.setZuchefei(zuche);
-        shisuan.setKaishitime(kaishitime);
-        shisuan.setZhongdui("s");
+        shisuan.setKaishitime(date);
+        shisuan.setZhongdui(zhongdui);
 
         //结果
         double jieguo=sum;
