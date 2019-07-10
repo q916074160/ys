@@ -21,7 +21,7 @@
                         <input id="Ktext" type="text" class="form-control" placeholder="请输入项目名称">
                     </div>
                 </div>
-                <div class="search_input">
+                <div class="search_input" >
                     <div class="input-group mb-3">
                         <span>请选择中队：</span>
                       <%--  <input id="job_num" type="text" class="form-control" placeholder="请输入工号">--%>
@@ -62,7 +62,7 @@
         <table id="tb" class="table">
             <thead>
             <tr>
-                <th>项目名称</th>
+                <th>名称</th>
                 <th>人数</th>
                 <th>工资</th>
                 <th>项目时长</th>
@@ -88,28 +88,28 @@
             </thead>
             <tbody id="show_tbody">
             <tr>
-                <td>刘晓晓</td>
-                <td>7652101</td>
-                <td>18086667777</td>
-                <td>------</td>
-                <td>一级</td>
-                <td>高级</td>
-                <td>
-                    <a href="#" class="edit">编辑</a>
-                    <a href="#" class="del">删除</a>
-                </td>
-            </tr>
-            <tr>
-                <td>李磊</td>
-                <td>7652102</td>
-                <td>18086668888</td>
-                <td>------</td>
-                <td>三级</td>
-                <td>专家</td>
-                <td>
-                    <a href="#" class="edit">编辑</a>
-                    <a href="#" class="del">删除</a>
-                </td>
+                <td>莲花</td>
+                <td>10</td>
+                <td>300000</td>
+                <td>2</td>
+                <td>200</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>2019-07-01</td>
             </tr>
             </tbody>
         </table>
