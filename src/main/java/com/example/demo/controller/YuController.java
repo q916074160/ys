@@ -1,9 +1,9 @@
 package com.example.demo.controller;
 
-import com.example.demo.dao.ShiSuanMapper;
-import com.example.demo.dao.YuSuanMapper;
-import com.example.demo.entity.ShiSuan;
-import com.example.demo.entity.YuSuan;
+import com.example.demo.dao.ShisuanMapper;
+import com.example.demo.dao.YusuanMapper;
+import com.example.demo.entity.Shisuan;
+import com.example.demo.entity.Yusuan;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -18,13 +18,13 @@ import java.util.Date;
 @RestController
 public class YuController {
     @Autowired
-    private YuSuanMapper yu;
+    private YusuanMapper yu;
 
     @Autowired
-    private ShiSuanMapper shiSuanMapper;
+    private ShisuanMapper shiSuanMapper;
 
     @RequestMapping(value = "/add",method= RequestMethod.GET)
-    public double YuInsert( @RequestParam String name,@RequestParam int ren,@RequestParam String zhongdui,
+    public double YuInsert( @RequestParam String name,@RequestParam int ren,@RequestParam int zhongdui,
         @RequestParam double gongshang,@RequestParam double yiliao,@RequestParam double yanglao,@RequestParam double shengyu,@RequestParam double shiye,
         @RequestParam int shi,@RequestParam double chepiao,@RequestParam double chuchai,@RequestParam double fangzu,@RequestParam double tongxing,
         @RequestParam double gongzi,@RequestParam double qita,@RequestParam double rengong,@RequestParam double riyong,@RequestParam double shebei,
@@ -35,7 +35,7 @@ public class YuController {
 
         sum=sum+(gongshang+yiliao+yanglao+shengyu+shiye)*ren*shi+gongzi*ren*shi+fangzu*shi+chepiao+chuchai+tongxing+qita+rengong+riyong+shebei+shuidian*shi+shuifei+tongxun+waibao+gongjiao+zhaodai+zuche+xiuche+youji;
 
-        YuSuan yusuan=new YuSuan();
+        Yusuan yusuan=new Yusuan();
         //合同名称
         yusuan.setXiangmuname(name);
         yusuan.setRenshu(ren);
@@ -63,7 +63,7 @@ public class YuController {
         yusuan.setYoujifei(youji);
         yusuan.setZhaodaifei(zhaodai);
         yusuan.setZuchefei(zuche);
-        yusuan.setZhongdui(zhongdui);
+        yusuan.setBid(zhongdui);
 
         //盈利
         double jieguo=sum;
@@ -73,7 +73,7 @@ public class YuController {
         return sum;
     }
     @RequestMapping(value = "/addS",method= RequestMethod.GET)
-    public double ShiInsert(@RequestParam String name, @RequestParam String kaishitime,@RequestParam String zhongdui, @RequestParam int ren,
+    public double ShiInsert(@RequestParam String name, @RequestParam String kaishitime,@RequestParam int zhongdui, @RequestParam int ren,
                             @RequestParam double gongshang, @RequestParam double yiliao, @RequestParam double yanglao, @RequestParam double shengyu, @RequestParam double shiye,
                             @RequestParam int shi, @RequestParam double chepiao, @RequestParam double chuchai, @RequestParam double fangzu, @RequestParam double tongxing,
                             @RequestParam double gongzi, @RequestParam double qita, @RequestParam double rengong, @RequestParam double riyong, @RequestParam double shebei,
@@ -93,7 +93,7 @@ public class YuController {
 
         sum=sum+(gongshang+yiliao+yanglao+shengyu+shiye)*ren*shi+gongzi*ren*shi+fangzu*shi+chepiao+chuchai+tongxing+qita+rengong+riyong+shebei+shuidian*shi+shuifei+tongxun+waibao+gongjiao+zhaodai+zuche+xiuche+youji;
 
-        ShiSuan shisuan=new ShiSuan();
+        Shisuan shisuan=new Shisuan();
         //合同名称
         shisuan.setXiangmuname(name);
         shisuan.setRenshu(ren);
@@ -122,7 +122,7 @@ public class YuController {
         shisuan.setZhaodaifei(zhaodai);
         shisuan.setZuchefei(zuche);
         shisuan.setKaishitime(date);
-        shisuan.setZhongdui(zhongdui);
+        shisuan.setBid(zhongdui);
 
         //结果
         double jieguo=sum;
