@@ -18,8 +18,14 @@ public class controller {
     public String findYs() {
         return "ys";
     }
+    //预算导入
     @RequestMapping("/ysdr")
     public String ysdr() {
         return "ysdr";
+    }
+    //实算导入
+    @RequestMapping("/ssdr")
+    public String ssdr() {
+        return "ss";
     }
 }
