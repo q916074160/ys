@@ -214,16 +214,12 @@ function check1(){
     var shuidian = document.getElementById("shuidian").value;
     var chepiao = document.getElementById("chepiao").value;
     var qita = document.getElementById("qita").value;
-    var yanglao = document.getElementById("yanglao").value;
-    var yiliao = document.getElementById("yiliao").value;
-    var gongshang = document.getElementById("gongshang").value;
-    var shiye = document.getElementById("shiye").value;
-    var shengyu = document.getElementById("shengyu").value;
     var gongzi=document.getElementById("gongzi").value;
     var  shineigongjiao=document.getElementById("shineigongjiao").value;
 
     var kaishitime=document.getElementById("kaishitime").value;
     var zhongdui=document.getElementById("zhongdui").value;
+    var time=document.getElementById("time").value;
     var boolean=true;
     if(xiangmuname ==  null || xiangmuname == ''){
         alert("合同名不能为空");
@@ -339,31 +335,6 @@ function check1(){
         boolean= false;
         return false;
     }
-    if (yanglao == "") {
-        alert("养老保险不能为空");
-        boolean= false;
-        return false;
-    }
-    if (yiliao == "") {
-        alert("医疗保险不能为空");
-        boolean= false;
-        return false;
-    }
-    if (gongshang == "") {
-        alert("工伤不能为空");
-        boolean= false;
-        return false;
-    }
-    if (shiye == "") {
-        alert("失业保险不能为空");
-        boolean= false;
-        return false;
-    }
-    if (shengyu == "") {
-        alert("生育保险不能为空");
-        boolean= false;
-        return false;
-    }
     if (zhongdui == "请选择") {
         alert("请选择一个");
         boolean= false;
@@ -374,10 +345,15 @@ function check1(){
         boolean= false;
         return false;
     }
+    if (time == "") {
+        alert("实施时间不能为空");
+        boolean= false;
+        return false;
+    }
     if(boolean==true) {
-        var url = "addS?name=" + xiangmuname + "&ren=" + renshu + "&gongshang=" + gongshang + "&yiliao=" + yiliao + "&yanglao=" + yanglao + "&shengyu=" + shengyu + "&shiye=" + shiye + "&shi=" + shichang + "&chepiao=" + chepiao + "&chuchai=" + chuchaijiayou + "&fangzu=" + fangzu +
+        var url = "addS?name=" + xiangmuname + "&ren=" + renshu +"&shi=" + shichang + "&chepiao=" + chepiao + "&chuchai=" + chuchaijiayou + "&fangzu=" + fangzu +
             "&tongxing=" + tongxunfei + "&gongzi=" + gongzi + "&qita=" + qita + "&rengong=" + rengong + "&riyong=" + riyongpin + "&shebei=" + shebeixiuli + "&shuidian=" + shuidian + "&shuifei=" + shuifei + "&tongxun=" + tongxunfei + "&waibao=" + waibao +
-            "&gongjiao=" + shineigongjiao + "&zhaodai=" + zhaodaifei + "&zuche=" + zuchefei + "&xiuche=" + xiuchefei + "&youji=" + youjifei+"&kaishitime="+kaishitime+"&zhongdui="+zhongdui;
+            "&gongjiao=" + shineigongjiao + "&zhaodai=" + zhaodaifei + "&zuche=" + zuchefei + "&xiuche=" + xiuchefei + "&youji=" + youjifei+"&kaishitime="+kaishitime+"&zhongdui="+zhongdui+"time="+time;
         //alert(url);
         $.get(url, function (data) {
             $("#jg").text(data);
@@ -385,7 +361,23 @@ function check1(){
 
     }
 }
+function zd() {
+    var zhongdui=document.getElementById("zhongdui").value;
+    if (zhongdui == "请选择") {
+        alert("请选择一个");
+        boolean= false;
+        return false;
+    }
+    var boolean=true;
+    if(boolean==true) {
+        var url = "sel?zhongdui=" +zhongdui;
+        //alert(url);
+        $.get(url, function (data) {
+            $("#gongzi").val(data);
+        });
 
+    }
+}
 
 
 

@@ -1,7 +1,10 @@
 package com.example.demo.controller;
 
+import com.example.demo.dao.BumenMapper;
+import com.example.demo.dao.RenyuanMapper;
 import com.example.demo.dao.ShisuanMapper;
 import com.example.demo.dao.YusuanMapper;
+import com.example.demo.entity.Renyuan;
 import com.example.demo.entity.Shisuan;
 import com.example.demo.entity.Yusuan;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
 
 @RestController
@@ -22,6 +26,12 @@ public class YuController {
 
     @Autowired
     private ShisuanMapper shiSuanMapper;
+
+    @Autowired
+    private BumenMapper bumenMapper;
+
+    @Autowired
+    private RenyuanMapper renyuanMapper;
 
     @RequestMapping(value = "/add",method= RequestMethod.GET)
     public double YuInsert( @RequestParam String name,@RequestParam int ren,@RequestParam int zhongdui,
@@ -73,8 +83,7 @@ public class YuController {
         return sum;
     }
     @RequestMapping(value = "/addS",method= RequestMethod.GET)
-    public double ShiInsert(@RequestParam String name, @RequestParam String kaishitime,@RequestParam int zhongdui, @RequestParam int ren,
-                            @RequestParam double gongshang, @RequestParam double yiliao, @RequestParam double yanglao, @RequestParam double shengyu, @RequestParam double shiye,
+    public double ShiInsert(@RequestParam String name, @RequestParam String kaishitime,@RequestParam String time,@RequestParam int zhongdui, @RequestParam int ren,
                             @RequestParam int shi, @RequestParam double chepiao, @RequestParam double chuchai, @RequestParam double fangzu, @RequestParam double tongxing,
                             @RequestParam double gongzi, @RequestParam double qita, @RequestParam double rengong, @RequestParam double riyong, @RequestParam double shebei,
                             @RequestParam double shuidian, @RequestParam double shuifei, @RequestParam double tongxun, @RequestParam double waibao, @RequestParam double gongjiao,
@@ -82,8 +91,10 @@ public class YuController {
 
         SimpleDateFormat formatter=new SimpleDateFormat("yyyy-MM-dd");
         Date date= null;
+        Date date1= null;
         try {
             date = formatter.parse(kaishitime);
+            date1= formatter.parse(time);
         } catch (ParseException e) {
             e.printStackTrace();
         }
@@ -91,17 +102,12 @@ public class YuController {
         //总共盈利
         double sum=0;
 
-        sum=sum+(gongshang+yiliao+yanglao+shengyu+shiye)*shi+gongzi*shi+fangzu*shi+chepiao+chuchai+tongxing+qita+rengong+riyong+shebei+shuidian*shi+shuifei+tongxun+waibao+gongjiao+zhaodai+zuche+xiuche+youji;
+        sum=sum+gongzi*shi+fangzu*shi+chepiao+chuchai+tongxing+qita+rengong+riyong+shebei+shuidian*shi+shuifei+tongxun+waibao+gongjiao+zhaodai+zuche+xiuche+youji;
 
         Shisuan shisuan=new Shisuan();
         //合同名称
         shisuan.setXiangmuname(name);
         shisuan.setRenshu(ren);
-        shisuan.setGongshang(gongshang);
-        shisuan.setShengyu(shengyu);
-        shisuan.setShiye(shiye);
-        shisuan.setYanglao(yanglao);
-        shisuan.setYiliao(yiliao);
         shisuan.setChepiao(chepiao);
         shisuan.setChuchaijiayou(chuchai);
         shisuan.setFangzu(fangzu);
@@ -123,12 +129,24 @@ public class YuController {
         shisuan.setZuchefei(zuche);
         shisuan.setKaishitime(date);
         shisuan.setBid(zhongdui);
-
+        shisuan.setTime(date1);
         //结果
         double jieguo=sum;
         shisuan.setJieguo(jieguo);
 
         shiSuanMapper.insert(shisuan);
+        return sum;
+    }
+    @RequestMapping(value = "/sel",method= RequestMethod.GET)
+    public double selectGongzi(@RequestParam int zhongdui){
+        double sum=0;
+        List<Renyuan> renyuanList=renyuanMapper.selectById(zhongdui);
+        for(int i=0;i<renyuanList.size();i++){
+            Renyuan renyuan=new Renyuan();
+            renyuan=renyuanList.get(i);
+            sum+=renyuan.getGongzi()+renyuan.getYanglao()+renyuan.getYiliao()+renyuan.getShengyu()+renyuan.getShiye()+renyuan.getGongshang();
+
+        }
         return sum;
     }
 }

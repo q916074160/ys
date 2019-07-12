@@ -9,6 +9,8 @@ import java.util.List;
 public interface RenyuanMapper {
     List<Renyuan> queryAll();
 
+    List<Renyuan> selectById(Integer bid);
+
     int deleteByPrimaryKey(Integer rid);
 
     int insert(Renyuan record);
