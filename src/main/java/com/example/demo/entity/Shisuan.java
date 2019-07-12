@@ -53,6 +53,8 @@ public class Shisuan {
 
     private Double jieguo;
 
+    private Date time;
+
     public Integer getShiid() {
         return shiid;
     }
@@ -251,5 +253,13 @@ public class Shisuan {
 
     public void setJieguo(Double jieguo) {
         this.jieguo = jieguo;
+    }
+
+    public Date getTime() {
+        return time;
+    }
+
+    public void setTime(Date time) {
+        this.time = time;
     }
 }
