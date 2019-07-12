@@ -33,7 +33,7 @@ public class YuController {
         //总共盈利
         double sum=0;
 
-        sum=sum+(gongshang+yiliao+yanglao+shengyu+shiye)*ren*shi+gongzi*ren*shi+fangzu*shi+chepiao+chuchai+tongxing+qita+rengong+riyong+shebei+shuidian*shi+shuifei+tongxun+waibao+gongjiao+zhaodai+zuche+xiuche+youji;
+        sum=sum+(gongshang+yiliao+yanglao+shengyu+shiye)*shi+gongzi*shi+fangzu*shi+chepiao+chuchai+tongxing+qita+rengong+riyong+shebei+shuidian*shi+shuifei+tongxun+waibao+gongjiao+zhaodai+zuche+xiuche+youji;
 
         Yusuan yusuan=new Yusuan();
         //合同名称
@@ -91,7 +91,7 @@ public class YuController {
         //总共盈利
         double sum=0;
 
-        sum=sum+(gongshang+yiliao+yanglao+shengyu+shiye)*ren*shi+gongzi*ren*shi+fangzu*shi+chepiao+chuchai+tongxing+qita+rengong+riyong+shebei+shuidian*shi+shuifei+tongxun+waibao+gongjiao+zhaodai+zuche+xiuche+youji;
+        sum=sum+(gongshang+yiliao+yanglao+shengyu+shiye)*shi+gongzi*shi+fangzu*shi+chepiao+chuchai+tongxing+qita+rengong+riyong+shebei+shuidian*shi+shuifei+tongxun+waibao+gongjiao+zhaodai+zuche+xiuche+youji;
 
         Shisuan shisuan=new Shisuan();
         //合同名称
