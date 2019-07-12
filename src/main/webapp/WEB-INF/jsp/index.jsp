@@ -20,7 +20,7 @@
         <div title="预算" class="beijing" id="Scene" data-options="selected:false">
             <li id="li1" onclick="addTab(this.innerHTML,'ysdr')">预算导入</li>
             <li id="li3" onclick="addTab(this.innerHTML,'ssdr')">实算导入</li>
-            <li id="li2" onclick="addTab(this.innerHTML,'querySs')">预算查询</li>
+            <li id="li2" onclick="addTab(this.innerHTML,'querySs')">查询</li>
             <li id="li4" onclick="addTab(this.innerHTML,'rydr')">人员导入</li>
         </div>
         <div title="xxx" class="beijing" id="sand">
