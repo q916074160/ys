@@ -74,21 +74,23 @@
             <td><input type="text" name="qita" id="qita"/>总金额</td>
         </tr>
         <tr>
-            <td class="td1">实施时间</td>
-            <td><input type="text" name="kaishitime" id="kaishitime"/></td>
-            <td class="td1">中队选择</td>
-            <td><select name="zhongdui" id="zhongdui">
-                <option value="请选择">--请选择--</option>
-                <option value="一中队">一中队</option>
-                <option value="二中队">二中队</option>
-                <option value="三中队">三中队</option>
-                <option value="四中队">四中队</option>
-                <option value="五中队">五中队</option>
-                <option value="内业">内业</option>
-                <option value="管理">管理</option>
-            </select>
-            </td>
-        </tr>
+        <td class="td1">实施时间</td>
+        <td><input type="text" name="kaishitime" id="kaishitime"/></td>
+        <td class="td1">中队选择</td>
+        <td><select name="zhongdui" id="zhongdui">
+            <option value="请选择">--请选择--</option>
+            <option value="一中队">一中队</option>
+            <option value="二中队">二中队</option>
+            <option value="三中队">三中队</option>
+            <option value="四中队">四中队</option>
+            <option value="五中队">五中队</option>
+            <option value="内业">内业</option>
+            <option value="管理">管理</option>
+        </select>
+        </td>
+            <td class="td1">时间</td>
+            <td></td>
+    </tr>
         <tr>
             <td colspan="6" style="text-align: center">社保</td>
         </tr>

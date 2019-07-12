@@ -21,6 +21,7 @@
             <li id="li1" onclick="addTab(this.innerHTML,'ysdr')">预算导入</li>
             <li id="li3" onclick="addTab(this.innerHTML,'ssdr')">实算导入</li>
             <li id="li2" onclick="addTab(this.innerHTML,'ysFind')">预算查询</li>
+            <li id="li4" onclick="addTab(this.innerHTML,'rydr')">人员导入</li>
         </div>
         <div title="xxx" class="beijing" id="sand">
             <li onclick="addTab(this.innerHTML,'')">xx</li>
