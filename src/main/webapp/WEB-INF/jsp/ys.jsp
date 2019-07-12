@@ -1,4 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <html>
 <head>
     <title>Title</title>
@@ -13,32 +15,34 @@
     <div class="title">项目查询</div>
     <div class="content">
         <!--搜索输入框及查询、重置按钮-->
+    <form method="get" action="querySs">
         <div class="container content_width">
             <div class="person_search">
                 <div class="search_input">
                     <div class="input-group mb-3">
                         <span>名称：</span>
-                        <input id="Ktext" type="text" class="form-control" placeholder="请输入项目名称">
+                        <input id="Ktext" type="text" class="form-control" placeholder="请输入项目名称" name="xiangmuname">
                     </div>
                 </div>
                 <div class="search_input" >
                     <div class="input-group mb-3">
                         <span>请选择中队：</span>
                       <%--  <input id="job_num" type="text" class="form-control" placeholder="请输入工号">--%>
-                        <select class="form-control" id="job_num">
+                        <select class="form-control" id="job_num" name="bid" >
                             <option value="0">--请选择--</option>
-                            <option value="一中队">一中队</option>
-                            <option value="二中队">二中队</option>
-                            <option value="三中队">三中队</option>
+                            <option value="1">一中队</option>
+                            <option value="2">二中队</option>
+                            <option value="3">三中队</option>
                         </select>
                     </div>
                 </div>
                 <div class="search_input">
-                    <button class="btn btn-primary search_btn" type="button" id="search_btn">查询</button>
+                    <button class="btn btn-primary search_btn" type="submit" id="search_btn">查询</button>
                 </div>
             </div>
             <div class="line"></div>
         </div>
+</form>
         <!--添加按钮及bootstrap的模态框-->
         <div class="export">
             <button id="new_add" type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#renyuan">
@@ -87,30 +91,34 @@
             </tr>
             </thead>
             <tbody id="show_tbody">
+            <c:forEach items="${list}" var="list">
             <tr>
-                <td>莲花</td>
-                <td>10</td>
-                <td>300000</td>
-                <td>2</td>
-                <td>200</td>
-                <td>0</td>
-                <td>0</td>
-                <td>0</td>
-                <td>0</td>
-                <td>0</td>
-                <td>0</td>
-                <td>0</td>
-                <td>0</td>
-                <td>0</td>
-                <td>0</td>
-                <td>0</td>
-                <td>0</td>
-                <td>0</td>
-                <td>0</td>
-                <td>0</td>
-                <td>0</td>
-                <td>2019-07-01</td>
+                <td>${list.xiangmuname}</td>
+                <td>${list.renshu}</td>
+                <td>${list.gongzi}</td>
+                <td>${list.shichang}</td>
+                <td>${list.shuifei}</td>
+                <td>${list.fangzu}</td>
+                <td>${list.waibao}</td>
+                <td>${list.zhaodaifei}</td>
+                <td>${list.tongxunfei}</td>
+                <td>${list.riyongpin}</td>
+                <td>${list.youjifei}</td>
+                <td>${list.zuchefei}</td>
+                <td>${list.shebeixiuli}</td>
+                <td>${list.gaosutongxing}</td>
+                <td>${list.chuchaijiayou}</td>
+                <td>${list.shineigongjiao}</td>
+                <td>${list.xiuchefei}</td>
+                <td>${list.rengong}</td>
+                <td>${list.shuidian}</td>
+                <td>${list.chepiao}</td>
+                <td>00</td>
+                <td>
+                    <fmt:formatDate pattern="yyyy-MM-dd" value="${list.kaishitime}"></fmt:formatDate>
+                </td>
             </tr>
+            </c:forEach>
             </tbody>
         </table>
     </div>

@@ -45,7 +45,18 @@
     from shisuan
     where shiid = #{shiid,jdbcType=INTEGER}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    <select id="queryShiSuan" resultType="com.example.demo.entity.Shisuan">
+    SELECT * FROM
+	shisuan
+	WHERE 1=1
+      <if test="bid !=0 and bid != null">
+        and bid=#{bid}
+      </if>
+      <if test="xiangmuname != null and xiangmuname!=''">
+        and xiangmuname=#{xiangmuname}
+      </if>
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from shisuan
     where shiid = #{shiid,jdbcType=INTEGER}
   </delete>

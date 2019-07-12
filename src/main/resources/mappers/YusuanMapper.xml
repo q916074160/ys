@@ -44,6 +44,8 @@
     from yusuan
     where yuid = #{yuid,jdbcType=INTEGER}
   </select>
+
+
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from yusuan
     where yuid = #{yuid,jdbcType=INTEGER}

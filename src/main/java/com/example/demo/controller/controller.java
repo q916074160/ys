@@ -1,11 +1,16 @@
 package com.example.demo.controller;
 
+import com.example.demo.dao.ShisuanMapper;
+import com.example.demo.entity.Shisuan;
 import com.example.demo.entity.Yusuan;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -17,8 +22,13 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
+import java.util.List;
+
 @Controller
 public class controller {
+    @Autowired
+    ShisuanMapper shisuanMapper;
+
     @RequestMapping("/index")
     public String addStudent() {
         return "index";
@@ -39,6 +49,22 @@ public class controller {
     @RequestMapping("/ssdr")
     public String ssdr() {
         return "ss";
+    }
+    @RequestMapping("/querySs")
+    public String queryShiSuan(Shisuan shisuan, HttpServletRequest request, HttpServletResponse response){
+        List<Shisuan>list=shisuanMapper.queryShiSuan(shisuan);
+        String xiangmuname=request.getParameter("xiangmuname");
+        String bidstr= request.getParameter("bid");
+        Integer bid=null;
+        if (bidstr!=null&&!"".equals(bidstr)){
+            bid=Integer.parseInt(bidstr);
+        }
+        shisuan.setBid(bid);
+        shisuan.setXiangmuname(xiangmuname);
+        request.setAttribute("bid",bid);
+        request.setAttribute("xiangmuname",xiangmuname);
+        request.setAttribute("list",list);
+        return "ys";
     }
 
     //人员导入
