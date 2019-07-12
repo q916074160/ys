@@ -373,7 +373,8 @@ function zd() {
         var url = "sel?zhongdui=" +zhongdui;
         //alert(url);
         $.get(url, function (data) {
-            $("#gongzi").val(data);
+            $("#gongzi").val(data[0]);
+            $("#renshu").val(data[1]);
         });
 
     }

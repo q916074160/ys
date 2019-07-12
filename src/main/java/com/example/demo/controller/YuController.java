@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -138,15 +139,19 @@ public class YuController {
         return sum;
     }
     @RequestMapping(value = "/sel",method= RequestMethod.GET)
-    public double selectGongzi(@RequestParam int zhongdui){
+    public Double[] selectGongzi(@RequestParam int zhongdui){
+
         double sum=0;
+        double ren=0;
+
         List<Renyuan> renyuanList=renyuanMapper.selectById(zhongdui);
         for(int i=0;i<renyuanList.size();i++){
             Renyuan renyuan=new Renyuan();
             renyuan=renyuanList.get(i);
             sum+=renyuan.getGongzi()+renyuan.getYanglao()+renyuan.getYiliao()+renyuan.getShengyu()+renyuan.getShiye()+renyuan.getGongshang();
-
+            ren+=1;
         }
-        return sum;
+        Double[] zhi={sum,ren};
+        return zhi;
     }
 }
