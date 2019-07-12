@@ -49,16 +49,6 @@ public class Shisuan {
 
     private Double qita;
 
-    private Double yanglao;
-
-    private Double yiliao;
-
-    private Double gongshang;
-
-    private Double shiye;
-
-    private Double shengyu;
-
     private Date kaishitime;
 
     private Double jieguo;
@@ -245,46 +235,6 @@ public class Shisuan {
 
     public void setQita(Double qita) {
         this.qita = qita;
-    }
-
-    public Double getYanglao() {
-        return yanglao;
-    }
-
-    public void setYanglao(Double yanglao) {
-        this.yanglao = yanglao;
-    }
-
-    public Double getYiliao() {
-        return yiliao;
-    }
-
-    public void setYiliao(Double yiliao) {
-        this.yiliao = yiliao;
-    }
-
-    public Double getGongshang() {
-        return gongshang;
-    }
-
-    public void setGongshang(Double gongshang) {
-        this.gongshang = gongshang;
-    }
-
-    public Double getShiye() {
-        return shiye;
-    }
-
-    public void setShiye(Double shiye) {
-        this.shiye = shiye;
-    }
-
-    public Double getShengyu() {
-        return shengyu;
-    }
-
-    public void setShengyu(Double shengyu) {
-        this.shengyu = shengyu;
     }
 
     public Date getKaishitime() {

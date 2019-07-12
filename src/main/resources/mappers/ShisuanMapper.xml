@@ -25,19 +25,13 @@
     <result column="shuidian" jdbcType="DOUBLE" property="shuidian" />
     <result column="chepiao" jdbcType="DOUBLE" property="chepiao" />
     <result column="qita" jdbcType="DOUBLE" property="qita" />
-    <result column="yanglao" jdbcType="DOUBLE" property="yanglao" />
-    <result column="yiliao" jdbcType="DOUBLE" property="yiliao" />
-    <result column="gongshang" jdbcType="DOUBLE" property="gongshang" />
-    <result column="shiye" jdbcType="DOUBLE" property="shiye" />
-    <result column="shengyu" jdbcType="DOUBLE" property="shengyu" />
     <result column="kaishitime" jdbcType="DATE" property="kaishitime" />
     <result column="jieguo" jdbcType="DOUBLE" property="jieguo" />
   </resultMap>
   <sql id="Base_Column_List">
     shiid, bid, xiangmuname, renshu, gongzi, shichang, shuifei, fangzu, waibao, zhaodaifei, 
     tongxunfei, riyongpin, youjifei, zuchefei, shebeixiuli, gaosutongxing, chuchaijiayou, 
-    shineigongjiao, xiuchefei, rengong, shuidian, chepiao, qita, yanglao, yiliao, gongshang, 
-    shiye, shengyu, kaishitime, jieguo
+    shineigongjiao, xiuchefei, rengong, shuidian, chepiao, qita,  kaishitime, jieguo
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
@@ -68,9 +62,7 @@
       youjifei, zuchefei, shebeixiuli, 
       gaosutongxing, chuchaijiayou, shineigongjiao, 
       xiuchefei, rengong, shuidian, 
-      chepiao, qita, yanglao, 
-      yiliao, gongshang, shiye, 
-      shengyu, kaishitime, jieguo
+      chepiao, qita, kaishitime, jieguo
       )
     values (#{shiid,jdbcType=INTEGER}, #{bid,jdbcType=INTEGER}, #{xiangmuname,jdbcType=VARCHAR}, 
       #{renshu,jdbcType=INTEGER}, #{gongzi,jdbcType=DOUBLE}, #{shichang,jdbcType=INTEGER}, 
@@ -79,9 +71,7 @@
       #{youjifei,jdbcType=DOUBLE}, #{zuchefei,jdbcType=DOUBLE}, #{shebeixiuli,jdbcType=DOUBLE}, 
       #{gaosutongxing,jdbcType=DOUBLE}, #{chuchaijiayou,jdbcType=DOUBLE}, #{shineigongjiao,jdbcType=DOUBLE}, 
       #{xiuchefei,jdbcType=DOUBLE}, #{rengong,jdbcType=DOUBLE}, #{shuidian,jdbcType=DOUBLE}, 
-      #{chepiao,jdbcType=DOUBLE}, #{qita,jdbcType=DOUBLE}, #{yanglao,jdbcType=DOUBLE}, 
-      #{yiliao,jdbcType=DOUBLE}, #{gongshang,jdbcType=DOUBLE}, #{shiye,jdbcType=DOUBLE}, 
-      #{shengyu,jdbcType=DOUBLE}, #{kaishitime,jdbcType=DATE}, #{jieguo,jdbcType=DOUBLE}
+      #{chepiao,jdbcType=DOUBLE}, #{qita,jdbcType=DOUBLE},  #{kaishitime,jdbcType=DATE}, #{jieguo,jdbcType=DOUBLE}
       )
   </insert>
   <insert id="insertSelective" parameterType="com.example.demo.entity.Shisuan">
@@ -155,21 +145,6 @@
       </if>
       <if test="qita != null">
         qita,
-      </if>
-      <if test="yanglao != null">
-        yanglao,
-      </if>
-      <if test="yiliao != null">
-        yiliao,
-      </if>
-      <if test="gongshang != null">
-        gongshang,
-      </if>
-      <if test="shiye != null">
-        shiye,
-      </if>
-      <if test="shengyu != null">
-        shengyu,
       </if>
       <if test="kaishitime != null">
         kaishitime,
@@ -248,21 +223,6 @@
       <if test="qita != null">
         #{qita,jdbcType=DOUBLE},
       </if>
-      <if test="yanglao != null">
-        #{yanglao,jdbcType=DOUBLE},
-      </if>
-      <if test="yiliao != null">
-        #{yiliao,jdbcType=DOUBLE},
-      </if>
-      <if test="gongshang != null">
-        #{gongshang,jdbcType=DOUBLE},
-      </if>
-      <if test="shiye != null">
-        #{shiye,jdbcType=DOUBLE},
-      </if>
-      <if test="shengyu != null">
-        #{shengyu,jdbcType=DOUBLE},
-      </if>
       <if test="kaishitime != null">
         #{kaishitime,jdbcType=DATE},
       </if>
@@ -340,21 +300,6 @@
       <if test="qita != null">
         qita = #{qita,jdbcType=DOUBLE},
       </if>
-      <if test="yanglao != null">
-        yanglao = #{yanglao,jdbcType=DOUBLE},
-      </if>
-      <if test="yiliao != null">
-        yiliao = #{yiliao,jdbcType=DOUBLE},
-      </if>
-      <if test="gongshang != null">
-        gongshang = #{gongshang,jdbcType=DOUBLE},
-      </if>
-      <if test="shiye != null">
-        shiye = #{shiye,jdbcType=DOUBLE},
-      </if>
-      <if test="shengyu != null">
-        shengyu = #{shengyu,jdbcType=DOUBLE},
-      </if>
       <if test="kaishitime != null">
         kaishitime = #{kaishitime,jdbcType=DATE},
       </if>
@@ -388,11 +333,6 @@
       shuidian = #{shuidian,jdbcType=DOUBLE},
       chepiao = #{chepiao,jdbcType=DOUBLE},
       qita = #{qita,jdbcType=DOUBLE},
-      yanglao = #{yanglao,jdbcType=DOUBLE},
-      yiliao = #{yiliao,jdbcType=DOUBLE},
-      gongshang = #{gongshang,jdbcType=DOUBLE},
-      shiye = #{shiye,jdbcType=DOUBLE},
-      shengyu = #{shengyu,jdbcType=DOUBLE},
       kaishitime = #{kaishitime,jdbcType=DATE},
       jieguo = #{jieguo,jdbcType=DOUBLE}
     where shiid = #{shiid,jdbcType=INTEGER}
