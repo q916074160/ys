@@ -4,7 +4,7 @@
     <title>Title</title>
 </head>
 <body>
-<form action="import">
+<form action="excel/add">
 选择文件 <input type="file" name="wenjian" id="wenjian">
     <input type="submit" value="上传">
 </form>

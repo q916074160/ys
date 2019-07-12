@@ -5,6 +5,9 @@
     <id column="bid" jdbcType="INTEGER" property="bid" />
     <result column="bname" jdbcType="VARCHAR" property="bname" />
   </resultMap>
+  <select id="query" resultType="com.example.demo.entity.Bumen">
+    select * from bumen
+  </select>
   <sql id="Base_Column_List">
     bid, bname
   </sql>

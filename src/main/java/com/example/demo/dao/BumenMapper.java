@@ -3,8 +3,12 @@ package com.example.demo.dao;
 import com.example.demo.entity.Bumen;
 import org.apache.ibatis.annotations.Mapper;
 
+import java.util.List;
+
 @Mapper
 public interface BumenMapper {
+    List<Bumen> query();
+
     int deleteByPrimaryKey(Integer bid);
 
     int insert(Bumen record);
