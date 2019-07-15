@@ -46,15 +46,29 @@
     <select id="queryShiSuan" resultType="com.example.demo.entity.Shisuan">
     SELECT * FROM
 	shisuan
-	WHERE 1=1
-      <if test="bid !=0 and bid != null">
-        and bid=#{bid}
-      </if>
-      <if test="xiangmuname != null and xiangmuname!=''">
-        and xiangmuname=#{xiangmuname}
-      </if>
+	<!--WHERE 1=1-->
+      <!--<if test="bid !=0 and bid != null">-->
+        <!--and bid=#{bid}-->
+      <!--</if>-->
+      <!--<if test="xiangmuname != null and xiangmuname!=''">-->
+        <!--and xiangmuname=#{xiangmuname}-->
+      <!--</if>-->
     </select>
-    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+  <select id="sumShiSuan" resultType="com.example.demo.entity.Shisuan">
+SELECT SUM(renshu) AS renshu,SUM(gongzi) AS gongzi,SUM(shichang) AS shichang,SUM(shuifei) AS shuifei,SUM(fangzu) AS fangzu,SUM(waibao) AS waibao,SUM(zhaodaifei) AS zhaodaifei,SUM(tongxunfei) AS tongxunfei,SUM(riyongpin) AS riyongpin,
+SUM(youjifei) AS youjifei,SUM(zuchefei) AS zuchefei,SUM(gaosutongxing) AS gaosutongxing,SUM(shineigongjiao) AS shineigongjiao,
+SUM(xiuchefei) AS xiuchefei,SUM(rengong) AS rengong,SUM(shuidian) AS shuidian,SUM(chepiao) AS chepiao,SUM(qita) AS qita,SUM(kaishitime) AS kaishitime,SUM(jieguo) AS jieguo, SUM(chuchaijiayou) AS chuchaijiayou, SUM(shebeixiuli) AS shebeixiuli,xiangmuname,`time` FROM shisuan
+WHERE 1=1
+    <if test="bid !=0 and bid != null">
+      and bid=#{bid}
+    </if>
+    <if test="xiangmuname != null and xiangmuname!=''">
+      and xiangmuname=#{xiangmuname}
+    </if>
+GROUP BY xiangmuname
+
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from shisuan
     where shiid = #{shiid,jdbcType=INTEGER}
   </delete>

@@ -23,4 +23,6 @@ public interface ShisuanMapper {
     List<Shisuan>  queryAll();
 
     List<Shisuan> queryShiSuan(Shisuan shisuan);
+
+   public List<Shisuan> sumShiSuan(Shisuan shisuan);
 }

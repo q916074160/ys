@@ -20,4 +20,5 @@ public interface BumenMapper {
     int updateByPrimaryKeySelective(Bumen record);
 
     int updateByPrimaryKey(Bumen record);
+    List<Bumen>queryBumen();
 }

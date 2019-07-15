@@ -1,6 +1,9 @@
 package com.example.demo.controller;
 
+import com.example.demo.dao.BumenMapper;
 import com.example.demo.dao.ShisuanMapper;
+import com.example.demo.dao.YusuanMapper;
+import com.example.demo.entity.Bumen;
 import com.example.demo.entity.Shisuan;
 import com.example.demo.entity.Yusuan;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,6 +31,10 @@ import java.util.List;
 public class controller {
     @Autowired
     ShisuanMapper shisuanMapper;
+@Autowired
+    BumenMapper bumenMapper;
+    @Autowired
+    private YusuanMapper yu;
 
     @RequestMapping("/index")
     public String addStudent() {
@@ -51,8 +58,12 @@ public class controller {
         return "ss";
     }
     @RequestMapping("/querySs")
-    public String queryShiSuan(Shisuan shisuan, HttpServletRequest request, HttpServletResponse response){
+    public String queryShiSuan(Shisuan shisuan,Yusuan yusuan,HttpServletRequest request, HttpServletResponse response){
         List<Shisuan>list=shisuanMapper.queryShiSuan(shisuan);
+        List<Bumen>bumenList=bumenMapper.queryBumen();
+
+        List<Shisuan> sumShiSuan =shisuanMapper.sumShiSuan(shisuan);
+        List<Yusuan>yulist=yu.queryYuSuan(yusuan);
         String xiangmuname=request.getParameter("xiangmuname");
         String bidstr= request.getParameter("bid");
         Integer bid=null;
@@ -60,12 +71,15 @@ public class controller {
             bid=Integer.parseInt(bidstr);
         }
         shisuan.setBid(bid);
-        shisuan.setXiangmuname(xiangmuname);
+
+        request.setAttribute("sumShiSuan",sumShiSuan);
         request.setAttribute("bid",bid);
         request.setAttribute("xiangmuname",xiangmuname);
         request.setAttribute("list",list);
+        request.setAttribute("bumenList",bumenList);
+        request.setAttribute("yulist",yulist);
         return "ys";
-    }
+}
 
     //人员导入
     @RequestMapping("/rydr")

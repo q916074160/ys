@@ -19,5 +19,6 @@ public interface YusuanMapper {
 
     int updateByPrimaryKey(Yusuan record);
 
+    List<Yusuan>queryYuSuan(Yusuan yusuan);
 
 }

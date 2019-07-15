@@ -17,7 +17,10 @@
     from bumen
     where bid = #{bid,jdbcType=INTEGER}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    <select id="queryBumen" resultType="com.example.demo.entity.Bumen">
+      SELECT * from bumen
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from bumen
     where bid = #{bid,jdbcType=INTEGER}
   </delete>
