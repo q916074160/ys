@@ -34,6 +34,9 @@
     tongxunfei, riyongpin, youjifei, zuchefei, shebeixiuli, gaosutongxing, chuchaijiayou, 
     shineigongjiao, xiuchefei, rengong, shuidian, chepiao, qita,  kaishitime, jieguo,time
   </sql>
+  <select id="queryAll" resultType="com.example.demo.entity.Shisuan">
+     select * from shisuan
+  </select>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />

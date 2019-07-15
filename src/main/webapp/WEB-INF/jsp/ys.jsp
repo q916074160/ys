@@ -40,7 +40,8 @@
                     <button class="btn btn-primary search_btn" type="submit" id="search_btn">查询</button>
                 </div>
                 <div class="search_input">
-                    <button class="btn btn-primary search_btn" type="button" id="dc_btn">导出</button>
+                    <a href="excel/export?list="+${list}><button class="btn btn-primary search_btn" type="button" id="dc_btn">导出</button></a>
+
                 </div>
             </div>
             <div class="line"></div>

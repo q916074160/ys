@@ -19,5 +19,8 @@ public interface ShisuanMapper {
     int updateByPrimaryKeySelective(Shisuan record);
 
     int updateByPrimaryKey(Shisuan record);
+
+    List<Shisuan> queryAll();
+
     List<Shisuan> queryShiSuan(Shisuan shisuan);
 }
