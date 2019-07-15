@@ -43,7 +43,7 @@ public class ExcelController {
     public void test2(HttpServletResponse response, @RequestParam List lists){
         int rowIndex = 0;
         List<Shisuan> list = lists;
-        List<Bumen> bList=bumenMapper.query();
+        List<Bumen> bList=bumenMapper.queryAll();
         ExcelData data = new ExcelData();
         data.setName("信息");
         List<String> titles = new ArrayList();

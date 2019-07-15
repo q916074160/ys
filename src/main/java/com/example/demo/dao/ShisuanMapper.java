@@ -20,7 +20,7 @@ public interface ShisuanMapper {
 
     int updateByPrimaryKey(Shisuan record);
 
-    List<Shisuan> queryAll();
+    List<Shisuan>  queryAll();
 
     List<Shisuan> queryShiSuan(Shisuan shisuan);
 }

@@ -7,7 +7,7 @@ import java.util.List;
 
 @Mapper
 public interface RenyuanMapper {
-    List<Renyuan> queryAll();
+    List<Renyuan>  queryAll();
 
     List<Renyuan> selectById(Integer bid);
 

@@ -7,7 +7,7 @@ import java.util.List;
 
 @Mapper
 public interface BumenMapper {
-    List<Bumen> query();
+    List<Bumen> queryAll();
 
     int deleteByPrimaryKey(Integer bid);
 

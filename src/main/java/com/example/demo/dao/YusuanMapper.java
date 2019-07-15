@@ -7,7 +7,7 @@ import java.util.List;
 
 @Mapper
 public interface YusuanMapper {
-    int deleteByPrimaryKey(Integer yuid);
+    int  deleteByPrimaryKey(Integer yuid);
 
     int insert(Yusuan record);
 
