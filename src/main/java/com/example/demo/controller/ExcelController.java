@@ -138,7 +138,7 @@ public class ExcelController {
                 System.out.println("未知版本的Excel !!!");
             }
             Sheet sheet = wb.getSheetAt(0); //获取第1个工作表
-            List<Bumen> blist=bumenMapper.query();
+            List<Bumen> blist=bumenMapper.queryAll();
             List<Renyuan> rlist=renyuanMapper.queryAll();
             for(int i=2;i<=sheet.getLastRowNum();i++){//循环Excel文件的i=1行开始
                 Renyuan renyuan=new Renyuan();
