@@ -101,7 +101,7 @@ public class YuController {
         } catch (ParseException e) {
             e.printStackTrace();
         }
-        System.out.println(date);
+
         //总共盈利
         double sum=0;
 
