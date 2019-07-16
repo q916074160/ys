@@ -266,6 +266,7 @@
                     <td>00</td>
                     <td>           <fmt:formatDate pattern="yyyy-MM-dd" value="${sumShiSuan.time}"></fmt:formatDate></td>
                 </tr>
+                </c:if>
                 </c:forEach>
             </c:forEach>
 
