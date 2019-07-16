@@ -9,31 +9,17 @@
     <script type="text/javascript" src="/static/easyUi/jquery.min.js"></script>
     <script src="/static/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
     <script src="/static/js/bootbox.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="../css/style.css">
-    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
-    <script type="text/javascript" src="../easyUi/jquery.min.js"></script>
-    <script src="../js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
-    <script src="../js/bootbox.min.js"></script>
-<script>
-    function qqq() {
-        var Ktext = document.getElementById("Ktext").value;
-        var renshu = document.getElementById("job_num").value;
-
-        var boolean = true;
-        if (Ktext == null || Ktext == '') {
-            alert("合同名不能为空");
-            boolean = false;
-            return false;
-        }
-
-    }
-</script>
+    <link rel="stylesheet" type="text/css" href="/static/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
+    <script type="text/javascript" src="/static/easyUi/jquery.min.js"></script>
+    <script src="/static/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/static/js/bootbox.min.js"></script>
 </head>
 <body><div class="box">
     <div class="title">项目查询</div>
     <div class="content">
         <!--搜索输入框及查询、重置按钮-->
-    <form method="get" action="querySs">
+    <form method="get" action="querySs" id="form">
         <div class="container content_width">
             <div class="person_search">
                 <div class="search_input">
@@ -55,7 +41,7 @@
                     </div>
                 </div>
                 <div class="search_input">
-                    <button class="btn btn-primary search_btn" type="submit" id="search_btn"  onsubmit="qqq()">查询</button>
+                    <button class="btn btn-primary search_btn" type="button" id="search_btn" >查询</button>
                 </div>
 
                 <div class="search_input">
@@ -68,7 +54,7 @@
         </div>
 </form>
         <!--添加按钮及bootstrap的模态框-->
-        <div class="export">
+        <%--<div class="export">
             <button id="new_add" type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#renyuan">
                 <img src="img/add_two.png">
             </button>
@@ -85,7 +71,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div>--%>
         <!--表格列表-->
         <table id="tb" class="table">
             <thead>
@@ -143,7 +129,7 @@
                     <fmt:formatDate pattern="yyyy-MM-dd" value="${list.kaishitime}"></fmt:formatDate>
                 </td>
             </tr>
-                </c:if>s
+                </c:if>
             </c:forEach>
             </tbody>
         </table>
@@ -276,5 +262,6 @@
     </div>
 </div>
 <script src="/static/js/daochu.js"></script>
+
 </body>
 </html>
