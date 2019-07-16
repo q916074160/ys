@@ -15,7 +15,6 @@ import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -115,10 +114,18 @@ public class ExcelController {
             row.add(shisuan.getShuidian());
             row.add(shisuan.getChepiao());
             row.add(shisuan.getQita());
+
             Date date1= shisuan.getKaishitime();
+
             String  dt = simpleDateFormat.format(date1);
-            //System.out.println(dt);
+
             row.add(dt);
+            row.add(shisuan.getJieguo());
+
+            Date date2= shisuan.getTime();
+            String  dt1 = simpleDateFormat.format(date2);
+
+            row.add(dt1);
             rows.add(row);
         }
         data.setRows(rows);

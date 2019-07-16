@@ -344,12 +344,12 @@ function check1(){
         boolean= false;
         return false;
     }
-    if (kaishitime == "") {
+    if (str == "") {
         alert("实施时间不能为空");
         boolean= false;
         return false;
     }
-    if (time == "") {
+    if (str1 == "") {
         alert("实施时间不能为空");
         boolean= false;
         return false;
