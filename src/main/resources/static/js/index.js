@@ -216,10 +216,14 @@ function check1(){
     var qita = document.getElementById("qita").value;
     var gongzi=document.getElementById("gongzi").value;
     var  shineigongjiao=document.getElementById("shineigongjiao").value;
-
-    var kaishitime=document.getElementById("kaishitime").value;
     var zhongdui=document.getElementById("zhongdui").value;
-    var time=document.getElementById("time").value;
+
+    var str=document.getElementById("kaishitime").value;
+    var kaishitime=str.substring(6,10)+"-"+str.substring(0,2)+"-"+str.substring(3,5);
+
+    var str1=document.getElementById("time").value;
+    var time=str1.substring(6,10)+"-"+str1.substring(0,2)+"-"+str1.substring(3,5);
+
     var boolean=true;
     if(xiangmuname ==  null || xiangmuname == ''){
         alert("合同名不能为空");
@@ -353,7 +357,7 @@ function check1(){
     if(boolean==true) {
         var url = "addS?name=" + xiangmuname + "&ren=" + renshu +"&shi=" + shichang + "&chepiao=" + chepiao + "&chuchai=" + chuchaijiayou + "&fangzu=" + fangzu +
             "&tongxing=" + tongxunfei + "&gongzi=" + gongzi + "&qita=" + qita + "&rengong=" + rengong + "&riyong=" + riyongpin + "&shebei=" + shebeixiuli + "&shuidian=" + shuidian + "&shuifei=" + shuifei + "&tongxun=" + tongxunfei + "&waibao=" + waibao +
-            "&gongjiao=" + shineigongjiao + "&zhaodai=" + zhaodaifei + "&zuche=" + zuchefei + "&xiuche=" + xiuchefei + "&youji=" + youjifei+"&kaishitime="+kaishitime+"&zhongdui="+zhongdui+"time="+time;
+            "&gongjiao=" + shineigongjiao + "&zhaodai=" + zhaodaifei + "&zuche=" + zuchefei + "&xiuche=" + xiuchefei + "&youji=" + youjifei+"&kaishitime="+kaishitime+"&zhongdui="+zhongdui+"&time="+time;
         //alert(url);
         $.get(url, function (data) {
             $("#jg").text(data);

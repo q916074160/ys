@@ -79,7 +79,7 @@
         </tr>
         <tr>
         <td class="td1">实施时间</td>
-        <td><input class="easyui-datetimebox" style="width:90%"name="kaishitime" id="kaishitime" ></td>
+        <td><input class="easyui-datebox" style="width:90%"name="kaishitime" id="kaishitime" ></td>
         <td class="td1">中队选择</td>
         <td><select name="zhongdui" id="zhongdui" onchange="zd()">
             <option value="请选择">--请选择--</option>
@@ -93,7 +93,7 @@
         </select>
         </td>
             <td class="td1">时间</td>
-            <td><input class="easyui-datetimebox" style="width:90%" name="time" id="time" ></td>
+            <td><input class="easyui-datebox" style="width:90%" name="time" id="time" ></td>
     </tr>
         <tr>
             <td colspan="6" style="text-align: center">社保</td>
