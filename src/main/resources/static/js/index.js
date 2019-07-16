@@ -167,7 +167,7 @@ function check(){
                 return false;
             }
     if (zhongdui == "请选择") {
-        alert("请选择一个");
+        alert("请选择中队");
         boolean= false;
         return false;
     }
@@ -182,6 +182,8 @@ function check(){
 
         }
 }
+
+
 
 function addTab(title, url) {
     if ($('#tts').tabs('exists', title)) {
@@ -340,7 +342,7 @@ function check1(){
         return false;
     }
     if (zhongdui == "请选择") {
-        alert("请选择一个");
+        alert("请选择中队");
         boolean= false;
         return false;
     }
@@ -368,7 +370,7 @@ function check1(){
 function zd() {
     var zhongdui=document.getElementById("zhongdui").value;
     if (zhongdui == "请选择") {
-        alert("请选择一个");
+        alert("请选择中队");
         boolean= false;
         return false;
     }

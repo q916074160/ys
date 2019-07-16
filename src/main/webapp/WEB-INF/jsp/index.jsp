@@ -20,13 +20,10 @@
         <div title="预算" class="beijing" id="Scene" data-options="selected:false">
             <li id="li1" onclick="addTab(this.innerHTML,'ysdr')">预算导入</li>
             <li id="li3" onclick="addTab(this.innerHTML,'ssdr')">实算导入</li>
-            <li id="li2" onclick="addTab(this.innerHTML,'querySs')">查询</li>
             <li id="li4" onclick="addTab(this.innerHTML,'rydr')">人员导入</li>
         </div>
-        <div title="xxx" class="beijing" id="sand">
-            <li onclick="addTab(this.innerHTML,'')">xx</li>
-
-            <li onclick="addTab(this.innerHTML,'DianXing.html')">xxx</li>
+        <div title="查询" class="beijing" id="sand">
+            <li id="li2" onclick="addTab(this.innerHTML,'querySs')">查询</li>
         </div>
 </div>
 </div>
@@ -38,7 +35,6 @@
     <div id="tts" class="easyui-tabs" data-options="border:false,fit:true">
         <!--首页tabs页-->
         <div class="easyui-layout" title="首页" style="padding:10px">
-
         </div>
     </div>
 </div>

@@ -53,25 +53,6 @@
             <div class="line"></div>
         </div>
 </form>
-        <!--添加按钮及bootstrap的模态框-->
-        <%--<div class="export">
-            <button id="new_add" type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#renyuan">
-                <img src="img/add_two.png">
-            </button>
-            <div class="modal fade" id="renyuan">
-                <div class="modal-dialog modal-lg modal_position">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
-                            <button id="add_btn" type="button" class="btn btn-secondary">确定</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>--%>
         <!--表格列表-->
         <table id="tb" class="table">
             <thead>
