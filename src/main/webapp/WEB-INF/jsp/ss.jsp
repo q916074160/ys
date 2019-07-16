@@ -2,11 +2,11 @@
 <html>
 <head>
     <title>Title</title>
-    <link rel="stylesheet" href="../easyUi/themes/default/easyui.css">
-    <link rel="stylesheet" href="../easyUi/themes/icon.css">
-    <link rel="stylesheet" href="../easyUi/demo/demo.css">
-    <script type="text/javascript" src="../easyUi/jquery.min.js"></script>
-    <script type="text/javascript" src="../easyUi/jquery.easyui.min.js"></script>
+    <link rel="stylesheet" href="/static/easyUi/themes/default/easyui.css">
+    <link rel="stylesheet" href="/static/easyUi/themes/icon.css">
+    <link rel="stylesheet" href="/static/easyUi/demo/demo.css">
+    <script type="text/javascript" src="/static/easyUi/jquery.min.js"></script>
+    <script type="text/javascript" src="/static/easyUi/jquery.easyui.min.js"></script>
     <style>
         #table1{width: 100%;height: 100%}
         .td1{background-color: #A1A1A1}
@@ -110,4 +110,4 @@
 </form>
 </body>
 </html>
-<script type="text/javascript" src="../js/index.js"></script>
+<script type="text/javascript" src="/static/js/index.js"></script>

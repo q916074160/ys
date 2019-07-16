@@ -4,11 +4,11 @@
 <html>
 <head>
     <title>Title</title>
-    <link rel="stylesheet" type="text/css" href="../css/style.css">
-    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
-    <script type="text/javascript" src="../easyUi/jquery.min.js"></script>
-    <script src="../js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
-    <script src="../js/bootbox.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
+    <script type="text/javascript" src="/static/easyUi/jquery.min.js"></script>
+    <script src="/static/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/static/js/bootbox.min.js"></script>
 
 </head>
 <body><div class="box">
