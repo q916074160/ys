@@ -26,7 +26,6 @@ public class LoginInterceptor implements HandlerInterceptor {
             response.sendRedirect("/login");
             return false;
         }else {
-            System.out.println(2);
             return true;    //如果session里有user，表示该用户已经登陆，放行，用户即可继续调用自己需要的接口
         }
     }

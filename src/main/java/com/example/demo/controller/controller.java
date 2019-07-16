@@ -54,7 +54,7 @@ public class controller {
         Integer i = userMapper.userLogin(user);
         if (i >= 1) {
             session.setAttribute("user", user);
-            session.setMaxInactiveInterval(1 * 60);
+            session.setMaxInactiveInterval(30 * 60);
             return "index";
         } else {
             return "login";

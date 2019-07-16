@@ -39,9 +39,11 @@
                 <div class="search_input">
                     <button class="btn btn-primary search_btn" type="submit" id="search_btn">查询</button>
                 </div>
-                <div class="search_input">
-                    <a href="excel/export?list=${list}"><button class="btn btn-primary search_btn" type="button" id="dc_btn">导出</button></a>
 
+                <div class="search_input">
+                    <c:if test="${list!=null}">
+                       <button class="btn btn-primary search_btn" type="button" id="dc_btn">导出</button>
+                    </c:if>
                 </div>
             </div>
             <div class="line"></div>
@@ -67,62 +69,62 @@
             </div>
         </div>
         <!--表格列表-->
-        <%--<table id="tb" class="table">--%>
-            <%--<thead>--%>
-            <%--<tr>--%>
-                <%--<th>名称</th>--%>
-                <%--<th>人数</th>--%>
-                <%--<th>工资</th>--%>
-                <%--<th>项目时长</th>--%>
-                <%--<th>税</th>--%>
-                <%--<th>房租</th>--%>
-                <%--<th>外包</th>--%>
-                <%--<th>招待</th>--%>
-                <%--<th>通讯</th>--%>
-                <%--<th>日用品</th>--%>
-                <%--<th>邮寄</th>--%>
-                <%--<th>租车</th>--%>
-                <%--<th>修理</th>--%>
-                <%--<th>通行</th>--%>
-                <%--<th>出差加油</th>--%>
-                <%--<th>公交出租</th>--%>
-                <%--<th>修洗车</th>--%>
-                <%--<th>人工</th>--%>
-                <%--<th>水电</th>--%>
-                <%--<th>车票</th>--%>
-                <%--<th>五险</th>--%>
-                <%--<th>开始时间</th>--%>
-            <%--</tr>--%>
-            <%--</thead>--%>
-            <%--<tbody id="show_tbody">--%>
-            <%--<c:forEach items="${list}" var="list">--%>
-            <%--<tr>--%>
-                <%--<td>${list.xiangmuname}</td>--%>
-                <%--<td>${list.renshu}</td>--%>
-                <%--<td>${list.gongzi}</td>--%>
-                <%--<td>${list.shichang}</td>--%>
-                <%--<td>${list.shuifei}</td>--%>
-                <%--<td>${list.fangzu}</td>--%>
-                <%--<td>${list.waibao}</td>--%>
-                <%--<td>${list.zhaodaifei}</td>--%>
-                <%--<td>${list.tongxunfei}</td>--%>
-                <%--<td>${list.riyongpin}</td>--%>
-                <%--<td>${list.youjifei}</td>--%>
-                <%--<td>${list.zuchefei}</td>--%>
-                <%--<td>${list.shebeixiuli}</td>--%>
-                <%--<td>${list.gaosutongxing}</td>--%>
-                <%--<td>${list.chuchaijiayou}</td>--%>
-                <%--<td>${list.shineigongjiao}</td>--%>
-                <%--<td>${list.xiuchefei}</td>--%>
-                <%--<td>${list.rengong}</td>--%>
-                <%--<td>${list.shuidian}</td>--%>
-                <%--<td>${list.chepiao}</td>--%>
-                <%--<td>00</td>--%>
-                <%--<td>--%>
-                    <%--<fmt:formatDate pattern="yyyy-MM-dd" value="${list.kaishitime}"></fmt:formatDate>--%>
-                <%--</td>--%>
-            <%--</tr>--%>
-            <%--</c:forEach>--%>
+        <table id="tb" class="table">
+            <thead>
+            <tr>
+                <th>名称</th>
+                <th>人数</th>
+                <th>工资</th>
+                <th>项目时长</th>
+                <th>税</th>
+                <th>房租</th>
+                <th>外包</th>
+                <th>招待</th>
+                <th>通讯</th>
+                <th>日用品</th>
+                <th>邮寄</th>
+                <th>租车</th>
+                <th>修理</th>
+                <th>通行</th>
+                <th>出差加油</th>
+                <th>公交出租</th>
+                <th>修洗车</th>
+                <th>人工</th>
+                <th>水电</th>
+                <th>车票</th>
+                <th>五险</th>
+                <th>开始时间</th>
+            </tr>
+            </thead>
+            <tbody id="show_tbody">
+            <c:forEach items="${list}" var="list">
+            <tr>
+                <td>${list.xiangmuname}</td>
+                <td>${list.renshu}</td>
+                <td>${list.gongzi}</td>
+                <td>${list.shichang}</td>
+                <td>${list.shuifei}</td>
+                <td>${list.fangzu}</td>
+                <td>${list.waibao}</td>
+                <td>${list.zhaodaifei}</td>
+                <td>${list.tongxunfei}</td>
+                <td>${list.riyongpin}</td>
+                <td>${list.youjifei}</td>
+                <td>${list.zuchefei}</td>
+                <td>${list.shebeixiuli}</td>
+                <td>${list.gaosutongxing}</td>
+                <td>${list.chuchaijiayou}</td>
+                <td>${list.shineigongjiao}</td>
+                <td>${list.xiuchefei}</td>
+                <td>${list.rengong}</td>
+                <td>${list.shuidian}</td>
+                <td>${list.chepiao}</td>
+                <td>00</td>
+                <td>
+                    <fmt:formatDate pattern="yyyy-MM-dd" value="${list.kaishitime}"></fmt:formatDate>
+                </td>
+            </tr>
+            </c:forEach>
             </tbody>
         </table>
 
@@ -246,5 +248,6 @@
 
     </div>
 </div>
+<script src="/static/js/daochu.js"></script>
 </body>
 </html>
