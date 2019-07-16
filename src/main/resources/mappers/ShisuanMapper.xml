@@ -34,6 +34,15 @@
     tongxunfei, riyongpin, youjifei, zuchefei, shebeixiuli, gaosutongxing, chuchaijiayou, 
     shineigongjiao, xiuchefei, rengong, shuidian, chepiao, qita,  kaishitime, jieguo,time
   </sql>
+  <select id="selectByShisuan" resultType="com.example.demo.entity.Shisuan" >
+    select * from shisuan where 1=1
+    <if test="xiangmuname != null and xiangmuname!=''">
+      and xiangmuname=#{xiangmuname}
+    </if>
+    <if test="bid !=0 and bid != null">
+      and bid=#{bid}
+    </if>
+  </select>
   <select id="queryAll" resultType="com.example.demo.entity.Shisuan">
      select * from  shisuan
   </select>

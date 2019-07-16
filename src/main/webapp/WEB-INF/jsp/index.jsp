@@ -2,13 +2,13 @@
 <html>
 <head>
     <title>项目预算管理系统</title>
-    <link rel="stylesheet" href="../easyUi/themes/default/easyui.css">
-    <link rel="stylesheet" href="../easyUi/themes/icon.css">
-    <link rel="stylesheet" href="../easyUi/demo/demo.css">
-    <link rel="stylesheet" href="../css/index.css">
-    <script type="text/javascript" src="../easyUi/jquery.min.js"></script>
-    <script type="text/javascript" src="../easyUi/jquery.easyui.min.js"></script>
-    <script type="text/javascript" src="../js/index.js"></script>
+    <link rel="stylesheet" href="/static/easyUi/themes/default/easyui.css">
+    <link rel="stylesheet" href="/static/easyUi/themes/icon.css">
+    <link rel="stylesheet" href="/static/easyUi/demo/demo.css">
+    <link rel="stylesheet" href="/static/css/index.css">
+    <script type="text/javascript" src="/static/easyUi/jquery.min.js"></script>
+    <script type="text/javascript" src="/static/easyUi/jquery.easyui.min.js"></script>
+    <script type="text/javascript" src="/static/js/index.js"></script>
 </head>
 <body class="easyui-layout">
 <div data-options="region:'north',border:false" id="north">

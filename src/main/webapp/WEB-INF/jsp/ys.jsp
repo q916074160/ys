@@ -4,6 +4,11 @@
 <html>
 <head>
     <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
+    <script type="text/javascript" src="/static/easyUi/jquery.min.js"></script>
+    <script src="/static/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/static/js/bootbox.min.js"></script>
     <link rel="stylesheet" type="text/css" href="../css/style.css">
     <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
     <script type="text/javascript" src="../easyUi/jquery.min.js"></script>
@@ -52,9 +57,11 @@
                 <div class="search_input">
                     <button class="btn btn-primary search_btn" type="submit" id="search_btn"  onsubmit="qqq()">查询</button>
                 </div>
-                <div class="search_input">
-                    <a href="excel/export?list=${list}"><button class="btn btn-primary search_btn" type="button" id="dc_btn">导出</button></a>
 
+                <div class="search_input">
+                    <c:if test="${list!=null}">
+                       <button class="btn btn-primary search_btn" type="button" id="dc_btn">导出</button>
+                    </c:if>
                 </div>
             </div>
             <div class="line"></div>
@@ -259,34 +266,6 @@
                     <td>00</td>
                     <td>           <fmt:formatDate pattern="yyyy-MM-dd" value="${sumShiSuan.time}"></fmt:formatDate></td>
                 </tr>
-                    <tr>
-
-                        <td>${yulist.xiangmuname}</td>
-                        <td>${yulist.renshu}</td>
-                        <td>${yulist.gongzi}</td>
-                        <td>${yulist.shichang}</td>
-                        <td>${yulist.shuifei}</td>
-                        <td>${yulist.fangzu}</td>
-                        <td>${yulist.waibao}</td>
-                        <td>${yulist.zhaodaifei}</td>
-                        <td>${yulist.tongxunfei}</td>
-                        <td>${yulist.riyongpin}</td>
-                        <td>${yulist.youjifei}</td>
-                        <td>${yulist.zuchefei}</td>
-                        <td>${yulist.shebeixiuli}</td>
-                        <td>${yulist.gaosutongxing}</td>
-                        <td>${yulist.chuchaijiayou}</td>
-                        <td>${yulist.shineigongjiao}</td>
-                        <td>${yulist.xiuchefei}</td>
-                        <td>${yulist.rengong}</td>
-                        <td>${yulist.shuidian}</td>
-                        <td>${yulist.chepiao}</td>
-
-                        <td>00</td>
-                        <td>           <fmt:formatDate pattern="yyyy-MM-dd" value="${sumShiSuan.time}"></fmt:formatDate></td>
-                    </tr>
-                </c:if>
-                    <input type="text" value="${yulist.jieguo-sumShiSuan.jieguo}"/>
                 </c:forEach>
             </c:forEach>
 
@@ -295,5 +274,6 @@
 
     </div>
 </div>
+<script src="/static/js/daochu.js"></script>
 </body>
 </html>

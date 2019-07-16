@@ -79,4 +79,8 @@
       uleve = #{uleve,jdbcType=INTEGER}
     where uid = #{uid,jdbcType=INTEGER}
   </update>
+  <!--登录-->
+  <select id="userLogin" resultType="int" parameterType="com.example.demo.entity.User">
+    select count(1) from user where uname=#{uname} and upass=#{upass}
+  </select>
 </mapper>

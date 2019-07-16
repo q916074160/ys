@@ -15,6 +15,7 @@ import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -23,7 +24,6 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -40,9 +40,17 @@ public class ExcelController {
     ShisuanMapper shisuanMapper;
 
     @RequestMapping("/export")
-    public void test2(HttpServletResponse response, @RequestParam List lists){
+    public void test2(HttpServletResponse response,@RequestParam String xiangmuname,@RequestParam Integer bid){
+
         int rowIndex = 0;
-        List<Shisuan> list = lists;
+        Shisuan shisuan=new Shisuan();
+        shisuan.setBid(bid);
+        shisuan.setXiangmuname(xiangmuname);
+
+        List<Shisuan> list = shisuanMapper.queryShiSuan(shisuan);
+
+
+
         List<Bumen> bList=bumenMapper.queryAll();
         ExcelData data = new ExcelData();
         data.setName("信息");
@@ -70,15 +78,16 @@ public class ExcelController {
         titles.add("车票");
         titles.add("其他");
         titles.add("开始时间");
-        /*titles.add("实算结果");
-        titles.add("时间");*/
+        titles.add("实算结果");
+        titles.add("时间");
         data.setTitles(titles);
+
         Bumen bumen=new Bumen();
 
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
         List<List<Object>> rows = new ArrayList();
         for(int i = 0, length = list.size();i<length;i++) {
-            Shisuan shisuan = list.get(i);
+            shisuan = list.get(i);
             List<Object> row = new ArrayList();
             row.add(shisuan.getShiid());
             for (int k = 0; k < bList.size(); k++) {
@@ -106,9 +115,9 @@ public class ExcelController {
             row.add(shisuan.getShuidian());
             row.add(shisuan.getChepiao());
             row.add(shisuan.getQita());
-            Date date= shisuan.getKaishitime();
-            String  dt = simpleDateFormat.format(date);
-            System.out.println(dt);
+            Date date1= shisuan.getKaishitime();
+            String  dt = simpleDateFormat.format(date1);
+            //System.out.println(dt);
             row.add(dt);
             rows.add(row);
         }
