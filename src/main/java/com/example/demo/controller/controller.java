@@ -87,4 +87,9 @@ public class controller {
         return "rydr";
     }
 
+    @RequestMapping("/a")
+    public String a(){
+        return "a";
+    }
+
 }
