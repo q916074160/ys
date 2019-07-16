@@ -99,7 +99,7 @@
             <td colspan="6" style="text-align: center">社保</td>
         </tr>
         <tr>
-            <td colspan="6" style="text-align: center"><input class="button1" type="button" id="button" value="实&nbsp;算&nbsp;结&nbsp;果" onclick="check()"/>&nbsp;&nbsp;&nbsp;&nbsp;
+            <td colspan="6" style="text-align: center"><input class="button1" type="button" id="button" value="实&nbsp;算&nbsp;结&nbsp;果" onclick="check1()"/>&nbsp;&nbsp;&nbsp;&nbsp;
                 <input class="button1" type="reset" value="重&nbsp;&nbsp;&nbsp;&nbsp;置"/>
             </td>
         </tr>
