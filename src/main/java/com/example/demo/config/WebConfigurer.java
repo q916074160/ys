@@ -3,8 +3,10 @@ package com.example.demo.config;
 import com.example.demo.config.intercepors.LoginInterceptor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.core.Ordered;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
+import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @Configuration
@@ -23,5 +25,10 @@ public class WebConfigurer implements WebMvcConfigurer {
         // addPathPatterns("/**") 表示拦截所有的请求，
         // excludePathPatterns("/login", "/register") 表示除了登陆与注册之外，因为登陆注册不需要登陆也可以访问
         registry.addInterceptor(loginInterceptor).addPathPatterns("/**").excludePathPatterns("/login","/userLogin","/static/**");
+    }
+    @Override
+    public void addViewControllers(ViewControllerRegistry reg) {
+        reg.addViewController("/").setViewName("login");//默认访问页面
+        reg.setOrder(Ordered.HIGHEST_PRECEDENCE);//最先执行过滤
     }
 }
