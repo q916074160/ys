@@ -18,7 +18,10 @@ public interface YusuanMapper {
     int updateByPrimaryKeySelective(Yusuan record);
 
     int updateByPrimaryKey(Yusuan record);
-
+    //动态查询
     List<Yusuan>queryYuSuan(Yusuan yusuan);
+
+
+
 
 }

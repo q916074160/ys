@@ -21,8 +21,8 @@ public interface ShisuanMapper {
     int updateByPrimaryKey(Shisuan record);
 
     List<Shisuan>  queryAll();
-
+    //动态查询
     List<Shisuan> queryShiSuan(Shisuan shisuan);
-
+    //计算实算总和
    public List<Shisuan> sumShiSuan(Shisuan shisuan);
 }

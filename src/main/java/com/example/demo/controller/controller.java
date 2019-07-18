@@ -80,11 +80,6 @@ public class controller {
 
     @RequestMapping("/querySs")
     public String queryShiSuan(Shisuan shisuan, Yusuan yusuan, HttpServletRequest request, HttpServletResponse response) {
-        List<Shisuan> list = shisuanMapper.queryShiSuan(shisuan);
-        List<Bumen> bumenList = bumenMapper.queryBumen();
-
-        List<Shisuan> sumShiSuan = shisuanMapper.sumShiSuan(shisuan);
-        List<Yusuan> yulist = yu.queryYuSuan(yusuan);
         String xiangmuname = request.getParameter("xiangmuname");
         String bidstr = request.getParameter("bid");
         Integer bid = null;
@@ -92,6 +87,58 @@ public class controller {
             bid = Integer.parseInt(bidstr);
         }
         shisuan.setBid(bid);
+        shisuan.setXiangmuname(xiangmuname);
+        yusuan.setXiangmuname(xiangmuname);
+        List<Shisuan> list = shisuanMapper.queryShiSuan(shisuan);
+        List<Bumen> bumenList = bumenMapper.queryBumen();
+        List<Shisuan> sumShiSuan = shisuanMapper.sumShiSuan(shisuan);
+        List<Yusuan> yulist = yu.queryYuSuan(yusuan);
+        for (int i = 0; i < yulist.size(); i++) {
+            for (int j = 0; j < sumShiSuan.size(); j++) {
+                Integer renshu = yulist.get(i).getRenshu() - sumShiSuan.get(j).getRenshu();
+                Double gongzi = yulist.get(i).getGongzi() - sumShiSuan.get(j).getGongzi();
+                Integer shichang = yulist.get(i).getShichang() - sumShiSuan.get(j).getShichang();
+                Double shuiFei = yulist.get(i).getShuifei() - sumShiSuan.get(j).getShuifei();
+                Double fangzu = yulist.get(i).getFangzu() - sumShiSuan.get(j).getFangzu();
+                Double waibao = yulist.get(i).getWaibao() - sumShiSuan.get(j).getWaibao();
+                Double zhaodaifei = yulist.get(i).getZhaodaifei() - sumShiSuan.get(j).getZhaodaifei();
+                Double tongxunfei = yulist.get(i).getTongxunfei() - sumShiSuan.get(j).getTongxunfei();
+                Double riyongpin = yulist.get(i).getRiyongpin() - sumShiSuan.get(j).getRiyongpin();
+                Double youji = yulist.get(i).getYoujifei() - sumShiSuan.get(j).getYoujifei();
+                Double zuche = yulist.get(i).getZuchefei() - sumShiSuan.get(j).getZuchefei();
+                Double xiuli = yulist.get(i).getShebeixiuli() - sumShiSuan.get(j).getShebeixiuli();
+                Double tongxing = yulist.get(i).getGaosutongxing() - sumShiSuan.get(j).getGaosutongxing();
+                Double chuchaijiayou = yulist.get(i).getChuchaijiayou() - sumShiSuan.get(j).getChuchaijiayou();
+                Double gongjiao = yulist.get(i).getShineigongjiao() - sumShiSuan.get(j).getShineigongjiao();
+                Double xiuche = yulist.get(i).getXiuchefei() - sumShiSuan.get(j).getXiuchefei();
+                Double rengong = yulist.get(i).getRengong() - sumShiSuan.get(j).getRengong();
+                Double shuidian = yulist.get(i).getShuidian() - sumShiSuan.get(j).getShuidian();
+                Double chepiao = yulist.get(i).getChepiao() - sumShiSuan.get(j).getChepiao();
+
+
+
+
+                request.setAttribute("renshu", renshu);
+                request.setAttribute("gongzi", gongzi);
+                request.setAttribute("shichang", shichang);
+                request.setAttribute("fangzu", fangzu);
+                request.setAttribute("waibao", waibao);
+                request.setAttribute("zhaodaifei", zhaodaifei);
+                request.setAttribute("tongxunfei", tongxunfei);
+                request.setAttribute("riyongpin", riyongpin);
+                request.setAttribute("youji", youji);
+                request.setAttribute("zuche", zuche);
+                request.setAttribute("xiuli", xiuli);
+                request.setAttribute("tongxing", tongxing);
+                request.setAttribute("chuchaijiayou", chuchaijiayou);
+                request.setAttribute("gongjiao", gongjiao);
+                request.setAttribute("xiuche", xiuche);
+                request.setAttribute("rengong", rengong);
+                request.setAttribute("shuidian", shuidian);
+                request.setAttribute("chepiao", chepiao);
+                request.setAttribute("shuiFei", shuiFei);
+            }
+        }
 
         request.setAttribute("sumShiSuan", sumShiSuan);
         request.setAttribute("bid", bid);
@@ -109,8 +156,9 @@ public class controller {
     }
 
     @RequestMapping("/a")
-    public String a(){
+    public String a() {
         return "a";
     }
+
 
 }

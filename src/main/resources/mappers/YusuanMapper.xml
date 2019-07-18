@@ -53,9 +53,10 @@
       and bid=#{bid}
     </if>
     <if test="xiangmuname != null and xiangmuname!=''">
-      and xiangmuname=#{xiangmuname}
+      and xiangmuname like concat('%',concat(#{xiangmuname}),'%')
     </if>
   </select>
+
 
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from yusuan

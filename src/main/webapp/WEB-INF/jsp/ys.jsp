@@ -14,18 +14,21 @@
     <script type="text/javascript" src="/static/easyUi/jquery.min.js"></script>
     <script src="/static/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
     <script src="/static/js/bootbox.min.js"></script>
+
 </head>
+
 <body><div class="box">
     <div class="title">项目查询</div>
     <div class="content">
         <!--搜索输入框及查询、重置按钮-->
-    <form method="get" action="querySs" id="form">
+    <form method="get" action="#" id="form">
         <div class="container content_width">
             <div class="person_search">
                 <div class="search_input">
                     <div class="input-group mb-3">
                         <span>名称：</span>
                         <input id="Ktext" type="text" class="form-control" placeholder="请输入项目名称" name="xiangmuname">
+
                     </div>
                 </div>
                 <div class="search_input" >
@@ -41,7 +44,7 @@
                     </div>
                 </div>
                 <div class="search_input">
-                    <button class="btn btn-primary search_btn" type="button" id="search_btn" >查询</button>
+                    <button class="btn btn-primary search_btn" type="button" id="search_btn"  onclick="showqueryBill()">查询</button>
                 </div>
 
                 <div class="search_input">
@@ -135,7 +138,6 @@
         </table>
 
 
-
         <%--<table id="tb1" class="table">--%>
             <%--<thead>--%>
             <%--<tr>--%>
@@ -224,10 +226,9 @@
             <tbody id="show_tbody12">
 
             <c:forEach items="${sumShiSuan}" var="sumShiSuan">
-                <c:forEach items="${yulist}" var="yulist">
+                <%--<c:forEach items="${yulist}" var="yulist">--%>
                 <c:if test="${xiangmuname!=null}">
                 <tr>
-
                     <td>${sumShiSuan.xiangmuname}</td>
                     <td>${sumShiSuan.renshu}</td>
                     <td>${sumShiSuan.gongzi}</td>
@@ -250,15 +251,74 @@
                     <td>${sumShiSuan.chepiao}</td>
 
                     <td>00</td>
-                    <td>           <fmt:formatDate pattern="yyyy-MM-dd" value="${sumShiSuan.time}"></fmt:formatDate></td>
+                    <td><fmt:formatDate pattern="yyyy-MM-dd" value="${sumShiSuan.time}"></fmt:formatDate></td>
                 </tr>
                 </c:if>
-                </c:forEach>
+                <%--</c:forEach>--%>
             </c:forEach>
 
             </tbody>
         </table>
 
+
+
+
+        <table id="tb2" class="table">
+            <thead>
+            <tr>
+                <th>人数</th>
+                <th>工资</th>
+                <th>项目时长</th>
+                <th>税</th>
+                <th>房租</th>
+                <th>外包</th>
+                <th>招待</th>
+                <th>通讯</th>
+                <th>日用品</th>
+                <th>邮寄</th>
+                <th>租车</th>
+                <th>修理</th>
+                <th>通行</th>
+                <th>出差加油</th>
+                <th>公交出租</th>
+                <th>修洗车</th>
+                <th>人工</th>
+                <th>水电</th>
+                <th>车票</th>
+                <th>五险</th>
+            </tr>
+            </thead>
+            <tbody id="show_tbody13">
+
+                <%--<c:forEach items="${yulist}" var="yulist">--%>
+                <c:if test="${xiangmuname!=null}">
+                    <tr>
+                        <td>${renshu}</td>
+                        <td>${gongzi}</td>
+                        <td>${shichang}</td>
+                        <td>${shuiFei}</td>
+                        <td>${fangzu}</td>
+                        <td>${waibao}</td>
+                        <td>${zhaodaifei}</td>
+                        <td>${tongxunfei}</td>
+                        <td>${riyongpin}</td>
+                        <td>${youji}</td>
+                        <td>${zuche}</td>
+                        <td>${xiuli}</td>
+                        <td>${tongxing}</td>
+                        <td>${chuchaijiayou}</td>
+                        <td>${gongjiao}</td>
+                        <td>${xiuche}</td>
+                        <td>${rengong}</td>
+                        <td>${shuidian}</td>
+                        <td>${chepiao}</td>
+
+                    </tr>
+                </c:if>
+                <%--</c:forEach>--%>
+
+            </tbody>
+        </table>
     </div>
 </div>
 <script src="/static/js/daochu.js"></script>

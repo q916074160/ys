@@ -4,7 +4,7 @@
   <resultMap id="BaseResultMap" type="com.example.demo.entity.Shisuan">
     <id column="shiid" jdbcType="INTEGER" property="shiid" />
     <result column="bid" jdbcType="INTEGER" property="bid" />
-    <result column="xiangmuname" jdbcType="VARCHAR" property="xiangmuname" />
+    <result column="xiangmuname" jdbcType="VARCHAR" property="xiangmuname"/>
     <result column="renshu" jdbcType="INTEGER" property="renshu" />
     <result column="gongzi" jdbcType="DOUBLE" property="gongzi" />
     <result column="shichang" jdbcType="INTEGER" property="shichang" />
@@ -34,15 +34,8 @@
     tongxunfei, riyongpin, youjifei, zuchefei, shebeixiuli, gaosutongxing, chuchaijiayou, 
     shineigongjiao, xiuchefei, rengong, shuidian, chepiao, qita,  kaishitime, jieguo,time
   </sql>
-  <select id="selectByShisuan" resultType="com.example.demo.entity.Shisuan" >
-    select * from shisuan where 1=1
-    <if test="xiangmuname != null and xiangmuname!=''">
-      and xiangmuname=#{xiangmuname}
-    </if>
-    <if test="bid !=0 and bid != null">
-      and bid=#{bid}
-    </if>
-  </select>
+
+
   <select id="queryAll" resultType="com.example.demo.entity.Shisuan">
      select * from  shisuan
   </select>
@@ -52,6 +45,8 @@
     from shisuan
     where shiid = #{shiid,jdbcType=INTEGER}
   </select>
+
+
     <select id="queryShiSuan" resultType="com.example.demo.entity.Shisuan">
     SELECT * FROM
 	shisuan
@@ -60,7 +55,7 @@
         and bid=#{bid}
       </if>
       <if test="xiangmuname != null and xiangmuname!=''">
-        and xiangmuname=#{xiangmuname}
+        and xiangmuname like concat('%',concat(#{xiangmuname}),'%')
       </if>
     </select>
   <select id="sumShiSuan" resultType="com.example.demo.entity.Shisuan">
@@ -68,11 +63,13 @@ SELECT SUM(renshu) AS renshu,SUM(gongzi) AS gongzi,SUM(shichang) AS shichang,SUM
 SUM(youjifei) AS youjifei,SUM(zuchefei) AS zuchefei,SUM(gaosutongxing) AS gaosutongxing,SUM(shineigongjiao) AS shineigongjiao,
 SUM(xiuchefei) AS xiuchefei,SUM(rengong) AS rengong,SUM(shuidian) AS shuidian,SUM(chepiao) AS chepiao,SUM(qita) AS qita,SUM(kaishitime) AS kaishitime,SUM(jieguo) AS jieguo, SUM(chuchaijiayou) AS chuchaijiayou, SUM(shebeixiuli) AS shebeixiuli,xiangmuname,`time` FROM shisuan
 WHERE 1=1
-
-    <if test="xiangmuname != null and xiangmuname!=''">
-      and xiangmuname=#{xiangmuname}
+    <if test="bid !=0 and bid != null">
+      and bid=#{bid}
     </if>
-GROUP BY xiangmuname
+    <if test="xiangmuname != null and xiangmuname!=''">
+      and xiangmuname like concat('%',concat(#{xiangmuname}),'%')
+    </if>
+  GROUP BY xiangmuname
 
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
