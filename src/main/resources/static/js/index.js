@@ -167,7 +167,7 @@ function check(){
                 return false;
             }
     if (zhongdui == "请选择") {
-        alert("请选择一个");
+        alert("请选择中队");
         boolean= false;
         return false;
     }
@@ -182,6 +182,8 @@ function check(){
 
         }
 }
+
+
 
 function addTab(title, url) {
     if ($('#tts').tabs('exists', title)) {
@@ -230,7 +232,7 @@ function check1(){
         boolean= false;
         return false;
     }
-    if (renshu == "") {
+/*    if (renshu == "") {
         alert("人数不能为空,可以为0");
         boolean= false;
         return false;
@@ -239,7 +241,7 @@ function check1(){
         alert("工资不能为空");
         boolean= false;
         return false;
-    }
+    }*/
 
     if (shichang == "") {
         alert("时长不能为空");
@@ -340,7 +342,7 @@ function check1(){
         return false;
     }
     if (zhongdui == "请选择") {
-        alert("请选择一个");
+        alert("请选择中队");
         boolean= false;
         return false;
     }
@@ -368,7 +370,7 @@ function check1(){
 function zd() {
     var zhongdui=document.getElementById("zhongdui").value;
     if (zhongdui == "请选择") {
-        alert("请选择一个");
+        alert("请选择中队");
         boolean= false;
         return false;
     }
