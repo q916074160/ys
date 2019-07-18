@@ -232,7 +232,7 @@ function check1(){
         boolean= false;
         return false;
     }
-    if (renshu == "") {
+/*    if (renshu == "") {
         alert("人数不能为空,可以为0");
         boolean= false;
         return false;
@@ -241,7 +241,7 @@ function check1(){
         alert("工资不能为空");
         boolean= false;
         return false;
-    }
+    }*/
 
     if (shichang == "") {
         alert("时长不能为空");
