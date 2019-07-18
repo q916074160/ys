@@ -208,18 +208,18 @@ public class ExcelController {
                 Cell cell12 = row.getCell(11);
                 cell12.setCellType(Cell.CELL_TYPE_STRING);
                 renyuan.setGongshang(Double.valueOf(cell12.getStringCellValue()));
-
+                boolean bl=true;
                 for(int k=0;k<rlist.size();k++){
                     Renyuan renyuan1=rlist.get(k);
-                    if(renyuan1.getRid() != renyuan.getRid()) {
-                        if (renyuan1.getRname().equals(renyuan.getRname()) && renyuan1.getBid() != renyuan.getBid()) {
-                            renyuanMapper.insert(renyuan);
-                        }
-                        if(!renyuan1.getRname().equals(renyuan.getRname())){
-                            renyuanMapper.insert(renyuan);
-                        }
-
+                    if(renyuan1.getRid().intValue()==renyuan.getRid().intValue()){
+                        bl=false;
                     }
+                    if (renyuan1.getRname().equals(renyuan.getRname()) && renyuan1.getBid() == renyuan.getBid()) {
+                        bl=false;
+                    }
+                }
+                if(bl==true){
+                    renyuanMapper.insert(renyuan);
                 }
             }
         } catch (Exception e) {

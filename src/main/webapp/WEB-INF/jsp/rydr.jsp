@@ -2,11 +2,13 @@
 <html>
 <head>
     <title>Title</title>
+    <script type="text/javascript" src="/static/easyUi/jquery.min.js"></script>
 </head>
 <body>
-<form action="excel/add">
+<form action="excel/add" id="f">
 选择文件 <input type="file" name="wenjian" id="wenjian">
-    <input type="submit" value="上传">
+    <input type="button" id="shangchuan" value="上传">
 </form>
+<script type="text/javascript" src="/static/js/daochu.js"></script>
 </body>
 </html>
