@@ -13,57 +13,57 @@
     <table cellpadding="5" style="position: absolute;left:20%;top: 7%;">
         <tr>
             <td>合同名称:</td>
-            <td><input class="easyui-textbox" type="text" name="xiangmuname" id="xiangmuname" data-options="required:true"></input></td>
+            <td><input class="easyui-textbox" type="text" name="xiangmuname" id="xiangmuname" ></input></td>
         </tr>
         <tr>
             <td>人工费:</td>
-            <td><input class="easyui-textbox" type="text"  name="rengong" id="rengong" data-options="required:true"></input>	</td>
+            <td><input class="easyui-textbox" type="text"  name="rengong" id="rengong"></input>	</td>
         </tr>
 
         <tr>
             <td>税费:</td>
-            <td><input class="easyui-textbox" type="text"  name="shuifei" id="shuifei" data-options="required:true"></input></td>
+            <td><input class="easyui-textbox" type="text"  name="shuifei" id="shuifei" ></input></td>
         </tr>
         <tr>
             <td>时长:</td>
-            <td><input class="easyui-textbox" type="text"  name="shichang" id="shichang" data-options="required:true"></input>	</td>
+            <td><input class="easyui-textbox" type="text"  name="shichang" id="shichang" ></input>	</td>
         </tr>
         <tr>
             <td>房租:</td>
-            <td><input class="easyui-textbox" type="text"  name="fangzu" id="fangzu" data-options="required:true"></input>	</td>
+            <td><input class="easyui-textbox" type="text"  name="fangzu" id="fangzu" ></input>	</td>
         </tr>
         <tr>
             <td>外包:</td>
-            <td><input class="easyui-textbox" type="text"  name="waibao" id="waibao" data-options="required:true"></input>	</td>
+            <td><input class="easyui-textbox" type="text"  name="waibao" id="waibao" ></input>	</td>
         </tr>
         <tr>
             <td>招待费:</td>
-            <td><input class="easyui-textbox" type="text"  name="zhaodaifei" id="zhaodaifei" data-options="required:true"></input>	</td>
+            <td><input class="easyui-textbox" type="text"  name="zhaodaifei" id="zhaodaifei"></input>	</td>
         </tr>
         <tr>
             <td>通讯费:</td>
-            <td><input class="easyui-textbox" type="text"  name="tongxunfei" id="tongxunfei" data-options="required:true"></input>	</td>
+            <td><input class="easyui-textbox" type="text"  name="tongxunfei" id="tongxunfei" ></input>	</td>
         </tr>
         <tr>
             <td>租车费:</td>
-            <td><input class="easyui-textbox" type="text"  name="zuchefei" id="zuchefei" data-options="required:true"></input>	</td>
+            <td><input class="easyui-textbox" type="text"  name="zuchefei" id="zuchefei" ></input>	</td>
         </tr>
         <tr>
             <td>(火/汽)车/飞机票:</td>
-            <td><input  class="easyui-textbox" type="text" name="chepiao" id="chepiao" data-options="required:true"></input></td>
-        </tr>
-        <tr>
-            <td>工资:</td>
-            <td><input  type="text" name="gongzi" id="gongzi"  readonly= "true" style="width:172px;height: 30px;border-radius: 5px;border: 1px solid cornflowerblue"></input></td>
+            <td><input  class="easyui-textbox" type="text" name="chepiao" id="chepiao"></input></td>
         </tr>
         <tr>
             <td class="td1">实施时间</td>
             <td><input class="easyui-datebox" style="width:90%"name="kaishitime" id="kaishitime" ></td>
         </tr>
-
         <tr>
-            <td colspan="2" style="text-align: right"><input class="button1" type="button" id="button" value="预&nbsp;算&nbsp;结&nbsp;果" onclick="check1()"/>&nbsp;&nbsp;<input class="button1" type="button" onclick="clearForm()"  value="重&nbsp;&nbsp;&nbsp;&nbsp;置"/></td>
+            <td>工资:</td>
+            <td><input type="text" name="gongzi" id="gongzi"  readonly= "true" style="border:0px red solid; outline:none;"></input></td>
         </tr>
+
+        <%--<tr>--%>
+            <%--<td colspan="2" style="text-align: right"><input class="button1" type="button" id="button" value="预&nbsp;算&nbsp;结&nbsp;果" onclick="check1()"/>&nbsp;&nbsp;<input class="button1" type="button" onclick="clearForm()"  value="重&nbsp;&nbsp;&nbsp;&nbsp;置"/></td>--%>
+        <%--</tr>--%>
         <tr>
             <td colspan="2">结果：<span id="jg" style="width: 300px;"></span>&nbsp;&nbsp;&nbsp;工资：<span id="gzhe" style="width: 300px;"></span></td>
         </tr>
@@ -71,49 +71,45 @@
     <table cellpadding="5" style="position: absolute; top:7%; left:60%;">
         <tr>
             <td>高速通行费:</td>
-            <td><input class="easyui-textbox" type="text" name="gaosutongxing" id="gaosutongxing" data-options="required:true"></input></td>
+            <td><input class="easyui-textbox" type="text" name="gaosutongxing" id="gaosutongxing" ></input></td>
         </tr>
         <tr>
             <td>出差加油费:</td>
-            <td><input class="easyui-textbox" type="text" name="chuchaijiayou" id="chuchaijiayou" data-options="required:true"></input></td>
+            <td><input class="easyui-textbox" type="text" name="chuchaijiayou" id="chuchaijiayou" ></input></td>
         </tr>
         <tr>
             <td>市内公交出租费:</td>
-            <td><input class="easyui-textbox" type="text"  name="shineigongjiao" id="shineigongjiao" data-options="required:true"></input></td>
+            <td><input class="easyui-textbox" type="text"  name="shineigongjiao" id="shineigongjiao" ></input></td>
         </tr>
         <tr>
             <td>(修/洗)车费:</td>
-            <td><input class="easyui-textbox" type="text"  name="xiuchefei" id="xiuchefei" data-options="required:true"></input></td>
+            <td><input class="easyui-textbox" type="text"  name="xiuchefei" id="xiuchefei" ></input></td>
         </tr>
         <tr>
             <td>设备修理费:</td>
-            <td><input class="easyui-textbox" type="text"  name="shebeixiuli" id="shebeixiuli" data-options="required:true"></input></td>
+            <td><input class="easyui-textbox" type="text"  name="shebeixiuli" id="shebeixiuli"></input></td>
         </tr>
         <tr>
             <td>(水/电)费:</td>
-            <td><input class="easyui-textbox" type="text" name="shuidian" id="shuidian" data-options="required:true"></input>	</td>
+            <td><input class="easyui-textbox" type="text" name="shuidian" id="shuidian" ></input>	</td>
         </tr>
         <tr>
             <td>日用品:</td>
-            <td><input class="easyui-textbox" type="text"  name="riyongpin" id="riyongpin" data-options="required:true"></input>	</td>
+            <td><input class="easyui-textbox" type="text"  name="riyongpin" id="riyongpin" ></input>	</td>
         </tr>
         <tr>
             <td>邮寄费:</td>
-            <td><input class="easyui-textbox" type="text"  name="youjifei" id="youjifei" data-options="required:true"></input>	</td>
+            <td><input class="easyui-textbox" type="text"  name="youjifei" id="youjifei"></input>	</td>
         </tr>
         <tr>
             <td>其他:</td>
-            <td><input class="easyui-textbox" type="text"  name="qita" id="qita" data-options="required:true"></input>	</td>
-        </tr>
-        <tr>
-            <td>人数:</td>
-            <td><input  type="text" name="renshu" id="renshu"  readonly= "true" style="width:172px;height: 30px;border-radius: 5px;border: 1px solid cornflowerblue"></input></td>
-        </tr>
+            <td><input class="easyui-textbox" type="text"  name="qita" id="qita" ></input>	</td>
         </tr>
         <tr>
             <td class="td1">时间</td>
             <td><input class="easyui-datebox" style="width:90%" name="time" id="time" ></td>
         </tr>
+
         <tr>
             <td>中队选择:</td>
             <td>
@@ -129,8 +125,19 @@
                 </select>
             </td>
         </tr>
+        <tr>
+            <td>人数:</td>
+            <td><input  type="text" name="renshu" id="renshu"  readonly= "true" style="border:0px red solid; outline:none;"></input></td>
+        </tr>
     </table>
+    <a href="javascript:void(0)" class="easyui-linkbutton" style="outline:none;text-align:center; position: absolute; bottom:0.5%;right:4.5%; height:30px;"><input class="button1" type="button" id="button" value="实算结果" onclick="check1()" style="border:0px white solid;background:transparent;outline:none;cursor: pointer;"/></a>
+    <a href="javascript:void(0)" class="easyui-linkbutton" style="outline:none;text-align:center; position: absolute; bottom:0.5%;right:0.5%; height:30px;" onclick="clearForm()"><input class="button1" type="reset" value="重置" style="outline:none;border:0px white solid;background:transparent;cursor: pointer;"/></a>
 </form>
 <script type="text/javascript" src="/static/js/index.js"></script>
+<script>
+    function clearForm(){
+        $('#ff').form('reset');
+    }
+</script>
 </body>
 </html>
