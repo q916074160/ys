@@ -24,10 +24,13 @@ $("#search_btn").click(function () {
     }
 });
 $("#shangchuan").click(function () {
-    var wanjian=$("#wenjian").filebox('getValue')
-    var str=wanjian.substr(wanjian.lastIndexOf("."));
+    var wenjian=document.getElementById('filebox_file_id_1').files[0].name;//$("#wenjian").filebox('getValue');
+    var str=wenjian.substr(wenjian.lastIndexOf("."));
     if(str==".xls"||str==".xlsx"){
-        $("#f").submit();
+       /* $("#f").submit();*/
+        $.get("excel/add?wenjian="+wenjian,function (data) {
+           alert(data);
+        });
         start();
     }else{
         alert("请导入excel文件");

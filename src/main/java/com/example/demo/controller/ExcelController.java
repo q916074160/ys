@@ -137,10 +137,9 @@ public class ExcelController {
     }
 
     @RequestMapping("/add")
-    public String Import(HttpServletRequest request) throws IOException {
-        String url=request.getParameter("wenjian");
+    public String Import(HttpServletRequest request,@RequestParam String wenjian) throws IOException {
 
-        File file = new File("C:\\Users\\Administrator\\Desktop\\"+url); //实际这个路径由前端传后台
+        File file = new File("C:\\Users\\Administrator\\Desktop\\"+wenjian); //实际这个路径由前端传后台
         FileInputStream fis = new FileInputStream(file);
         Workbook wb = null;
         try {
