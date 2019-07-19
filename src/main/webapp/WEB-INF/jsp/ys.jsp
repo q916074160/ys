@@ -9,11 +9,6 @@
     <script type="text/javascript" src="/static/easyUi/jquery.min.js"></script>
     <script src="/static/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
     <script src="/static/js/bootbox.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="/static/css/style.css">
-    <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
-    <script type="text/javascript" src="/static/easyUi/jquery.min.js"></script>
-    <script src="/static/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
-    <script src="/static/js/bootbox.min.js"></script>
 
 
     <link rel="stylesheet" type="text/css" href="static/easyUi/themes/icon.css">
