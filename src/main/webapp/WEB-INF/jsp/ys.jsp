@@ -15,11 +15,18 @@
     <script src="/static/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
     <script src="/static/js/bootbox.min.js"></script>
 
+
+    <link rel="stylesheet" type="text/css" href="static/easyUi/themes/icon.css">
+    <script type="text/javascript" src="static/easyUi/jquery.easyui.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="static/easyUi/themes/default/easyui.css">
+    <link rel="stylesheet" type="text/css" href="static/easyUi/demo/demo.css">
+    <script src="static/easyUi/locale/easyui-lang-zh_CN.js"></script>
 </head>
 
-<body><div class="box">
+<body>
+<div class="box,easyui-layout">
     <div class="title">项目查询</div>
-    <div class="content">
+    <div class="content,easyui-layout" data-options="region:'center'" style="height: 100%" >
         <!--搜索输入框及查询、重置按钮-->
     <form method="get" action="#" id="form">
         <div class="container content_width">
@@ -52,256 +59,301 @@
                        <button class="btn btn-primary search_btn" type="button" id="dc_btn">导出</button>
                     </c:if>
                 </div>
+                <tr>
+                <td>对比结果:</td>
+                <c:if test="${xiangmuname!=null}">
+
+
+                <td><input type="text" name="gongzi" id="gongzi"  readonly= "true" style="border:0px red solid; outline:none; " value="${jiguo}"></input></td>
+                </tr>
+                </c:if>
             </div>
             <div class="line"></div>
+
         </div>
 </form>
-        <!--表格列表-->
-        <table id="tb" class="table">
+
+
+
+
+
+<div class="easyui-layout" style="height:100%;" data-options="region:'center'">
+        <table id="dg1" title="实算信息" style="width:100%;height:40%" data-options="region:'south',
+				rownumbers:true,
+				singleSelect:true,
+				autoRowHeight:false,
+				pagination:true,
+				pageSize:10,
+              collapsible:true">
+
             <thead>
             <tr>
-                <th>名称</th>
-                <th>人数</th>
-                <th>工资</th>
-                <th>项目时长</th>
-                <th>税</th>
-                <th>房租</th>
-                <th>外包</th>
-                <th>招待</th>
-                <th>通讯</th>
-                <th>日用品</th>
-                <th>邮寄</th>
-                <th>租车</th>
-                <th>修理</th>
-                <th>通行</th>
-                <th>出差加油</th>
-                <th>公交出租</th>
-                <th>修洗车</th>
-                <th>人工</th>
-                <th>水电</th>
-                <th>车票</th>
-                <th>五险</th>
-                <th>开始时间</th>
+                <th field="xiangmuname" width="80">名称</th>
+                <th field="renshu" width="100">人数</th>
+                <th field="gongzi" width="80">工资</th>
+                <th field="shichang" width="80" align="right">项目时长</th>
+                <th field="shuifei" width="80" align="right">税</th>
+                <th field="fangzu" width="100" align="right">房租</th>
+                <th field="waibao" width="110">外包</th>
+                <th field="zhaodaifei" width="80">招待</th>
+                <th field="tongxunfei" width="100">通讯</th>
+                <th field="riyongpin" width="80">日用品</th>
+                <th field="youjifei" width="80" align="right">邮寄</th>
+                <th field="zuchefei" width="80" align="right">租车</th>
+                <th field="shebeixiuli" width="100" align="right">修理</th>
+                <th field="gaosutongxing" width="110">通行</th>
+                <th field="chuchaijiayou" width="80">出差加油</th>
+                <th field="shineigongjiao" width="100">公交出租</th>
+                <th field="xiuchefei" width="80">修洗车</th>
+                <th field="rengong" width="80" align="right">人工</th>
+                <th field="shuidian" width="80" align="right">水电</th>
+                <th field="chepiao" width="100" align="right">车票</th>
+                <th field="zhaodaifei" width="110">五险</th>
+                <th field="kaishitime" width="110">开始时间</th>
             </tr>
             </thead>
-            <tbody id="show_tbody">
+
+            <tbody id="show_tbody1">
             <c:forEach items="${list}" var="list">
-                <c:if test="${xiangmuname!=null}">
+            <c:if test="${xiangmuname!=null}">
             <tr>
-                <td>${list.xiangmuname}</td>
-                <td>${list.renshu}</td>
-                <td>${list.gongzi}</td>
-                <td>${list.shichang}</td>
-                <td>${list.shuifei}</td>
-                <td>${list.fangzu}</td>
-                <td>${list.waibao}</td>
-                <td>${list.zhaodaifei}</td>
-                <td>${list.tongxunfei}</td>
-                <td>${list.riyongpin}</td>
-                <td>${list.youjifei}</td>
-                <td>${list.zuchefei}</td>
-                <td>${list.shebeixiuli}</td>
-                <td>${list.gaosutongxing}</td>
-                <td>${list.chuchaijiayou}</td>
-                <td>${list.shineigongjiao}</td>
-                <td>${list.xiuchefei}</td>
-                <td>${list.rengong}</td>
-                <td>${list.shuidian}</td>
-                <td>${list.chepiao}</td>
-                <td>00</td>
-                <td>
-                    <fmt:formatDate pattern="yyyy-MM-dd" value="${list.kaishitime}"></fmt:formatDate>
-                </td>
+            <td>${list.xiangmuname}</td>
+            <td>${list.renshu}</td>
+            <td>${list.gongzi}</td>
+            <td>${list.shichang}</td>
+            <td>${list.shuifei}</td>
+            <td>${list.fangzu}</td>
+            <td>${list.waibao}</td>
+            <td>${list.zhaodaifei}</td>
+            <td>${list.tongxunfei}</td>
+            <td>${list.riyongpin}</td>
+            <td>${list.youjifei}</td>
+            <td>${list.zuchefei}</td>
+            <td>${list.shebeixiuli}</td>
+            <td>${list.gaosutongxing}</td>
+            <td>${list.chuchaijiayou}</td>
+            <td>${list.shineigongjiao}</td>
+            <td>${list.xiuchefei}</td>
+            <td>${list.rengong}</td>
+            <td>${list.shuidian}</td>
+            <td>${list.chepiao}</td>
+            <td>00</td>
+            <td>
+            <fmt:formatDate pattern="yyyy-MM-dd" value="${list.kaishitime}"></fmt:formatDate>
+            </td>
             </tr>
-                </c:if>
+            </c:if>
             </c:forEach>
             </tbody>
+
+
         </table>
 
 
-        <%--<table id="tb1" class="table">--%>
-            <%--<thead>--%>
-            <%--<tr>--%>
-                <%--<th>名称</th>--%>
-                <%--<th>人数</th>--%>
-                <%--<th>工资</th>--%>
-                <%--<th>项目时长</th>--%>
-                <%--<th>税</th>--%>
-                <%--<th>房租</th>--%>
-                <%--<th>外包</th>--%>
-                <%--<th>招待</th>--%>
-                <%--<th>通讯</th>--%>
-                <%--<th>日用品</th>--%>
-                <%--<th>邮寄</th>--%>
-                <%--<th>租车</th>--%>
-                <%--<th>修理</th>--%>
-                <%--<th>通行</th>--%>
-                <%--<th>出差加油</th>--%>
-                <%--<th>公交出租</th>--%>
-                <%--<th>修洗车</th>--%>
-                <%--<th>人工</th>--%>
-                <%--<th>水电</th>--%>
-                <%--<th>车票</th>--%>
-                <%--<th>五险</th>--%>
-                <%--<th>开始时间</th>--%>
-            <%--</tr>--%>
-            <%--</thead>--%>
-            <%--<tbody id="show_tbody1">--%>
-            <%--<c:forEach items="${yulist}" var="yulist">--%>
-                <%--<tr>--%>
-                    <%--<td>${yulist.xiangmuname}</td>--%>
-                    <%--<td>${yulist.renshu}</td>--%>
-                    <%--<td>${yulist.gongzi}</td>--%>
-                    <%--<td>${yulist.shichang}</td>--%>
-                    <%--<td>${yulist.shuifei}</td>--%>
-                    <%--<td>${yulist.fangzu}</td>--%>
-                    <%--<td>${yulist.waibao}</td>--%>
-                    <%--<td>${yulist.zhaodaifei}</td>--%>
-                    <%--<td>${yulist.tongxunfei}</td>--%>
-                    <%--<td>${yulist.riyongpin}</td>--%>
-                    <%--<td>${yulist.youjifei}</td>--%>
-                    <%--<td>${yulist.zuchefei}</td>--%>
-                    <%--<td>${yulist.shebeixiuli}</td>--%>
-                    <%--<td>${yulist.gaosutongxing}</td>--%>
-                    <%--<td>${yulist.chuchaijiayou}</td>--%>
-                    <%--<td>${yulist.shineigongjiao}</td>--%>
-                    <%--<td>${yulist.xiuchefei}</td>--%>
-                    <%--<td>${yulist.rengong}</td>--%>
-                    <%--<td>${yulist.shuidian}</td>--%>
-                    <%--<td>${yulist.chepiao}</td>--%>
-                    <%--<td>00</td>--%>
-                    <%--<td>--%>
-                    <%--</td>--%>
-                <%--</tr>--%>
-
-            <%--</c:forEach>--%>
-            <%--</tbody>--%>
-        <%--</table>--%>
-        <table id="tb2" class="table">
+        <table class="easyui-datagrid" title="实算总和信息" style="width:100%;height:30%"
+               data-options="
+               region:'center',
+				rownumbers:true,
+				singleSelect:true,
+				autoRowHeight:false,
+				pagination:true,
+				pageSize:10,
+              collapsible:true">
             <thead>
             <tr>
-                <th>名称</th>
-                <th>人数</th>
-                <th>工资</th>
-                <th>项目时长</th>
-                <th>税</th>
-                <th>房租</th>
-                <th>外包</th>
-                <th>招待</th>
-                <th>通讯</th>
-                <th>日用品</th>
-                <th>邮寄</th>
-                <th>租车</th>
-                <th>修理</th>
-                <th>通行</th>
-                <th>出差加油</th>
-                <th>公交出租</th>
-                <th>修洗车</th>
-                <th>人工</th>
-                <th>水电</th>
-                <th>车票</th>
-                <th>五险</th>
-                <th>开始时间</th>
+                <th data-options="field:'xiangmuname',width:80">名称</th>
+                <th data-options="field:'renshu',width:100">人数</th>
+                <th data-options="field:'gongzi',width:80,align:'right'">工资</th>
+                <th data-options="field:'shichang',width:80,align:'right'">项目时长</th>
+                <th data-options="field:'shuifei',width:250">税</th>
+                <th data-options="field:'fangzu',width:60,align:'center'">房租</th>
+                <th data-options="field:'waibao',width:80">外包</th>
+                <th data-options="field:'zhaodaifei',width:100">招待</th>
+                <th data-options="field:'tongxunfei',width:80,align:'right'">通讯</th>
+                <th data-options="field:'riyongpin',width:80,align:'right'">日用品</th>
+                <th data-options="field:'youjifei',width:250">邮寄</th>
+                <th data-options="field:'zuchefei',width:60,align:'center'">租车</th>
+                <th data-options="field:'shebeixiuli',width:80">修理</th>
+                <th data-options="field:'gaosutongxing',width:100">通行</th>
+                <th data-options="field:'chuchaijiayou',width:80,align:'right'">出差加油</th>
+                <th data-options="field:'shineigongjiao',width:80,align:'right'">公交出租</th>
+                <th data-options="field:'xiuchefei',width:250">修洗车</th>
+                <th data-options="field:'rengong',width:60,align:'center'">人工</th>
+                <th data-options="field:'shuidian',width:80">水电</th>
+                <th data-options="field:'chepiao',width:100">车票</th>
+                <th data-options="field:'zhaodaifei',width:80,align:'right'">五险</th>
+                <th data-options="field:'kaishitime',width:80,align:'right'">开始时间</th>
             </tr>
             </thead>
+
             <tbody id="show_tbody12">
 
             <c:forEach items="${sumShiSuan}" var="sumShiSuan">
-                <%--<c:forEach items="${yulist}" var="yulist">--%>
+
                 <c:if test="${xiangmuname!=null}">
-                <tr>
-                    <td>${sumShiSuan.xiangmuname}</td>
-                    <td>${sumShiSuan.renshu}</td>
-                    <td>${sumShiSuan.gongzi}</td>
-                    <td>${sumShiSuan.shichang}</td>
-                    <td>${sumShiSuan.shuifei}</td>
-                    <td>${sumShiSuan.fangzu}</td>
-                    <td>${sumShiSuan.waibao}</td>
-                    <td>${sumShiSuan.zhaodaifei}</td>
-                    <td>${sumShiSuan.tongxunfei}</td>
-                    <td>${sumShiSuan.riyongpin}</td>
-                    <td>${sumShiSuan.youjifei}</td>
-                    <td>${sumShiSuan.zuchefei}</td>
-                    <td>${sumShiSuan.shebeixiuli}</td>
-                    <td>${sumShiSuan.gaosutongxing}</td>
-                    <td>${sumShiSuan.chuchaijiayou}</td>
-                    <td>${sumShiSuan.shineigongjiao}</td>
-                    <td>${sumShiSuan.xiuchefei}</td>
-                    <td>${sumShiSuan.rengong}</td>
-                    <td>${sumShiSuan.shuidian}</td>
-                    <td>${sumShiSuan.chepiao}</td>
-
-                    <td>00</td>
-                    <td><fmt:formatDate pattern="yyyy-MM-dd" value="${sumShiSuan.time}"></fmt:formatDate></td>
-                </tr>
+                    <tr>
+                        <td>${sumShiSuan.xiangmuname}</td>
+                        <td>${sumShiSuan.renshu}</td>
+                        <td>${sumShiSuan.gongzi}</td>
+                        <td>${sumShiSuan.shichang}</td>
+                        <td>${sumShiSuan.shuifei}</td>
+                        <td>${sumShiSuan.fangzu}</td>
+                        <td>${sumShiSuan.waibao}</td>
+                        <td>${sumShiSuan.zhaodaifei}</td>
+                        <td>${sumShiSuan.tongxunfei}</td>
+                        <td>${sumShiSuan.riyongpin}</td>
+                        <td>${sumShiSuan.youjifei}</td>
+                        <td>${sumShiSuan.zuchefei}</td>
+                        <td>${sumShiSuan.shebeixiuli}</td>
+                        <td>${sumShiSuan.gaosutongxing}</td>
+                        <td>${sumShiSuan.chuchaijiayou}</td>
+                        <td>${sumShiSuan.shineigongjiao}</td>
+                        <td>${sumShiSuan.xiuchefei}</td>
+                        <td>${sumShiSuan.rengong}</td>
+                        <td>${sumShiSuan.shuidian}</td>
+                        <td>${sumShiSuan.chepiao}</td>
+                        <td>00</td>
+                        <td><fmt:formatDate pattern="yyyy-MM-dd" value="${sumShiSuan.time}"></fmt:formatDate></td>
+                    </tr>
                 </c:if>
-                <%--</c:forEach>--%>
-            </c:forEach>
 
+            </c:forEach>
             </tbody>
+
+
         </table>
 
 
-
-
-        <table id="tb2" class="table">
+        <table class="easyui-datagrid" title="预算信息" style="width:100%;height:30%"
+               data-options="
+              region:'north',
+				rownumbers:true,
+				singleSelect:true,
+				autoRowHeight:false,
+				pagination:true,
+				pageSize:10,
+              collapsible:true">
             <thead>
             <tr>
-                <th>人数</th>
-                <th>工资</th>
-                <th>项目时长</th>
-                <th>税</th>
-                <th>房租</th>
-                <th>外包</th>
-                <th>招待</th>
-                <th>通讯</th>
-                <th>日用品</th>
-                <th>邮寄</th>
-                <th>租车</th>
-                <th>修理</th>
-                <th>通行</th>
-                <th>出差加油</th>
-                <th>公交出租</th>
-                <th>修洗车</th>
-                <th>人工</th>
-                <th>水电</th>
-                <th>车票</th>
-                <th>五险</th>
+                <th data-options="field:'xiangmuname',width:80">名称</th>
+                <th data-options="field:'renshu',width:100">人数</th>
+                <th data-options="field:'gongzi',width:80,align:'right'">工资</th>
+                <th data-options="field:'shichang',width:80,align:'right'">项目时长</th>
+                <th data-options="field:'shuifei',width:250">税</th>
+                <th data-options="field:'fangzu',width:60,align:'center'">房租</th>
+                <th data-options="field:'waibao',width:80">外包</th>
+                <th data-options="field:'zhaodaifei',width:100">招待</th>
+                <th data-options="field:'tongxunfei',width:80,align:'right'">通讯</th>
+                <th data-options="field:'riyongpin',width:80,align:'right'">日用品</th>
+                <th data-options="field:'youjifei',width:250">邮寄</th>
+                <th data-options="field:'zuchefei',width:60,align:'center'">租车</th>
+                <th data-options="field:'shebeixiuli',width:80">修理</th>
+                <th data-options="field:'gaosutongxing',width:100">通行</th>
+                <th data-options="field:'chuchaijiayou',width:80,align:'right'">出差加油</th>
+                <th data-options="field:'shineigongjiao',width:80,align:'right'">公交出租</th>
+                <th data-options="field:'xiuchefei',width:250">修洗车</th>
+                <th data-options="field:'rengong',width:60,align:'center'">人工</th>
+                <th data-options="field:'shuidian',width:80">水电</th>
+                <th data-options="field:'chepiao',width:100">车票</th>
+                <th data-options="field:'zhaodaifei',width:80,align:'right'">五险</th>
+                <th data-options="field:'kaishitime',width:80,align:'right'">开始时间</th>
             </tr>
             </thead>
-            <tbody id="show_tbody13">
 
-                <%--<c:forEach items="${yulist}" var="yulist">--%>
+            <tbody id="show_tbody14">
+            <c:forEach items="${yulist}" var="yulist">
                 <c:if test="${xiangmuname!=null}">
                     <tr>
-                        <td>${renshu}</td>
-                        <td>${gongzi}</td>
-                        <td>${shichang}</td>
-                        <td>${shuiFei}</td>
-                        <td>${fangzu}</td>
-                        <td>${waibao}</td>
-                        <td>${zhaodaifei}</td>
-                        <td>${tongxunfei}</td>
-                        <td>${riyongpin}</td>
-                        <td>${youji}</td>
-                        <td>${zuche}</td>
-                        <td>${xiuli}</td>
-                        <td>${tongxing}</td>
-                        <td>${chuchaijiayou}</td>
-                        <td>${gongjiao}</td>
-                        <td>${xiuche}</td>
-                        <td>${rengong}</td>
-                        <td>${shuidian}</td>
-                        <td>${chepiao}</td>
+                        <td>${yulist.xiangmuname}</td>
+                        <td>${yulist.renshu}</td>
+                        <td>${yulist.gongzi}</td>
+                        <td>${yulist.shichang}</td>
+                        <td>${yulist.shuifei}</td>
+                        <td>${yulist.fangzu}</td>
+                        <td>${yulist.waibao}</td>
+                        <td>${yulist.zhaodaifei}</td>
+                        <td>${yulist.tongxunfei}</td>
+                        <td>${yulist.riyongpin}</td>
+                        <td>${yulist.youjifei}</td>
+                        <td>${yulist.zuchefei}</td>
+                        <td>${yulist.shebeixiuli}</td>
+                        <td>${yulist.gaosutongxing}</td>
+                        <td>${yulist.chuchaijiayou}</td>
+                        <td>${yulist.shineigongjiao}</td>
+                        <td>${yulist.xiuchefei}</td>
+                        <td>${yulist.rengong}</td>
+                        <td>${yulist.shuidian}</td>
+                        <td>${yulist.chepiao}</td>
+                        <td>00</td>
 
                     </tr>
                 </c:if>
-                <%--</c:forEach>--%>
 
+            </c:forEach>
             </tbody>
         </table>
+
+
+</div>
+
+
+
+
+
+
+        <script>
+            function pagerFilter(data){
+                if (typeof data.length == 'number' && typeof data.splice == 'function'){	// is array
+                    data = {
+                        total: data.length,
+                        rows: data
+                    }
+                }
+
+
+                var dg1 = $(this);
+                var opts = dg1.datagrid('options');
+                var pager = dg1.datagrid('getPager');
+
+                pager.pagination({
+                    displayMsg:'当前显示从第{from}条到{to}条 共{total}条记录',
+                    onSelectPage:function(pageNum, pageSize){
+                        opts.pageNumber = pageNum;
+                        opts.pageSize = pageSize;
+                        pager.pagination('refresh',{
+                            pageNumber:pageNum,
+                            pageSize:pageSize
+                        });
+                        dg1.datagrid('loadData',data);
+                    }
+                });
+                if (!data.originalRows){
+                    data.originalRows = (data.rows);
+                }
+                var start = (opts.pageNumber-1)*parseInt(opts.pageSize);
+                var end = start + parseInt(opts.pageSize);
+                data.rows = (data.originalRows.slice(start, end));
+                return data;
+            }
+
+            $(function(){
+                $('#dg1').datagrid({loadFilter:pagerFilter}).datagrid('loadData', getData());
+            });
+
+
+
+
+
+
+        </script>
+
+
+
+
+
     </div>
 </div>
+
 <script src="/static/js/daochu.js"></script>
 
 </body>

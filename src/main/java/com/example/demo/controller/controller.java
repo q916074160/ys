@@ -66,6 +66,10 @@ public class controller {
         return "ys";
     }
 
+    @RequestMapping("/ysFind1")
+    public String findYs1() {
+        return "ys1";
+    }
     //预算导入
     @RequestMapping("/ysdr")
     public String ysdr() {
@@ -114,10 +118,10 @@ public class controller {
                 Double rengong = yulist.get(i).getRengong() - sumShiSuan.get(j).getRengong();
                 Double shuidian = yulist.get(i).getShuidian() - sumShiSuan.get(j).getShuidian();
                 Double chepiao = yulist.get(i).getChepiao() - sumShiSuan.get(j).getChepiao();
+                Double jiguo=yulist.get(i).getJieguo()-sumShiSuan.get(j).getJieguo();
 
 
-
-
+                request.setAttribute("jiguo",jiguo);
                 request.setAttribute("renshu", renshu);
                 request.setAttribute("gongzi", gongzi);
                 request.setAttribute("shichang", shichang);
