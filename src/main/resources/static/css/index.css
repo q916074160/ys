@@ -1,9 +1,12 @@
-#div1{float:left;width: 40%;padding: 8px}
-#div2{float:right;width: 60%;padding: 8px}
-#north{overflow: hidden;height:40px;background:#B3DFDA;}
+#div1{float:left;width: 70%;height: 40px;padding: 0px;}
+#div2{float:right;width: 30%;height: 40px;padding: 0px;}
+#north{overflow: hidden;height:40px;background:#9fcdff;padding: 0px}
 h1{margin: 0 auto;padding: 0;    text-align: right;}
 span{    line-height: 35px;    font-size: 20px;}
 .tishi{    margin: 0;    font-size: 15px;    color: red;}
 input{    width: 50px;}
 table{    margin-left: 20%;}
 .button{    width: 130px;    height: 30px;    font-size: 20px;    text-align: center;}
+#div1 img{width: 80px;height: 40px;}
+.cl1{color: black;font-family: "Adobe Caslon Pro" ;font-size: 20px;line-height: 40px;position: relative;top: -10px}
+.cl2{color: black;font-family: "Adobe Caslon Pro" ;font-size: 16px;line-height: 40px;position: relative;top: 5px}

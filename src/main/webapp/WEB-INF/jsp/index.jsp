@@ -17,17 +17,15 @@
     </style>
 </head>
 <body class="easyui-layout">
-<div data-options="region:'north',border:false" id="north" style="background: #e0ecff;">
-    <img src="/static/img/logo.png" alt="" style="width: 60px; height: 60px;position: absolute; top:-10px;">
-    <div id="div1" style="margin:0; padding:0; border:0; position:absolute;top:0px; left:60px; font-size: 30px; color:black;">&nbsp;项目预算管理系统</div>
-    <div id="div2" style=" position:absolute; top:3px; left:1680px;">欢迎你:</div><span style="color:white;position: absolute; top:3px;left:1740px; font-size:15px;"></span>
+<div data-options="region:'north',border:false" id="north" style="padding: 0px">
+    <div id="div1" ><img src="/static/img/lg.png" alt="">&nbsp;<span class="cl1">项目预算管理系统</span></div>
+    <div id="div2"><span class="cl2">欢迎你:</span><span id="sp1"></span><a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-add'"  onclick="$('#w').window('open')" style="position: relative;right: -250px;">人员导入</a></div>
 </div>
 <div data-options="region:'west',split:true,title:'菜单'" style="width:250px;">
     <div class="easyui-accordion" data-options="fit:true,border:false,selected:false" style="background-color: #e7eaed" id="leftMenu">
         <div title="预算" class="beijing" id="Scene" data-options="selected:false">
             <li id="li1" onclick="addTab(this.innerHTML,'ysdr')" style="cursor: pointer; list-style-type:none;">预算导入</li>
             <li id="li3" onclick="addTab(this.innerHTML,'ssdr')" style="cursor: pointer; list-style-type:none;">实算导入</li>
-            <li id="li4" onclick="addTab(this.innerHTML,'rydr')" style="cursor: pointer; list-style-type:none;">人员导入</li>
         </div>
         <div title="查询" class="beijing" id="sand">
             <li id="li2" onclick="addTab(this.innerHTML,'querySs')" style="cursor: pointer; list-style-type:none;">查询</li>
@@ -44,5 +42,17 @@
         </div>
     </div>
 </div>
+<%--文件导入---------------------------------------%>
+<div id="w" class="easyui-window" title="文件导入" data-options="minimizable:false,maximizable: false,tools:'#tt',closed:true" style="width:500px;height:300px;padding:10px;">
+    <form action="excel/add" id="f">
+        <div style="margin-bottom:20px;margin-top: 20px;">
+            <input class="easyui-filebox" id="wenjian" name="wenjian" data-options="buttonText:'浏览...',prompt:'请选择文件'" style="width:100%;">
+        </div>
+        <div>
+            <a href="#" id="shangchuan" class="easyui-linkbutton" style="width:50%">确定</a><a href="#" class="easyui-linkbutton" style="width:50%" onclick="$('#w').window('close')">取消</a>
+        </div>
+    </form>
+</div>
+<script type="text/javascript" src="/static/js/daochu.js"></script>
 </body>
 </html>
