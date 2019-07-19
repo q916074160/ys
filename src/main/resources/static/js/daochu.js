@@ -24,11 +24,21 @@ $("#search_btn").click(function () {
     }
 });
 $("#shangchuan").click(function () {
-    var wanjian=document.getElementById("wenjian").value;
+    var wanjian=$("#wenjian").filebox('getValue')
     var str=wanjian.substr(wanjian.lastIndexOf("."));
     if(str==".xls"||str==".xlsx"){
         $("#f").submit();
+        start();
     }else{
         alert("请导入excel文件");
     }
 });
+function start(){
+    var value = $('#p').progressbar('getValue');
+    $('#p').show();
+    if (value < 100){
+        value += Math.floor(Math.random() * 10);
+        $('#p').progressbar('setValue', value);
+        setTimeout(arguments.callee, 100);
+    }
+};
