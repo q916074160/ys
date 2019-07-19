@@ -42,7 +42,7 @@
                     <div class="input-group mb-3">
                         <span>请选择中队：</span>
                       <%--  <input id="job_num" type="text" class="form-control" placeholder="请输入工号">--%>
-                        <select class="form-control" id="job_num" name="bid" >
+                        <select class="form-control" id="job_num" name="bid" id="bid" >
                             <option value="">--请选择--</option>
                             <c:forEach items="${bumenList}" var="bumenList">
                             <option value="${bumenList.bid}">${bumenList.bname}</option>
@@ -108,7 +108,7 @@
                 <th field="rengong" width="80" align="right">人工</th>
                 <th field="shuidian" width="80" align="right">水电</th>
                 <th field="chepiao" width="100" align="right">车票</th>
-                <th field="zhaodaifei" width="110">五险</th>
+                <th field="zhaodaifei" width="110">总和</th>
                 <th field="kaishitime" width="110">开始时间</th>
             </tr>
             </thead>
@@ -137,10 +137,11 @@
             <td>${list.rengong}</td>
             <td>${list.shuidian}</td>
             <td>${list.chepiao}</td>
-            <td>00</td>
+            <td>${list.jieguo}</td>
             <td>
             <fmt:formatDate pattern="yyyy-MM-dd" value="${list.kaishitime}"></fmt:formatDate>
             </td>
+
             </tr>
             </c:if>
             </c:forEach>
@@ -150,7 +151,7 @@
         </table>
 
 
-        <table class="easyui-datagrid" title="实算总和信息" style="width:100%;height:30%"
+        <table id="dg2" class="easyui-datagrid" title="实算总和信息" style="width:100%;height:30%"
                data-options="
                region:'center',
 				rownumbers:true,
@@ -181,7 +182,7 @@
                 <th data-options="field:'rengong',width:60,align:'center'">人工</th>
                 <th data-options="field:'shuidian',width:80">水电</th>
                 <th data-options="field:'chepiao',width:100">车票</th>
-                <th data-options="field:'zhaodaifei',width:80,align:'right'">五险</th>
+                <th data-options="field:'zhaodaifei',width:80,align:'right'">总和</th>
                 <th data-options="field:'kaishitime',width:80,align:'right'">开始时间</th>
             </tr>
             </thead>
@@ -212,8 +213,8 @@
                         <td>${sumShiSuan.rengong}</td>
                         <td>${sumShiSuan.shuidian}</td>
                         <td>${sumShiSuan.chepiao}</td>
-                        <td>00</td>
-                        <td><fmt:formatDate pattern="yyyy-MM-dd" value="${sumShiSuan.time}"></fmt:formatDate></td>
+                        <td>${sumShiSuan.jieguo}</td>
+                        <td><fmt:formatDate pattern="yyyy-MM-dd" value="${sumShiSuan.kaishitime}"></fmt:formatDate></td>
                     </tr>
                 </c:if>
 
@@ -224,7 +225,7 @@
         </table>
 
 
-        <table class="easyui-datagrid" title="预算信息" style="width:100%;height:30%"
+        <table id="dg3" class="easyui-datagrid" title="预算信息" style="width:100%;height:30%"
                data-options="
               region:'north',
 				rownumbers:true,
@@ -255,8 +256,7 @@
                 <th data-options="field:'rengong',width:60,align:'center'">人工</th>
                 <th data-options="field:'shuidian',width:80">水电</th>
                 <th data-options="field:'chepiao',width:100">车票</th>
-                <th data-options="field:'zhaodaifei',width:80,align:'right'">五险</th>
-                <th data-options="field:'kaishitime',width:80,align:'right'">开始时间</th>
+                <th data-options="field:'zhaodaifei',width:80,align:'right'">总和</th>
             </tr>
             </thead>
 
@@ -284,8 +284,7 @@
                         <td>${yulist.rengong}</td>
                         <td>${yulist.shuidian}</td>
                         <td>${yulist.chepiao}</td>
-                        <td>00</td>
-
+                        <td>${yulist.jieguo}</td>
                     </tr>
                 </c:if>
 
@@ -295,13 +294,12 @@
 
 
 </div>
-
-
-
-
-
-
         <script>
+
+
+
+
+
             function pagerFilter(data){
                 if (typeof data.length == 'number' && typeof data.splice == 'function'){	// is array
                     data = {
@@ -339,22 +337,10 @@
             $(function(){
                 $('#dg1').datagrid({loadFilter:pagerFilter}).datagrid('loadData', getData());
             });
-
-
-
-
-
-
         </script>
-
-
-
-
-
     </div>
 </div>
 
 <script src="/static/js/daochu.js"></script>
-
 </body>
 </html>
