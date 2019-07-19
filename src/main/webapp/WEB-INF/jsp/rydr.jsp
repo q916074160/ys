@@ -17,7 +17,7 @@
 <div id="w" class="easyui-window" title="文件导入" data-options="minimizable:false,maximizable: false,tools:'#tt',closed:true" style="width:500px;height:300px;padding:10px;">
     <form action="excel/add" id="f">
     <div style="margin-bottom:20px;margin-top: 20px;">
-        <input class="easyui-filebox" id="wenjian" name="file2" data-options="buttonText:'浏览...',prompt:'请选择文件'" style="width:100%;">
+        <input class="easyui-filebox" id="wenjian" name="wenjian" data-options="buttonText:'浏览...',prompt:'请选择文件'" style="width:100%;">
     </div>
     <div>
         <a href="#" id="shangchuan" class="easyui-linkbutton" style="width:50%">确定</a><a href="#" class="easyui-linkbutton" style="width:50%" onclick="$('#w').window('close')">取消</a>
