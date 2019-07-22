@@ -9,16 +9,6 @@ import java.util.List;
 public interface BumenMapper {
     List<Bumen> queryAll();
 
-    int deleteByPrimaryKey(Integer bid);
-
     int insert(Bumen record);
 
-    int insertSelective(Bumen record);
-
-    Bumen selectByPrimaryKey(Integer bid);
-
-    int updateByPrimaryKeySelective(Bumen record);
-
-    int updateByPrimaryKey(Bumen record);
-    List<Bumen>queryBumen();
 }

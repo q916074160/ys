@@ -7,19 +7,11 @@ import java.util.List;
 
 @Mapper
 public interface YusuanMapper {
-    int  deleteByPrimaryKey(Integer yuid);
 
     int insert(Yusuan record);
 
-    int insertSelective(Yusuan record);
-
-    Yusuan selectByPrimaryKey(Integer yuid);
-
-    int updateByPrimaryKeySelective(Yusuan record);
-
-    int updateByPrimaryKey(Yusuan record);
     //动态查询
-    List<Yusuan>queryYuSuan(Yusuan yusuan);
+    List<Yusuan> queryYuSuan(Yusuan yusuan);
 
 
 
