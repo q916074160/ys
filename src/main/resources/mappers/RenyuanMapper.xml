@@ -15,6 +15,10 @@
     <result column="shengyu" jdbcType="DOUBLE" property="shengyu" />
     <result column="gongshang" jdbcType="DOUBLE" property="gongshang" />
   </resultMap>
+  <sql id="Base_Column_List">
+    rid, rname, bid, gongzi, gerenbaoxian, gerenshui, jingling, yanglao, yiliao, shiye,
+    shengyu, gongshang
+  </sql>
   <select id="queryAll" resultType="com.example.demo.entity.Renyuan">
     select * from  renyuan
   </select>

@@ -32,6 +32,12 @@
     <result column="jieguo" jdbcType="DOUBLE" property="jieguo" />
     <result column="bid" jdbcType="INTEGER" property="bid" />
   </resultMap>
+  <sql id="Base_Column_List">
+    yuid, xiangmuname, renshu, gongzi, shichang, shuifei, fangzu, waibao, zhaodaifei,
+    tongxunfei, riyongpin, youjifei, zuchefei, shebeixiuli, gaosutongxing, chuchaijiayou,
+    shineigongjiao, xiuchefei, rengong, shuidian, chepiao, qita, yanglao, yiliao, gongshang,
+    shiye, shengyu, jieguo,  bid
+  </sql>
   <select id="queryYuSuan" resultType="com.example.demo.entity.Yusuan">
     SELECT * FROM
     yusuan

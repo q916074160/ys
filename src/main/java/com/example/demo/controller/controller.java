@@ -94,7 +94,7 @@ public class controller {
         shisuan.setXiangmuname(xiangmuname);
         yusuan.setXiangmuname(xiangmuname);
         List<Shisuan> list = shisuanMapper.queryShiSuan(shisuan);
-        List<Bumen> bumenList = bumenMapper.queryBumen();
+        List<Bumen> bumenList = bumenMapper.queryAll();
         List<Shisuan> sumShiSuan = shisuanMapper.sumShiSuan(shisuan);
         List<Yusuan> yulist = yu.queryYuSuan(yusuan);
         double sum=0;

@@ -29,11 +29,15 @@
     <result column="jieguo" jdbcType="DOUBLE" property="jieguo" />
     <result column="time" jdbcType="DATE" property="time" />
   </resultMap>
+  <sql id="Base_Column_List">
+    shiid, bid, xiangmuname, renshu, gongzi, shichang, shuifei, fangzu, waibao, zhaodaifei,
+    tongxunfei, riyongpin, youjifei, zuchefei, shebeixiuli, gaosutongxing, chuchaijiayou,
+    shineigongjiao, xiuchefei, rengong, shuidian, chepiao, qita,  kaishitime, jieguo,time
+  </sql>
 
   <select id="queryAll" resultType="com.example.demo.entity.Shisuan">
      select * from  shisuan
   </select>
-
 
     <select id="queryShiSuan" resultType="com.example.demo.entity.Shisuan">
     SELECT * FROM
@@ -58,7 +62,6 @@ WHERE 1=1
       and xiangmuname like concat('%',concat(#{xiangmuname}),'%')
     </if>
   GROUP BY xiangmuname
-
   </select>
   <insert id="insert" parameterType="com.example.demo.entity.Shisuan">
     insert into shisuan (shiid, bid, xiangmuname, 

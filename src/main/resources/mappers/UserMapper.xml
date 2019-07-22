@@ -7,6 +7,9 @@
     <result column="upass" jdbcType="VARCHAR" property="upass" />
     <result column="uleve" jdbcType="INTEGER" property="uleve" />
   </resultMap>
+  <sql id="Base_Column_List">
+    uid, uname, upass, uleve
+  </sql>
   <!--登录-->
   <select id="userLogin" resultType="int" parameterType="com.example.demo.entity.User">
     select count(1) from user where uname=#{uname} and upass=#{upass}
