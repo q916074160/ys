@@ -9,8 +9,11 @@ import com.example.demo.entity.Shisuan;
 import com.example.demo.entity.User;
 import com.example.demo.entity.Yusuan;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.propertyeditors.CustomDateEditor;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpServletRequest;
@@ -25,7 +28,10 @@ import org.springframework.web.multipart.MultipartFile;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import java.util.List;
@@ -83,16 +89,29 @@ public class controller {
     }
 
     @RequestMapping("/querySs")
-    public String queryShiSuan(Shisuan shisuan, Yusuan yusuan, HttpServletRequest request, HttpServletResponse response) {
+    public String queryShiSuan(@DateTimeFormat(pattern="yyyy-MM-dd") Date date,Shisuan shisuan, Yusuan yusuan, HttpServletRequest request, HttpServletResponse response) {
+        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+
         String xiangmuname = request.getParameter("xiangmuname");
         String bidstr = request.getParameter("bid");
         Integer bid = null;
         if (bidstr != null && !"".equals(bidstr)) {
             bid = Integer.parseInt(bidstr);
         }
-        shisuan.setBid(bid);
-        shisuan.setXiangmuname(xiangmuname);
-        yusuan.setXiangmuname(xiangmuname);
+
+
+        try {
+            String kaishitime=request.getParameter("kaishitime");
+            String time=request.getParameter("time");
+            System.out.println(kaishitime);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
+//
+//        shisuan.setBid(bid);
+//        shisuan.setXiangmuname(xiangmuname);
+//        yusuan.setXiangmuname(xiangmuname);
         List<Shisuan> list = shisuanMapper.queryShiSuan(shisuan);
         List<Bumen> bumenList = bumenMapper.queryAll();
         List<Shisuan> sumShiSuan = shisuanMapper.sumShiSuan(shisuan);
@@ -101,54 +120,13 @@ public class controller {
         double s=0;
         for (int i = 0; i < yulist.size(); i++) {
             sum=sum+yulist.get(i).getJieguo();
-            for (int j = 0; j < sumShiSuan.size(); j++) {
-//                Integer renshu = yulist.get(i).getRenshu() - sumShiSuan.get(j).getRenshu();
-//                Double gongzi = yulist.get(i).getGongzi() - sumShiSuan.get(j).getGongzi();
-//                Integer shichang = yulist.get(i).getShichang() - sumShiSuan.get(j).getShichang();
-//                Double shuiFei = yulist.get(i).getShuifei() - sumShiSuan.get(j).getShuifei();
-//                Double fangzu = yulist.get(i).getFangzu() - sumShiSuan.get(j).getFangzu();
-//                Double waibao = yulist.get(i).getWaibao() - sumShiSuan.get(j).getWaibao();
-//                Double zhaodaifei = yulist.get(i).getZhaodaifei() - sumShiSuan.get(j).getZhaodaifei();
-//                Double tongxunfei = yulist.get(i).getTongxunfei() - sumShiSuan.get(j).getTongxunfei();
-//                Double riyongpin = yulist.get(i).getRiyongpin() - sumShiSuan.get(j).getRiyongpin();
-//                Double youji = yulist.get(i).getYoujifei() - sumShiSuan.get(j).getYoujifei();
-//                Double zuche = yulist.get(i).getZuchefei() - sumShiSuan.get(j).getZuchefei();
-//                Double xiuli = yulist.get(i).getShebeixiuli() - sumShiSuan.get(j).getShebeixiuli();
-//                Double tongxing = yulist.get(i).getGaosutongxing() - sumShiSuan.get(j).getGaosutongxing();
-//                Double chuchaijiayou = yulist.get(i).getChuchaijiayou() - sumShiSuan.get(j).getChuchaijiayou();
-//                Double gongjiao = yulist.get(i).getShineigongjiao() - sumShiSuan.get(j).getShineigongjiao();
-//                Double xiuche = yulist.get(i).getXiuchefei() - sumShiSuan.get(j).getXiuchefei();
-//                Double rengong = yulist.get(i).getRengong() - sumShiSuan.get(j).getRengong();
-//                Double shuidian = yulist.get(i).getShuidian() - sumShiSuan.get(j).getShuidian();
-//                Double chepiao = yulist.get(i).getChepiao() - sumShiSuan.get(j).getChepiao();
-                     s=s+sumShiSuan.get(j).getJieguo();
 
-
-
-//                request.setAttribute("renshu", renshu);
-//                request.setAttribute("gongzi", gongzi);
-//                request.setAttribute("shichang", shichang);
-//                request.setAttribute("fangzu", fangzu);
-//                request.setAttribute("waibao", waibao);
-//                request.setAttribute("zhaodaifei", zhaodaifei);
-//                request.setAttribute("tongxunfei", tongxunfei);
-//                request.setAttribute("riyongpin", riyongpin);
-//                request.setAttribute("youji", youji);
-//                request.setAttribute("zuche", zuche);
-//                request.setAttribute("xiuli", xiuli);
-//                request.setAttribute("tongxing", tongxing);
-//                request.setAttribute("chuchaijiayou", chuchaijiayou);
-//                request.setAttribute("gongjiao", gongjiao);
-//                request.setAttribute("xiuche", xiuche);
-//                request.setAttribute("rengong", rengong);
-//                request.setAttribute("shuidian", shuidian);
-//                request.setAttribute("chepiao", chepiao);
-//                request.setAttribute("shuiFei", shuiFei);
-            }
+        }
+        for (int j = 0; j < sumShiSuan.size(); j++) {
+            s=s+sumShiSuan.get(j).getJieguo();
         }
         double jiguo=sum-s;
         request.setAttribute("jiguo",jiguo);
-
         request.setAttribute("sumShiSuan", sumShiSuan);
         request.setAttribute("bid", bid);
         request.setAttribute("xiangmuname", xiangmuname);

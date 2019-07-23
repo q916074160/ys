@@ -49,6 +49,9 @@
       <if test="xiangmuname != null and xiangmuname!=''">
         and xiangmuname like concat('%',concat(#{xiangmuname}),'%')
       </if>
+      <if test="kaishitime!=null and time!=null">
+        and  `time` BETWEEN #{kaishitime} AND #{time}
+      </if>
     </select>
   <select id="sumShiSuan" resultType="com.example.demo.entity.Shisuan">
 SELECT SUM(renshu) AS renshu,SUM(gongzi) AS gongzi,SUM(shichang) AS shichang,SUM(shuifei) AS shuifei,SUM(fangzu) AS fangzu,SUM(waibao) AS waibao,SUM(zhaodaifei) AS zhaodaifei,SUM(tongxunfei) AS tongxunfei,SUM(riyongpin) AS riyongpin,

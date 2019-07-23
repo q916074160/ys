@@ -1,5 +1,7 @@
 package com.example.demo.entity;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import java.util.Date;
 
 public class Shisuan {
@@ -48,11 +50,11 @@ public class Shisuan {
     private Double chepiao;
 
     private Double qita;
-
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date kaishitime;
 
     private Double jieguo;
-
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date time;
 
     public Integer getShiid() {

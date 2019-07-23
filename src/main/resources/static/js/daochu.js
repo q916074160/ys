@@ -12,17 +12,18 @@ $("#dc_btn").click(function () {
         document.location.href=url;
     }
 });
-$("#search_btn").click(function () {
-    var name=document.getElementById("Ktext").value;
-    var boolean=true;
-    if(name==''||name==null){
-        alert("项目名称不能为空")
-        boolean=false;
-    }
-    if(boolean==true){
-        $("#form").submit();
-    }
-});
+// $("#search_btn").click(function () {
+//     var name=document.getElementById("Ktext").value;
+//     var boolean=true;
+//     if(name==''||name==null){
+//         alert("项目名称不能为空")
+//         boolean=false;
+//     }
+//     if(boolean==true){
+//         $("#form").submit();
+//     }
+// });
+
 $("#shangchuan").click(function () {
     var wenjian=document.getElementById('filebox_file_id_1').files[0].name;//$("#wenjian").filebox('getValue');
     var str=wenjian.substr(wenjian.lastIndexOf("."));

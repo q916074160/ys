@@ -30,7 +30,6 @@
                     <div class="input-group mb-3">
                         <span>名称：</span>
                         <input id="Ktext" type="text" class="form-control" placeholder="请输入项目名称" name="xiangmuname">
-
                     </div>
                 </div>
                 <div class="search_input" >
@@ -45,8 +44,18 @@
                         </select>
                     </div>
                 </div>
+
                 <div class="search_input">
-                    <button class="btn btn-primary search_btn" type="button" id="search_btn"  onclick="showqueryBill()">查询</button>
+                    <span>开始时间：</span>
+                   <input class="easyui-datebox" style="width:65%"name="kaishitime" id="kaishitime" >
+                </div>
+
+                <div class="search_input">
+                    <span>结束时间：</span>
+                    <input class="easyui-datebox" style="width:65%"name="time" id="time" >
+                </div>
+                <div class="search_input" style="margin-left:80px">
+                    <button class="btn btn-primary search_btn" type="submit" id="search_btn"  onclick="showqueryBill()" >查询</button>
                 </div>
 
                 <div class="search_input">
@@ -55,11 +64,11 @@
                     </c:if>
                 </div>
                 <tr>
-                <td>对比结果:</td>
+                <span >对比结果:</span>
                 <c:if test="${xiangmuname!=null}">
-
-
-                <td><input type="text" name="gongzi" id="gongzi"  readonly= "true" style="border:0px red solid; outline:none; " value="${jiguo}"></input></td>
+                <td><input type="text" name="gongzi" id="gongzi"  readonly= "true" style="border:0px red solid; outline:none;" value="${jiguo}"></input></td>
+                    <%--<td><input type="text" name="gongzi" id="gongzi1"  readonly= "true" style="border:0px red solid; outline:none;" value="${kaishitime}"></input></td>--%>
+                    <%--<td><input type="text" name="gongzi" id="gongzi2"  readonly= "true" style="border:0px red solid; outline:none;" value="${jieshutime}"></input></td>--%>
                 </tr>
                 </c:if>
             </div>
