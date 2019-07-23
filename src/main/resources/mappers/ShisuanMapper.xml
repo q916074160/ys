@@ -64,6 +64,9 @@ WHERE 1=1
     <if test="xiangmuname != null and xiangmuname!=''">
       and xiangmuname like concat('%',concat(#{xiangmuname}),'%')
     </if>
+    <if test="kaishitime!=null and time!=null">
+      and  `time` BETWEEN #{kaishitime} AND #{time}
+    </if>
   GROUP BY xiangmuname
   </select>
   <insert id="insert" parameterType="com.example.demo.entity.Shisuan">

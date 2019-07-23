@@ -16,7 +16,6 @@
             color:white;
         }
     </style>
-
 </head>
 <body class="easyui-layout">
 <div data-options="region:'north',border:false" id="north" style="padding: 0px">
