@@ -136,14 +136,16 @@
             <td><select  class="easyui-combobox" name="zhongdui" id="zhongdui" style="width:100px;" data-options="editable:false"><option value="请选择" >--请选择--</option><option value="1">一中队</option><option value="2">二中队</option><option  value="3">三中队</option><option value="4">四中队</option><option value="5">五中队</option><option value="6">内页</option><option value="7">管理</option></select></td>
         </tr>
     </table>
-    <a href="javascript:void(0)" class="easyui-linkbutton" style="outline:none;text-align:center; position: absolute; bottom:0.5%;right:4.5%;height:30px;" ><input class="button1" type="button" id="button" value="预算结果" onclick="check()" style="border:0px white solid;background:transparent;outline:none;cursor: pointer;"/></a>
-    <a href="javascript:void(0)" class="easyui-linkbutton" style="outline:none;text-align:center; position: absolute; bottom:0.5%;right:0.5%; height:30px;" onclick="clearForm()"><input class="button1" type="reset" value="重置" style="outline:none;border:0px white solid;background:transparent;cursor: pointer;"/></a>
+    <a href="javascript:void(0)" class="easyui-linkbutton" style="outline:none;text-align:center; position: absolute; bottom:0.5%;right:170px;height:30px;" ><input class="button1" type="button" id="button2" value="保存" onclick="check(2)" style="border:0px white solid;background:transparent;outline:none;cursor: pointer;"/></a>
+    <a href="javascript:void(0)" class="easyui-linkbutton" style="outline:none;text-align:center; position: absolute; bottom:0.5%;right:80px;height:30px;" ><input class="button1" type="button" id="button" value="预算结果" onclick="check(1)" style="border:0px white solid;background:transparent;outline:none;cursor: pointer;"/></a>
+    <a href="javascript:void(0)" class="easyui-linkbutton" style="outline:none;text-align:center; position: absolute; bottom:0.5%;right:20px; height:30px;" onclick="clearForm()"><input class="button1" type="reset" value="重置" style="outline:none;border:0px white solid;background:transparent;cursor: pointer;"/></a>
 </form>
 </body>
 </html>
 <script type="text/javascript" src="/static/js/index.js"></script>
 <script  type="text/javascript">
     function clearForm(){
+        $("#jg").text('');
         $('#form1').form('reset');
     }
 </script>

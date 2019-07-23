@@ -130,12 +130,14 @@
             <td><input  type="text" name="renshu" id="renshu"  readonly= "true" style="border:0px red solid; outline:none;"></input></td>
         </tr>
     </table>
-    <a href="javascript:void(0)" class="easyui-linkbutton" style="outline:none;text-align:center; position: absolute; bottom:0.5%;right:4.5%; height:30px;"><input class="button1" type="button" id="button" value="实算结果" onclick="check1()" style="border:0px white solid;background:transparent;outline:none;cursor: pointer;"/></a>
-    <a href="javascript:void(0)" class="easyui-linkbutton" style="outline:none;text-align:center; position: absolute; bottom:0.5%;right:0.5%; height:30px;" onclick="clearForm()"><input class="button1" type="reset" value="重置" style="outline:none;border:0px white solid;background:transparent;cursor: pointer;"/></a>
+    <a href="javascript:void(0)" class="easyui-linkbutton" style="outline:none;text-align:center; position: absolute; bottom:0.5%;right:170px;height:30px;" ><input class="button1" type="button" id="button2" value="保存" onclick="check1(2)" style="border:0px white solid;background:transparent;outline:none;cursor: pointer;"/></a>
+    <a href="javascript:void(0)" class="easyui-linkbutton" style="outline:none;text-align:center; position: absolute; bottom:0.5%;right:80px; height:30px;"><input class="button1" type="button" id="button" value="实算结果" onclick="check1(1)" style="border:0px white solid;background:transparent;outline:none;cursor: pointer;"/></a>
+    <a href="javascript:void(0)" class="easyui-linkbutton" style="outline:none;text-align:center; position: absolute; bottom:0.5%;right:20px; height:30px;" onclick="clearForm()"><input class="button1" type="reset" value="重置" style="outline:none;border:0px white solid;background:transparent;cursor: pointer;"/></a>
 </form>
 <script type="text/javascript" src="/static/js/index.js"></script>
 <script>
     function clearForm(){
+        $("#jg").text('');
         $('#ff').form('reset');
     }
 </script>
