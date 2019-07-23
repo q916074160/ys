@@ -8,5 +8,6 @@ input{    width: 50px;}
 table{    margin-left: 20%;}
 .button{    width: 130px;    height: 30px;    font-size: 20px;    text-align: center;}
 #div1 img{width: 100px;height: 35px;}
-.cl1{color: black;font-family: "Adobe Caslon Pro" ;font-size: 22px;line-height: 40px;position: relative;top: -10px}
-.cl2{color: black;font-family: "Adobe Caslon Pro" ;font-size: 16px;line-height: 40px;position: relative;top: 5px}
+.cl1{color: black;font-family: "Adobe Caslon Pro" ;font-size: 22px;line-height: 40px;position: relative;top: -7px}
+.cl2{color: black;font-family: "Adobe Caslon Pro" ;font-size: 16px;line-height: 40px;position: relative;top: 2px}
+#sp1{width: 100px;position: relative;top:2px;}
