@@ -48,16 +48,25 @@
 </div>
 <%--文件导入---------------------------------------%>
 <div id="w" class="easyui-window" title="文件导入" data-options="minimizable:false,maximizable: false,tools:'#tt',closed:true" style="width:500px;height:250px;padding:10px;">
-    <form action="excel/add" id="f" >
+    <form action="excel/upload.do" id="f"   target="frame1" enctype="multipart/form-data" method="post">
         <div style="margin-bottom:20px;margin-top: 20px;">
-            <input class="easyui-filebox" id="wenjian" name="wenjian" data-options="buttonText:'浏览...',prompt:'请选择文件'" style="width:100%;">
+            <input class="easyui-filebox" id="wenjian" name="files" data-options="buttonText:'浏览...',prompt:'请选择文件'"  style="width:100%;" >
         </div>
         <div>
             <a href="#" id="shangchuan" class="easyui-linkbutton" style="width:50%">确定</a><a href="#" class="easyui-linkbutton" style="width:50%" onclick="$('#w').window('close')">取消</a>
         </div>
     </form>
     <div id="p" class="easyui-progressbar" style="width:400px;margin: 25px" hidden></div>
+    <iframe name="frame1"  id="frame1" frameborder="0" height="40" hidden></iframe>
 </div>
+<%-------------------------------------------------------------------------------------------------------------------%>
+<%--<div id="w" class="easyui-window" title="文件导入" data-options="minimizable:false,maximizable: false,tools:'#tt',closed:true" style="width:500px;height:250px;padding:10px;">
+    <form action="excel/upload.do" id="f"  enctype="multipart/form-data" method="post">
+        <input type="file" name="files" >
+        <br>
+        <input type="submit" value="上传">
+    </form>
+</div>--%>
 <script type="text/javascript" src="/static/js/daochu.js"></script>
 </body>
 </html>

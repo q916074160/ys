@@ -14,10 +14,7 @@ import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
@@ -42,8 +39,8 @@ public class ExcelController {
     @Autowired
     ShisuanMapper shisuanMapper;
 
-    @PostMapping("/upload.do")
-    //@RequestMapping(value="/upload2.do", method = RequestMethod.POST)
+   // @PostMapping("/upload.do")
+    @RequestMapping(value="/upload.do", method = RequestMethod.POST)
     //上传的文件会转换成MultipartFile对象，file名字对应html中上传控件的name
     public String upload2(MultipartFile[] files) throws IOException{
         if(files.length == 0){
@@ -64,7 +61,6 @@ public class ExcelController {
             String wenjian=filePath+"/"+fileName;
             Import(wenjian);
         }
-
         return "文件上传完毕";
     }
     public static void uploadFile(byte[] file, String filePath, String fileName) throws IOException{
