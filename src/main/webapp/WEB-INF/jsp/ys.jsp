@@ -20,7 +20,13 @@
 
 <body>
 <div class="box,easyui-layout">
-    <div class="title">项目查询</div>
+    <div class="title">项目查询
+
+            <span style="position: absolute ;right: 8%;">对比结果:</span>
+            <c:if test="${xiangmuname!=null}">
+            <span style="float: right;">${jiguo}</span>
+        </c:if>
+    </div>
     <div class="content,easyui-layout" data-options="region:'center'" style="height: 100%" >
         <!--搜索输入框及查询、重置按钮-->
     <form method="get" action="#" id="form">
@@ -55,7 +61,7 @@
                     <input class="easyui-datebox" style="width:65%"name="time" id="time" >
                 </div>
                 <div class="search_input" style="margin-left:80px">
-                    <button class="btn btn-primary search_btn" type="submit" id="search_btn"  onclick="showqueryBill()" >查询</button>
+                    <button class="btn btn-primary search_btn" type="button" id="search_btn"  onclick="showqueryBill()" >查询</button>
                 </div>
 
                 <div class="search_input">
@@ -63,14 +69,7 @@
                        <button class="btn btn-primary search_btn" type="button" id="dc_btn">导出</button>
                     </c:if>
                 </div>
-                <tr>
-                <span >对比结果:</span>
-                <c:if test="${xiangmuname!=null}">
-                <td><input type="text" name="gongzi" id="gongzi"  readonly= "true" style="border:0px red solid; outline:none;" value="${jiguo}"></input></td>
-                    <%--<td><input type="text" name="gongzi" id="gongzi1"  readonly= "true" style="border:0px red solid; outline:none;" value="${kaishitime}"></input></td>--%>
-                    <%--<td><input type="text" name="gongzi" id="gongzi2"  readonly= "true" style="border:0px red solid; outline:none;" value="${jieshutime}"></input></td>--%>
-                </tr>
-                </c:if>
+
             </div>
             <div class="line"></div>
 
@@ -114,6 +113,7 @@
                 <th field="chepiao" width="100" align="right">车票</th>
                 <th field="zhaodaifei" width="110">总和</th>
                 <th field="kaishitime" width="110">开始时间</th>
+                <th field="time" width="110">录入时间</th>
             </tr>
             </thead>
 
@@ -145,7 +145,9 @@
             <td>
             <fmt:formatDate pattern="yyyy-MM-dd" value="${list.kaishitime}"></fmt:formatDate>
             </td>
-
+                <td>
+                    <fmt:formatDate pattern="yyyy-MM-dd" value="${list.time}"></fmt:formatDate>
+                </td>
             </tr>
             </c:if>
             </c:forEach>
