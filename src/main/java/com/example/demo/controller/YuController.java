@@ -36,13 +36,27 @@ public class YuController {
     @Autowired
     private RenyuanMapper renyuanMapper;
 
-    @RequestMapping(value = "/add",method= RequestMethod.GET)
-    public double YuInsert( @RequestParam String name,@RequestParam int ren,@RequestParam int zhongdui,
+    @RequestMapping(value = "/sumY",method= RequestMethod.GET)
+    public double sumY( @RequestParam String name,@RequestParam int ren,@RequestParam int zhongdui,
         @RequestParam double gongshang,@RequestParam double yiliao,@RequestParam double yanglao,@RequestParam double shengyu,@RequestParam double shiye,
         @RequestParam int shi,@RequestParam double chepiao,@RequestParam double chuchai,@RequestParam double fangzu,@RequestParam double tongxing,
         @RequestParam double gongzi,@RequestParam double qita,@RequestParam double rengong,@RequestParam double riyong,@RequestParam double shebei,
         @RequestParam double shuidian,@RequestParam double shuifei,@RequestParam double tongxun,@RequestParam double waibao,@RequestParam double gongjiao,
                                 @RequestParam double zhaodai,@RequestParam double zuche,@RequestParam double xiuche,@RequestParam double youji){
+        //总共盈利
+        double sum=0;
+
+        sum=sum+(gongshang+yiliao+yanglao+shengyu+shiye)*shi+gongzi*shi+fangzu*shi+chepiao+chuchai+tongxing+qita+rengong+riyong+shebei+shuidian*shi+shuifei+tongxun+waibao+gongjiao+zhaodai+zuche+xiuche+youji;
+        double jieguo=sum;
+        return sum;
+    }
+    @RequestMapping(value = "/addY",method= RequestMethod.GET)
+    public double YInsert( @RequestParam String name,@RequestParam int ren,@RequestParam int zhongdui,
+                            @RequestParam double gongshang,@RequestParam double yiliao,@RequestParam double yanglao,@RequestParam double shengyu,@RequestParam double shiye,
+                            @RequestParam int shi,@RequestParam double chepiao,@RequestParam double chuchai,@RequestParam double fangzu,@RequestParam double tongxing,
+                            @RequestParam double gongzi,@RequestParam double qita,@RequestParam double rengong,@RequestParam double riyong,@RequestParam double shebei,
+                            @RequestParam double shuidian,@RequestParam double shuifei,@RequestParam double tongxun,@RequestParam double waibao,@RequestParam double gongjiao,
+                            @RequestParam double zhaodai,@RequestParam double zuche,@RequestParam double xiuche,@RequestParam double youji){
         //总共盈利
         double sum=0;
 
@@ -78,15 +92,27 @@ public class YuController {
         yusuan.setZuchefei(zuche);
         yusuan.setBid(zhongdui);
 
-        //盈利
-        double jieguo=sum;
-        yusuan.setJieguo(jieguo);
+        yusuan.setJieguo(sum);
 
         yu.insert(yusuan);
         return sum;
     }
+    @RequestMapping(value = "/sumS",method= RequestMethod.GET)
+    public double sumS(@RequestParam String name, @RequestParam String kaishitime,@RequestParam String time,@RequestParam int zhongdui, @RequestParam int ren,
+                            @RequestParam int shi, @RequestParam double chepiao, @RequestParam double chuchai, @RequestParam double fangzu, @RequestParam double tongxing,
+                            @RequestParam double gongzi, @RequestParam double qita, @RequestParam double rengong, @RequestParam double riyong, @RequestParam double shebei,
+                            @RequestParam double shuidian, @RequestParam double shuifei, @RequestParam double tongxun, @RequestParam double waibao, @RequestParam double gongjiao,
+                            @RequestParam double zhaodai, @RequestParam double zuche, @RequestParam double xiuche, @RequestParam double youji){
+        //总共盈利
+        double sum=0;
+
+        sum=sum+gongzi*shi+fangzu*shi+chepiao+chuchai+tongxing+qita+rengong+riyong+shebei+shuidian*shi+shuifei+tongxun+waibao+gongjiao+zhaodai+zuche+xiuche+youji;
+
+
+        return sum;
+    }
     @RequestMapping(value = "/addS",method= RequestMethod.GET)
-    public double ShiInsert(@RequestParam String name, @RequestParam String kaishitime,@RequestParam String time,@RequestParam int zhongdui, @RequestParam int ren,
+    public double SInsert(@RequestParam String name, @RequestParam String kaishitime,@RequestParam String time,@RequestParam int zhongdui, @RequestParam int ren,
                             @RequestParam int shi, @RequestParam double chepiao, @RequestParam double chuchai, @RequestParam double fangzu, @RequestParam double tongxing,
                             @RequestParam double gongzi, @RequestParam double qita, @RequestParam double rengong, @RequestParam double riyong, @RequestParam double shebei,
                             @RequestParam double shuidian, @RequestParam double shuifei, @RequestParam double tongxun, @RequestParam double waibao, @RequestParam double gongjiao,
@@ -133,9 +159,7 @@ public class YuController {
         shisuan.setKaishitime(date);
         shisuan.setBid(zhongdui);
         shisuan.setTime(date1);
-        //结果
-        double jieguo=sum;
-        shisuan.setJieguo(jieguo);
+        shisuan.setJieguo(sum);
 
         shiSuanMapper.insert(shisuan);
         return sum;

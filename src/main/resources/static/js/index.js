@@ -1,4 +1,4 @@
-function check(){
+function check(data){
     var xiangmuname = document.getElementById("xiangmuname").value;
     var renshu = document.getElementById("renshu").value;
     var shichang = document.getElementById("shichang").value;
@@ -172,14 +172,24 @@ function check(){
         return false;
     }
         if(boolean==true) {
-            var url = "add?name=" + xiangmuname + "&ren=" + renshu + "&gongshang=" + gongshang + "&yiliao=" + yiliao + "&yanglao=" + yanglao + "&shengyu=" + shengyu + "&shiye=" + shiye + "&shi=" + shichang + "&chepiao=" + chepiao + "&chuchai=" + chuchaijiayou + "&fangzu=" + fangzu +
+            if(data==1){
+            var url = "sumY?name=" + xiangmuname + "&ren=" + renshu + "&gongshang=" + gongshang + "&yiliao=" + yiliao + "&yanglao=" + yanglao + "&shengyu=" + shengyu + "&shiye=" + shiye + "&shi=" + shichang + "&chepiao=" + chepiao + "&chuchai=" + chuchaijiayou + "&fangzu=" + fangzu +
                 "&tongxing=" + tongxunfei + "&gongzi=" + gongzi + "&qita=" + qita + "&rengong=" + rengong + "&riyong=" + riyongpin + "&shebei=" + shebeixiuli + "&shuidian=" + shuidian + "&shuifei=" + shuifei + "&tongxun=" + tongxunfei + "&waibao=" + waibao +
                 "&gongjiao=" + shineigongjiao + "&zhaodai=" + zhaodaifei + "&zuche=" + zuchefei + "&xiuche=" + xiuchefei + "&youji=" + youjifei+"&zhongdui="+zhongdui;
-            //alert(url);
+
             $.get(url, function (data) {
                 $("#jg").text(data);
             });
+            }
+            if(data==2){
+                var url = "addY?name=" + xiangmuname + "&ren=" + renshu + "&gongshang=" + gongshang + "&yiliao=" + yiliao + "&yanglao=" + yanglao + "&shengyu=" + shengyu + "&shiye=" + shiye + "&shi=" + shichang + "&chepiao=" + chepiao + "&chuchai=" + chuchaijiayou + "&fangzu=" + fangzu +
+                    "&tongxing=" + tongxunfei + "&gongzi=" + gongzi + "&qita=" + qita + "&rengong=" + rengong + "&riyong=" + riyongpin + "&shebei=" + shebeixiuli + "&shuidian=" + shuidian + "&shuifei=" + shuifei + "&tongxun=" + tongxunfei + "&waibao=" + waibao +
+                    "&gongjiao=" + shineigongjiao + "&zhaodai=" + zhaodaifei + "&zuche=" + zuchefei + "&xiuche=" + xiuchefei + "&youji=" + youjifei+"&zhongdui="+zhongdui;
 
+                $.get(url, function (data) {
+                    $("#jg").text(data);
+                });
+            }
         }
 }
 
@@ -196,7 +206,7 @@ function addTab(title, url) {
             closable: true
         });
     }}
-function check1(){
+function check1(data){
     var xiangmuname = document.getElementById("xiangmuname").value;
     var renshu = document.getElementById("renshu").value;
     var shichang = document.getElementById("shichang").value;
@@ -232,16 +242,6 @@ function check1(){
         boolean= false;
         return false;
     }
-/*    if (renshu == "") {
-        alert("人数不能为空,可以为0");
-        boolean= false;
-        return false;
-    }
-    if (gongzi == "") {
-        alert("工资不能为空");
-        boolean= false;
-        return false;
-    }*/
 
     if (shichang == "") {
         alert("时长不能为空");
@@ -357,6 +357,16 @@ function check1(){
         return false;
     }
     if(boolean==true) {
+        if(data==1){
+            var url = "sumS?name=" + xiangmuname + "&ren=" + renshu +"&shi=" + shichang + "&chepiao=" + chepiao + "&chuchai=" + chuchaijiayou + "&fangzu=" + fangzu +
+                "&tongxing=" + tongxunfei + "&gongzi=" + gongzi + "&qita=" + qita + "&rengong=" + rengong + "&riyong=" + riyongpin + "&shebei=" + shebeixiuli + "&shuidian=" + shuidian + "&shuifei=" + shuifei + "&tongxun=" + tongxunfei + "&waibao=" + waibao +
+                "&gongjiao=" + shineigongjiao + "&zhaodai=" + zhaodaifei + "&zuche=" + zuchefei + "&xiuche=" + xiuchefei + "&youji=" + youjifei+"&kaishitime="+kaishitime+"&zhongdui="+zhongdui+"&time="+time;
+            //alert(url);
+            $.get(url, function (data) {
+                $("#jg").text(data);
+            });
+        }
+        if(data==2){
         var url = "addS?name=" + xiangmuname + "&ren=" + renshu +"&shi=" + shichang + "&chepiao=" + chepiao + "&chuchai=" + chuchaijiayou + "&fangzu=" + fangzu +
             "&tongxing=" + tongxunfei + "&gongzi=" + gongzi + "&qita=" + qita + "&rengong=" + rengong + "&riyong=" + riyongpin + "&shebei=" + shebeixiuli + "&shuidian=" + shuidian + "&shuifei=" + shuifei + "&tongxun=" + tongxunfei + "&waibao=" + waibao +
             "&gongjiao=" + shineigongjiao + "&zhaodai=" + zhaodaifei + "&zuche=" + zuchefei + "&xiuche=" + xiuchefei + "&youji=" + youjifei+"&kaishitime="+kaishitime+"&zhongdui="+zhongdui+"&time="+time;
@@ -364,6 +374,7 @@ function check1(){
         $.get(url, function (data) {
             $("#jg").text(data);
         });
+        }
 
     }
 }
