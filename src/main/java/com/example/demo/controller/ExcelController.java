@@ -14,19 +14,23 @@ import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.UUID;
 
 @RestController
 @RequestMapping("excel")
@@ -37,6 +41,43 @@ public class ExcelController {
     RenyuanMapper renyuanMapper;
     @Autowired
     ShisuanMapper shisuanMapper;
+
+    @PostMapping("/upload.do")
+    //@RequestMapping(value="/upload2.do", method = RequestMethod.POST)
+    //上传的文件会转换成MultipartFile对象，file名字对应html中上传控件的name
+    public String upload2(MultipartFile[] files) throws IOException{
+        if(files.length == 0){
+            return "请选择要上传的文件";
+        }
+        for (MultipartFile multipartFile : files) {
+            if(multipartFile.isEmpty()){
+                return "文件上传失败";
+            }
+            byte[] fileBytes = multipartFile.getBytes();
+            String filePath=System.getProperty("user.dir")+"/src/main/resources/static/pics/";
+            //取得当前上传文件的文件名称
+            String originalFilename = multipartFile.getOriginalFilename();
+            //生成文件名
+            String fileName = UUID.randomUUID() +"&"+ originalFilename;
+            System.out.println(filePath+"/"+fileName);
+            uploadFile(fileBytes, filePath, fileName);
+            String wenjian=filePath+"/"+fileName;
+            Import(wenjian);
+        }
+
+        return "文件上传完毕";
+    }
+    public static void uploadFile(byte[] file, String filePath, String fileName) throws IOException{
+
+        File targetFile = new File(filePath);
+        if(!targetFile.exists()){
+            targetFile.mkdirs();
+        }
+        FileOutputStream out = new FileOutputStream(filePath + fileName);
+        out.write(file);
+        out.flush();
+        out.close();
+    }
 
     @RequestMapping("/export")
     public void test2(HttpServletResponse response,@RequestParam String xiangmuname,@RequestParam Integer bid){
@@ -137,9 +178,9 @@ public class ExcelController {
     }
 
     @RequestMapping("/add")
-    public String Import(HttpServletRequest request,@RequestParam String wenjian) throws IOException {
+    public void Import(String wenjian) throws IOException {
 
-        File file = new File("C:\\Users\\Administrator\\Desktop\\"+wenjian); //实际这个路径由前端传后台
+        File file = new File(wenjian); //实际这个路径由前端传后台
         FileInputStream fis = new FileInputStream(file);
         Workbook wb = null;
         try {
@@ -226,7 +267,6 @@ public class ExcelController {
         }finally {
             fis.close();
         }
-        return "上传成功";
     }
 
     public static boolean isExcel2003(String filePath)
