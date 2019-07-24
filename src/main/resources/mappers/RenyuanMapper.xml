@@ -14,10 +14,11 @@
     <result column="shiye" jdbcType="DOUBLE" property="shiye" />
     <result column="shengyu" jdbcType="DOUBLE" property="shengyu" />
     <result column="gongshang" jdbcType="DOUBLE" property="gongshang" />
+    <result column="time" jdbcType="DATE" property="time" />
   </resultMap>
   <sql id="Base_Column_List">
     rid, rname, bid, gongzi, gerenbaoxian, gerenshui, jingling, yanglao, yiliao, shiye,
-    shengyu, gongshang
+    shengyu, gongshang,time
   </sql>
   <select id="queryAll" resultType="com.example.demo.entity.Renyuan">
     select * from  renyuan
@@ -32,12 +33,12 @@
     insert into renyuan (rid, rname, bid, 
       gongzi, gerenbaoxian, gerenshui, 
       jingling, yanglao, yiliao, 
-      shiye, shengyu, gongshang
+      shiye, shengyu, gongshang,time
       )
     values (#{rid,jdbcType=INTEGER}, #{rname,jdbcType=VARCHAR}, #{bid,jdbcType=INTEGER}, 
       #{gongzi,jdbcType=DOUBLE}, #{gerenbaoxian,jdbcType=DOUBLE}, #{gerenshui,jdbcType=DOUBLE}, 
       #{jingling,jdbcType=DOUBLE}, #{yanglao,jdbcType=DOUBLE}, #{yiliao,jdbcType=DOUBLE}, 
-      #{shiye,jdbcType=DOUBLE}, #{shengyu,jdbcType=DOUBLE}, #{gongshang,jdbcType=DOUBLE}
+      #{shiye,jdbcType=DOUBLE}, #{shengyu,jdbcType=DOUBLE}, #{gongshang,jdbcType=DOUBLE}, #{time,jdbcType=DATE}
       )
   </insert>
 </mapper>

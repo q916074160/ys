@@ -8,10 +8,7 @@ import com.example.demo.entity.ExcelData;
 import com.example.demo.entity.Renyuan;
 import com.example.demo.entity.Shisuan;
 import com.example.demo.util.ExcelUtils;
-import org.apache.poi.ss.usermodel.Cell;
-import org.apache.poi.ss.usermodel.Row;
-import org.apache.poi.ss.usermodel.Sheet;
-import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -23,6 +20,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -190,9 +188,7 @@ public class ExcelController {
                 Bumen bumen=new Bumen();
                 Row row = sheet.getRow(i);
                 int bumen1=0;
-                Cell cell1=row.getCell(0);
-                cell1.setCellType(Cell.CELL_TYPE_STRING);
-                renyuan.setRid(Integer.parseInt(cell1.getStringCellValue()));
+                renyuan.setRid(null);
                 Cell cell2=row.getCell(1);
                 cell2.setCellType(Cell.CELL_TYPE_STRING);
                 renyuan.setRname(cell2.getStringCellValue());
@@ -237,13 +233,18 @@ public class ExcelController {
                 Cell cell12 = row.getCell(11);
                 cell12.setCellType(Cell.CELL_TYPE_STRING);
                 renyuan.setGongshang(Double.valueOf(cell12.getStringCellValue()));
+
+
+                Cell cell13 = row.getCell(12);
+                SimpleDateFormat dateFormat = new SimpleDateFormat("yyyyMMdd");
+                Date d = dateFormat.parse(excelTime(cell13));
+                renyuan.setTime(d);
+
+
                 boolean bl=true;
                 for(int k=0;k<rlist.size();k++){
                     Renyuan renyuan1=rlist.get(k);
                     if(renyuan1.getRid().intValue()==renyuan.getRid().intValue()){
-                        bl=false;
-                    }
-                    if (renyuan1.getRname().equals(renyuan.getRname()) && renyuan1.getBid() == renyuan.getBid()) {
                         bl=false;
                     }
                 }
@@ -266,6 +267,16 @@ public class ExcelController {
     public static boolean isExcel2007(String filePath)
     {
         return filePath.matches("^.+\\.(?i)(xlsx)$");
+    }
+    public String excelTime(Cell cell){
+        String guarantee_time = null;
+        if(DateUtil.isCellDateFormatted(cell)){
+            //用于转化为日期格式
+            Date d = cell.getDateCellValue();
+            DateFormat formater = new SimpleDateFormat("yyyyMMdd");
+            guarantee_time = formater.format(d);
+        }
+        return guarantee_time;
     }
 
 }

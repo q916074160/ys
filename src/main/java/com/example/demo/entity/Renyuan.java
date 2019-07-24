@@ -1,5 +1,7 @@
 package com.example.demo.entity;
 
+import java.util.Date;
+
 public class Renyuan {
     private Integer rid;
 
@@ -24,6 +26,8 @@ public class Renyuan {
     private Double shengyu;
 
     private Double gongshang;
+
+    private Date time;
 
     public Integer getRid() {
         return rid;
@@ -120,4 +124,8 @@ public class Renyuan {
     public void setGongshang(Double gongshang) {
         this.gongshang = gongshang;
     }
+
+    public Date getTime(){return time;}
+
+    public void setTime(Date time){this.time=time;}
 }
