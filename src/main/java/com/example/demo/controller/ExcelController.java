@@ -85,7 +85,6 @@ public class ExcelController {
 
         List<Shisuan> list = shisuanMapper.queryShiSuan(shisuan);
 
-        System.out.println(bid+" "+xiangmuname+""+list.size());
 
         List<Bumen> bList=bumenMapper.queryAll();
         ExcelData data = new ExcelData();
