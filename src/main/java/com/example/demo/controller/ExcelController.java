@@ -85,7 +85,7 @@ public class ExcelController {
 
         List<Shisuan> list = shisuanMapper.queryShiSuan(shisuan);
 
-
+        System.out.println(bid+" "+xiangmuname+""+list.size());
 
         List<Bumen> bList=bumenMapper.queryAll();
         ExcelData data = new ExcelData();
@@ -113,9 +113,8 @@ public class ExcelController {
         titles.add("水电费");
         titles.add("车票");
         titles.add("其他");
-        titles.add("开始时间");
         titles.add("实算结果");
-        titles.add("时间");
+        titles.add("所属时间");
         data.setTitles(titles);
 
         Bumen bumen=new Bumen();
@@ -152,11 +151,6 @@ public class ExcelController {
             row.add(shisuan.getChepiao());
             row.add(shisuan.getQita());
 
-            Date date1= shisuan.getKaishitime();
-
-            String  dt = simpleDateFormat.format(date1);
-
-            row.add(dt);
             row.add(shisuan.getJieguo());
 
             Date date2= shisuan.getTime();
