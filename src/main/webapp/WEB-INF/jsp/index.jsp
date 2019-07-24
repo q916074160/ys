@@ -26,7 +26,7 @@
 
 <div data-options="region:'west',split:true,title:'菜单'" style="width:250px;">
     <div class="easyui-accordion" data-options="fit:true,border:false,selected:false" style="background-color: #e7eaed" id="leftMenu">
-        <div title="预算" class="beijing" id="Scene" data-options="selected:false">
+        <div title="信息导入" class="beijing" id="Scene" data-options="selected:false">
             <li id="li1" onclick="addTab(this.innerHTML,'ysdr')" style="cursor: pointer; list-style-type:none;">预算导入</li>
             <li id="li3" onclick="addTab(this.innerHTML,'ssdr')" style="cursor: pointer; list-style-type:none;">实算导入</li>
         </div>
