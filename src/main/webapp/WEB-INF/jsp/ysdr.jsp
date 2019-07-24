@@ -44,7 +44,7 @@
             <td><input class="easyui-textbox" type="text"  name="fangzu" id="fangzu" ></input>	</td>
         </tr>
         <tr>
-            <td>外包:</td>
+            <td>外包(总共):</td>
             <td><input class="easyui-textbox" type="text"  name="waibao" id="waibao" ></input>	</td>
         </tr>
         <tr>
@@ -79,7 +79,7 @@
             <%--<td colspan="2" style="text-align: right"><input class="button1" type="button" id="button" value="预&nbsp;算&nbsp;结&nbsp;果" onclick="check()"/>&nbsp;&nbsp;<input class="button1" type="button" onclick="clearForm()"  value="重&nbsp;&nbsp;&nbsp;&nbsp;置"/></td>--%>
         <%--</tr>--%>
         <tr>
-            <td colspan="2">结果：<span id="jg" style="width: 300px;"></span>&nbsp;&nbsp;&nbsp;工资：<span id="gzhe" style="width: 300px;"></span></td>
+            <td colspan="2">结果：<span id="jg" style="width: 300px;"></span>&nbsp;&nbsp;&nbsp;<span id="gzhe" style="width: 300px;"></span></td>
         </tr>
     </table>
     <table cellpadding="5" style="position: absolute; top:7%; left:60%;">

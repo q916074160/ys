@@ -292,12 +292,9 @@
                         <td>${yulist.jieguo}</td>
                     </tr>
                 </c:if>
-
             </c:forEach>
             </tbody>
         </table>
-
-
 </div>
 
     </div>

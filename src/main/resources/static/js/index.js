@@ -1,4 +1,4 @@
-function check(data){
+function check(data) {
     var xiangmuname = document.getElementById("xiangmuname").value;
     var renshu = document.getElementById("renshu").value;
     var shichang = document.getElementById("shichang").value;
@@ -23,176 +23,176 @@ function check(data){
     var gongshang = document.getElementById("gongshang").value;
     var shiye = document.getElementById("shiye").value;
     var shengyu = document.getElementById("shengyu").value;
-    var gongzi=document.getElementById("gongzi").value;
-    var  shineigongjiao=document.getElementById("shineigongjiao").value;
-    var zhongdui=document.getElementById("zhongdui").value;
-    var boolean=true;
-    if(xiangmuname ==  null || xiangmuname == ''){
+    var gongzi = document.getElementById("gongzi").value;
+    var shineigongjiao = document.getElementById("shineigongjiao").value;
+    var zhongdui = document.getElementById("zhongdui").value;
+    var boolean = true;
+    if (xiangmuname == null || xiangmuname == '') {
         alert("合同名不能为空");
-        boolean= false;
+        boolean = false;
         return false;
     }
     if (renshu == "") {
         alert("人数不能为空,可以为0");
-        boolean= false;
+        boolean = false;
         return false;
     }
     if (gongzi == "") {
         alert("工资不能为空");
-        boolean= false;
+        boolean = false;
         return false;
     }
 
     if (shichang == "") {
         alert("时长不能为空");
-        boolean= false;
+        boolean = false;
         return false;
     }
 
     if (shuifei == "") {
         alert("税费不能为空");
-        boolean= false;
+        boolean = false;
         return false;
     }
 
     if (fangzu == "") {
         alert("房租不能为空");
-        boolean= false;
+        boolean = false;
         return false;
     }
 
     if (waibao == "") {
         alert("外包不能为空");
-        boolean= false;
+        boolean = false;
         return false;
     }
 
-        if (zhaodaifei == "") {
-            alert("招待费不能为空");
-            boolean= false;
-            return false;
-        }
-        if (tongxunfei == "") {
-            alert("通讯费不能为空");
-            boolean= false;
-            return false;
-        }
+    if (zhaodaifei == "") {
+        alert("招待费不能为空");
+        boolean = false;
+        return false;
+    }
+    if (tongxunfei == "") {
+        alert("通讯费不能为空");
+        boolean = false;
+        return false;
+    }
 
-        if (riyongpin == "") {
-            alert("日用品不能为空");
-            boolean= false;
-            return false;
-        }
-        if (youjifei == "") {
-            alert("邮寄费不能为空");
-            boolean= false;
-            return false;
-        }
-        if (zuchefei == "") {
-            alert("租车费不能为空");
-            boolean= false;
-            return false;
-        }
+    if (riyongpin == "") {
+        alert("日用品不能为空");
+        boolean = false;
+        return false;
+    }
+    if (youjifei == "") {
+        alert("邮寄费不能为空");
+        boolean = false;
+        return false;
+    }
+    if (zuchefei == "") {
+        alert("租车费不能为空");
+        boolean = false;
+        return false;
+    }
 
-        if (shebeixiuli == "") {
-            alert("设备修理费不能为空");
-            boolean= false;
-            return false;
-        }
-        if (gaosutongxing == "") {
-            alert("高速通行费不能为空");
-            boolean= false;
-            return false;
-        }
+    if (shebeixiuli == "") {
+        alert("设备修理费不能为空");
+        boolean = false;
+        return false;
+    }
+    if (gaosutongxing == "") {
+        alert("高速通行费不能为空");
+        boolean = false;
+        return false;
+    }
 
-        if (chuchaijiayou == "") {
-            alert("出差加油费不能为空");
-            boolean= false;
-            return false;
-        }
-        if (shineigongjiao == "") {
-            alert("市内公交出租费不能为空");
-            boolean= false;
-            return false;
-        }
-        if (xiuchefei == "") {
-            alert("修车费不能为空");
-            boolean= false;
-            return false;
-        }
+    if (chuchaijiayou == "") {
+        alert("出差加油费不能为空");
+        boolean = false;
+        return false;
+    }
+    if (shineigongjiao == "") {
+        alert("市内公交出租费不能为空");
+        boolean = false;
+        return false;
+    }
+    if (xiuchefei == "") {
+        alert("修车费不能为空");
+        boolean = false;
+        return false;
+    }
 
-        if (rengong == "") {
-            alert("人工费不能为空");
-            boolean= false;
-            return false;
-        }
-        if (shuidian == "") {
-            alert("水电费不能为空");
-            boolean= false;
-            return false;
-        }
-        if (chepiao == "") {
-            alert("车票不能为空");
-            boolean= false;
-            return false;
-        }
-        if (qita == "") {
-            alert("其他不能为空");
-            boolean= false;
-            return false;
-        }
-        if (yanglao == "") {
-            alert("养老保险不能为空");
-            boolean= false;
-            return false;
-        }
-        if (yiliao == "") {
-            alert("医疗保险不能为空");
-            boolean= false;
-            return false;
-        }
-            if (gongshang == "") {
-                alert("工伤不能为空");
-                boolean= false;
-                return false;
-            }
-            if (shiye == "") {
-                alert("失业保险不能为空");
-                boolean= false;
-                return false;
-            }
-            if (shengyu == "") {
-                alert("生育保险不能为空");
-                boolean= false;
-                return false;
-            }
+    if (rengong == "") {
+        alert("人工费不能为空");
+        boolean = false;
+        return false;
+    }
+    if (shuidian == "") {
+        alert("水电费不能为空");
+        boolean = false;
+        return false;
+    }
+    if (chepiao == "") {
+        alert("车票不能为空");
+        boolean = false;
+        return false;
+    }
+    if (qita == "") {
+        alert("其他不能为空");
+        boolean = false;
+        return false;
+    }
+    if (yanglao == "") {
+        alert("养老保险不能为空");
+        boolean = false;
+        return false;
+    }
+    if (yiliao == "") {
+        alert("医疗保险不能为空");
+        boolean = false;
+        return false;
+    }
+    if (gongshang == "") {
+        alert("工伤不能为空");
+        boolean = false;
+        return false;
+    }
+    if (shiye == "") {
+        alert("失业保险不能为空");
+        boolean = false;
+        return false;
+    }
+    if (shengyu == "") {
+        alert("生育保险不能为空");
+        boolean = false;
+        return false;
+    }
     if (zhongdui == "请选择") {
         alert("请选择中队");
-        boolean= false;
+        boolean = false;
         return false;
     }
-        if(boolean==true) {
-            if(data==1){
+    if (boolean == true) {
+        if (data == 1) {
             var url = "sumY?name=" + xiangmuname + "&ren=" + renshu + "&gongshang=" + gongshang + "&yiliao=" + yiliao + "&yanglao=" + yanglao + "&shengyu=" + shengyu + "&shiye=" + shiye + "&shi=" + shichang + "&chepiao=" + chepiao + "&chuchai=" + chuchaijiayou + "&fangzu=" + fangzu +
                 "&tongxing=" + tongxunfei + "&gongzi=" + gongzi + "&qita=" + qita + "&rengong=" + rengong + "&riyong=" + riyongpin + "&shebei=" + shebeixiuli + "&shuidian=" + shuidian + "&shuifei=" + shuifei + "&tongxun=" + tongxunfei + "&waibao=" + waibao +
-                "&gongjiao=" + shineigongjiao + "&zhaodai=" + zhaodaifei + "&zuche=" + zuchefei + "&xiuche=" + xiuchefei + "&youji=" + youjifei+"&zhongdui="+zhongdui;
+                "&gongjiao=" + shineigongjiao + "&zhaodai=" + zhaodaifei + "&zuche=" + zuchefei + "&xiuche=" + xiuchefei + "&youji=" + youjifei + "&zhongdui=" + zhongdui;
 
             $.get(url, function (data) {
                 $("#jg").text(data);
             });
-            }
-            if(data==2){
+        }
+        if (data == 2) {
+            if (confirm("是否保存？")) {
                 var url = "addY?name=" + xiangmuname + "&ren=" + renshu + "&gongshang=" + gongshang + "&yiliao=" + yiliao + "&yanglao=" + yanglao + "&shengyu=" + shengyu + "&shiye=" + shiye + "&shi=" + shichang + "&chepiao=" + chepiao + "&chuchai=" + chuchaijiayou + "&fangzu=" + fangzu +
                     "&tongxing=" + tongxunfei + "&gongzi=" + gongzi + "&qita=" + qita + "&rengong=" + rengong + "&riyong=" + riyongpin + "&shebei=" + shebeixiuli + "&shuidian=" + shuidian + "&shuifei=" + shuifei + "&tongxun=" + tongxunfei + "&waibao=" + waibao +
-                    "&gongjiao=" + shineigongjiao + "&zhaodai=" + zhaodaifei + "&zuche=" + zuchefei + "&xiuche=" + xiuchefei + "&youji=" + youjifei+"&zhongdui="+zhongdui;
-
+                    "&gongjiao=" + shineigongjiao + "&zhaodai=" + zhaodaifei + "&zuche=" + zuchefei + "&xiuche=" + xiuchefei + "&youji=" + youjifei + "&zhongdui=" + zhongdui;
                 $.get(url, function (data) {
                     $("#jg").text(data);
                 });
             }
         }
+    }
 }
-
 
 
 function addTab(title, url) {
@@ -205,8 +205,10 @@ function addTab(title, url) {
             content: content,
             closable: true
         });
-    }}
-function check1(data){
+    }
+}
+
+function check1(data) {
     var xiangmuname = document.getElementById("xiangmuname").value;
     var renshu = document.getElementById("renshu").value;
     var shichang = document.getElementById("shichang").value;
@@ -226,168 +228,170 @@ function check1(data){
     var shuidian = document.getElementById("shuidian").value;
     var chepiao = document.getElementById("chepiao").value;
     var qita = document.getElementById("qita").value;
-    var gongzi=document.getElementById("gongzi").value;
-    var  shineigongjiao=document.getElementById("shineigongjiao").value;
-    var zhongdui=document.getElementById("zhongdui").value;
+    var gongzi = document.getElementById("gongzi").value;
+    var shineigongjiao = document.getElementById("shineigongjiao").value;
+    var zhongdui = document.getElementById("zhongdui").value;
 
-    var str=document.getElementById("kaishitime").value;
-    var kaishitime=str.substring(6,10)+"-"+str.substring(0,2)+"-"+str.substring(3,5);
+    var str = document.getElementById("kaishitime").value;
+    var kaishitime = str.substring(6, 10) + "-" + str.substring(0, 2) + "-" + str.substring(3, 5);
 
-    var str1=document.getElementById("time").value;
-    var time=str1.substring(6,10)+"-"+str1.substring(0,2)+"-"+str1.substring(3,5);
+    var str1 = document.getElementById("time").value;
+    var time = str1.substring(6, 10) + "-" + str1.substring(0, 2) + "-" + str1.substring(3, 5);
 
-    var boolean=true;
-    if(xiangmuname ==  null || xiangmuname == ''){
+    var boolean = true;
+    if (xiangmuname == null || xiangmuname == '') {
         alert("合同名不能为空");
-        boolean= false;
+        boolean = false;
         return false;
     }
 
     if (shichang == "") {
         alert("时长不能为空");
-        boolean= false;
+        boolean = false;
         return false;
     }
 
     if (shuifei == "") {
         alert("税费不能为空");
-        boolean= false;
+        boolean = false;
         return false;
     }
 
     if (fangzu == "") {
         alert("房租不能为空");
-        boolean= false;
+        boolean = false;
         return false;
     }
 
     if (waibao == "") {
         alert("外包不能为空");
-        boolean= false;
+        boolean = false;
         return false;
     }
 
     if (zhaodaifei == "") {
         alert("招待费不能为空");
-        boolean= false;
+        boolean = false;
         return false;
     }
     if (tongxunfei == "") {
         alert("通讯费不能为空");
-        boolean= false;
+        boolean = false;
         return false;
     }
 
     if (riyongpin == "") {
         alert("日用品不能为空");
-        boolean= false;
+        boolean = false;
         return false;
     }
     if (youjifei == "") {
         alert("邮寄费不能为空");
-        boolean= false;
+        boolean = false;
         return false;
     }
     if (zuchefei == "") {
         alert("租车费不能为空");
-        boolean= false;
+        boolean = false;
         return false;
     }
 
     if (shebeixiuli == "") {
         alert("设备修理费不能为空");
-        boolean= false;
+        boolean = false;
         return false;
     }
     if (gaosutongxing == "") {
         alert("高速通行费不能为空");
-        boolean= false;
+        boolean = false;
         return false;
     }
 
     if (chuchaijiayou == "") {
         alert("出差加油费不能为空");
-        boolean= false;
+        boolean = false;
         return false;
     }
     if (shineigongjiao == "") {
         alert("市内公交出租费不能为空");
-        boolean= false;
+        boolean = false;
         return false;
     }
     if (xiuchefei == "") {
         alert("修车费不能为空");
-        boolean= false;
+        boolean = false;
         return false;
     }
 
     if (rengong == "") {
         alert("人工费不能为空");
-        boolean= false;
+        boolean = false;
         return false;
     }
     if (shuidian == "") {
         alert("水电费不能为空");
-        boolean= false;
+        boolean = false;
         return false;
     }
     if (chepiao == "") {
         alert("车票不能为空");
-        boolean= false;
+        boolean = false;
         return false;
     }
     if (qita == "") {
         alert("其他不能为空");
-        boolean= false;
+        boolean = false;
         return false;
     }
     if (zhongdui == "请选择") {
         alert("请选择中队");
-        boolean= false;
+        boolean = false;
         return false;
     }
     if (str == "") {
         alert("实施时间不能为空");
-        boolean= false;
+        boolean = false;
         return false;
     }
     if (str1 == "") {
         alert("实施时间不能为空");
-        boolean= false;
+        boolean = false;
         return false;
     }
-    if(boolean==true) {
-        if(data==1){
-            var url = "sumS?name=" + xiangmuname + "&ren=" + renshu +"&shi=" + shichang + "&chepiao=" + chepiao + "&chuchai=" + chuchaijiayou + "&fangzu=" + fangzu +
+    if (boolean == true) {
+        if (data == 1) {
+            var url = "sumS?name=" + xiangmuname + "&ren=" + renshu + "&shi=" + shichang + "&chepiao=" + chepiao + "&chuchai=" + chuchaijiayou + "&fangzu=" + fangzu +
                 "&tongxing=" + tongxunfei + "&gongzi=" + gongzi + "&qita=" + qita + "&rengong=" + rengong + "&riyong=" + riyongpin + "&shebei=" + shebeixiuli + "&shuidian=" + shuidian + "&shuifei=" + shuifei + "&tongxun=" + tongxunfei + "&waibao=" + waibao +
-                "&gongjiao=" + shineigongjiao + "&zhaodai=" + zhaodaifei + "&zuche=" + zuchefei + "&xiuche=" + xiuchefei + "&youji=" + youjifei+"&kaishitime="+kaishitime+"&zhongdui="+zhongdui+"&time="+time;
+                "&gongjiao=" + shineigongjiao + "&zhaodai=" + zhaodaifei + "&zuche=" + zuchefei + "&xiuche=" + xiuchefei + "&youji=" + youjifei + "&kaishitime=" + kaishitime + "&zhongdui=" + zhongdui + "&time=" + time;
             //alert(url);
             $.get(url, function (data) {
                 $("#jg").text(data);
             });
         }
-        if(data==2){
-        var url = "addS?name=" + xiangmuname + "&ren=" + renshu +"&shi=" + shichang + "&chepiao=" + chepiao + "&chuchai=" + chuchaijiayou + "&fangzu=" + fangzu +
-            "&tongxing=" + tongxunfei + "&gongzi=" + gongzi + "&qita=" + qita + "&rengong=" + rengong + "&riyong=" + riyongpin + "&shebei=" + shebeixiuli + "&shuidian=" + shuidian + "&shuifei=" + shuifei + "&tongxun=" + tongxunfei + "&waibao=" + waibao +
-            "&gongjiao=" + shineigongjiao + "&zhaodai=" + zhaodaifei + "&zuche=" + zuchefei + "&xiuche=" + xiuchefei + "&youji=" + youjifei+"&kaishitime="+kaishitime+"&zhongdui="+zhongdui+"&time="+time;
-        //alert(url);
-        $.get(url, function (data) {
-            $("#jg").text(data);
-        });
+        if (data == 2) {
+            if (confirm("是否保存？")) {
+                var url = "addS?name=" + xiangmuname + "&ren=" + renshu + "&shi=" + shichang + "&chepiao=" + chepiao + "&chuchai=" + chuchaijiayou + "&fangzu=" + fangzu +
+                    "&tongxing=" + tongxunfei + "&gongzi=" + gongzi + "&qita=" + qita + "&rengong=" + rengong + "&riyong=" + riyongpin + "&shebei=" + shebeixiuli + "&shuidian=" + shuidian + "&shuifei=" + shuifei + "&tongxun=" + tongxunfei + "&waibao=" + waibao +
+                    "&gongjiao=" + shineigongjiao + "&zhaodai=" + zhaodaifei + "&zuche=" + zuchefei + "&xiuche=" + xiuchefei + "&youji=" + youjifei + "&kaishitime=" + kaishitime + "&zhongdui=" + zhongdui + "&time=" + time;
+                //alert(url);
+                $.get(url, function (data) {
+                    $("#jg").text(data);
+                });
+            }
         }
-
     }
 }
+
 function zd() {
-    var zhongdui=document.getElementById("zhongdui").value;
+    var zhongdui = document.getElementById("zhongdui").value;
     if (zhongdui == "请选择") {
         alert("请选择中队");
-        boolean= false;
+        boolean = false;
         return false;
     }
-    var boolean=true;
-    if(boolean==true) {
-        var url = "sel?zhongdui=" +zhongdui;
+    var boolean = true;
+    if (boolean == true) {
+        var url = "sel?zhongdui=" + zhongdui;
         //alert(url);
         $.get(url, function (data) {
             $("#gongzi").val(data[0]);
