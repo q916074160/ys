@@ -32,7 +32,7 @@
   <sql id="Base_Column_List">
     shiid, bid, xiangmuname, renshu, gongzi, shichang, shuifei, fangzu, waibao, zhaodaifei,
     tongxunfei, riyongpin, youjifei, zuchefei, shebeixiuli, gaosutongxing, chuchaijiayou,
-    shineigongjiao, xiuchefei, rengong, shuidian, chepiao, qita,  kaishitime, jieguo,time
+    shineigongjiao, xiuchefei, rengong, shuidian, chepiao, qita,  jieguo,time
   </sql>
 
   <select id="queryAll" resultType="com.example.demo.entity.Shisuan">
@@ -56,7 +56,7 @@
   <select id="sumShiSuan" resultType="com.example.demo.entity.Shisuan">
 SELECT SUM(renshu) AS renshu,SUM(gongzi) AS gongzi,SUM(shichang) AS shichang,SUM(shuifei) AS shuifei,SUM(fangzu) AS fangzu,SUM(waibao) AS waibao,SUM(zhaodaifei) AS zhaodaifei,SUM(tongxunfei) AS tongxunfei,SUM(riyongpin) AS riyongpin,
 SUM(youjifei) AS youjifei,SUM(zuchefei) AS zuchefei,SUM(gaosutongxing) AS gaosutongxing,SUM(shineigongjiao) AS shineigongjiao,
-SUM(xiuchefei) AS xiuchefei,SUM(rengong) AS rengong,SUM(shuidian) AS shuidian,SUM(chepiao) AS chepiao,SUM(qita) AS qita, kaishitime,SUM(jieguo) AS jieguo, SUM(chuchaijiayou) AS chuchaijiayou, SUM(shebeixiuli) AS shebeixiuli,xiangmuname,`time` FROM shisuan
+SUM(xiuchefei) AS xiuchefei,SUM(rengong) AS rengong,SUM(shuidian) AS shuidian,SUM(chepiao) AS chepiao,SUM(qita) AS qita,SUM(jieguo) AS jieguo, SUM(chuchaijiayou) AS chuchaijiayou, SUM(shebeixiuli) AS shebeixiuli,xiangmuname,`time` FROM shisuan
 WHERE 1=1
     <if test="bid !=0 and bid != null">
       and bid=#{bid}
@@ -77,7 +77,7 @@ WHERE 1=1
       youjifei, zuchefei, shebeixiuli, 
       gaosutongxing, chuchaijiayou, shineigongjiao, 
       xiuchefei, rengong, shuidian, 
-      chepiao, qita, kaishitime, jieguo,`time`
+      chepiao, qita, jieguo,`time`
       )
     values (#{shiid,jdbcType=INTEGER}, #{bid,jdbcType=INTEGER}, #{xiangmuname,jdbcType=VARCHAR}, 
       #{renshu,jdbcType=INTEGER}, #{gongzi,jdbcType=DOUBLE}, #{shichang,jdbcType=INTEGER}, 
@@ -86,7 +86,7 @@ WHERE 1=1
       #{youjifei,jdbcType=DOUBLE}, #{zuchefei,jdbcType=DOUBLE}, #{shebeixiuli,jdbcType=DOUBLE}, 
       #{gaosutongxing,jdbcType=DOUBLE}, #{chuchaijiayou,jdbcType=DOUBLE}, #{shineigongjiao,jdbcType=DOUBLE}, 
       #{xiuchefei,jdbcType=DOUBLE}, #{rengong,jdbcType=DOUBLE}, #{shuidian,jdbcType=DOUBLE}, 
-      #{chepiao,jdbcType=DOUBLE}, #{qita,jdbcType=DOUBLE},  #{kaishitime,jdbcType=DATE}, #{jieguo,jdbcType=DOUBLE},#{time,jdbcType=DATE}
+      #{chepiao,jdbcType=DOUBLE}, #{qita,jdbcType=DOUBLE},   #{jieguo,jdbcType=DOUBLE},#{time,jdbcType=DATE}
       )
   </insert>
 </mapper>
