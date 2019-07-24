@@ -232,8 +232,7 @@ function check1(data) {
     var shineigongjiao = document.getElementById("shineigongjiao").value;
     var zhongdui = document.getElementById("zhongdui").value;
 
-    var str = document.getElementById("kaishitime").value;
-
+    var str1 = document.getElementById("time").value;
     var time = str1.substring(6, 10) + "-" + str1.substring(0, 2) + "-" + str1.substring(3, 5);
 
     var boolean = true;
@@ -346,8 +345,13 @@ function check1(data) {
         boolean = false;
         return false;
     }
+    if (str == "") {
+        alert("实施时间不能为空");
+        boolean = false;
+        return false;
+    }
     if (str1 == "") {
-        alert("所属时间不能为空");
+        alert("实施时间不能为空");
         boolean = false;
         return false;
     }
@@ -355,7 +359,7 @@ function check1(data) {
         if (data == 1) {
             var url = "sumS?name=" + xiangmuname + "&ren=" + renshu + "&shi=" + shichang + "&chepiao=" + chepiao + "&chuchai=" + chuchaijiayou + "&fangzu=" + fangzu +
                 "&tongxing=" + tongxunfei + "&gongzi=" + gongzi + "&qita=" + qita + "&rengong=" + rengong + "&riyong=" + riyongpin + "&shebei=" + shebeixiuli + "&shuidian=" + shuidian + "&shuifei=" + shuifei + "&tongxun=" + tongxunfei + "&waibao=" + waibao +
-                "&gongjiao=" + shineigongjiao + "&zhaodai=" + zhaodaifei + "&zuche=" + zuchefei + "&xiuche=" + xiuchefei + "&youji=" + youjifei + "&zhongdui=" + zhongdui + "&time=" + time;
+                "&gongjiao=" + shineigongjiao + "&zhaodai=" + zhaodaifei + "&zuche=" + zuchefei + "&xiuche=" + xiuchefei + "&youji=" + youjifei + "&kaishitime=" + kaishitime + "&zhongdui=" + zhongdui + "&time=" + time;
             //alert(url);
             $.get(url, function (data) {
                 $("#jg").text(data);
@@ -365,7 +369,7 @@ function check1(data) {
             if (confirm("是否保存？")) {
                 var url = "addS?name=" + xiangmuname + "&ren=" + renshu + "&shi=" + shichang + "&chepiao=" + chepiao + "&chuchai=" + chuchaijiayou + "&fangzu=" + fangzu +
                     "&tongxing=" + tongxunfei + "&gongzi=" + gongzi + "&qita=" + qita + "&rengong=" + rengong + "&riyong=" + riyongpin + "&shebei=" + shebeixiuli + "&shuidian=" + shuidian + "&shuifei=" + shuifei + "&tongxun=" + tongxunfei + "&waibao=" + waibao +
-                    "&gongjiao=" + shineigongjiao + "&zhaodai=" + zhaodaifei + "&zuche=" + zuchefei + "&xiuche=" + xiuchefei + "&youji=" + youjifei + "&kaishitime=" + kaishitime + "&zhongdui=" + zhongdui + "&time=" + time;
+                    "&gongjiao=" + shineigongjiao + "&zhaodai=" + zhaodaifei + "&zuche=" + zuchefei + "&xiuche=" + xiuchefei + "&youji=" + youjifei + "&zhongdui=" + zhongdui + "&time=" + time;
                 //alert(url);
                 $.get(url, function (data) {
                     $("#jg").text(data);
@@ -377,6 +381,8 @@ function check1(data) {
 
 function zd() {
     var zhongdui = document.getElementById("zhongdui").value;
+    var str1 = document.getElementById("time").value;
+    var time = str1.substring(6, 10) + "-" + str1.substring(0, 2) + "-" + str1.substring(3, 5);
     if (zhongdui == "请选择") {
         alert("请选择中队");
         boolean = false;
@@ -384,7 +390,7 @@ function zd() {
     }
     var boolean = true;
     if (boolean == true) {
-        var url = "sel?zhongdui=" + zhongdui;
+        var url = "sel?zhongdui=" + zhongdui+"&time="+time;
         //alert(url);
         $.get(url, function (data) {
             $("#gongzi").val(data[0]);

@@ -49,12 +49,23 @@
             <td><input class="easyui-textbox" type="text"  name="zuchefei" id="zuchefei" ></input>	</td>
         </tr>
         <tr>
-            <td>(火/汽)车/飞机票:</td>
-            <td><input  class="easyui-textbox" type="text" name="chepiao" id="chepiao"></input></td>
+            <td class="td1">所属时间:</td>
+            <td><input class="easyui-datebox" style="width:90%" name="time" id="time" ></td>
         </tr>
         <tr>
-            <td class="td1">实施时间</td>
-            <td><input class="easyui-datebox" style="width:90%"name="kaishitime" id="kaishitime" ></td>
+            <td>中队选择:</td>
+            <td>
+                <select   name="zhongdui" id="zhongdui" onchange="zd()" style="width:100px;height: 30px;border-radius: 5px;border: 1px solid cornflowerblue" >
+                    <option value="请选择" >--请选择--</option>
+                    <option value="1">一中队</option>
+                    <option value="2">二中队</option>
+                    <option  value="3">三中队</option>
+                    <option value="4">四中队</option>
+                    <option value="5">五中队</option>
+                    <option value="6">内业</option>
+                    <option value="7">管理</option>
+                </select>
+            </td>
         </tr>
         <tr>
             <td>工资:</td>
@@ -106,24 +117,12 @@
             <td><input class="easyui-textbox" type="text"  name="qita" id="qita" ></input>	</td>
         </tr>
         <tr>
-            <td class="td1">时间</td>
-            <td><input class="easyui-datebox" style="width:90%" name="time" id="time" ></td>
+            <td>(火/汽)车/飞机票:</td>
+            <td><input  class="easyui-textbox" type="text" name="chepiao" id="chepiao"></input></td>
         </tr>
-
-        <tr>
-            <td>中队选择:</td>
-            <td>
-                <select   name="zhongdui" id="zhongdui" onchange="zd()" style="width:100px;height: 30px;border-radius: 5px;border: 1px solid cornflowerblue" >
-                    <option value="请选择" >--请选择--</option>
-                    <option value="1">一中队</option>
-                    <option value="2">二中队</option>
-                    <option  value="3">三中队</option>
-                    <option value="4">四中队</option>
-                    <option value="5">五中队</option>
-                    <option value="6">内业</option>
-                    <option value="7">管理</option>
-                </select>
-            </td>
+        <tr style="height: 35px">
+            <td></td>
+            <td></td>
         </tr>
         <tr>
             <td>人数:</td>

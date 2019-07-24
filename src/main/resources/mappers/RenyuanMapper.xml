@@ -23,11 +23,12 @@
   <select id="queryAll" resultType="com.example.demo.entity.Renyuan">
     select * from  renyuan
   </select>
-  <select id="selectById" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+  <select id="selectById" parameterType="com.example.demo.entity.Renyuan" resultMap="BaseResultMap">
     select
     <include refid="Base_Column_List" />
     from renyuan
     where bid = #{bid,jdbcType=INTEGER}
+    and time like  concat('%',#{time1},'%')
   </select>
   <insert id="insert" parameterType="com.example.demo.entity.Renyuan">
     insert into renyuan (rid, rname, bid, 
