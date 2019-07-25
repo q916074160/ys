@@ -138,7 +138,11 @@
     function clearForm(){
         $("#jg").text('');
         $('#ff').form('reset');
+        $("#zhongdui").attr("disabled","disabled");
     }
+    $("body").delegate(".datebox input[type=text]","blur",function() {
+        $("#zhongdui").removeAttr("disabled");
+    });
 </script>
 </body>
 </html>

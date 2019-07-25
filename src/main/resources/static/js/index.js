@@ -1,3 +1,6 @@
+$("#zhongdui").attr("disabled","disabled");
+
+
 function check(data) {
     var xiangmuname = document.getElementById("xiangmuname").value;
     var renshu = document.getElementById("renshu").value;
@@ -345,13 +348,9 @@ function check1(data) {
         boolean = false;
         return false;
     }
-    if (str == "") {
-        alert("实施时间不能为空");
-        boolean = false;
-        return false;
-    }
+
     if (str1 == "") {
-        alert("实施时间不能为空");
+        alert("所属时间不能为空");
         boolean = false;
         return false;
     }
@@ -385,6 +384,12 @@ function zd() {
     var time = str1.substring(6, 10) + "-" + str1.substring(0, 2) + "-" + str1.substring(3, 5);
     if (zhongdui == "请选择") {
         alert("请选择中队");
+        boolean = false;
+        return false;
+    }
+
+    if (str1 == "") {
+        alert("所属时间不能为空");
         boolean = false;
         return false;
     }
