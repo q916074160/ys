@@ -141,7 +141,13 @@
         $("#zhongdui").attr("disabled","disabled");
     }
     $("body").delegate(".datebox input[type=text]","blur",function() {
-        $("#zhongdui").removeAttr("disabled");
+        var str1 = document.getElementById("time").value;
+        if (str1==""){
+            alert("时间没有选择！");
+        }
+        if (str1!="") {
+            $("#zhongdui").removeAttr("disabled");
+        }
     });
 </script>
 </body>
