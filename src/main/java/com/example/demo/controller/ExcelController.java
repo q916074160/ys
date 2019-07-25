@@ -182,7 +182,6 @@ public class ExcelController {
             }
             Sheet sheet = wb.getSheetAt(0); //获取第1个工作表
             List<Bumen> blist=bumenMapper.queryAll();
-            List<Renyuan> rlist=renyuanMapper.queryAll();
             for(int i=2;i<=sheet.getLastRowNum();i++){//循环Excel文件的i=1行开始
                 Renyuan renyuan=new Renyuan();
                 Bumen bumen=new Bumen();
@@ -241,16 +240,8 @@ public class ExcelController {
                 renyuan.setTime(d);
 
 
-                boolean bl=true;
-                for(int k=0;k<rlist.size();k++){
-                    Renyuan renyuan1=rlist.get(k);
-                    if(renyuan1.getRid().intValue()==renyuan.getRid().intValue()){
-                        bl=false;
-                    }
-                }
-                if(bl==true){
                     renyuanMapper.insert(renyuan);
-                }
+
             }
         } catch (Exception e) {
             e.printStackTrace();
