@@ -135,6 +135,9 @@
 </form>
 <script type="text/javascript" src="/static/js/index.js"></script>
 <script>
+    $(function () {
+        $("#zhongdui").attr("disabled","disabled");
+    });
     function clearForm(){
         $("#jg").text('');
         $('#ff').form('reset');

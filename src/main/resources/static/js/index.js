@@ -1,5 +1,3 @@
-$("#zhongdui").attr("disabled","disabled");
-
 
 function check(data) {
     var xiangmuname = document.getElementById("xiangmuname").value;
