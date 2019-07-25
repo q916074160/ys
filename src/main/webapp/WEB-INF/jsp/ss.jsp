@@ -143,6 +143,7 @@
     $("body").delegate(".datebox input[type=text]","blur",function() {
         var str1 = document.getElementById("time").value;
         if (str1==""){
+            $("#zhongdui").attr("disabled","disabled");
             alert("时间没有选择！");
         }
         if (str1!="") {
