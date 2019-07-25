@@ -38,6 +38,9 @@
     shineigongjiao, xiuchefei, rengong, shuidian, chepiao, qita, yanglao, yiliao, gongshang,
     shiye, shengyu, jieguo,  bid
   </sql>
+
+
+
   <select id="queryYuSuan" resultType="com.example.demo.entity.Yusuan">
     SELECT * FROM
     yusuan

@@ -34,6 +34,34 @@
     tongxunfei, riyongpin, youjifei, zuchefei, shebeixiuli, gaosutongxing, chuchaijiayou,
     shineigongjiao, xiuchefei, rengong, shuidian, chepiao, qita,  jieguo,time
   </sql>
+  <update id="updateShiSuan">
+  UPDATE ys.shisuan
+	SET
+	bid =#{bid}  ,
+	xiangmuname = #{xiangmuname}  ,
+	renshu = #{renshu} ,
+	gongzi = #{gongzi}  ,
+	shichang = #{shichang}  ,
+	shuifei = #{shuifei}  ,
+	fangzu = #{fangzu}  ,
+	waibao = #{waibao}  ,
+	zhaodaifei = #{zhaodaifei}  ,
+	tongxunfei = #{tongxunfei}  ,
+	riyongpin = #{riyongpin}  ,
+	youjifei = #{youjifei}  ,
+	zuchefei = #{zuchefei}  ,
+	shebeixiuli =#{shebeixiuli}  ,
+	gaosutongxing = #{gaosutongxing}  ,
+	chuchaijiayou =#{chuchaijiayou}  ,
+	shineigongjiao = #{shineigongjiao}  ,
+	xiuchefei = #{xiuchefei}  ,
+	rengong = #{rengong}  ,
+	shuidian = #{shuidian}  ,
+	chepiao = #{chepiao}
+	WHERE
+	shiid = #{shiid} ;
+  </update>
+
 
   <select id="queryAll" resultType="com.example.demo.entity.Shisuan">
      select * from  shisuan
@@ -69,6 +97,10 @@ WHERE 1=1
     </if>
   GROUP BY xiangmuname
   </select>
+  <select id="selectShiSuamById" resultType="com.example.demo.entity.Shisuan">
+    select * from shisuan where shiid=#{shiid}
+  </select>
+
   <insert id="insert" parameterType="com.example.demo.entity.Shisuan">
     insert into shisuan (shiid, bid, xiangmuname, 
       renshu, gongzi, shichang, 
