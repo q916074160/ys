@@ -24,9 +24,8 @@
                 //双击事件
 //            onDblClickRow
                 //单击事件
-                onClickRow: function (rowIndex, rowData) {
+                onDblClickRow: function (rowIndex, rowData) {
                     $('#w').window('open');
-
                     var row = $('#dg1').datagrid('getSelected');
                     if (row) {
 //                    alert('ID:'+row.shiid);
@@ -59,7 +58,45 @@
                 }
             });
         });
-        function bb () {
+
+
+        $(function () {
+            $('#dg3').datagrid({
+                //双击事件
+//            onDblClickRow
+                //单击事件
+                onDblClickRow: function (rowIndex, rowData) {
+                    $('#w1').window('open');
+                    var row = $('#dg3').datagrid('getSelected');
+                    if (row) {
+                        $("#shiid1").textbox("setValue", row.shiid);
+                        $("#xiangmuname1").textbox("setValue", row.xiangmuname);
+                        $("#renshu1").textbox("setValue", row.renshu);
+                        $("#gongzi1").textbox("setValue", row.gongzi);
+                        $("#shichang1").textbox("setValue", row.shichang);
+                        $("#shuifei1").textbox("setValue", row.shuifei);
+                        $("#fangzu1").textbox("setValue", row.fangzu);
+                        $("#waibao1").textbox("setValue", row.waibao);
+                        $("#zhaodaifei1").textbox("setValue", row.zhaodaifei);
+                        $("#tongxunfei1").textbox("setValue", row.tongxunfei);
+                        $("#riyongpin1").textbox("setValue", row.riyongpin);
+                        $("#youjifei1").textbox("setValue", row.youjifei);
+                        $("#zuchefei1").textbox("setValue", row.zuchefei);
+                        $("#shebeixiuli1").textbox("setValue", row.shebeixiuli);
+                        $("#gaosutongxing1").textbox("setValue", row.gaosutongxing);
+                        $("#chuchaijiayou1").textbox("setValue", row.chuchaijiayou);
+                        $("#shineigongjiao1").textbox("setValue", row.shineigongjiao);
+                        $("#xiuchefei1").textbox("setValue", row.xiuchefei);
+                        $("#rengong1").textbox("setValue", row.rengong);
+                        $("#shuidian1").textbox("setValue", row.shuidian);
+                        $("#chepiao1").textbox("setValue", row.chepiao);
+
+
+                    }
+                }
+            });
+        });
+        function shisuan () {
             var shiid = document.getElementById("shiid").value;
             var xiangmuname = document.getElementById("xiangmuname").value;
             var renshu = document.getElementById("renshu").value;
@@ -85,19 +122,15 @@
             var url = "update?xiangmuname=" + xiangmuname + "&renshu=" + renshu + "&shichang=" + shichang + "&chepiao=" + chepiao + "&chuchaijiayou=" + chuchaijiayou + "&fangzu=" + fangzu +
                 "&tongxunfei=" + tongxunfei + "&gongzi=" + gongzi+ "&rengong=" + rengong + "&riyongpin=" + riyongpin + "&shebeixiuli=" + shebeixiuli + "&shuidian=" + shuidian + "&shuifei=" + shuifei + "&tongxunfei=" + tongxunfei + "&waibao=" + waibao +
                 "&shineigongjiao=" + shineigongjiao + "&zhaodaifei=" + zhaodaifei + "&zuchefei=" + zuchefei + "&xiuchefei=" + xiuchefei + "&youjifei=" + youjifei+"&shiid="+shiid+"&gaosutongxing="+gaosutongxing;
-            $.get(url);
+            if (confirm("是否修改？")) {
+                $.get(url);
+            }
             $('#dg1').datagrid('reload');
         }
 
-//                    function qqq() {
-//                        var xiangmuname = document.getElementById("Ktext").value;
-//                        var bid= $('#bid option:selected') .val();//选中的值
-//                        var kaishitime = document.getElementById("kaishitime").value;
-//                        var time = document.getElementById("time").value;
-//                        var url= "querySs?xiangmuname="+xiangmuname+"&bid="+bid+"&kaishitime="+kaishitime+"&time="+time;
-//                        alert(url)
-//                        $.get(url);
-//                    }
+
+
+
     </script>
 </head>
 
@@ -174,7 +207,6 @@
               collapsible:true">
                 <thead>
                 <tr>
-
                     <th field="time" width="110">所属时间</th>
                     <th field="xiangmuname" width="80">名称</th>
                     <th field="renshu" width="100">人数</th>
@@ -330,7 +362,7 @@
                                         class="easyui-textbox" id="chepiao" value=""></div>
                         </div>
                         <div>
-                            <a href="#" class="easyui-linkbutton" onclick="bb()">修改</a>
+                            <a href="#" class="easyui-linkbutton" onclick="shisuan()">修改</a>
 
                             <%--<input type="submit" value="修改">--%>
                         </div>
@@ -343,7 +375,6 @@
                 <tbody id="show_tbody1">
                 <c:forEach items="${list}" var="list">
                     <c:if test="${xiangmuname!=null}">
-                        <%--querySs?id=${shisuanByid.shiid}--%>
                         <tr>
                             <td> ${list.shiid}</td>
                             <td>
@@ -524,7 +555,139 @@
                     <th data-options="field:'jieguo',width:80,align:'right'">总和</th>
                 </tr>
                 </thead>
+                <div id="w1" class="easyui-window" title="查询预算信息"
+                     data-options="iconCls:'icon-save',minimizable:false,closed:true"
+                     style="width:60%;height:90%;padding:10px;overflow:hidden;" >
 
+
+                    <form>
+                        <div>
+                            <div style="margin-bottom:20px">
+                                <div>项目名称:</div>
+
+                                <input class="easyui-textbox" id="xiangmuname1" name="xiangmuname" value="" disabled>
+                            </div>
+                            <div style="margin-bottom:20px">
+                                <div>人数:</div>
+                                <input class="easyui-textbox" id="renshu1" name="renshu"value="" disabled>
+                            </div>
+                            <div style="margin-bottom:20px">
+                                <div>工资:</div>
+                                <input class="easyui-textbox" id="gongzi1" name="gongzi"value="" disabled>
+                            </div>
+                            <div style="margin-bottom:20px">
+                                <div>项目时长:</div>
+                                <input class="easyui-textbox" id="shichang1" name="shichang"value="" disabled>
+                            </div>
+
+                            <div style="margin-bottom:20px">
+                                <div>税费:</div>
+                                <input class="easyui-textbox" id="shuifei1"name="shuifei" value="" disabled>
+                            </div>
+                            <div style="margin-bottom:20px">
+                                <div>房租:</div>
+                                <input class="easyui-textbox" id="fangzu1" name="fangzu"value="" disabled></div>
+                            <div style="margin-bottom:20px">
+                                <div>外包:</div>
+                                <input class="easyui-textbox" id="waibao1" name="waibao"value="" disabled>
+                            </div>
+
+
+                        </div>
+
+
+                        <div style="position: absolute;left: 35%;top: 7%">
+
+                            <div style="margin-bottom:20px">
+                                <div>招待费:</div>
+                                <input class="easyui-textbox" id="zhaodaifei1"name="zhaodaifei"
+                                       value="" disabled></div>
+
+                            <div style="margin-bottom:20px">
+                                <div>通讯费:</div>
+                                <input class="easyui-textbox"
+                                       id="tongxunfei1"name="tongxunfei"
+                                       value="" disabled></div>
+
+                            <div style="margin-bottom:20px">
+                                <div>日用品:</div>
+                                <input class="easyui-textbox"
+                                       id="riyongpin1"name="riyongpin"
+                                       value="" disabled></div>
+
+                            <div style="margin-bottom:20px">
+                                <div>邮寄费:</div>
+                                <input class="easyui-textbox" id="youjifei1"name="youjifei" value="" disabled></div>
+
+                            <div style="margin-bottom:20px">
+                                <div>租车费:</div>
+                                <input class="easyui-textbox"
+                                       id="zuchefei1"name="zuchefei"
+                                       value="" disabled></div>
+                            <div style="margin-bottom:20px">
+                                <div>设备修理费:</div>
+                                <input class="easyui-textbox"
+                                       id="shebeixiuli1"name="shebeixiuli"
+                                       value="" disabled></div>
+
+
+
+
+                        </div>
+
+                        <div style="position: absolute;left: 70%;top: 7%">
+
+
+
+                            <div style="margin-bottom:20px">
+                                <div>高速通行费:</div>
+                                <input class="easyui-textbox"
+                                       id="gaosutongxing1"
+                                       value="" disabled></div>
+
+                            <div style="margin-bottom:20px">
+                                <div>出差加油费:</div>
+                                <input class="easyui-textbox"
+                                       id="chuchaijiayou1"
+                                       value="" disabled></div>
+
+                            <div style="margin-bottom:20px">
+                                <div>市内公交出租费:</div>
+                                <input class="easyui-textbox"
+                                       id="shineigongjiao1"
+                                       value="" disabled></div>
+
+
+                            <div style="margin-bottom:20px">
+                                <div>(修/洗)车费:</div>
+                                <input class="easyui-textbox"
+                                       id="xiuchefei1"
+                                       value="" disabled> </div>
+
+                            <div style="margin-bottom:20px">
+                                <div>人工费:</div>
+                                <input class="easyui-textbox"
+                                       id="rengong1"
+                                       value="" disabled></div>
+
+                            <div style="margin-bottom:20px">
+                                <div>水电费:</div>
+                                <input class="easyui-textbox"
+                                       id="shuidian1"
+                                       value="" disabled></div>
+                            <div style="margin-bottom:20px">
+                                <div>(火/汽)车/飞机票:</div>
+                                <input
+                                        class="easyui-textbox" id="chepiao1" value="" disabled></div>
+                        </div>
+                        <div>
+
+                            <%--<input type="submit" value="修改">--%>
+                        </div>
+                    </form>
+
+
+                </div>
                 <tbody id="show_tbody14">
                 <c:forEach items="${yulist}" var="yulist">
                     <c:if test="${xiangmuname!=null}">
