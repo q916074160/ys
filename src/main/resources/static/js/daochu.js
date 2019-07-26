@@ -1,5 +1,5 @@
 $("#dc_btn").click(function () {
-    var bid = document.getElementById("job_num").value;
+    var bid = document.getElementById("bid").value;
 
     var xiangmuname = document.getElementById("Ktext").value;
     var boolean = true;
