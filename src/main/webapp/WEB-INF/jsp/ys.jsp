@@ -16,6 +16,89 @@
     <link rel="stylesheet" type="text/css" href="static/easyUi/themes/default/easyui.css">
     <link rel="stylesheet" type="text/css" href="static/easyUi/demo/demo.css">
     <script src="static/easyUi/locale/easyui-lang-zh_CN.js"></script>
+
+    <script>
+
+        $(function () {
+            $('#dg1').datagrid({
+                //双击事件
+//            onDblClickRow
+                //单击事件
+                onClickRow: function (rowIndex, rowData) {
+                    $('#w').window('open');
+
+                    var row = $('#dg1').datagrid('getSelected');
+                    if (row) {
+//                    alert('ID:'+row.shiid);
+
+//                    document.getElementById("a").value=row.shiid;
+                        $("#shiid").textbox("setValue", row.shiid);
+                        $("#xiangmuname").textbox("setValue", row.xiangmuname);
+                        $("#renshu").textbox("setValue", row.renshu);
+                        $("#gongzi").textbox("setValue", row.gongzi);
+                        $("#shichang").textbox("setValue", row.shichang);
+                        $("#shuifei").textbox("setValue", row.shuifei);
+                        $("#fangzu").textbox("setValue", row.fangzu);
+                        $("#waibao").textbox("setValue", row.waibao);
+                        $("#zhaodaifei").textbox("setValue", row.zhaodaifei);
+                        $("#tongxunfei").textbox("setValue", row.tongxunfei);
+                        $("#riyongpin").textbox("setValue", row.riyongpin);
+                        $("#youjifei").textbox("setValue", row.youjifei);
+                        $("#zuchefei").textbox("setValue", row.zuchefei);
+                        $("#shebeixiuli").textbox("setValue", row.shebeixiuli);
+                        $("#gaosutongxing").textbox("setValue", row.gaosutongxing);
+                        $("#chuchaijiayou").textbox("setValue", row.chuchaijiayou);
+                        $("#shineigongjiao").textbox("setValue", row.shineigongjiao);
+                        $("#xiuchefei").textbox("setValue", row.xiuchefei);
+                        $("#rengong").textbox("setValue", row.rengong);
+                        $("#shuidian").textbox("setValue", row.shuidian);
+                        $("#chepiao").textbox("setValue", row.chepiao);
+
+
+                    }
+                }
+            });
+        });
+        function bb () {
+            var shiid = document.getElementById("shiid").value;
+            var xiangmuname = document.getElementById("xiangmuname").value;
+            var renshu = document.getElementById("renshu").value;
+            var shichang = document.getElementById("shichang").value;
+            var shuifei = document.getElementById("shuifei").value;
+            var fangzu = document.getElementById("fangzu").value;
+            var waibao = document.getElementById("waibao").value;
+            var zhaodaifei = document.getElementById("zhaodaifei").value;
+            var tongxunfei = document.getElementById("tongxunfei").value;
+            var riyongpin = document.getElementById("riyongpin").value;
+            var youjifei = document.getElementById("youjifei").value;
+            var zuchefei = document.getElementById("zuchefei").value;
+            var shebeixiuli = document.getElementById("shebeixiuli").value;
+            var gaosutongxing = document.getElementById("gaosutongxing").value;
+            var chuchaijiayou = document.getElementById("chuchaijiayou").value;
+            var xiuchefei = document.getElementById("xiuchefei").value;
+            var rengong = document.getElementById("rengong").value;
+            var shuidian = document.getElementById("shuidian").value;
+            var chepiao = document.getElementById("chepiao").value;
+            var gongzi = document.getElementById("gongzi").value;
+            var shineigongjiao = document.getElementById("shineigongjiao").value;
+
+            var url = "update?xiangmuname=" + xiangmuname + "&renshu=" + renshu + "&shichang=" + shichang + "&chepiao=" + chepiao + "&chuchaijiayou=" + chuchaijiayou + "&fangzu=" + fangzu +
+                "&tongxunfei=" + tongxunfei + "&gongzi=" + gongzi+ "&rengong=" + rengong + "&riyongpin=" + riyongpin + "&shebeixiuli=" + shebeixiuli + "&shuidian=" + shuidian + "&shuifei=" + shuifei + "&tongxunfei=" + tongxunfei + "&waibao=" + waibao +
+                "&shineigongjiao=" + shineigongjiao + "&zhaodaifei=" + zhaodaifei + "&zuchefei=" + zuchefei + "&xiuchefei=" + xiuchefei + "&youjifei=" + youjifei+"&shiid="+shiid+"&gaosutongxing="+gaosutongxing;
+            $.get(url);
+            $('#dg1').datagrid('reload');
+        }
+
+//                    function qqq() {
+//                        var xiangmuname = document.getElementById("Ktext").value;
+//                        var bid= $('#bid option:selected') .val();//选中的值
+//                        var kaishitime = document.getElementById("kaishitime").value;
+//                        var time = document.getElementById("time").value;
+//                        var url= "querySs?xiangmuname="+xiangmuname+"&bid="+bid+"&kaishitime="+kaishitime+"&time="+time;
+//                        alert(url)
+//                        $.get(url);
+//                    }
+    </script>
 </head>
 
 <body>
@@ -45,7 +128,7 @@
                         <div class="input-group mb-3">
                             <span>请选择中队：</span>
                             <%--  <input id="job_num" type="text" class="form-control" placeholder="请输入工号">--%>
-                            <select class="form-control" id="job_num" name="bid" id="bid">
+                            <select class="form-control" name="bid" id="bid">
                                 <option value="">--请选择--</option>
                                 <c:forEach items="${bumenList}" var="bumenList">
                                     <option value="${bumenList.bid}">${bumenList.bname}</option>
@@ -117,51 +200,8 @@
 
                 </tr>
                 </thead>
-                <script>
-
-                    $(function () {
-                        $('#dg1').datagrid({
-                            //双击事件
-//            onDblClickRow
-                            //单击事件
-                            onClickRow: function (rowIndex, rowData) {
-                                $('#w').window('open');
-
-                                var row = $('#dg1').datagrid('getSelected');
-                                if (row) {
-//                    alert('ID:'+row.shiid);
-
-//                    document.getElementById("a").value=row.shiid;
-                                    $("#shiid").textbox("setValue", row.shiid);
-                                    $("#xiangmuname").textbox("setValue", row.xiangmuname);
-                                    $("#renshu").textbox("setValue", row.renshu);
-                                    $("#gongzi").textbox("setValue", row.gongzi);
-                                    $("#shichang").textbox("setValue", row.shichang);
-                                    $("#shuifei").textbox("setValue", row.shuifei);
-                                    $("#fangzu").textbox("setValue", row.fangzu);
-                                    $("#waibao").textbox("setValue", row.waibao);
-                                    $("#zhaodaifei").textbox("setValue", row.zhaodaifei);
-                                    $("#tongxunfei").textbox("setValue", row.tongxunfei);
-                                    $("#riyongpin").textbox("setValue", row.riyongpin);
-                                    $("#youjifei").textbox("setValue", row.youjifei);
-                                    $("#zuchefei").textbox("setValue", row.zuchefei);
-                                    $("#shebeixiuli").textbox("setValue", row.shebeixiuli);
-                                    $("#gaosutongxing").textbox("setValue", row.gaosutongxing);
-                                    $("#chuchaijiayou").textbox("setValue", row.chuchaijiayou);
-                                    $("#shineigongjiao").textbox("setValue", row.shineigongjiao);
-                                    $("#xiuchefei").textbox("setValue", row.xiuchefei);
-                                    $("#rengong").textbox("setValue", row.rengong);
-                                    $("#shuidian").textbox("setValue", row.shuidian);
-                                    $("#chepiao").textbox("setValue", row.chepiao);
 
 
-                                }
-                            }
-                        });
-                    });
-
-
-                </script>
 
                 <div id="w" class="easyui-window" title="查询实算信息"
                      data-options="iconCls:'icon-save',minimizable:false,closed:true"
@@ -239,6 +279,9 @@
                                        id="shebeixiuli"name="shebeixiuli"
                                        value=""></div>
 
+
+
+
                         </div>
 
                         <div style="position: absolute;left: 70%;top: 7%">
@@ -287,9 +330,9 @@
                                         class="easyui-textbox" id="chepiao" value=""></div>
                         </div>
                         <div>
-                            <%--<a href="#" class="easyui-linkbutton">修改</a>--%>
+                            <a href="#" class="easyui-linkbutton" onclick="bb()">修改</a>
 
-                            <input type="submit" value="修改">
+                            <%--<input type="submit" value="修改">--%>
                         </div>
                     </form>
 
@@ -527,5 +570,7 @@
 
 <script src="/static/js/daochu.js"></script>
 <script src="/static/js/fenye.js"></script>
+
+
 </body>
 </html>

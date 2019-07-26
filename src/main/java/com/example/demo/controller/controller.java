@@ -87,13 +87,18 @@ public class controller {
     public String ssdr() {
         return "ss";
     }
+    @RequestMapping("/update")
+    public String  updateShiSuan(Shisuan shisuan,HttpServletRequest request){
 
+        shisuanMapper.updateShiSuan(shisuan);
+
+        return "ys";
+    }
 
     @RequestMapping("/querySs")
     public String queryShiSuan(@DateTimeFormat(pattern="yyyy-MM-dd") Date date,Shisuan shisuan, Yusuan yusuan, HttpServletRequest request, HttpServletResponse response,Integer shiid) {
 
-//        shisuan=shisuanMapper.selectShiSuamById(shiid);
-//        request.setAttribute("shisuan",shisuan);
+
 
         DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
         String xiangmuname = request.getParameter("xiangmuname");
@@ -102,17 +107,25 @@ public class controller {
         if (bidstr != null && !"".equals(bidstr)) {
             bid = Integer.parseInt(bidstr);
         }
+
         try {
             String kaishitime=request.getParameter("kaishitime");
             String time=request.getParameter("time");
+            System.out.println(kaishitime);
+            System.out.println(time);
         }catch (Exception e){
             e.printStackTrace();
         }
 
-//
+        System.out.println(xiangmuname);
+        System.out.println(bid);
+
+
 //        shisuan.setBid(bid);
+//
 //        shisuan.setXiangmuname(xiangmuname);
 //        yusuan.setXiangmuname(xiangmuname);
+//        System.out.println(xiangmuname);
         List<Shisuan> list = shisuanMapper.queryShiSuan(shisuan);
         List<Bumen> bumenList = bumenMapper.queryAll();
         List<Shisuan> sumShiSuan = shisuanMapper.sumShiSuan(shisuan);

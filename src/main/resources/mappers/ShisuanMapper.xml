@@ -34,10 +34,9 @@
     tongxunfei, riyongpin, youjifei, zuchefei, shebeixiuli, gaosutongxing, chuchaijiayou,
     shineigongjiao, xiuchefei, rengong, shuidian, chepiao, qita,  jieguo,time
   </sql>
-  <update id="updateShiSuan">
+  <update id="updateShiSuan" parameterType="com.example.demo.entity.Shisuan">
   UPDATE ys.shisuan
 	SET
-	bid =#{bid}  ,
 	xiangmuname = #{xiangmuname}  ,
 	renshu = #{renshu} ,
 	gongzi = #{gongzi}  ,
