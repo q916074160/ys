@@ -33,6 +33,12 @@ function check(data) {
         boolean = false;
         return false;
     }
+
+    if(isNaN(renshu)||isNaN(shichang)||isNaN(shuifei)||isNaN(fangzu)||isNaN(waibao)||isNaN(zhaodaifei)||isNaN(tongxunfei)||isNaN(riyongpin)||isNaN(youjifei)||isNaN(zuchefei)||isNaN(shebeixiuli)||isNaN(gaosutongxing)||isNaN(chuchaijiayou)||isNaN(xiuchefei)||isNaN(rengong)||isNaN(shuidian)||isNaN(chepiao)||isNaN(qita)||isNaN(yanglao)||isNaN(yiliao)||isNaN(gongshang)||isNaN(shiye)||isNaN(shengyu)||isNaN(gongzi)||isNaN(shineigongjiao)){
+        alert("请输入正确的数字");
+        boolean = false;
+        return false;
+    }
     if (renshu == "") {
         alert("人数不能为空,可以为0");
         boolean = false;
@@ -242,7 +248,11 @@ function check1(data) {
         boolean = false;
         return false;
     }
-
+    if(isNaN(renshu)||isNaN(shichang)||isNaN(shuifei)||isNaN(fangzu)||isNaN(waibao)||isNaN(zhaodaifei)||isNaN(tongxunfei)||isNaN(riyongpin)||isNaN(youjifei)||isNaN(zuchefei)||isNaN(shebeixiuli)||isNaN(gaosutongxing)||isNaN(chuchaijiayou)||isNaN(xiuchefei)||isNaN(rengong)||isNaN(shuidian)||isNaN(chepiao)||isNaN(qita)||isNaN(gongzi)||isNaN(shineigongjiao)){
+        alert("请输入正确的数字");
+        boolean = false;
+        return false;
+    }
     if (shichang == "") {
         alert("时长不能为空");
         boolean = false;
