@@ -405,7 +405,7 @@ function zd() {
     var boolean = true;
     if (boolean == true) {
         var url = "sel?zhongdui=" + zhongdui+"&time="+time;
-        //alert(url);
+        alert(url);
         $.get(url, function (data) {
             $("#gongzi").val(data[0]);
             $("#renshu").val(data[1]);

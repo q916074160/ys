@@ -106,14 +106,12 @@ public class controller {
         try {
             String kaishitime=request.getParameter("kaishitime");
             String time=request.getParameter("time");
-            System.out.println(kaishitime);
-            System.out.println(time);
+
         }catch (Exception e){
             e.printStackTrace();
         }
 
 //        shisuan.setBid(bid);
-//
 //        shisuan.setXiangmuname(xiangmuname);
 //        yusuan.setXiangmuname(xiangmuname);
 //        System.out.println(xiangmuname);
@@ -239,8 +237,6 @@ public class controller {
 
         }
         for (int j = 0; j < sumShiSuan.size(); j++) {
-
-
             //            Syanglaosum=Syanglaosum+sumShiSuan.get(j).getYanglao();
 //            Sgongshangsum=Sgongshangsum+sumShiSuan.get(j).getGongshang();
 //            Sshiyesum=Sshiyesum+sumShiSuan.get(j).getShiye();
@@ -269,7 +265,6 @@ public class controller {
         double jieguo=Yjieguosum-Sjieguosum;
         double chepiao=Ychepiaosum-Schepiaosum;
         double renshu=Yrenshusum-Srenshusum;
-
         double gongzi=Ygongzisum-Sgongzisum;
         double shuifei=Yshuifeisum-Sshuifeisum;
         double fangzu=Yfangzusum-Sfangzusum;
@@ -287,7 +282,7 @@ public class controller {
         double shuidian=Yshuidiansum-Sshuidiansum;
         double qita=Yqitasum-Sqitasum;
         double rengong=Yrengongsum-Srengongsum;
-
+//        System.out.println(list.get(0).getShiid());
         request.setAttribute("jieguo",jieguo);
         request.setAttribute("chepiao",chepiao);
         request.setAttribute("renshu",renshu);
@@ -323,10 +318,12 @@ public class controller {
         return "rydr";
     }
 
-    @RequestMapping("/a")
+    @RequestMapping("/aaa")
     public String a() {
-        return "a";
+        return "aaa";
     }
+
+
 
 
 

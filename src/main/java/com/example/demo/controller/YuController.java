@@ -163,13 +163,14 @@ public class YuController {
     }
     @RequestMapping(value = "/sel",method= RequestMethod.GET)
     public Double[] selectGongzi(@RequestParam int zhongdui,@RequestParam String time){
+        System.out.println(zhongdui);
         int c= time.lastIndexOf("-");
         String a=time.substring(0,c);
 
         double sum=0;
         double ren=0;
 
-        List<Renyuan> renyuanList=renyuanMapper.selectById(zhongdui,a);
+        List<Renyuan> renyuanList=renyuanMapper.selectById(zhongdui,a );
         for(int i=0;i<renyuanList.size();i++){
             Renyuan renyuan=new Renyuan();
             renyuan=renyuanList.get(i);

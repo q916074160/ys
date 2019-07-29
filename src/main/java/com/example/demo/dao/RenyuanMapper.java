@@ -2,6 +2,7 @@ package com.example.demo.dao;
 
 import com.example.demo.entity.Renyuan;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.Date;
 import java.util.List;
@@ -10,7 +11,7 @@ import java.util.List;
 public interface RenyuanMapper {
     List<Renyuan>  queryAll();
 
-    List<Renyuan> selectById(Integer bid, String time1);
+    List<Renyuan> selectById(@Param("bid")Integer bid,@Param("time1")String time1);
 
     int insert(Renyuan record);
 }
