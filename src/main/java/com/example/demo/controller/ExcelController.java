@@ -26,6 +26,8 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.UUID;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 @RestController
 @RequestMapping("excel")
@@ -54,7 +56,6 @@ public class ExcelController {
             String originalFilename = multipartFile.getOriginalFilename();
             //生成文件名
             String fileName = UUID.randomUUID() +"&"+ originalFilename;
-            System.out.println(filePath+"/"+fileName);
             uploadFile(fileBytes, filePath, fileName);
             String wenjian=filePath+"/"+fileName;
             Import(wenjian);
@@ -203,44 +204,158 @@ public class ExcelController {
                     }
                 }
                 renyuan.setBid(bumen1);
-
-
+                Pattern p = Pattern.compile("[a-zA-Z\u4e00-\u9fa5]");//定义规则 ，该规则为大小写字母，汉字
+                boolean bl=true;
                 Cell cell4 = row.getCell(3); //获取第1个单元格的数据
+                if (cell4 == null){
+                    continue;
+                }
                 cell4.setCellType(Cell.CELL_TYPE_STRING); //设置Cell的类型为String类型
-                renyuan.setGongzi(Double.valueOf(cell4.getStringCellValue()));
+
+                Matcher m = p.matcher(cell4.getStringCellValue());
+
+                if (m.find()) {//包含则为true
+                    bl=false;
+                    continue;
+                }else{
+                    bl = true;
+                    renyuan.setGongzi(Double.valueOf(cell4.getStringCellValue()));
+                }
+
                 Cell cell5 = row.getCell(4);
+                if (cell5 == null){
+                    continue;
+                }
                 cell5.setCellType(Cell.CELL_TYPE_STRING);
-                renyuan.setGerenbaoxian(Double.valueOf(cell5.getStringCellValue()));
+
+                Matcher m1 = p.matcher(cell5.getStringCellValue());
+
+                if (m1.find()) {
+                    bl=false;
+                    continue;
+                }else {
+                    bl = true;
+                    renyuan.setGerenbaoxian(Double.valueOf(cell5.getStringCellValue()));
+
+                }
+
                 Cell cell6 = row.getCell(5);
+                if (cell6 == null){
+                    continue;
+                }
                 cell6.setCellType(Cell.CELL_TYPE_STRING);
-                renyuan.setGerenshui(Double.valueOf(cell6.getStringCellValue()));
+
+                Matcher m2 = p.matcher(cell6.getStringCellValue());
+                if (m2.find()) {
+                    bl=false;
+                    continue;
+                }else {
+                    bl=true;
+                    renyuan.setGerenshui(Double.valueOf(cell6.getStringCellValue()));
+
+                }
+
                 Cell cell7 = row.getCell(6);
+                if (cell7 == null){
+                    continue;
+                }
                 cell7.setCellType(Cell.CELL_TYPE_STRING);
-                renyuan.setJingling(Double.valueOf(cell7.getStringCellValue()));
+
+                Matcher m3 = p.matcher(cell7.getStringCellValue());
+                if (m3.find()) {
+                    bl=false;
+                    continue;
+                }else {
+                    bl=true;
+                    renyuan.setJingling(Double.valueOf(cell7.getStringCellValue()));
+                }
+
                 Cell cell8 = row.getCell(7);
+                if (cell8 == null){
+                    continue;
+                }
                 cell8.setCellType(Cell.CELL_TYPE_STRING);
-                renyuan.setYanglao(Double.valueOf(cell8.getStringCellValue()));
+
+                Matcher m4 = p.matcher(cell8.getStringCellValue());
+                if (m4.find()) {
+                    bl=false;
+                    continue;
+                }else {
+                    bl=true;
+                    renyuan.setYanglao(Double.valueOf(cell8.getStringCellValue()));
+                }
+
+
                 Cell cell9 = row.getCell(8);
+                if (cell9 == null){
+                    continue;
+                }
                 cell9.setCellType(Cell.CELL_TYPE_STRING);
-                renyuan.setYiliao(Double.valueOf(cell9.getStringCellValue()));
+
+                Matcher m5 = p.matcher(cell9.getStringCellValue());
+                if (m5.find()) {
+                    bl=false;
+                    continue;
+                }else {
+                    bl=true;
+                    renyuan.setYiliao(Double.valueOf(cell9.getStringCellValue()));
+                }
+
                 Cell cell10 = row.getCell(9);
+                if (cell10 == null){
+                    continue;
+                }
                 cell10.setCellType(Cell.CELL_TYPE_STRING);
-                renyuan.setShiye(Double.valueOf(cell10.getStringCellValue()));
+
+                Matcher m6 = p.matcher(cell10.getStringCellValue());
+                if (m6.find()) {
+                    bl=false;
+                    continue;
+                }else {
+                    bl=true;
+                    renyuan.setShiye(Double.valueOf(cell10.getStringCellValue()));
+                }
+
+
                 Cell cell11 = row.getCell(10);
+                if (cell11 == null){
+                    continue;
+                }
                 cell11.setCellType(Cell.CELL_TYPE_STRING);
-                renyuan.setShengyu(Double.valueOf(cell11.getStringCellValue()));
+
+                Matcher m7 = p.matcher(cell11.getStringCellValue());
+                if (m7.find()) {
+                    bl=false;
+                    continue;
+                }else {
+                    bl=true;
+                    renyuan.setShengyu(Double.valueOf(cell11.getStringCellValue()));
+                }
+
                 Cell cell12 = row.getCell(11);
+                if (cell2 == null){
+                    continue;
+                }
                 cell12.setCellType(Cell.CELL_TYPE_STRING);
-                renyuan.setGongshang(Double.valueOf(cell12.getStringCellValue()));
+
+                Matcher m8 = p.matcher(cell12.getStringCellValue());
+                if (m8.find()) {
+                    bl=false;
+                    continue;
+                }else {
+                    bl=true;
+                    renyuan.setGongshang(Double.valueOf(cell12.getStringCellValue()));
+                }
+
 
 
                 Cell cell13 = row.getCell(12);
                 SimpleDateFormat dateFormat = new SimpleDateFormat("yyyyMMdd");
                 Date d = dateFormat.parse(excelTime(cell13));
                 renyuan.setTime(d);
-
-
+                if(bl==true) {
                     renyuanMapper.insert(renyuan);
+                }
 
             }
         } catch (Exception e) {
