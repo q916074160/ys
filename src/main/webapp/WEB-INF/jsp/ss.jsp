@@ -25,10 +25,6 @@
             <td><input class="easyui-textbox" type="text"  name="shuifei" id="shuifei" ></input></td>
         </tr>
         <tr>
-            <td>时长:</td>
-            <td><input class="easyui-textbox" type="text"  name="shichang" id="shichang" ></input>	</td>
-        </tr>
-        <tr>
             <td>房租:</td>
             <td><input class="easyui-textbox" type="text"  name="fangzu" id="fangzu" ></input>	</td>
         </tr>
