@@ -100,7 +100,7 @@ public class YuController {
     }
     @RequestMapping(value = "/sumS",method= RequestMethod.GET)
     public double sumS(@RequestParam String name,@RequestParam String time,@RequestParam int zhongdui, @RequestParam int ren,
-                            @RequestParam int shi, @RequestParam double chepiao, @RequestParam double chuchai, @RequestParam double fangzu, @RequestParam double tongxing,
+                             @RequestParam double chepiao, @RequestParam double chuchai, @RequestParam double fangzu, @RequestParam double tongxing,
                             @RequestParam double gongzi, @RequestParam double qita, @RequestParam double rengong, @RequestParam double riyong, @RequestParam double shebei,
                             @RequestParam double shuidian, @RequestParam double shuifei, @RequestParam double tongxun, @RequestParam double waibao, @RequestParam double gongjiao,
                             @RequestParam double zhaodai, @RequestParam double zuche, @RequestParam double xiuche, @RequestParam double youji){
@@ -114,7 +114,7 @@ public class YuController {
     }
     @RequestMapping(value = "/addS",method= RequestMethod.GET)
     public double SInsert(@RequestParam String name,@RequestParam String time,@RequestParam int zhongdui, @RequestParam int ren,
-                            @RequestParam int shi, @RequestParam double chepiao, @RequestParam double chuchai, @RequestParam double fangzu, @RequestParam double tongxing,
+                             @RequestParam double chepiao, @RequestParam double chuchai, @RequestParam double fangzu, @RequestParam double tongxing,
                             @RequestParam double gongzi, @RequestParam double qita, @RequestParam double rengong, @RequestParam double riyong, @RequestParam double shebei,
                             @RequestParam double shuidian, @RequestParam double shuifei, @RequestParam double tongxun, @RequestParam double waibao, @RequestParam double gongjiao,
                             @RequestParam double zhaodai, @RequestParam double zuche, @RequestParam double xiuche, @RequestParam double youji){
