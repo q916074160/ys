@@ -28,8 +28,6 @@ $("#search_btn").click(function () {
 var ti;
 
 
-
-
 $("#shangchuan").click(function () {
     var k = $("#wenjian").textbox('getValue');
     if (k == '' || k == null) {
@@ -48,6 +46,7 @@ $("#shangchuan").click(function () {
                 $('#p').hide();
                 $('#w').window('close');
                 $("#f").submit();
+                $("#f").form('clear')
                 var t = setInterval(function() {
                     //获取iframe标签里body元素里的文字。即服务器响应过来的"上传成功"或"上传失败"
                     var word = $("iframe[name='frame1']").contents().find("body").text();

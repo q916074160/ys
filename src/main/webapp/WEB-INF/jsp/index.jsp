@@ -17,7 +17,7 @@
         }
     </style>
 </head>
-<body class="easyui-layout">
+<body class="easyui-layout" >
 <div data-options="region:'north',border:false" id="north" style="padding: 0px">
     <div id="div1" ><img src="/static/img/lg.png" alt="">&nbsp;<span class="cl1">项目预算管理系统</span></div>
     <div id="div2"><span class="cl2">欢迎你:</span><c:if test="${user!=null}"><span id="sp1">${user.uname}</span></c:if><a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-add'"  onclick="$('#w').window('open')" style="position: absolute;right:30px; top: 5px">人员导入</a></div>
@@ -41,7 +41,7 @@
     <!-- 通过左边添加tabs-->
     <div id="tts" class="easyui-tabs" data-options="border:false,fit:true">
         <!--首页tabs页-->
-        <div class="easyui-layout" title="首页" style="padding:10px">
+        <div class="easyui-layout" title="首页" style="padding:10px;background-image: url('/static/img/0f5c8e76b43d136f5a77722157576f17.jpg');background-repeat: no-repeat;width: 100%;height: 100%;">
         </div>
     </div>
 </div>
@@ -58,14 +58,6 @@
     <div id="p" class="easyui-progressbar" style="width:400px;margin: 25px" hidden></div>
     <iframe name="frame1"  id="frame1" frameborder="0" height="40" hidden></iframe>
 </div>
-<%-------------------------------------------------------------------------------------------------------------------%>
-<%--<div id="w" class="easyui-window" title="文件导入" data-options="minimizable:false,maximizable: false,tools:'#tt',closed:true" style="width:500px;height:250px;padding:10px;">
-    <form action="excel/upload.do" id="f"  enctype="multipart/form-data" method="post">
-        <input type="file" name="files" >
-        <br>
-        <input type="submit" value="上传">
-    </form>
-</div>--%>
 <script type="text/javascript" src="/static/js/daochu.js"></script>
 </body>
 </html>

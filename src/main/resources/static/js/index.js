@@ -351,17 +351,18 @@ function check1(data) {
         boolean = false;
         return false;
     }
+    if (str1 == "") {
+        alert("所属时间不能为空");
+        boolean = false;
+        return false;
+    }
     if (zhongdui == "请选择") {
         alert("请选择中队");
         boolean = false;
         return false;
     }
 
-    if (str1 == "") {
-        alert("所属时间不能为空");
-        boolean = false;
-        return false;
-    }
+
     if (boolean == true) {
         if (data == 1) {
             var url = "sumS?name=" + xiangmuname + "&ren=" + renshu + "&shi=" + shichang + "&chepiao=" + chepiao + "&chuchai=" + chuchaijiayou + "&fangzu=" + fangzu +

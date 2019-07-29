@@ -2,9 +2,9 @@
 <html>
 <head>
     <title>Title</title>
-    <link rel="stylesheet" href="/static/easyUi/themes/default/easyui.css">
-    <link rel="stylesheet" href="/static/easyUi/themes/icon.css">
-    <link rel="stylesheet" href="/static/easyUi/demo/demo.css">
+    <link rel="stylesheet" type="text/css" href="/static/easyUi/themes/default/easyui.css">
+    <link rel="stylesheet" type="text/css" href="/static/easyUi/themes/icon.css">
+    <link rel="stylesheet" type="text/css" href="/static/easyUi/demo/demo.css">
     <script type="text/javascript" src="/static/easyUi/jquery.min.js"></script>
     <script type="text/javascript" src="/static/easyUi/jquery.easyui.min.js"></script>
 </head>
@@ -71,10 +71,6 @@
             <td>工资:</td>
             <td><input type="text" name="gongzi" id="gongzi"  readonly= "true" style="border:0px red solid; outline:none;"></input></td>
         </tr>
-
-        <%--<tr>--%>
-            <%--<td colspan="2" style="text-align: right"><input class="button1" type="button" id="button" value="预&nbsp;算&nbsp;结&nbsp;果" onclick="check1()"/>&nbsp;&nbsp;<input class="button1" type="button" onclick="clearForm()"  value="重&nbsp;&nbsp;&nbsp;&nbsp;置"/></td>--%>
-        <%--</tr>--%>
         <tr>
             <td colspan="2">结果：<span id="jg" style="width: 300px;"></span>&nbsp;&nbsp;&nbsp;<span id="gzhe" style="width: 300px;"></span></td>
         </tr>
@@ -137,10 +133,13 @@
 <script>
     $(function () {
         $("#zhongdui").attr("disabled","disabled");
+        $('#time').datebox({
+            editable:false
+        });
     });
     function clearForm(){
         $("#jg").text('');
-        $('#ff').form('reset');
+        $('#form1').form('reset');
         $("#zhongdui").attr("disabled","disabled");
     }
     $("body").delegate(".datebox input[type=text]","blur",function() {
