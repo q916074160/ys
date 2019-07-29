@@ -27,9 +27,9 @@
                 onDblClickRow: function (rowIndex, rowData) {
                     $('#w').window('open');
                     var row = $('#dg1').datagrid('getSelected');
+                    alert(row);
                     if (row) {
 //                    alert('ID:'+row.shiid);
-
 //                    document.getElementById("a").value=row.shiid;
                         $("#shiid").textbox("setValue", row.shiid);
                         $("#xiangmuname").textbox("setValue", row.xiangmuname);
@@ -52,8 +52,6 @@
                         $("#rengong").textbox("setValue", row.rengong);
                         $("#shuidian").textbox("setValue", row.shuidian);
                         $("#chepiao").textbox("setValue", row.chepiao);
-
-
                     }
                 }
             });
@@ -96,7 +94,8 @@
                 }
             });
         });
-        function shisuan () {
+
+        function shisuan() {
             var shiid = document.getElementById("shiid").value;
             var xiangmuname = document.getElementById("xiangmuname").value;
             var renshu = document.getElementById("renshu").value;
@@ -120,15 +119,13 @@
             var shineigongjiao = document.getElementById("shineigongjiao").value;
 
             var url = "update?xiangmuname=" + xiangmuname + "&renshu=" + renshu + "&shichang=" + shichang + "&chepiao=" + chepiao + "&chuchaijiayou=" + chuchaijiayou + "&fangzu=" + fangzu +
-                "&tongxunfei=" + tongxunfei + "&gongzi=" + gongzi+ "&rengong=" + rengong + "&riyongpin=" + riyongpin + "&shebeixiuli=" + shebeixiuli + "&shuidian=" + shuidian + "&shuifei=" + shuifei + "&tongxunfei=" + tongxunfei + "&waibao=" + waibao +
-                "&shineigongjiao=" + shineigongjiao + "&zhaodaifei=" + zhaodaifei + "&zuchefei=" + zuchefei + "&xiuchefei=" + xiuchefei + "&youjifei=" + youjifei+"&shiid="+shiid+"&gaosutongxing="+gaosutongxing;
+                "&tongxunfei=" + tongxunfei + "&gongzi=" + gongzi + "&rengong=" + rengong + "&riyongpin=" + riyongpin + "&shebeixiuli=" + shebeixiuli + "&shuidian=" + shuidian + "&shuifei=" + shuifei + "&tongxunfei=" + tongxunfei + "&waibao=" + waibao +
+                "&shineigongjiao=" + shineigongjiao + "&zhaodaifei=" + zhaodaifei + "&zuchefei=" + zuchefei + "&xiuchefei=" + xiuchefei + "&youjifei=" + youjifei + "&shiid=" + shiid + "&gaosutongxing=" + gaosutongxing;
             if (confirm("是否修改？")) {
                 $.get(url);
             }
             $('#dg1').datagrid('reload');
         }
-
-
 
 
     </script>
@@ -195,8 +192,6 @@
 
             </div>
         </form>
-
-
         <div class="easyui-layout" style="height:100%;" data-options="region:'center'">
             <table id="dg1" title="实算信息" style="width:100%;height:40%" data-options="region:'south',
 				rownumbers:true,
@@ -211,7 +206,6 @@
                     <th field="xiangmuname" width="80">名称</th>
                     <th field="renshu" width="100">人数</th>
                     <th field="gongzi" width="80">工资</th>
-                    <th field="shichang" width="80" align="right">项目时长</th>
                     <th field="shuifei" width="80" align="right">税</th>
                     <th field="fangzu" width="100" align="right">房租</th>
                     <th field="waibao" width="110">外包</th>
@@ -229,15 +223,12 @@
                     <th field="shuidian" width="80" align="right">水电</th>
                     <th field="chepiao" width="100" align="right">车票</th>
                     <th field="jieguo" width="110">总和</th>
-
                 </tr>
                 </thead>
 
-
-
                 <div id="w" class="easyui-window" title="查询实算信息"
                      data-options="iconCls:'icon-save',minimizable:false,closed:true"
-                     style="width:60%;height:90%;padding:10px;overflow:hidden;" >
+                     style="width:60%;height:90%;padding:10px;overflow:hidden;">
                     <%--<input class="easyui-textbox" id="a" value="" type="text">--%>
 
                     <form>
@@ -245,35 +236,32 @@
                         <div>
                             <div style="margin-bottom:20px">
                                 <div>项目名称:</div>
-
                                 <input class="easyui-textbox" id="xiangmuname" name="xiangmuname" value="">
                             </div>
                             <div style="margin-bottom:20px">
                                 <div>人数:</div>
-                                <input class="easyui-textbox" id="renshu" name="renshu"value="">
+                                <input class="easyui-textbox" id="renshu" name="renshu" value="">
                             </div>
                             <div style="margin-bottom:20px">
                                 <div>工资:</div>
-                                <input class="easyui-textbox" id="gongzi" name="gongzi"value="">
+                                <input class="easyui-textbox" id="gongzi" name="gongzi" value="">
                             </div>
                             <div style="margin-bottom:20px">
                                 <div>项目时长:</div>
-                                <input class="easyui-textbox" id="shichang" name="shichang"value="">
+                                <input class="easyui-textbox" id="shichang" name="shichang" value="">
                             </div>
 
                             <div style="margin-bottom:20px">
                                 <div>税费:</div>
-                                <input class="easyui-textbox" id="shuifei"name="shuifei" value="">
+                                <input class="easyui-textbox" id="shuifei" name="shuifei" value="">
                             </div>
                             <div style="margin-bottom:20px">
                                 <div>房租:</div>
-                                <input class="easyui-textbox" id="fangzu" name="fangzu"value=""></div>
+                                <input class="easyui-textbox" id="fangzu" name="fangzu" value=""></div>
                             <div style="margin-bottom:20px">
                                 <div>外包:</div>
-                                <input class="easyui-textbox" id="waibao" name="waibao"value="">
+                                <input class="easyui-textbox" id="waibao" name="waibao" value="">
                             </div>
-
-
                         </div>
 
 
@@ -281,45 +269,37 @@
 
                             <div style="margin-bottom:20px">
                                 <div>招待费:</div>
-                                <input class="easyui-textbox" id="zhaodaifei"name="zhaodaifei"
+                                <input class="easyui-textbox" id="zhaodaifei" name="zhaodaifei"
                                        value=""></div>
 
                             <div style="margin-bottom:20px">
                                 <div>通讯费:</div>
                                 <input class="easyui-textbox"
-                                       id="tongxunfei"name="tongxunfei"
+                                       id="tongxunfei" name="tongxunfei"
                                        value=""></div>
 
                             <div style="margin-bottom:20px">
                                 <div>日用品:</div>
                                 <input class="easyui-textbox"
-                                       id="riyongpin"name="riyongpin"
+                                       id="riyongpin" name="riyongpin"
                                        value=""></div>
 
                             <div style="margin-bottom:20px">
                                 <div>邮寄费:</div>
-                                <input class="easyui-textbox" id="youjifei"name="youjifei" value=""></div>
+                                <input class="easyui-textbox" id="youjifei" name="youjifei" value=""></div>
 
                             <div style="margin-bottom:20px">
                                 <div>租车费:</div>
                                 <input class="easyui-textbox"
-                                       id="zuchefei"name="zuchefei"
+                                       id="zuchefei" name="zuchefei"
                                        value=""></div>
                             <div style="margin-bottom:20px">
                                 <div>设备修理费:</div>
                                 <input class="easyui-textbox"
-                                       id="shebeixiuli"name="shebeixiuli"
+                                       id="shebeixiuli" name="shebeixiuli"
                                        value=""></div>
-
-
-
-
                         </div>
-
                         <div style="position: absolute;left: 70%;top: 7%">
-
-
-
                             <div style="margin-bottom:20px">
                                 <div>高速通行费:</div>
                                 <input class="easyui-textbox"
@@ -338,13 +318,11 @@
                                        id="shineigongjiao"
                                        value=""></div>
 
-
                             <div style="margin-bottom:20px">
                                 <div>(修/洗)车费:</div>
                                 <input class="easyui-textbox"
                                        id="xiuchefei"
                                        value=""></div>
-
                             <div style="margin-bottom:20px">
                                 <div>人工费:</div>
                                 <input class="easyui-textbox"
@@ -363,15 +341,10 @@
                         </div>
                         <div>
                             <a href="#" class="easyui-linkbutton" onclick="shisuan()">修改</a>
-
                             <%--<input type="submit" value="修改">--%>
                         </div>
                     </form>
-
-
                 </div>
-
-
                 <tbody id="show_tbody1">
                 <c:forEach items="${list}" var="list">
                     <c:if test="${xiangmuname!=null}">
@@ -380,11 +353,9 @@
                             <td>
                                 <fmt:formatDate pattern="yyyy-MM-dd" value="${list.time}"></fmt:formatDate>
                             </td>
-
                             <td>${list.xiangmuname}</td>
                             <td>${list.renshu}</td>
                             <td>${list.gongzi}</td>
-                            <td>${list.shichang}</td>
                             <td>${list.shuifei}</td>
                             <td>${list.fangzu}</td>
                             <td>${list.waibao}</td>
@@ -402,18 +373,12 @@
                             <td>${list.shuidian}</td>
                             <td>${list.chepiao}</td>
                             <td>${list.jieguo}</td>
-
                         </tr>
                     </c:if>
                 </c:forEach>
-
-
                 <c:forEach items="${sumShiSuan}" var="sumShiSuan">
-
-
                     <c:if test="${xiangmuname!=null}">
                         <tr>
-
                             <td>&nbsp;</td>
                             <td>${sumShiSuan.xiangmuname}</td>
                             <td>${sumShiSuan.renshu}</td>
@@ -436,19 +401,12 @@
                             <td>${sumShiSuan.shuidian}</td>
                             <td>${sumShiSuan.chepiao}</td>
                             <td>${sumShiSuan.jieguo}</td>
-                            <td><fmt:formatDate pattern="yyyy-MM-dd"
-                                                value="${sumShiSuan.kaishitime}"></fmt:formatDate></td>
+                            <td><fmt:formatDate pattern="yyyy-MM-dd" value="${sumShiSuan.kaishitime}"></fmt:formatDate></td>
                         </tr>
                     </c:if>
-
                 </c:forEach>
-
                 </tbody>
-
-
             </table>
-
-
             <table id="dg2" class="easyui-datagrid" title="对比信息" style="width:100%;height:30%"
                    data-options="
                region:'center',
@@ -482,7 +440,6 @@
                     <th data-options="field:'jieguo',width:80,align:'right'">总和</th>
                 </tr>
                 </thead>
-
                 <tbody id="show_tbody12">
                 <c:if test="${xiangmuname!=null}">
                     <tr>
@@ -495,7 +452,6 @@
                         <td>
                             <fmt:formatNumber value='${zhaodaifei}' pattern='#,#00.00#'></fmt:formatNumber>
                         </td>
-
                         <td>${tongxunfei}</td>
                         <td>${riyongpin}</td>
                         <td>${youjifei}</td>
@@ -513,14 +469,8 @@
                         </td>
                     </tr>
                 </c:if>
-
-
                 </tbody>
-
-
             </table>
-
-
             <table id="dg3" class="easyui-datagrid" title="预算信息" style="width:100%;height:30%"
                    data-options="
               region:'north',
@@ -557,86 +507,71 @@
                 </thead>
                 <div id="w1" class="easyui-window" title="查询预算信息"
                      data-options="iconCls:'icon-save',minimizable:false,closed:true"
-                     style="width:60%;height:90%;padding:10px;overflow:hidden;" >
-
-
+                     style="width:60%;height:90%;padding:10px;overflow:hidden;">
                     <form>
                         <div>
                             <div style="margin-bottom:20px">
                                 <div>项目名称:</div>
-
                                 <input class="easyui-textbox" id="xiangmuname1" name="xiangmuname" value="" disabled>
                             </div>
                             <div style="margin-bottom:20px">
                                 <div>人数:</div>
-                                <input class="easyui-textbox" id="renshu1" name="renshu"value="" disabled>
+                                <input class="easyui-textbox" id="renshu1" name="renshu" value="" disabled>
                             </div>
                             <div style="margin-bottom:20px">
                                 <div>工资:</div>
-                                <input class="easyui-textbox" id="gongzi1" name="gongzi"value="" disabled>
+                                <input class="easyui-textbox" id="gongzi1" name="gongzi" value="" disabled>
                             </div>
                             <div style="margin-bottom:20px">
                                 <div>项目时长:</div>
-                                <input class="easyui-textbox" id="shichang1" name="shichang"value="" disabled>
+                                <input class="easyui-textbox" id="shichang1" name="shichang" value="" disabled>
                             </div>
-
                             <div style="margin-bottom:20px">
                                 <div>税费:</div>
-                                <input class="easyui-textbox" id="shuifei1"name="shuifei" value="" disabled>
+                                <input class="easyui-textbox" id="shuifei1" name="shuifei" value="" disabled>
                             </div>
                             <div style="margin-bottom:20px">
                                 <div>房租:</div>
-                                <input class="easyui-textbox" id="fangzu1" name="fangzu"value="" disabled></div>
+                                <input class="easyui-textbox" id="fangzu1" name="fangzu" value="" disabled></div>
                             <div style="margin-bottom:20px">
                                 <div>外包:</div>
-                                <input class="easyui-textbox" id="waibao1" name="waibao"value="" disabled>
+                                <input class="easyui-textbox" id="waibao1" name="waibao" value="" disabled>
                             </div>
-
-
                         </div>
-
-
                         <div style="position: absolute;left: 35%;top: 7%">
-
                             <div style="margin-bottom:20px">
                                 <div>招待费:</div>
-                                <input class="easyui-textbox" id="zhaodaifei1"name="zhaodaifei"
+                                <input class="easyui-textbox" id="zhaodaifei1" name="zhaodaifei"
                                        value="" disabled></div>
-
                             <div style="margin-bottom:20px">
                                 <div>通讯费:</div>
                                 <input class="easyui-textbox"
-                                       id="tongxunfei1"name="tongxunfei"
+                                       id="tongxunfei1" name="tongxunfei"
                                        value="" disabled></div>
-
                             <div style="margin-bottom:20px">
                                 <div>日用品:</div>
                                 <input class="easyui-textbox"
-                                       id="riyongpin1"name="riyongpin"
+                                       id="riyongpin1" name="riyongpin"
                                        value="" disabled></div>
-
                             <div style="margin-bottom:20px">
                                 <div>邮寄费:</div>
-                                <input class="easyui-textbox" id="youjifei1"name="youjifei" value="" disabled></div>
+                                <input class="easyui-textbox" id="youjifei1" name="youjifei" value="" disabled></div>
 
                             <div style="margin-bottom:20px">
                                 <div>租车费:</div>
                                 <input class="easyui-textbox"
-                                       id="zuchefei1"name="zuchefei"
+                                       id="zuchefei1" name="zuchefei"
                                        value="" disabled></div>
                             <div style="margin-bottom:20px">
                                 <div>设备修理费:</div>
                                 <input class="easyui-textbox"
-                                       id="shebeixiuli1"name="shebeixiuli"
+                                       id="shebeixiuli1" name="shebeixiuli"
                                        value="" disabled></div>
-
-
 
 
                         </div>
 
                         <div style="position: absolute;left: 70%;top: 7%">
-
 
 
                             <div style="margin-bottom:20px">
@@ -662,7 +597,7 @@
                                 <div>(修/洗)车费:</div>
                                 <input class="easyui-textbox"
                                        id="xiuchefei1"
-                                       value="" disabled> </div>
+                                       value="" disabled></div>
 
                             <div style="margin-bottom:20px">
                                 <div>人工费:</div>
@@ -681,12 +616,9 @@
                                         class="easyui-textbox" id="chepiao1" value="" disabled></div>
                         </div>
                         <div>
-
                             <%--<input type="submit" value="修改">--%>
                         </div>
                     </form>
-
-
                 </div>
                 <tbody id="show_tbody14">
                 <c:forEach items="${yulist}" var="yulist">
@@ -702,7 +634,6 @@
                             <td>
                                 <fmt:formatNumber value='${yulist.zhaodaifei}' pattern='#,#00.00#'></fmt:formatNumber>
                             </td>
-
                             <td>${yulist.tongxunfei}</td>
                             <td>${yulist.riyongpin}</td>
                             <td>${yulist.youjifei}</td>
@@ -721,19 +652,12 @@
                         </tr>
                     </c:if>
                 </c:forEach>
-
                 </tbody>
             </table>
-
-
         </div>
-
     </div>
 </div>
-
 <script src="/static/js/daochu.js"></script>
 <script src="/static/js/fenye.js"></script>
-
-
 </body>
 </html>

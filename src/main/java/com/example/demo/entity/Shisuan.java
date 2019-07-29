@@ -15,8 +15,6 @@ public class Shisuan {
 
     private Double gongzi;
 
-    private Integer shichang;
-
     private Double shuifei;
 
     private Double fangzu;
@@ -97,13 +95,6 @@ public class Shisuan {
         this.gongzi = gongzi;
     }
 
-    public Integer getShichang() {
-        return shichang;
-    }
-
-    public void setShichang(Integer shichang) {
-        this.shichang = shichang;
-    }
 
     public Double getShuifei() {
         return shuifei;

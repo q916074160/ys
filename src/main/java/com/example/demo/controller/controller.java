@@ -132,7 +132,6 @@ public class controller {
         double Sgongzisum=0;
 
 
-        double Yshichangsum=0;
         double Sshichangsum=0;
 
         double Yshuifeisum=0;
@@ -217,7 +216,6 @@ public class controller {
             Ychepiaosum=Ychepiaosum+yulist.get(i).getChepiao();
             Yrenshusum=Yrenshusum+yulist.get(i).getRenshu();
             Ygongzisum=Ygongzisum+yulist.get(i).getGongzi();
-            Yshichangsum=Yshichangsum+yulist.get(i).getShichang();
             Yshuifeisum=Yshuifeisum+yulist.get(i).getShuifei();
             Yfangzusum=Yfangzusum+yulist.get(i).getFangzu();
             Ywaibaosum=Ywaibaosum+yulist.get(i).getWaibao();
@@ -251,7 +249,6 @@ public class controller {
             Schepiaosum=Schepiaosum+sumShiSuan.get(j).getChepiao();
             Srenshusum=Srenshusum+sumShiSuan.get(j).getRenshu();
             Sgongzisum=Sgongzisum+sumShiSuan.get(j).getGongzi();
-            Sshichangsum=Sshichangsum+sumShiSuan.get(j).getShichang();
             Sshuifeisum=Sshuifeisum+sumShiSuan.get(j).getShuifei();
             Sfangzusum=Sfangzusum+sumShiSuan.get(j).getFangzu();
             Swaibaosum=Swaibaosum+sumShiSuan.get(j).getWaibao();
@@ -274,7 +271,6 @@ public class controller {
         double renshu=Yrenshusum-Srenshusum;
 
         double gongzi=Ygongzisum-Sgongzisum;
-        double shichang=Yshichangsum-Sshichangsum;
         double shuifei=Yshuifeisum-Sshuifeisum;
         double fangzu=Yfangzusum-Sfangzusum;
         double waibao=Ywaibaosum-Swaibaosum;
@@ -296,7 +292,6 @@ public class controller {
         request.setAttribute("chepiao",chepiao);
         request.setAttribute("renshu",renshu);
         request.setAttribute("gongzi",gongzi);
-        request.setAttribute("shichang",shichang);
         request.setAttribute("shuifei",shuifei);
         request.setAttribute("fangzu",fangzu);
         request.setAttribute("waibao",waibao);

@@ -145,7 +145,6 @@ public class YuController {
         shisuan.setRengong(rengong);
         shisuan.setRiyongpin(riyong);
         shisuan.setShebeixiuli(shebei);
-        shisuan.setShichang(shi);
         shisuan.setShuidian(shuidian);
         shisuan.setShuifei(shuifei);
         shisuan.setTongxunfei(tongxun);

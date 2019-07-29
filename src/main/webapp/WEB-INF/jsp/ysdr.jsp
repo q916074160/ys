@@ -90,11 +90,8 @@
             <td><input class="easyui-textbox" type="text" name="chepiao" id="chepiao"></input></td>
         </tr>
         <tr>
-            <%--<td colspan="2" style="text-align: right"><input class="button1" type="button" id="button" value="预&nbsp;算&nbsp;结&nbsp;果" onclick="check()"/>&nbsp;&nbsp;<input class="button1" type="button" onclick="clearForm()"  value="重&nbsp;&nbsp;&nbsp;&nbsp;置"/></td>--%>
-            <%--</tr>--%>
         <tr>
-            <td colspan="2">结果：<span id="jg" style="width: 300px;"></span>&nbsp;&nbsp;&nbsp;<span id="gzhe"
-                                                                                                  style="width: 300px;"></span>
+            <td colspan="2">结果：<span id="jg" style="width: 300px;"></span>&nbsp;&nbsp;&nbsp;<span id="gzhe" style="width: 300px;"></span>
             </td>
         </tr>
     </table>
@@ -150,8 +147,7 @@
         <tr>
             <td>中队选择:</td>
             <td>
-               <select class="easyui-combobox" name="zhongdui" id="zhongdui" style="width:100px;"
-                            data-options="editable:false">
+               <select class="easyui-combobox" name="zhongdui" id="zhongdui" style="width:100px;"  data-options="editable:false">
                     <option value="请选择">--请选择--</option>
                     <option value="1">一中队</option>
                     <option value="2">二中队</option>
@@ -170,12 +166,9 @@
             style="border:0px white solid;background:transparent;outline:none;cursor: pointer;"/></a>
     <a href="javascript:void(0)" class="easyui-linkbutton"
        style="outline:none;text-align:center; position: absolute; bottom:0.5%;right:80px;height:30px;"><input
-            class="button1" type="button" id="button" value="预算结果" onclick="check(1)"
-            style="border:0px white solid;background:transparent;outline:none;cursor: pointer;"/></a>
-    <a href="javascript:void(0)" class="easyui-linkbutton"
-       style="outline:none;text-align:center; position: absolute; bottom:0.5%;right:20px; height:30px;"
-       onclick="clearForm()"><input class="button1" type="reset" value="重置"
-                                    style="outline:none;border:0px white solid;background:transparent;cursor: pointer;"/></a>
+            class="button1" type="button" id="button" value="预算结果" onclick="check(1)" style="border:0px white solid;background:transparent;outline:none;cursor: pointer;"/></a>
+    <a href="javascript:void(0)" class="easyui-linkbutton" style="outline:none;text-align:center; position: absolute; bottom:0.5%;right:20px; height:30px;"
+       onclick="clearForm()"><input class="button1" type="reset" value="重置" style="outline:none;border:0px white solid;background:transparent;cursor: pointer;"/></a>
 </form>
 </body>
 </html>

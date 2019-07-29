@@ -7,7 +7,6 @@
     <result column="xiangmuname" jdbcType="VARCHAR" property="xiangmuname"/>
     <result column="renshu" jdbcType="INTEGER" property="renshu" />
     <result column="gongzi" jdbcType="DOUBLE" property="gongzi" />
-    <result column="shichang" jdbcType="INTEGER" property="shichang" />
     <result column="shuifei" jdbcType="DOUBLE" property="shuifei" />
     <result column="fangzu" jdbcType="DOUBLE" property="fangzu" />
     <result column="waibao" jdbcType="DOUBLE" property="waibao" />
@@ -30,7 +29,7 @@
     <result column="time" jdbcType="DATE" property="time" />
   </resultMap>
   <sql id="Base_Column_List">
-    shiid, bid, xiangmuname, renshu, gongzi, shichang, shuifei, fangzu, waibao, zhaodaifei,
+    shiid, bid, xiangmuname, renshu, gongzi, shuifei, fangzu, waibao, zhaodaifei,
     tongxunfei, riyongpin, youjifei, zuchefei, shebeixiuli, gaosutongxing, chuchaijiayou,
     shineigongjiao, xiuchefei, rengong, shuidian, chepiao, qita,  jieguo,time
   </sql>
@@ -40,7 +39,6 @@
 	xiangmuname = #{xiangmuname}  ,
 	renshu = #{renshu} ,
 	gongzi = #{gongzi}  ,
-	shichang = #{shichang}  ,
 	shuifei = #{shuifei}  ,
 	fangzu = #{fangzu}  ,
 	waibao = #{waibao}  ,
@@ -81,7 +79,7 @@
       </if>
     </select>
   <select id="sumShiSuan" resultType="com.example.demo.entity.Shisuan">
-SELECT SUM(renshu) AS renshu,SUM(gongzi) AS gongzi,SUM(shichang) AS shichang,SUM(shuifei) AS shuifei,SUM(fangzu) AS fangzu,SUM(waibao) AS waibao,SUM(zhaodaifei) AS zhaodaifei,SUM(tongxunfei) AS tongxunfei,SUM(riyongpin) AS riyongpin,
+SELECT SUM(renshu) AS renshu,SUM(gongzi) AS gongzi,SUM(shuifei) AS shuifei,SUM(fangzu) AS fangzu,SUM(waibao) AS waibao,SUM(zhaodaifei) AS zhaodaifei,SUM(tongxunfei) AS tongxunfei,SUM(riyongpin) AS riyongpin,
 SUM(youjifei) AS youjifei,SUM(zuchefei) AS zuchefei,SUM(gaosutongxing) AS gaosutongxing,SUM(shineigongjiao) AS shineigongjiao,
 SUM(xiuchefei) AS xiuchefei,SUM(rengong) AS rengong,SUM(shuidian) AS shuidian,SUM(chepiao) AS chepiao,SUM(qita) AS qita,SUM(jieguo) AS jieguo, SUM(chuchaijiayou) AS chuchaijiayou, SUM(shebeixiuli) AS shebeixiuli,xiangmuname,`time` FROM shisuan
 WHERE 1=1
@@ -102,7 +100,7 @@ WHERE 1=1
 
   <insert id="insert" parameterType="com.example.demo.entity.Shisuan">
     insert into shisuan (shiid, bid, xiangmuname, 
-      renshu, gongzi, shichang, 
+      renshu, gongzi,
       shuifei, fangzu, waibao, 
       zhaodaifei, tongxunfei, riyongpin, 
       youjifei, zuchefei, shebeixiuli, 
@@ -111,7 +109,7 @@ WHERE 1=1
       chepiao, qita, jieguo,`time`
       )
     values (#{shiid,jdbcType=INTEGER}, #{bid,jdbcType=INTEGER}, #{xiangmuname,jdbcType=VARCHAR}, 
-      #{renshu,jdbcType=INTEGER}, #{gongzi,jdbcType=DOUBLE}, #{shichang,jdbcType=INTEGER}, 
+      #{renshu,jdbcType=INTEGER}, #{gongzi,jdbcType=DOUBLE},
       #{shuifei,jdbcType=DOUBLE}, #{fangzu,jdbcType=DOUBLE}, #{waibao,jdbcType=DOUBLE}, 
       #{zhaodaifei,jdbcType=DOUBLE}, #{tongxunfei,jdbcType=DOUBLE}, #{riyongpin,jdbcType=DOUBLE}, 
       #{youjifei,jdbcType=DOUBLE}, #{zuchefei,jdbcType=DOUBLE}, #{shebeixiuli,jdbcType=DOUBLE}, 
