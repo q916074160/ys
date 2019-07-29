@@ -218,7 +218,6 @@ function addTab(title, url) {
 function check1(data) {
     var xiangmuname = document.getElementById("xiangmuname").value;
     var renshu = document.getElementById("renshu").value;
-    var shichang = document.getElementById("shichang").value;
     var shuifei = document.getElementById("shuifei").value;
     var fangzu = document.getElementById("fangzu").value;
     var waibao = document.getElementById("waibao").value;
@@ -248,13 +247,8 @@ function check1(data) {
         boolean = false;
         return false;
     }
-    if(isNaN(renshu)||isNaN(shichang)||isNaN(shuifei)||isNaN(fangzu)||isNaN(waibao)||isNaN(zhaodaifei)||isNaN(tongxunfei)||isNaN(riyongpin)||isNaN(youjifei)||isNaN(zuchefei)||isNaN(shebeixiuli)||isNaN(gaosutongxing)||isNaN(chuchaijiayou)||isNaN(xiuchefei)||isNaN(rengong)||isNaN(shuidian)||isNaN(chepiao)||isNaN(qita)||isNaN(gongzi)||isNaN(shineigongjiao)){
+    if(isNaN(renshu)||isNaN(shuifei)||isNaN(fangzu)||isNaN(waibao)||isNaN(zhaodaifei)||isNaN(tongxunfei)||isNaN(riyongpin)||isNaN(youjifei)||isNaN(zuchefei)||isNaN(shebeixiuli)||isNaN(gaosutongxing)||isNaN(chuchaijiayou)||isNaN(xiuchefei)||isNaN(rengong)||isNaN(shuidian)||isNaN(chepiao)||isNaN(qita)||isNaN(gongzi)||isNaN(shineigongjiao)){
         alert("请输入正确的数字");
-        boolean = false;
-        return false;
-    }
-    if (shichang == "") {
-        alert("时长不能为空");
         boolean = false;
         return false;
     }
@@ -365,7 +359,7 @@ function check1(data) {
 
     if (boolean == true) {
         if (data == 1) {
-            var url = "sumS?name=" + xiangmuname + "&ren=" + renshu + "&shi=" + shichang + "&chepiao=" + chepiao + "&chuchai=" + chuchaijiayou + "&fangzu=" + fangzu +
+            var url = "sumS?name=" + xiangmuname + "&ren=" + renshu +  "&chepiao=" + chepiao + "&chuchai=" + chuchaijiayou + "&fangzu=" + fangzu +
                 "&tongxing=" + tongxunfei + "&gongzi=" + gongzi + "&qita=" + qita + "&rengong=" + rengong + "&riyong=" + riyongpin + "&shebei=" + shebeixiuli + "&shuidian=" + shuidian + "&shuifei=" + shuifei + "&tongxun=" + tongxunfei + "&waibao=" + waibao +
                 "&gongjiao=" + shineigongjiao + "&zhaodai=" + zhaodaifei + "&zuche=" + zuchefei + "&xiuche=" + xiuchefei + "&youji=" + youjifei + "&zhongdui=" + zhongdui + "&time=" + time;
             //alert(url);
@@ -375,7 +369,7 @@ function check1(data) {
         }
         if (data == 2) {
             if (confirm("是否保存？")) {
-                var url = "addS?name=" + xiangmuname + "&ren=" + renshu + "&shi=" + shichang + "&chepiao=" + chepiao + "&chuchai=" + chuchaijiayou + "&fangzu=" + fangzu +
+                var url = "addS?name=" + xiangmuname + "&ren=" + renshu + "&chepiao=" + chepiao + "&chuchai=" + chuchaijiayou + "&fangzu=" + fangzu +
                     "&tongxing=" + tongxunfei + "&gongzi=" + gongzi + "&qita=" + qita + "&rengong=" + rengong + "&riyong=" + riyongpin + "&shebei=" + shebeixiuli + "&shuidian=" + shuidian + "&shuifei=" + shuifei + "&tongxun=" + tongxunfei + "&waibao=" + waibao +
                     "&gongjiao=" + shineigongjiao + "&zhaodai=" + zhaodaifei + "&zuche=" + zuchefei + "&xiuche=" + xiuchefei + "&youji=" + youjifei + "&zhongdui=" + zhongdui + "&time=" + time;
                 //alert(url);
