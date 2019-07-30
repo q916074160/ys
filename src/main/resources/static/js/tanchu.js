@@ -39,11 +39,10 @@ $(function () {
             }
         }
     });
-
-
-
 });
-// $('#dg1').datagrid('clearSelections');
+
+
+
 
 $(function () {
     $('#dg3').datagrid({
@@ -51,38 +50,28 @@ $(function () {
         //            onDblClickRow
         //单击事件
         onDblClickRow: function (rowIndex, rowData) {
-
-            var row = $('#dg3').datagrid('getSelected');
-            // if(row==null){
-            //     alert($("#shiid1").textbox("setValue", row.xiangmuname))
-            //     return rows;
-            // }
-            // alert($("#xiangmuname1").textbox("setValue", row.xiangmuname))
-            alert(row);
-            if (row) {
-
-
-
-                $("#xiangmuname1").textbox("setValue", row.xiangmuname);
-                $("#renshu1").textbox("setValue", row.renshu);
-                $("#gongzi1").textbox("setValue", row.gongzi);
-                $("#shichang1").textbox("setValue", row.shichang);
-                $("#shuifei1").textbox("setValue", row.shuifei);
-                $("#fangzu1").textbox("setValue", row.fangzu);
-                $("#waibao1").textbox("setValue", row.waibao);
-                $("#zhaodaifei1").textbox("setValue", row.zhaodaifei);
-                $("#tongxunfei1").textbox("setValue", row.tongxunfei);
-                $("#riyongpin1").textbox("setValue", row.riyongpin);
-                $("#youjifei1").textbox("setValue", row.youjifei);
-                $("#zuchefei1").textbox("setValue", row.zuchefei);
-                $("#shebeixiuli1").textbox("setValue", row.shebeixiuli);
-                $("#gaosutongxing1").textbox("setValue", row.gaosutongxing);
-                $("#chuchaijiayou1").textbox("setValue", row.chuchaijiayou);
-                $("#shineigongjiao1").textbox("setValue", row.shineigongjiao);
-                $("#xiuchefei1").textbox("setValue", row.xiuchefei);
-                $("#rengong1").textbox("setValue", row.rengong);
-                $("#shuidian1").textbox("setValue", row.shuidian);
-                $("#chepiao1").textbox("setValue", row.chepiao);
+            var rows = $('#dg3').datagrid('getSelected');
+            if (rows) {
+                $("#xiangmuname1").textbox("setValue", rows.xiangmuname);
+                $("#renshu1").textbox("setValue", rows.renshu);
+                $("#gongzi1").textbox("setValue", rows.gongzi);
+                $("#shichang1").textbox("setValue", rows.shichang);
+                $("#shuifei1").textbox("setValue", rows.shuifei);
+                $("#fangzu1").textbox("setValue", rows.fangzu);
+                $("#waibao1").textbox("setValue", rows.waibao);
+                $("#zhaodaifei00").textbox("setValue", rows.zhaodaifei)
+                $("#tongxunfei1").textbox("setValue", rows.tongxunfei);
+                $("#riyongpin1").textbox("setValue", rows.riyongpin);
+                $("#youjifei1").textbox("setValue", rows.youjifei);
+                $("#zuchefei1").textbox("setValue", rows.zuchefei);
+                $("#shebeixiuli1").textbox("setValue", rows.shebeixiuli);
+                $("#gaosutongxing1").textbox("setValue", rows.gaosutongxing);
+                $("#chuchaijiayou1").textbox("setValue", rows.chuchaijiayou);
+                $("#shineigongjiao1").textbox("setValue", rows.shineigongjiao);
+                $("#xiuchefei1").textbox("setValue", rows.xiuchefei);
+                $("#rengong1").textbox("setValue", rows.rengong);
+                $("#shuidian1").textbox("setValue", rows.shuidian);
+                $("#chepiao1").textbox("setValue", rows.chepiao);
                 $('#w1').window('open');
             }
         }

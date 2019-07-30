@@ -318,12 +318,7 @@ public class controller {
         return "rydr";
     }
 
-    @RequestMapping("/aaa")
-    public String a(@DateTimeFormat(pattern="yyyy-MM-dd") Date date,Shisuan shisuan, Yusuan yusuan, HttpServletRequest request, HttpServletResponse response) {
-        List<Shisuan> list = shisuanMapper.queryShiSuan(shisuan);
-        request.setAttribute("list", list);
-        return "aaa";
-    }
+
 
 
 
