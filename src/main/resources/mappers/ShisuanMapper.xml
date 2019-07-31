@@ -56,7 +56,8 @@
 	rengong = #{rengong}  ,
 	shuidian = #{shuidian}  ,
 	chepiao = #{chepiao},
-	qita=#{qita}
+	qita=#{qita},
+	jieguo=#{jieguo}
 	WHERE
 	shiid = #{shiid} ;
   </update>
