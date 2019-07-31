@@ -190,10 +190,16 @@ public class ExcelController {
                 int bumen1=0;
                 renyuan.setRid(null);
                 Cell cell2=row.getCell(1);
+                if (cell2 == null){
+                    continue;
+                }
                 cell2.setCellType(Cell.CELL_TYPE_STRING);
                 renyuan.setRname(cell2.getStringCellValue());
 
                 Cell cell3=row.getCell(2);
+                if (cell3 == null){
+                    continue;
+                }
                 cell3.setCellType(Cell.CELL_TYPE_STRING);
                 for(int j=0;j<blist.size();j++){
                     bumen.setBname(blist.get(j).getBname());
