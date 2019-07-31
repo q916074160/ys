@@ -57,7 +57,7 @@ public class YuController {
                             @RequestParam int shi,@RequestParam double chepiao,@RequestParam double chuchai,@RequestParam double fangzu,@RequestParam double tongxing,
                             @RequestParam double gongzi,@RequestParam double qita,@RequestParam double rengong,@RequestParam double riyong,@RequestParam double shebei,
                             @RequestParam double shuidian,@RequestParam double shuifei,@RequestParam double tongxun,@RequestParam double waibao,@RequestParam double gongjiao,
-                            @RequestParam double zhaodai,@RequestParam double zuche,@RequestParam double xiuche,@RequestParam double youji){
+                            @RequestParam double zhaodai,@RequestParam double zuche,@RequestParam double xiuche,@RequestParam double youji,@RequestParam String beizhu){
         //总共盈利
         double sum=0;
 
@@ -94,6 +94,7 @@ public class YuController {
         yusuan.setBid(zhongdui);
 
         yusuan.setJieguo(sum);
+        yusuan.setBeizhu(beizhu);
 
         yu.insert(yusuan);
         return sum;
@@ -117,7 +118,7 @@ public class YuController {
                              @RequestParam double chepiao, @RequestParam double chuchai, @RequestParam double fangzu, @RequestParam double tongxing,
                             @RequestParam double gongzi, @RequestParam double qita, @RequestParam double rengong, @RequestParam double riyong, @RequestParam double shebei,
                             @RequestParam double shuidian, @RequestParam double shuifei, @RequestParam double tongxun, @RequestParam double waibao, @RequestParam double gongjiao,
-                            @RequestParam double zhaodai, @RequestParam double zuche, @RequestParam double xiuche, @RequestParam double youji){
+                            @RequestParam double zhaodai, @RequestParam double zuche, @RequestParam double xiuche, @RequestParam double youji,@RequestParam String beizhu){
 
         SimpleDateFormat formatter=new SimpleDateFormat("yyyy-MM-dd");
         Date date1= null;
@@ -157,6 +158,7 @@ public class YuController {
         shisuan.setBid(zhongdui);
         shisuan.setTime(date1);
         shisuan.setJieguo(sum);
+        shisuan.setBeizhu(beizhu);
 
         shiSuanMapper.insert(shisuan);
         return sum;
