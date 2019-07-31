@@ -228,7 +228,7 @@ public class controller {
             request.setAttribute("xiangmuname", xiangmuname);
             request.setAttribute("list", list);
             request.setAttribute("bumenList", bumenList);
-            request.setAttribute("yulist", yusuanList);
+            request.setAttribute("yulist", yulist);
         }
 
         return "ys";

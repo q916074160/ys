@@ -88,7 +88,9 @@
              data-options="iconCls:'icon-save',minimizable:false,closed:true"
              style="width:60%;height:90%;padding:10px;overflow:hidden;" >
             <form>
-                <input class="easyui-textbox" id="shiid" name="shiid" value=" ">
+
+                <input class="easyui-textbox" id="shiid" name="shiid" value=" " type="hidden">
+                <%--<input type="text" value=" " id="shiid" name="shiid">--%>
                 <div>
                     <div style="margin-bottom:20px">
                         <div>项目名称:</div>
@@ -220,6 +222,7 @@
 
                 <thead>
                 <tr>
+                    <th field="shiid" width="80" hidden="true" >shiid</th>
                     <th field="time" width="80">所属时间</th>
                     <th field="xiangmuname" width="100">名称</th>
                     <th field="bid" width="80">中队</th>
@@ -248,13 +251,15 @@
                 </thead>
 
 
-
+<script>
+    $("#b").hide();
+</script>
 
                 <tbody id="show_tbody1">
                 <c:forEach items="${list}" var="list">
                     <c:if test="${xiangmuname!=null}">
                         <tr>
-                            <td>${list.shiid}</td>
+                            <td  hidden="true">${list.shiid}</td>
                             <td>
                                 <fmt:formatDate pattern="yyyy-MM" value="${list.time}"></fmt:formatDate>
                             </td>
@@ -313,69 +318,68 @@
                 </c:forEach>
                 </tbody>
 
-                <tbody>
-                <c:if test="${sumShiSuan!=null}">
-         <c:forEach items="${sumShiSuan}" var="sumShiSuan">
+                <%--<tbody>--%>
+                <%--<c:if test="${sumShiSuan!=null}">--%>
+         <%--<c:forEach items="${sumShiSuan}" var="sumShiSuan">--%>
 
-                        <tr>
+                        <%--<tr>--%>
 
-                            <td>&nbsp;</td>
-                            <td>&nbsp;</td>
-                            <td>${sumShiSuan.xiangmuname}</td>
-                            <c:if test="${sumShiSuan.bid==1}">
-                                <td>一中队</td>
-                            </c:if>
+                            <%--<td>&nbsp;</td>--%>
+                            <%--<td>&nbsp;</td>--%>
+                            <%--<td>${sumShiSuan.xiangmuname}</td>--%>
+                            <%--<c:if test="${sumShiSuan.bid==1}">--%>
+                                <%--<td>一中队</td>--%>
+                            <%--</c:if>--%>
 
-                            <c:if test="${sumShiSuan.bid==2}">
-                                <td>二中队</td>
-                            </c:if>
+                            <%--<c:if test="${sumShiSuan.bid==2}">--%>
+                                <%--<td>二中队</td>--%>
+                            <%--</c:if>--%>
 
-                            <c:if test="${sumShiSuan.bid==3}">
-                                <td>三中队</td>
-                            </c:if>
+                            <%--<c:if test="${sumShiSuan.bid==3}">--%>
+                                <%--<td>三中队</td>--%>
+                            <%--</c:if>--%>
 
-                            <c:if test="${sumShiSuan.bid==4}">
-                                <td>四中队</td>
-                            </c:if>
+                            <%--<c:if test="${sumShiSuan.bid==4}">--%>
+                                <%--<td>四中队</td>--%>
+                            <%--</c:if>--%>
 
-                            <c:if test="${sumShiSuan.bid==5}">
-                                <td>五中队</td>
-                            </c:if>
+                            <%--<c:if test="${sumShiSuan.bid==5}">--%>
+                                <%--<td>五中队</td>--%>
+                            <%--</c:if>--%>
 
-                            <c:if test="${sumShiSuan.bid==6}">
-                                <td>内业</td>
-                            </c:if>
+                            <%--<c:if test="${sumShiSuan.bid==6}">--%>
+                                <%--<td>内业</td>--%>
+                            <%--</c:if>--%>
 
-                            <c:if test="${sumShiSuan.bid==7}">
-                                <td>管理</td>
-                            </c:if>
+                            <%--<c:if test="${sumShiSuan.bid==7}">--%>
+                                <%--<td>管理</td>--%>
+                            <%--</c:if>--%>
 
-                            <td>${sumShiSuan.renshu}</td>
-                            <td>${sumShiSuan.gongzi}</td>
-                            <td>${sumShiSuan.shuifei}</td>
-                            <td>${sumShiSuan.fangzu}</td>
-                            <td>${sumShiSuan.waibao}</td>
-                            <td>${sumShiSuan.zhaodaifei}</td>
-                            <td>${sumShiSuan.tongxunfei}</td>
-                            <td>${sumShiSuan.riyongpin}</td>
-                            <td>${sumShiSuan.youjifei}</td>
-                            <td>${sumShiSuan.zuchefei}</td>
-                            <td>${sumShiSuan.shebeixiuli}</td>
-                            <td>${sumShiSuan.gaosutongxing}</td>
-                            <td>${sumShiSuan.chuchaijiayou}</td>
-                            <td>${sumShiSuan.shineigongjiao}</td>
-                            <td>${sumShiSuan.xiuchefei}</td>
-                            <td>${sumShiSuan.rengong}</td>
-                            <td>${sumShiSuan.shuidian}</td>
-                            <td>${sumShiSuan.chepiao}</td>
-                            <td>${sumShiSuan.qita}</td>
-                            <td>${sumShiSuan.jieguo}</td>
-                            <td><fmt:formatDate pattern="yyyy-MM-dd" value="${sumShiSuan.kaishitime}"></fmt:formatDate></td>
-                        </tr>
+                            <%--<td>${sumShiSuan.renshu}</td>--%>
+                            <%--<td>${sumShiSuan.gongzi}</td>--%>
+                            <%--<td>${sumShiSuan.shuifei}</td>--%>
+                            <%--<td>${sumShiSuan.fangzu}</td>--%>
+                            <%--<td>${sumShiSuan.waibao}</td>--%>
+                            <%--<td>${sumShiSuan.zhaodaifei}</td>--%>
+                            <%--<td>${sumShiSuan.tongxunfei}</td>--%>
+                            <%--<td>${sumShiSuan.riyongpin}</td>--%>
+                            <%--<td>${sumShiSuan.youjifei}</td>--%>
+                            <%--<td>${sumShiSuan.zuchefei}</td>--%>
+                            <%--<td>${sumShiSuan.shebeixiuli}</td>--%>
+                            <%--<td>${sumShiSuan.gaosutongxing}</td>--%>
+                            <%--<td>${sumShiSuan.chuchaijiayou}</td>--%>
+                            <%--<td>${sumShiSuan.shineigongjiao}</td>--%>
+                            <%--<td>${sumShiSuan.xiuchefei}</td>--%>
+                            <%--<td>${sumShiSuan.rengong}</td>--%>
+                            <%--<td>${sumShiSuan.shuidian}</td>--%>
+                            <%--<td>${sumShiSuan.chepiao}</td>--%>
+                            <%--<td>${sumShiSuan.jieguo}</td>--%>
+                            <%--<td><fmt:formatDate pattern="yyyy-MM-dd" value="${sumShiSuan.kaishitime}"></fmt:formatDate></td>--%>
+                        <%--</tr>--%>
 
-                </c:forEach>
-                </c:if>
-                </tbody>
+                <%--</c:forEach>--%>
+                <%--</c:if>--%>
+                <%--</tbody>--%>
 
             </table>
 
@@ -495,14 +499,17 @@
 
 
             </div>
-
-            <table id="dg3" title="预算信息" style="width:100%;height:30%" data-options="region:'south',
+            <table id="dg3" class="easyui-datagrid" title="预算信息" style="width:100%;height:30%"
+                   data-options="
+              region:'north',
 				rownumbers:true,
 				singleSelect:true,
 				autoRowHeight:false,
 				pagination:true,
 				pageSize:10,
               collapsible:true">
+
+
                 <thead>
                 <tr>
 
@@ -615,6 +622,7 @@
                 <tr>
 
                     <th field="xiangmuname" width="100">名称</th>
+                    <th field="renshu" width="80" align="right">人数</th>
                     <th field="gongzi" width="80" align="right">工资</th>
                     <th field="shuifei" width="100" align="right">税</th>
                     <th field="fangzu" width="110">房租</th>
