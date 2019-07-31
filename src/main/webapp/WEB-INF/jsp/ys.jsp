@@ -69,7 +69,7 @@
                     </div>
                     <div class="search_input" style="margin-left:80px">
                         <%--onclick="showqueryBill()"--%>
-                        <button class="btn btn-primary search_btn" type="button" id="search_btn1" >查询</button>
+                        <button class="btn btn-primary search_btn" type="button" id="search_btn1"  >查询</button>
                     </div>
 
                     <div class="search_input">
@@ -217,6 +217,36 @@
 				pagination:true,
 				pageSize:10,
               collapsible:true">
+
+                <thead>
+                <tr>
+                    <th field="time" width="80">所属时间</th>
+                    <th field="xiangmuname" width="100">名称</th>
+                    <th field="bid" width="80">中队</th>
+                    <th field="renshu" width="80" align="right">人数</th>
+                    <th field="gongzi" width="80" align="right">工资</th>
+                    <th field="shuifei" width="100" align="right">税</th>
+                    <th field="fangzu" width="110">房租</th>
+                    <th field="waibao" width="110">外包</th>
+                    <th field="zhaodaifei" width="80">招待</th>
+                    <th field="tongxunfei" width="100">通讯</th>
+                    <th field="riyongpin" width="80">日用品</th>
+                    <th field="youjifei" width="80" align="right">邮寄</th>
+                    <th field="zuchefei" width="80" align="right">租车</th>
+                    <th field="shebeixiuli" width="100" align="right">修理</th>
+                    <th field="gaosutongxing" width="110">通行</th>
+                    <th field="chuchaijiayou" width="110">出差加油</th>
+                    <th field="shineigongjiao" width="100">公交出租</th>
+                    <th field="xiuchefei" width="80">修洗车</th>
+                    <th field="rengong" width="80" align="right">人工</th>
+                    <th field="shuidian" width="80" align="right">水电</th>
+                    <th field="chepiao" width="100" align="right">车票</th>
+                    <th field="qita" width="110">其他</th>
+                    <th field="jieguo" width="110">总和</th>
+
+                </tr>
+                </thead>
+
 
 
 
@@ -464,15 +494,46 @@
 
 
             </div>
-            <table id="dg3" class="easyui-datagrid" title="预算信息" style="width:100%;height:30%"
-                   data-options="
-              region:'north',
+
+            <table id="dg3" title="预算信息" style="width:100%;height:30%" data-options="region:'south',
 				rownumbers:true,
 				singleSelect:true,
 				autoRowHeight:false,
 				pagination:true,
 				pageSize:10,
               collapsible:true">
+                <thead>
+                <tr>
+
+
+                    <th field="shichang" width="100">项目时长</th>
+                    <th field="shiid" width="100" hidden="hidden">shiid</th>
+                    <th field="xiangmuname" width="100">名称</th>
+                    <th field="bid" width="80">中队</th>
+                    <th field="renshu" width="80" align="right">人数</th>
+                    <th field="gongzi" width="80" align="right">工资</th>
+                    <th field="shuifei" width="100" align="right">税</th>
+                    <th field="fangzu" width="110">房租</th>
+                    <th field="waibao" width="110">外包</th>
+                    <th field="zhaodaifei" width="80">招待</th>
+                    <th field="tongxunfei" width="100">通讯</th>
+                    <th field="riyongpin" width="80">日用品</th>
+                    <th field="youjifei" width="80" align="right">邮寄</th>
+                    <th field="zuchefei" width="80" align="right">租车</th>
+                    <th field="shebeixiuli" width="100" align="right">修理</th>
+                    <th field="gaosutongxing" width="110">通行</th>
+                    <th field="chuchaijiayou" width="110">出差加油</th>
+                    <th field="shineigongjiao" width="100">公交出租</th>
+                    <th field="xiuchefei" width="80">修洗车</th>
+                    <th field="rengong" width="80" align="right">人工</th>
+                    <th field="shuidian" width="80" align="right">水电</th>
+                    <th field="chepiao" width="100" align="right">车票</th>
+                    <th field="qita" width="110">其他</th>
+                    <th field="jieguo" width="110">总和</th>
+
+                </tr>
+                </thead>
+
                 <tbody id="show_tbody14">
                 <c:if test="${yulist!=null}">
                 <c:forEach items="${yulist}" var="yulist">
@@ -547,6 +608,35 @@
                 pagination:true,
                 pageSize:10,
                 collapsible:true">
+
+
+                <thead>
+                <tr>
+
+                    <th field="xiangmuname" width="100">名称</th>
+                    <th field="gongzi" width="80" align="right">工资</th>
+                    <th field="shuifei" width="100" align="right">税</th>
+                    <th field="fangzu" width="110">房租</th>
+                    <th field="waibao" width="110">外包</th>
+                    <th field="zhaodaifei" width="80">招待</th>
+                    <th field="tongxunfei" width="100">通讯</th>
+                    <th field="riyongpin" width="80">日用品</th>
+                    <th field="youjifei" width="80" align="right">邮寄</th>
+                    <th field="zuchefei" width="80" align="right">租车</th>
+                    <th field="shebeixiuli" width="100" align="right">修理</th>
+                    <th field="gaosutongxing" width="110">通行</th>
+                    <th field="chuchaijiayou" width="110">出差加油</th>
+                    <th field="shineigongjiao" width="100">公交出租</th>
+                    <th field="xiuchefei" width="80">修洗车</th>
+                    <th field="rengong" width="80" align="right">人工</th>
+                    <th field="shuidian" width="80" align="right">水电</th>
+                    <th field="chepiao" width="100" align="right">车票</th>
+                    <th field="qita" width="110">其他</th>
+                    <th field="jieguo" width="110">总和</th>
+
+                </tr>
+                </thead>
+
 
                 <tbody id="show_tbody12">
 

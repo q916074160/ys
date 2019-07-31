@@ -111,3 +111,16 @@ function shisuan () {
 }
 
 
+function chaxun () {
+    var xiangmuname = document.getElementById("Ktext").value;
+    var bid = document.getElementById("bid").value;
+    alert(bid)
+    var kaishitime = document.getElementById("kaishitime").value;
+    var time = document.getElementById("time").value;
+
+    var url = "querySs?xiangmuname=" + xiangmuname + "&bid=" + bid + "&kaishitime=" + kaishitime+"&time"+time;
+alert(url);
+        $.get(url);
+}
+
+
