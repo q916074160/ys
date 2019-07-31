@@ -283,68 +283,69 @@
                 </c:forEach>
                 </tbody>
 
-                <%--<tbody>--%>
-                <%--<c:if test="${sumShiSuan!=null}">--%>
-         <%--<c:forEach items="${sumShiSuan}" var="sumShiSuan">--%>
+                <tbody>
+                <c:if test="${sumShiSuan!=null}">
+         <c:forEach items="${sumShiSuan}" var="sumShiSuan">
 
-                        <%--<tr>--%>
+                        <tr>
 
-                            <%--<td>&nbsp;</td>--%>
-                            <%--<td>&nbsp;</td>--%>
-                            <%--<td>${sumShiSuan.xiangmuname}</td>--%>
-                            <%--<c:if test="${sumShiSuan.bid==1}">--%>
-                                <%--<td>一中队</td>--%>
-                            <%--</c:if>--%>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td>${sumShiSuan.xiangmuname}</td>
+                            <c:if test="${sumShiSuan.bid==1}">
+                                <td>一中队</td>
+                            </c:if>
 
-                            <%--<c:if test="${sumShiSuan.bid==2}">--%>
-                                <%--<td>二中队</td>--%>
-                            <%--</c:if>--%>
+                            <c:if test="${sumShiSuan.bid==2}">
+                                <td>二中队</td>
+                            </c:if>
 
-                            <%--<c:if test="${sumShiSuan.bid==3}">--%>
-                                <%--<td>三中队</td>--%>
-                            <%--</c:if>--%>
+                            <c:if test="${sumShiSuan.bid==3}">
+                                <td>三中队</td>
+                            </c:if>
 
-                            <%--<c:if test="${sumShiSuan.bid==4}">--%>
-                                <%--<td>四中队</td>--%>
-                            <%--</c:if>--%>
+                            <c:if test="${sumShiSuan.bid==4}">
+                                <td>四中队</td>
+                            </c:if>
 
-                            <%--<c:if test="${sumShiSuan.bid==5}">--%>
-                                <%--<td>五中队</td>--%>
-                            <%--</c:if>--%>
+                            <c:if test="${sumShiSuan.bid==5}">
+                                <td>五中队</td>
+                            </c:if>
 
-                            <%--<c:if test="${sumShiSuan.bid==6}">--%>
-                                <%--<td>内业</td>--%>
-                            <%--</c:if>--%>
+                            <c:if test="${sumShiSuan.bid==6}">
+                                <td>内业</td>
+                            </c:if>
 
-                            <%--<c:if test="${sumShiSuan.bid==7}">--%>
-                                <%--<td>管理</td>--%>
-                            <%--</c:if>--%>
+                            <c:if test="${sumShiSuan.bid==7}">
+                                <td>管理</td>
+                            </c:if>
 
-                            <%--<td>${sumShiSuan.renshu}</td>--%>
-                            <%--<td>${sumShiSuan.gongzi}</td>--%>
-                            <%--<td>${sumShiSuan.shuifei}</td>--%>
-                            <%--<td>${sumShiSuan.fangzu}</td>--%>
-                            <%--<td>${sumShiSuan.waibao}</td>--%>
-                            <%--<td>${sumShiSuan.zhaodaifei}</td>--%>
-                            <%--<td>${sumShiSuan.tongxunfei}</td>--%>
-                            <%--<td>${sumShiSuan.riyongpin}</td>--%>
-                            <%--<td>${sumShiSuan.youjifei}</td>--%>
-                            <%--<td>${sumShiSuan.zuchefei}</td>--%>
-                            <%--<td>${sumShiSuan.shebeixiuli}</td>--%>
-                            <%--<td>${sumShiSuan.gaosutongxing}</td>--%>
-                            <%--<td>${sumShiSuan.chuchaijiayou}</td>--%>
-                            <%--<td>${sumShiSuan.shineigongjiao}</td>--%>
-                            <%--<td>${sumShiSuan.xiuchefei}</td>--%>
-                            <%--<td>${sumShiSuan.rengong}</td>--%>
-                            <%--<td>${sumShiSuan.shuidian}</td>--%>
-                            <%--<td>${sumShiSuan.chepiao}</td>--%>
-                            <%--<td>${sumShiSuan.jieguo}</td>--%>
-                            <%--<td><fmt:formatDate pattern="yyyy-MM-dd" value="${sumShiSuan.kaishitime}"></fmt:formatDate></td>--%>
-                        <%--</tr>--%>
+                            <td>${sumShiSuan.renshu}</td>
+                            <td>${sumShiSuan.gongzi}</td>
+                            <td>${sumShiSuan.shuifei}</td>
+                            <td>${sumShiSuan.fangzu}</td>
+                            <td>${sumShiSuan.waibao}</td>
+                            <td>${sumShiSuan.zhaodaifei}</td>
+                            <td>${sumShiSuan.tongxunfei}</td>
+                            <td>${sumShiSuan.riyongpin}</td>
+                            <td>${sumShiSuan.youjifei}</td>
+                            <td>${sumShiSuan.zuchefei}</td>
+                            <td>${sumShiSuan.shebeixiuli}</td>
+                            <td>${sumShiSuan.gaosutongxing}</td>
+                            <td>${sumShiSuan.chuchaijiayou}</td>
+                            <td>${sumShiSuan.shineigongjiao}</td>
+                            <td>${sumShiSuan.xiuchefei}</td>
+                            <td>${sumShiSuan.rengong}</td>
+                            <td>${sumShiSuan.shuidian}</td>
+                            <td>${sumShiSuan.chepiao}</td>
+                            <td>${sumShiSuan.qita}</td>
+                            <td>${sumShiSuan.jieguo}</td>
+                            <td><fmt:formatDate pattern="yyyy-MM-dd" value="${sumShiSuan.kaishitime}"></fmt:formatDate></td>
+                        </tr>
 
-                <%--</c:forEach>--%>
-                <%--</c:if>--%>
-                <%--</tbody>--%>
+                </c:forEach>
+                </c:if>
+                </tbody>
 
             </table>
 
