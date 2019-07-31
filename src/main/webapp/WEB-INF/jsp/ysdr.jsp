@@ -159,6 +159,10 @@
                 </select>
             </td>
         </tr>
+        <tr>
+            <td>备注:</td>
+            <td><textarea  name="beizhu" id="beizhu"></textarea></td>
+        </tr>
     </table>
     <a href="javascript:void(0)" class="easyui-linkbutton"
        style="outline:none;text-align:center; position: absolute; bottom:0.5%;right:170px;height:30px;"><input

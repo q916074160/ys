@@ -191,14 +191,14 @@ function check(data) {
         }
         if (data == 2) {
             if (beizhu == "") {
-                alert("租车费不能为空");
+                alert("备注不能为空，可以写无");
                 boolean = false;
                 return false;
             }
             if (confirm("是否保存？")) {
                 var url = "addY?name=" + xiangmuname + "&ren=" + renshu + "&gongshang=" + gongshang + "&yiliao=" + yiliao + "&yanglao=" + yanglao + "&shengyu=" + shengyu + "&shiye=" + shiye + "&shi=" + shichang + "&chepiao=" + chepiao + "&chuchai=" + chuchaijiayou + "&fangzu=" + fangzu +
                     "&tongxing=" + tongxunfei + "&gongzi=" + gongzi + "&qita=" + qita + "&rengong=" + rengong + "&riyong=" + riyongpin + "&shebei=" + shebeixiuli + "&shuidian=" + shuidian + "&shuifei=" + shuifei + "&tongxun=" + tongxunfei + "&waibao=" + waibao +
-                    "&gongjiao=" + shineigongjiao + "&zhaodai=" + zhaodaifei + "&zuche=" + zuchefei + "&xiuche=" + xiuchefei + "&youji=" + youjifei + "&zhongdui=" + zhongdui+"&beizhu"+beizhu;
+                    "&gongjiao=" + shineigongjiao + "&zhaodai=" + zhaodaifei + "&zuche=" + zuchefei + "&xiuche=" + xiuchefei + "&youji=" + youjifei + "&zhongdui=" + zhongdui+"&beizhu="+beizhu;
                 $.get(url, function (data) {
                     $("#jg").text(data);
                 });
@@ -376,14 +376,14 @@ function check1(data) {
         }
         if (data == 2) {
             if (beizhu == "") {
-                alert("备注不能为空");
+                alert("备注不能为空，可以写无");
                 boolean = false;
                 return false;
             }
             if (confirm("是否保存？")) {
                 var url = "addS?name=" + xiangmuname + "&ren=" + renshu + "&chepiao=" + chepiao + "&chuchai=" + chuchaijiayou + "&fangzu=" + fangzu +
                     "&tongxing=" + tongxunfei + "&gongzi=" + gongzi + "&qita=" + qita + "&rengong=" + rengong + "&riyong=" + riyongpin + "&shebei=" + shebeixiuli + "&shuidian=" + shuidian + "&shuifei=" + shuifei + "&tongxun=" + tongxunfei + "&waibao=" + waibao +
-                    "&gongjiao=" + shineigongjiao + "&zhaodai=" + zhaodaifei + "&zuche=" + zuchefei + "&xiuche=" + xiuchefei + "&youji=" + youjifei + "&zhongdui=" + zhongdui + "&time=" + time+"&beizhu"+beizhu;
+                    "&gongjiao=" + shineigongjiao + "&zhaodai=" + zhaodaifei + "&zuche=" + zuchefei + "&xiuche=" + xiuchefei + "&youji=" + youjifei + "&zhongdui=" + zhongdui + "&time=" + time+"&beizhu="+beizhu;
                 //alert(url);
                 $.get(url, function (data) {
                     $("#jg").text(data);

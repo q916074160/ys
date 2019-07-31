@@ -46,7 +46,7 @@
         </tr>
         <tr>
             <td class="td1">所属时间:</td>
-            <td><input class="easyui-datebox" style="width:90%" name="time" id="time" ></td>
+            <td><input class="easyui-datebox" style="width:77%" name="time" id="time" ></td>
         </tr>
         <tr>
             <td>中队选择:</td>
@@ -115,6 +115,10 @@
         <tr>
             <td>人数:</td>
             <td><input  type="text" name="renshu" id="renshu"  readonly= "true" style="border:0px red solid; outline:none;"></input>(个)</td>
+        </tr>
+        <tr>
+            <td>备注:</td>
+            <td><textarea  name="beizhu" id="beizhu"></textarea></td>
         </tr>
         <tr style="height: 35px">
             <td></td>
