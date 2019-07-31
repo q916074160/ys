@@ -154,7 +154,7 @@
                     <option value="3">三中队</option>
                     <option value="4">四中队</option>
                     <option value="5">五中队</option>
-                    <option value="6">内页</option>
+                    <option value="6">内业</option>
                     <option value="7">管理</option>
                 </select>
             </td>
@@ -172,7 +172,7 @@
        style="outline:none;text-align:center; position: absolute; bottom:0.5%;right:80px;height:30px;"><input
             class="button1" type="button" id="button" value="预算结果" onclick="check(1)" style="border:0px white solid;background:transparent;outline:none;cursor: pointer;"/></a>
     <a href="javascript:void(0)" class="easyui-linkbutton" style="outline:none;text-align:center; position: absolute; bottom:0.5%;right:20px; height:30px;"
-       onclick="clearForm()"><input class="button1" type="reset" value="重置" style="outline:none;border:0px white solid;background:transparent;cursor: pointer;"/></a>
+       onclick="clearForm()"><input class="button1" type="button" value="重置" style="outline:none;border:0px white solid;background:transparent;cursor: pointer;"/></a>
 </form>
 </body>
 </html>
@@ -181,5 +181,13 @@
     function clearForm() {
         $("#jg").text('');
         $('#form1').form('reset');
+        $("#zhongdui").html(' <option value="请选择">--请选择--</option>\n' +
+            '                    <option value="1">一中队</option>\n' +
+            '                    <option value="2">二中队</option>\n' +
+            '                    <option value="3">三中队</option>\n' +
+            '                    <option value="4">四中队</option>\n' +
+            '                    <option value="5">五中队</option>\n' +
+            '                    <option value="6">内业</option>\n' +
+            '                    <option value="7">管理</option>');
     }
 </script>
