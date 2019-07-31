@@ -13,7 +13,8 @@ public interface YusuanMapper {
     //动态查询
     List<Yusuan> queryYuSuan(Yusuan yusuan);
 
-
+    //预算查询总和
+    List<Yusuan> sumYuSuan(Yusuan yusuan);
 
 
 }

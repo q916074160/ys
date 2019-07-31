@@ -290,66 +290,68 @@
                 </c:forEach>
                 </tbody>
 
-                <tbody>
-         <c:forEach items="${sumShiSuan}" var="sumShiSuan">
-                    <c:if test="${xiangmuname!=null}">
-                        <tr>
+                <%--<tbody>--%>
+                <%--<c:if test="${sumShiSuan!=null}">--%>
+         <%--<c:forEach items="${sumShiSuan}" var="sumShiSuan">--%>
 
-                            <td>&nbsp;</td>
-                            <td>&nbsp;</td>
-                            <td>${sumShiSuan.xiangmuname}</td>
-                            <c:if test="${sumShiSuan.bid==1}">
-                                <td>一中队</td>
-                            </c:if>
+                        <%--<tr>--%>
 
-                            <c:if test="${sumShiSuan.bid==2}">
-                                <td>二中队</td>
-                            </c:if>
+                            <%--<td>&nbsp;</td>--%>
+                            <%--<td>&nbsp;</td>--%>
+                            <%--<td>${sumShiSuan.xiangmuname}</td>--%>
+                            <%--<c:if test="${sumShiSuan.bid==1}">--%>
+                                <%--<td>一中队</td>--%>
+                            <%--</c:if>--%>
 
-                            <c:if test="${sumShiSuan.bid==3}">
-                                <td>三中队</td>
-                            </c:if>
+                            <%--<c:if test="${sumShiSuan.bid==2}">--%>
+                                <%--<td>二中队</td>--%>
+                            <%--</c:if>--%>
 
-                            <c:if test="${sumShiSuan.bid==4}">
-                                <td>四中队</td>
-                            </c:if>
+                            <%--<c:if test="${sumShiSuan.bid==3}">--%>
+                                <%--<td>三中队</td>--%>
+                            <%--</c:if>--%>
 
-                            <c:if test="${sumShiSuan.bid==5}">
-                                <td>五中队</td>
-                            </c:if>
+                            <%--<c:if test="${sumShiSuan.bid==4}">--%>
+                                <%--<td>四中队</td>--%>
+                            <%--</c:if>--%>
 
-                            <c:if test="${sumShiSuan.bid==6}">
-                                <td>内业</td>
-                            </c:if>
+                            <%--<c:if test="${sumShiSuan.bid==5}">--%>
+                                <%--<td>五中队</td>--%>
+                            <%--</c:if>--%>
 
-                            <c:if test="${sumShiSuan.bid==7}">
-                                <td>管理</td>
-                            </c:if>
+                            <%--<c:if test="${sumShiSuan.bid==6}">--%>
+                                <%--<td>内业</td>--%>
+                            <%--</c:if>--%>
 
-                            <td>${sumShiSuan.renshu}</td>
-                            <td>${sumShiSuan.gongzi}</td>
-                            <td>${sumShiSuan.shuifei}</td>
-                            <td>${sumShiSuan.fangzu}</td>
-                            <td>${sumShiSuan.waibao}</td>
-                            <td>${sumShiSuan.zhaodaifei}</td>
-                            <td>${sumShiSuan.tongxunfei}</td>
-                            <td>${sumShiSuan.riyongpin}</td>
-                            <td>${sumShiSuan.youjifei}</td>
-                            <td>${sumShiSuan.zuchefei}</td>
-                            <td>${sumShiSuan.shebeixiuli}</td>
-                            <td>${sumShiSuan.gaosutongxing}</td>
-                            <td>${sumShiSuan.chuchaijiayou}</td>
-                            <td>${sumShiSuan.shineigongjiao}</td>
-                            <td>${sumShiSuan.xiuchefei}</td>
-                            <td>${sumShiSuan.rengong}</td>
-                            <td>${sumShiSuan.shuidian}</td>
-                            <td>${sumShiSuan.chepiao}</td>
-                            <td>${sumShiSuan.jieguo}</td>
-                            <td><fmt:formatDate pattern="yyyy-MM-dd" value="${sumShiSuan.kaishitime}"></fmt:formatDate></td>
-                        </tr>
-                    </c:if>
-                </c:forEach>
-                </tbody>
+                            <%--<c:if test="${sumShiSuan.bid==7}">--%>
+                                <%--<td>管理</td>--%>
+                            <%--</c:if>--%>
+
+                            <%--<td>${sumShiSuan.renshu}</td>--%>
+                            <%--<td>${sumShiSuan.gongzi}</td>--%>
+                            <%--<td>${sumShiSuan.shuifei}</td>--%>
+                            <%--<td>${sumShiSuan.fangzu}</td>--%>
+                            <%--<td>${sumShiSuan.waibao}</td>--%>
+                            <%--<td>${sumShiSuan.zhaodaifei}</td>--%>
+                            <%--<td>${sumShiSuan.tongxunfei}</td>--%>
+                            <%--<td>${sumShiSuan.riyongpin}</td>--%>
+                            <%--<td>${sumShiSuan.youjifei}</td>--%>
+                            <%--<td>${sumShiSuan.zuchefei}</td>--%>
+                            <%--<td>${sumShiSuan.shebeixiuli}</td>--%>
+                            <%--<td>${sumShiSuan.gaosutongxing}</td>--%>
+                            <%--<td>${sumShiSuan.chuchaijiayou}</td>--%>
+                            <%--<td>${sumShiSuan.shineigongjiao}</td>--%>
+                            <%--<td>${sumShiSuan.xiuchefei}</td>--%>
+                            <%--<td>${sumShiSuan.rengong}</td>--%>
+                            <%--<td>${sumShiSuan.shuidian}</td>--%>
+                            <%--<td>${sumShiSuan.chepiao}</td>--%>
+                            <%--<td>${sumShiSuan.jieguo}</td>--%>
+                            <%--<td><fmt:formatDate pattern="yyyy-MM-dd" value="${sumShiSuan.kaishitime}"></fmt:formatDate></td>--%>
+                        <%--</tr>--%>
+
+                <%--</c:forEach>--%>
+                <%--</c:if>--%>
+                <%--</tbody>--%>
 
             </table>
 
@@ -493,8 +495,9 @@
 				pageSize:10,
               collapsible:true">
                 <tbody id="show_tbody14">
+                <c:if test="${yulist!=null}">
                 <c:forEach items="${yulist}" var="yulist">
-                    <c:if test="${xiangmuname!=null}">
+
                         <tr>
                             <td>${yulist.xiangmuname}</td>
                             <td>${yulist.renshu}</td>
@@ -520,8 +523,9 @@
                                 <fmt:formatNumber value='${yulist.jieguo}' pattern='#,#00.00#'></fmt:formatNumber>
                             </td>
                         </tr>
-                    </c:if>
+
                 </c:forEach>
+                </c:if>
                 </tbody>
             </table>
 
@@ -537,33 +541,39 @@
                 collapsible:true">
 
                 <tbody id="show_tbody12">
-                <c:if test="${xiangmuname!=null}">
+
+                <c:if test="${list1!=null}">
+            <c:forEach items="${list1}" var="list1">
+
+
                     <tr>
-                        <td>${renshu}</td>
-                        <td>${gongzi}</td>
-                        <%--<td>${shichang}</td>--%>
-                        <td>${shuifei}</td>
-                        <td>${fangzu}</td>
-                        <td>${waibao}</td>
+                        <td>${list1.xiangmuname}</td>
+                        <td>${list1.renshu}</td>
+                        <td>${list1.gongzi}</td>
+                        <td>${list1.shuifei}</td>
+                        <td>${list1.fangzu}</td>
+                        <td>${list1.waibao}</td>
                         <td>
-                            <fmt:formatNumber value='${zhaodaifei}' pattern='#,#00.00#'></fmt:formatNumber>
+                            <fmt:formatNumber value='${list1.zhaodaifei}' pattern='#,#00.00#'></fmt:formatNumber>
                         </td>
-                        <td>${tongxunfei}</td>
-                        <td>${riyongpin}</td>
-                        <td>${youjifei}</td>
-                        <td>${zuchefei}</td>
-                        <td>${shebeixiuli}</td>
-                        <td>${gaosutongxing}</td>
-                        <td>${chuchaijiayou}</td>
-                        <td>${shineigongjiao}</td>
-                        <td>${xiuchefei}</td>
-                        <td>${rengong}</td>
-                        <td>${shuidian}</td>
-                        <td>${chepiao}</td>
+                        <td>${list1.tongxunfei}</td>
+                        <td>${list1.riyongpin}</td>
+                        <td>${list1.youjifei}</td>
+                        <td>${list1.zuchefei}</td>
+                        <td>${list1.shebeixiuli}</td>
+                        <td>${list1.gaosutongxing}</td>
+                        <td>${list1.chuchaijiayou}</td>
+                        <td>${list1.shineigongjiao}</td>
+                        <td>${list1.xiuchefei}</td>
+                        <td>${list1.rengong}</td>
+                        <td>${list1.shuidian}</td>
+                        <td>${list1.chepiao}</td>
                         <td>
-                            <fmt:formatNumber value='${jieguo}' pattern='#,#00.00#'></fmt:formatNumber>
+                            <fmt:formatNumber value='${list1.jieguo}' pattern='#,#00.00#'></fmt:formatNumber>
                         </td>
                     </tr>
+
+</c:forEach>
                 </c:if>
                 </tbody>
             </table>

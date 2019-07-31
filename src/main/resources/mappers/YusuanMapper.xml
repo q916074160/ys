@@ -53,6 +53,41 @@
     </if>
   </select>
 
+  <select id="sumYuSuan" resultType="com.example.demo.entity.Yusuan">
+    SELECT
+    SUM(renshu) AS renshu,
+    SUM(gongzi) AS gongzi,
+    SUM(shuifei) AS shuifei,
+    SUM(fangzu) AS fangzu,
+    SUM(waibao) AS waibao,
+    SUM(zhaodaifei) AS zhaodaifei,
+    SUM(tongxunfei) AS tongxunfei,
+    SUM(riyongpin) AS riyongpin,
+    SUM(youjifei) AS youjifei,
+    SUM(zuchefei) AS zuchefei,
+    SUM(gaosutongxing) AS gaosutongxing,
+    SUM(shineigongjiao) AS shineigongjiao,
+    SUM(xiuchefei) AS xiuchefei,
+    SUM(rengong) AS rengong,
+    SUM(shuidian) AS shuidian,
+    SUM(chepiao) AS chepiao,
+    SUM(qita) AS qita,
+    SUM(jieguo) AS jieguo,
+    SUM(chuchaijiayou) AS chuchaijiayou,
+    SUM(shebeixiuli) AS shebeixiuli,xiangmuname,bid
+
+    FROM yusuan
+
+    WHERE 1=1
+    <if test="bid !=0 and bid != null">
+      and bid=#{bid}
+    </if>
+    <if test="xiangmuname != null and xiangmuname!=''">
+      and xiangmuname like concat('%',concat(#{xiangmuname}),'%')
+    </if>
+    GROUP BY xiangmuname
+  </select>
+
   <insert id="insert" parameterType="com.example.demo.entity.Yusuan">
     insert into yusuan (yuid, xiangmuname, renshu, 
       gongzi, shichang, shuifei, 

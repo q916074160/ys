@@ -30,9 +30,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 import java.util.List;
 
@@ -95,220 +93,143 @@ public class controller {
     }
 
     @RequestMapping("/querySs")
-    public String queryShiSuan(@DateTimeFormat(pattern="yyyy-MM-dd") Date date,Shisuan shisuan, Yusuan yusuan, HttpServletRequest request, HttpServletResponse response,Integer shiid) {
+    public String queryShiSuan(@DateTimeFormat(pattern="yyyy-MM-dd") Date date,Shisuan shisuan, Yusuan yusuan, HttpServletRequest request, HttpServletResponse response,Integer shiid,HttpSession session) {
         DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-        String xiangmuname = request.getParameter("xiangmuname");
+        String  xiangmuname = request.getParameter("xiangmuname");
+        if(xiangmuname==null||xiangmuname.equals("")){
+            xiangmuname="1";
+        }
         String bidstr = request.getParameter("bid");
         Integer bid = null;
         if (bidstr != null && !"".equals(bidstr)) {
             bid = Integer.parseInt(bidstr);
         }
         try {
-            String kaishitime=request.getParameter("kaishitime");
-            String time=request.getParameter("time");
+            String kaishitime = request.getParameter("kaishitime");
+            String time = request.getParameter("time");
 
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
+//        System.out.println(yusuan.getXiangmuname());
 
-//        shisuan.setBid(bid);
-//        shisuan.setXiangmuname(xiangmuname);
-//        yusuan.setXiangmuname(xiangmuname);
-//        System.out.println(xiangmuname);
+        //shisuan.setBid(bid);
+        if(xiangmuname!=null||!xiangmuname.equals("")) {
+        shisuan.setXiangmuname(xiangmuname);
+        yusuan.setXiangmuname(xiangmuname);
+
         List<Shisuan> list = shisuanMapper.queryShiSuan(shisuan);
         List<Bumen> bumenList = bumenMapper.queryAll();
-        List<Shisuan> sumShiSuan = shisuanMapper.sumShiSuan(shisuan);
+
         List<Yusuan> yulist = yu.queryYuSuan(yusuan);
 
-        double Yjieguosum=0;
-        double Sjieguosum=0;
+            List<Shisuan> sumShiSuan = shisuanMapper.sumShiSuan(shisuan);
+            List<Yusuan> sumyulist = yu.sumYuSuan(yusuan);
 
-        int Yrenshusum=0;
-        int Srenshusum=0;
+            List<Yusuan> list1 = new ArrayList<>();
 
-        double Ygongzisum=0;
-        double Sgongzisum=0;
+            List<Yusuan> yusuanList = new ArrayList<>();
+            List<Shisuan> shisuanList = new ArrayList<>();
 
+            for (int i = 0; i < sumyulist.size(); i++) {
+                yusuan=new Yusuan();
+            yusuan.setXiangmuname(sumyulist.get(i).getXiangmuname());
+                yusuan.setJieguo(sumyulist.get(i).getJieguo());
+                yusuan.setChepiao(sumyulist.get(i).getChepiao());
+                yusuan.setRenshu(sumyulist.get(i).getRenshu());
+                yusuan.setGongzi(sumyulist.get(i).getGongzi());
+                yusuan.setShuifei(sumyulist.get(i).getShuifei());
+                yusuan.setFangzu(sumyulist.get(i).getFangzu());
+                yusuan.setWaibao(sumyulist.get(i).getWaibao());
+                yusuan.setZhaodaifei(sumyulist.get(i).getZhaodaifei());
+                yusuan.setTongxunfei(sumyulist.get(i).getTongxunfei());
+                yusuan.setRiyongpin(sumyulist.get(i).getRiyongpin());
+                yusuan.setYoujifei(sumyulist.get(i).getYoujifei());
+                yusuan.setZuchefei(sumyulist.get(i).getZuchefei());
+                yusuan.setShebeixiuli(sumyulist.get(i).getShebeixiuli());
+                yusuan.setGaosutongxing(sumyulist.get(i).getGaosutongxing());
+                yusuan.setChuchaijiayou(sumyulist.get(i).getChuchaijiayou());
+                yusuan.setShineigongjiao(sumyulist.get(i).getShineigongjiao());
+                yusuan.setXiuchefei(sumyulist.get(i).getXiuchefei());
+                yusuan.setRengong(sumyulist.get(i).getRengong());
+                yusuan.setShuidian(sumyulist.get(i).getShuidian());
+                yusuan.setQita(sumyulist.get(i).getQita());
 
-        double Sshichangsum=0;
-
-        double Yshuifeisum=0;
-        double Sshuifeisum=0;
-
-        double Yfangzusum=0;
-        double Sfangzusum=0;
-
-        double Ywaibaosum=0;
-        double Swaibaosum=0;
-
-        double Yzhaodaifeisum=0;
-        double Szhaodaifeisum=0;
-
-        double Ytongxunfeisum=0;
-        double Stongxunfeisum=0;
-
-        double Yriyongpinsum=0;
-        double Sriyongpinsum=0;
-
-
-        double Yyoujifeisum=0;
-        double Syoujifeisum=0;
-
-
-        double Yzuchefeisum=0;
-        double Szuchefeisum=0;
+                yusuanList.add(yusuan);
 
 
-        double Yshebeixiulisum=0;
-        double Sshebeixiulisum=0;
+            }
+            for (int j = 0; j < sumShiSuan.size(); j++) {
+                shisuan=new Shisuan();
+                shisuan.setXiangmuname(sumShiSuan.get(j).getXiangmuname());
+                shisuan.setJieguo(sumShiSuan.get(j).getJieguo());
+                shisuan.setChepiao(sumShiSuan.get(j).getChepiao());
+                shisuan.setRenshu(sumShiSuan.get(j).getRenshu());
+                shisuan.setGongzi(sumShiSuan.get(j).getGongzi());
+                shisuan.setShuifei(sumShiSuan.get(j).getShuifei());
+                shisuan.setFangzu(sumShiSuan.get(j).getFangzu());
+                shisuan.setWaibao(sumShiSuan.get(j).getWaibao());
+                shisuan.setZhaodaifei(sumShiSuan.get(j).getZhaodaifei());
+                shisuan.setTongxunfei(sumShiSuan.get(j).getTongxunfei());
+                shisuan.setRiyongpin(sumShiSuan.get(j).getRiyongpin());
+                shisuan.setYoujifei(sumShiSuan.get(j).getYoujifei());
+                shisuan.setZuchefei(sumShiSuan.get(j).getZuchefei());
+                shisuan.setShebeixiuli(sumShiSuan.get(j).getShebeixiuli());
+                shisuan.setGaosutongxing(sumShiSuan.get(j).getGaosutongxing());
+                shisuan.setChuchaijiayou(sumShiSuan.get(j).getChuchaijiayou());
+                shisuan.setShineigongjiao(sumShiSuan.get(j).getShineigongjiao());
+                shisuan.setXiuchefei(sumShiSuan.get(j).getXiuchefei());
+                shisuan.setRengong(sumShiSuan.get(j).getShuidian());
+                shisuan.setShuidian(sumShiSuan.get(j).getQita());
+                shisuan.setQita(sumShiSuan.get(j).getRengong());
+
+                shisuanList.add(shisuan);
+
+            }
+            if(yusuanList.size()==0) {
+                request.setAttribute("list1", shisuanList);
+            }
+for (int k=0;k<yusuanList.size();k++) {
+if(shisuanList.size()==0){
+    request.setAttribute("list1",yusuanList);
+
+}else if(yusuanList.get(k).getXiangmuname().equals(shisuanList.get(k).getXiangmuname())) {
+    yusuan.setJieguo(yusuanList.get(k).getJieguo() - shisuanList.get(k).getJieguo());
+    yusuan.setChepiao(yusuanList.get(k).getChepiao() - shisuanList.get(k).getChepiao());
+    yusuan.setRenshu(yusuanList.get(k).getRenshu() - shisuanList.get(k).getRenshu());
+    yusuan.setGongzi(yusuanList.get(k).getGongzi() - shisuanList.get(k).getGongzi());
+    yusuan.setShuifei(yusuanList.get(k).getShuifei() - shisuanList.get(k).getShuifei());
+    yusuan.setFangzu(yusuanList.get(k).getFangzu() - shisuanList.get(k).getFangzu());
+    yusuan.setWaibao(yusuanList.get(k).getWaibao() - shisuanList.get(k).getWaibao());
+    yusuan.setZhaodaifei(yusuanList.get(k).getZhaodaifei() - shisuanList.get(k).getZhaodaifei());
+    yusuan.setTongxunfei(yusuanList.get(k).getTongxunfei() - shisuanList.get(k).getTongxunfei());
+    yusuan.setRiyongpin(yusuanList.get(k).getRiyongpin() - shisuanList.get(k).getRiyongpin());
+    yusuan.setYoujifei(yusuanList.get(k).getYoujifei() - shisuanList.get(k).getYoujifei());
+    yusuan.setZuchefei(yusuanList.get(k).getZuchefei() - shisuanList.get(k).getZuchefei());
+    yusuan.setShebeixiuli(yusuanList.get(k).getShebeixiuli() - shisuanList.get(k).getShebeixiuli());
+    yusuan.setGaosutongxing(yusuanList.get(k).getGaosutongxing() - shisuanList.get(k).getGaosutongxing());
+    yusuan.setChuchaijiayou(yusuanList.get(k).getChuchaijiayou() - shisuanList.get(k).getChuchaijiayou());
+    yusuan.setShineigongjiao(yusuanList.get(k).getShineigongjiao() - shisuanList.get(k).getShineigongjiao());
+    yusuan.setXiuchefei(yusuanList.get(k).getXiuchefei() - shisuanList.get(k).getXiuchefei());
+    yusuan.setShuidian(yusuanList.get(k).getShuidian() - shisuanList.get(k).getShuidian());
+    yusuan.setQita(yusuanList.get(k).getQita() - shisuanList.get(k).getQita());
+    yusuan.setRengong(yusuanList.get(k).getRengong() - shisuanList.get(k).getRengong());
+
+    list1.add(yusuan);
+    request.setAttribute("list1",list1);
+}
+}
 
 
-        double Ygaosutongxingsum=0;
-        double Sgaosutongxingsum=0;
-
-
-        double Ychuchaijiayousum=0;
-        double Schuchaijiayousum=0;
-
-
-        double Yshineigongjiaosum=0;
-        double Sshineigongjiaosum=0;
-
-
-        double Yxiuchefeisum=0;
-        double Sxiuchefeisum=0;
-
-        double Yrengongsum=0;
-        double Srengongsum=0;
-
-
-        double Yshuidiansum=0;
-        double Sshuidiansum =0;
-
-
-        double Ychepiaosum=0;
-        double Schepiaosum=0;
-
-
-        double Yqitasum=0;
-        double Sqitasum=0;
-
-
-//        double Yyanglaosum=0;
-//        double Syanglaosum=0;
-//
-//
-//        double Ygongshangsum=0;
-//        double Sgongshangsum=0;
-//
-//        double Yshiyesum=0;
-//        double Sshiyesum=0;
-//
-//        double Yshengyusum=0;
-//        double Sshengyusum=0;
-
-
-
-        for (int i = 0; i < yulist.size(); i++) {
-            Yjieguosum=Yjieguosum+yulist.get(i).getJieguo();
-            Ychepiaosum=Ychepiaosum+yulist.get(i).getChepiao();
-            Yrenshusum=Yrenshusum+yulist.get(i).getRenshu();
-            Ygongzisum=Ygongzisum+yulist.get(i).getGongzi();
-            Yshuifeisum=Yshuifeisum+yulist.get(i).getShuifei();
-            Yfangzusum=Yfangzusum+yulist.get(i).getFangzu();
-            Ywaibaosum=Ywaibaosum+yulist.get(i).getWaibao();
-            Yzhaodaifeisum=Yzhaodaifeisum+yulist.get(i).getZhaodaifei();
-            Ytongxunfeisum=Ytongxunfeisum+yulist.get(i).getTongxunfei();
-            Yriyongpinsum=Yriyongpinsum+yulist.get(i).getRiyongpin();
-            Yyoujifeisum=Yyoujifeisum+yulist.get(i).getYoujifei();
-            Yzuchefeisum=Yzuchefeisum+yulist.get(i).getZuchefei();
-            Yshebeixiulisum=Yshebeixiulisum+yulist.get(i).getShebeixiuli();
-            Ygaosutongxingsum=Ygaosutongxingsum+yulist.get(i).getGaosutongxing();
-            Ychuchaijiayousum=Ychuchaijiayousum+yulist.get(i).getChuchaijiayou();
-            Yshineigongjiaosum=Yshineigongjiaosum+yulist.get(i).getShineigongjiao();
-            Yxiuchefeisum=Yxiuchefeisum+yulist.get(i).getXiuchefei();
-            Yrengongsum=Yrengongsum+yulist.get(i).getRengong();
-            Yshuidiansum=Yshuidiansum+yulist.get(i).getShuidian();
-            Yqitasum=Yqitasum+yulist.get(i).getQita();
-//            Yyanglaosum=Yyanglaosum+yulist.get(i).getYanglao();
-//            Ygongshangsum=Ygongshangsum+yulist.get(i).getGongshang();
-//            Yshiyesum=Yshiyesum+yulist.get(i).getShiye();
-//            Yshengyusum=Yshengyusum+yulist.get(i).getShengyu();
-
-        }
-        for (int j = 0; j < sumShiSuan.size(); j++) {
-            //            Syanglaosum=Syanglaosum+sumShiSuan.get(j).getYanglao();
-//            Sgongshangsum=Sgongshangsum+sumShiSuan.get(j).getGongshang();
-//            Sshiyesum=Sshiyesum+sumShiSuan.get(j).getShiye();
-//            Sshengyusum=Sshengyusum+sumShiSuan.get(j).getShengyu();
-            Sjieguosum=Sjieguosum+sumShiSuan.get(j).getJieguo();
-            Schepiaosum=Schepiaosum+sumShiSuan.get(j).getChepiao();
-            Srenshusum=Srenshusum+sumShiSuan.get(j).getRenshu();
-            Sgongzisum=Sgongzisum+sumShiSuan.get(j).getGongzi();
-            Sshuifeisum=Sshuifeisum+sumShiSuan.get(j).getShuifei();
-            Sfangzusum=Sfangzusum+sumShiSuan.get(j).getFangzu();
-            Swaibaosum=Swaibaosum+sumShiSuan.get(j).getWaibao();
-            Szhaodaifeisum=Szhaodaifeisum+sumShiSuan.get(j).getZhaodaifei();
-            Stongxunfeisum=Stongxunfeisum+sumShiSuan.get(j).getTongxunfei();
-            Sriyongpinsum=Sriyongpinsum+sumShiSuan.get(j).getRiyongpin();
-            Syoujifeisum=Syoujifeisum+sumShiSuan.get(j).getYoujifei();
-            Szuchefeisum=Szuchefeisum+sumShiSuan.get(j).getZuchefei();
-            Sshebeixiulisum=Sshebeixiulisum+sumShiSuan.get(j).getShebeixiuli();
-            Sgaosutongxingsum=Sgaosutongxingsum+sumShiSuan.get(j).getGaosutongxing();
-            Schuchaijiayousum=Schuchaijiayousum+sumShiSuan.get(j).getChuchaijiayou();
-            Sshineigongjiaosum=Sshineigongjiaosum+sumShiSuan.get(j).getShineigongjiao();
-            Sxiuchefeisum=Sxiuchefeisum+sumShiSuan.get(j).getXiuchefei();
-            Sshuidiansum=Sshuidiansum+sumShiSuan.get(j).getShuidian();
-            Sqitasum=Sqitasum+sumShiSuan.get(j).getQita();
-            Srengongsum=Srengongsum+sumShiSuan.get(j).getRengong();
-        }
-        double jieguo=Yjieguosum-Sjieguosum;
-        double chepiao=Ychepiaosum-Schepiaosum;
-        double renshu=Yrenshusum-Srenshusum;
-        double gongzi=Ygongzisum-Sgongzisum;
-        double shuifei=Yshuifeisum-Sshuifeisum;
-        double fangzu=Yfangzusum-Sfangzusum;
-        double waibao=Ywaibaosum-Swaibaosum;
-        double zhaodaifei=Yzhaodaifeisum-Szhaodaifeisum;
-        double tongxunfei=Ytongxunfeisum-Stongxunfeisum;
-        double riyongpin=Yriyongpinsum-Sriyongpinsum;
-        double youjifei=Yyoujifeisum-Syoujifeisum;
-        double zuchefei=Yzuchefeisum-Szuchefeisum;
-        double shebeixiuli=Yshebeixiulisum-Sshebeixiulisum;
-        double gaosutongxing=Ygaosutongxingsum-Sgaosutongxingsum;
-        double chuchaijiayou=Ychuchaijiayousum-Schuchaijiayousum;
-        double shineigongjiao=Yshineigongjiaosum-Sshineigongjiaosum;
-        double xiuchefei=Yxiuchefeisum-Sxiuchefeisum;
-        double shuidian=Yshuidiansum-Sshuidiansum;
-        double qita=Yqitasum-Sqitasum;
-        double rengong=Yrengongsum-Srengongsum;
-//        System.out.println(list.get(0).getShiid());
-        request.setAttribute("jieguo",jieguo);
-        request.setAttribute("chepiao",chepiao);
-        request.setAttribute("renshu",renshu);
-        request.setAttribute("gongzi",gongzi);
-        request.setAttribute("shuifei",shuifei);
-        request.setAttribute("fangzu",fangzu);
-        request.setAttribute("waibao",waibao);
-        request.setAttribute("zhaodaifei",zhaodaifei);
-        request.setAttribute("tongxunfei",tongxunfei);
-        request.setAttribute("riyongpin",riyongpin);
-        request.setAttribute("youjifei",youjifei);
-        request.setAttribute("zuchefei",zuchefei);
-        request.setAttribute("shebeixiuli",shebeixiuli);
-        request.setAttribute("gaosutongxing",gaosutongxing);
-        request.setAttribute("chuchaijiayou",chuchaijiayou);
-        request.setAttribute("shineigongjiao",shineigongjiao);
-        request.setAttribute("xiuchefei",xiuchefei);
-        request.setAttribute("shuidian",shuidian);
-        request.setAttribute("qita",qita);
-        request.setAttribute("rengong",rengong);
-        request.setAttribute("sumShiSuan", sumShiSuan);
+            request.setAttribute("sumShiSuan", sumShiSuan);
+            request.setAttribute("sumyulist",sumyulist);
         request.setAttribute("bid", bid);
         request.setAttribute("xiangmuname", xiangmuname);
         request.setAttribute("list", list);
         request.setAttribute("bumenList", bumenList);
         request.setAttribute("yulist", yulist);
+        }
+
         return "ys";
     }
 
