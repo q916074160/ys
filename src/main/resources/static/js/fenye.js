@@ -64,10 +64,12 @@ $(function(){
 
         //列的定义
         columns:[[
+            {field:'shichang',title:'项目时长',width:50},
+            {field:'shiid',title:'shiid',width:50, hidden: true},
             {field:'xiangmuname',title:'名称',width:50},
+            {field:'bid',title:'中队',width:50},
             {field:'renshu',title:'人数',width:50},
             {field:'gongzi',title:'工资',width:50},
-            {field:'shichang',title:'项目时长',width:50},
             {field:'shuifei',title:'税',width:50},
             {field:'fangzu',title:'房租',width:50},
             {field:'waibao',title:'外包',width:50},
@@ -84,6 +86,7 @@ $(function(){
             {field:'rengong',title:'人工',width:50},
             {field:'shuidian',title:'水电',width:50},
             {field:'chepiao',title:'车票',width:50},
+            {field:'qita',title:'其他',width:50},
             {field:'jieguo',title:'总和',width:50}
         ]],
 
@@ -112,9 +115,13 @@ $(function(){
 
         //列的定义
         columns:[[
-            {field:'renshu',title:'人数',width:50},
+           /* {field:'shichang',title:'项目时长',width:50},
+            {field:'shiid',title:'shiid',width:50, hidden: true},
+            {field:'time',title:'所属时间',width:80},*/
+          /*  {field:'xiangmuname',title:'名称',width:50},*/
+           /* {field:'bid',title:'中队',width:50},*/
+           /* {field:'renshu',title:'人数',width:50},*/
             {field:'gongzi',title:'工资',width:50},
-            {field:'shichang',title:'项目时长',width:50},
             {field:'shuifei',title:'税',width:50},
             {field:'fangzu',title:'房租',width:50},
             {field:'waibao',title:'外包',width:50},
@@ -131,6 +138,7 @@ $(function(){
             {field:'rengong',title:'人工',width:50},
             {field:'shuidian',title:'水电',width:50},
             {field:'chepiao',title:'车票',width:50},
+            {field:'qita',title:'其他',width:50},
             {field:'jieguo',title:'总和',width:50}
         ]],
 

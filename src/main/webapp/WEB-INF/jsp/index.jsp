@@ -52,12 +52,18 @@
             <input class="easyui-filebox" id="wenjian" name="files" data-options="buttonText:'浏览...',prompt:'请选择文件'"  style="width:100%;" >
         </div>
         <div>
-            <a href="#" id="shangchuan" class="easyui-linkbutton" style="width:50%">确定</a><a href="#" class="easyui-linkbutton" style="width:50%" onclick="$('#w').window('close')">取消</a>
+            <a href="#" id="shangchuan" class="easyui-linkbutton" style="width:50%">确定</a><a href="#" class="easyui-linkbutton" style="width:50%" onclick="guanbi()">取消</a>
         </div>
     </form>
     <div id="p" class="easyui-progressbar" style="width:400px;margin: 25px" hidden></div>
     <iframe name="frame1"  id="frame1" frameborder="0" height="40" hidden></iframe>
 </div>
 <script type="text/javascript" src="/static/js/daochu.js"></script>
+<script>
+    function guanbi() {
+    $('#w').window('close');
+    $("#f").form('clear')
+}
+</script>
 </body>
 </html>

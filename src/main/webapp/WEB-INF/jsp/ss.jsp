@@ -112,14 +112,15 @@
             <td>(火/汽)车/飞机票:</td>
             <td><input  class="easyui-textbox" type="text" name="chepiao" id="chepiao"></input></td>
         </tr>
-        <tr style="height: 35px">
-            <td></td>
-            <td></td>
-        </tr>
         <tr>
             <td>人数:</td>
             <td><input  type="text" name="renshu" id="renshu"  readonly= "true" style="border:0px red solid; outline:none;"></input></td>
         </tr>
+        <tr style="height: 35px">
+            <td></td>
+            <td></td>
+        </tr>
+
     </table>
     <a href="javascript:void(0)" class="easyui-linkbutton" style="outline:none;text-align:center; position: absolute; bottom:0.5%;right:170px;height:30px;" ><input class="button1" type="button" id="button2" value="保存" onclick="check1(2)" style="border:0px white solid;background:transparent;outline:none;cursor: pointer;"/></a>
     <a href="javascript:void(0)" class="easyui-linkbutton" style="outline:none;text-align:center; position: absolute; bottom:0.5%;right:80px; height:30px;"><input class="button1" type="button" id="button" value="实算结果" onclick="check1(1)" style="border:0px white solid;background:transparent;outline:none;cursor: pointer;"/></a>
@@ -148,6 +149,12 @@
             $("#zhongdui").removeAttr("disabled");
         }
     });
+    $("body").delegate(".datebox input[type=text]","focus",function() {
+        $("#zhongdui option:first").prop("selected","selected");
+        $("#gongzi").val('');
+        $("#renshu").val('');
+    });
+
 </script>
 </body>
 </html>

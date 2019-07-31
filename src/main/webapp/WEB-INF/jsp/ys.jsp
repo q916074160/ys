@@ -77,19 +77,13 @@
                             <button class="btn btn-primary search_btn" type="button" id="dc_btn">导出</button>
                         </c:if>
                     </div>
-
                 </div>
                 <div class="line"></div>
-
             </div>
         </form>
-
-
-
         <div id="w" class="easyui-window" title="查询实算信息"
              data-options="iconCls:'icon-save',minimizable:false,closed:true"
              style="width:60%;height:90%;padding:10px;overflow:hidden;" >
-
             <form>
                 <input class="easyui-textbox" id="shiid" name="shiid" value=" ">
                 <div>
@@ -117,11 +111,7 @@
                         <div>外包:</div>
                         <input class="easyui-textbox" id="waibao" name="waibao"value="">
                     </div>
-
-
                 </div>
-
-
                 <div style="position: absolute;left: 35%;top: 7%">
 
                     <div style="margin-bottom:20px">
@@ -233,7 +223,7 @@
                         <tr>
                             <td>${list.shiid}</td>
                             <td>
-                                <fmt:formatDate pattern="yyyy-MM-dd" value="${list.time}"></fmt:formatDate>
+                                <fmt:formatDate pattern="yyyy-MM" value="${list.time}"></fmt:formatDate>
                             </td>
                             <td>${list.xiangmuname}</td>
                             <c:if test="${list.bid==1}">
@@ -294,9 +284,8 @@
          <c:forEach items="${sumShiSuan}" var="sumShiSuan">
                     <c:if test="${xiangmuname!=null}">
                         <tr>
-
                             <td>&nbsp;</td>
-                            <td>&nbsp;</td>
+                            <td>实算合计</td>
                             <td>${sumShiSuan.xiangmuname}</td>
                             <c:if test="${sumShiSuan.bid==1}">
                                 <td>一中队</td>
@@ -412,7 +401,6 @@
                         <div style="margin-bottom:20px">
                             <div>邮寄费:</div>
                             <input class="easyui-textbox" id="youjifei1"name="youjifei1" value="" disabled></div>
-
                         <div style="margin-bottom:20px">
                             <div>租车费:</div>
                             <input class="easyui-textbox"
@@ -423,16 +411,8 @@
                             <input class="easyui-textbox"
                                    id="shebeixiuli1"name="shebeixiuli1"
                                    value="" disabled></div>
-
-
-
-
                     </div>
-
                     <div style="position: absolute;left: 70%;top: 7%">
-
-
-
                         <div style="margin-bottom:20px">
                             <div>高速通行费:</div>
                             <input class="easyui-textbox"
@@ -444,14 +424,11 @@
                             <input class="easyui-textbox"
                                    id="chuchaijiayou1" name="chuchaijiayou1"
                                    value="" disabled></div>
-
                         <div style="margin-bottom:20px">
                             <div>市内公交出租费:</div>
                             <input class="easyui-textbox"
                                    id="shineigongjiao1" name="shineigongjiao1"
                                    value="" disabled></div>
-
-
                         <div style="margin-bottom:20px">
                             <div>(修/洗)车费:</div>
                             <input class="easyui-textbox"
@@ -481,8 +458,6 @@
 
 
             </div>
-
-
             <table id="dg3" class="easyui-datagrid" title="预算信息" style="width:100%;height:30%"
                    data-options="
               region:'north',
@@ -496,10 +471,38 @@
                 <c:forEach items="${yulist}" var="yulist">
                     <c:if test="${xiangmuname!=null}">
                         <tr>
+                            <td>${yulist.shichang}</td>
+                            <td></td>
                             <td>${yulist.xiangmuname}</td>
+                            <c:if test="${yulist.bid==1}">
+                                <td>一中队</td>
+                            </c:if>
+
+                            <c:if test="${yulist.bid==2}">
+                                <td>二中队</td>
+                            </c:if>
+
+                            <c:if test="${yulist.bid==3}">
+                                <td>三中队</td>
+                            </c:if>
+
+                            <c:if test="${yulist.bid==4}">
+                                <td>四中队</td>
+                            </c:if>
+
+                            <c:if test="${yulist.bid==5}">
+                                <td>五中队</td>
+                            </c:if>
+
+                            <c:if test="${yulist.bid==6}">
+                                <td>内业</td>
+                            </c:if>
+
+                            <c:if test="${yulist.bid==7}">
+                                <td>管理</td>
+                            </c:if>
                             <td>${yulist.renshu}</td>
                             <td>${yulist.gongzi}</td>
-                            <td>${yulist.shichang}</td>
                             <td>${yulist.shuifei}</td>
                             <td>${yulist.fangzu}</td>
                             <td>${yulist.waibao}</td>
@@ -516,6 +519,7 @@
                             <td>${yulist.rengong}</td>
                             <td>${yulist.shuidian}</td>
                             <td>${yulist.chepiao}</td>
+                            <td>${yulist.qita}</td>
                             <td>
                                 <fmt:formatNumber value='${yulist.jieguo}' pattern='#,#00.00#'></fmt:formatNumber>
                             </td>
@@ -539,7 +543,7 @@
                 <tbody id="show_tbody12">
                 <c:if test="${xiangmuname!=null}">
                     <tr>
-                        <td>${renshu}</td>
+              <%--          <td>${renshu}</td>--%>
                         <td>${gongzi}</td>
                         <%--<td>${shichang}</td>--%>
                         <td>${shuifei}</td>
@@ -560,6 +564,7 @@
                         <td>${rengong}</td>
                         <td>${shuidian}</td>
                         <td>${chepiao}</td>
+                        <td>${qita}</td>
                         <td>
                             <fmt:formatNumber value='${jieguo}' pattern='#,#00.00#'></fmt:formatNumber>
                         </td>
