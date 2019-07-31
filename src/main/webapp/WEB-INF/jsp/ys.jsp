@@ -211,7 +211,27 @@
             </form>
         </div>
 
-        <div class="easyui-layout" style="height:100%;" data-options="region:'center'">
+        <%--<script>--%>
+
+            <%--window.onload=function(){--%>
+                <%--var classElements = getClassElements('panel-title');--%>
+                <%--for (var i=0; i<classElements.length; i++) {--%>
+                    <%--classElements[i].style.display = "none";--%>
+                <%--}--%>
+            <%--}--%>
+
+            <%--function getClassElements(n) {--%>
+                <%--var elements = [],allElements = document.getElementsByTagName('*');--%>
+                <%--for (var i=0; i< allElements.length; i++ ){--%>
+                    <%--if (allElements[i].className == n ) {--%>
+                        <%--elements[elements.length] = allElements[i];--%>
+                    <%--}--%>
+                <%--}--%>
+                <%--return elements;--%>
+            <%--}--%>
+        <%--</script>--%>
+
+        <div style="height:100%;">
             <table id="dg1" title="实算信息" style="width:100%;height:40%" data-options="region:'south',
 				rownumbers:true,
 				singleSelect:true,
