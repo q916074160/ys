@@ -97,7 +97,7 @@ public class controller {
         DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
         String  xiangmuname = request.getParameter("xiangmuname");
         if(xiangmuname==null||xiangmuname.equals("")){
-            xiangmuname="1";
+            xiangmuname="死";
         }
         String bidstr = request.getParameter("bid");
         Integer bid = null;
