@@ -100,10 +100,11 @@ function shisuan () {
     var gongzi = document.getElementById("gongzi").value;
     var qita = document.getElementById("qita").value;
     var shineigongjiao = document.getElementById("shineigongjiao").value;
-
+    var jieguo=parseInt(shuifei)+parseInt(fangzu)+parseInt(waibao)+ parseInt(    zhaodaifei) +parseInt(     tongxunfei)+parseInt(     riyongpin)+  parseInt(   youjifei)+parseInt(     zuchefei) +parseInt(     shebeixiuli) +parseInt(     gaosutongxing) + parseInt(    chuchaijiayou)+parseInt(     xiuchefei)+ parseInt(    rengong )+ parseInt(    shuidian)+parseInt(   chepiao )+parseInt(     gongzi)+parseInt(     qita)+parseInt(     shineigongjiao);
+    alert(jieguo);
     var url = "update?xiangmuname=" + xiangmuname + "&renshu=" + renshu + "&chepiao=" + chepiao + "&chuchaijiayou=" + chuchaijiayou + "&fangzu=" + fangzu +
         "&tongxunfei=" + tongxunfei + "&gongzi=" + gongzi+ "&rengong=" + rengong + "&riyongpin=" + riyongpin + "&shebeixiuli=" + shebeixiuli + "&shuidian=" + shuidian + "&shuifei=" + shuifei + "&tongxunfei=" + tongxunfei + "&waibao=" + waibao +
-        "&shineigongjiao=" + shineigongjiao + "&zhaodaifei=" + zhaodaifei + "&zuchefei=" + zuchefei + "&xiuchefei=" + xiuchefei + "&youjifei=" + youjifei+"&shiid="+shiid+"&gaosutongxing="+gaosutongxing+"&qita="+qita;
+        "&shineigongjiao=" + shineigongjiao + "&zhaodaifei=" + zhaodaifei + "&zuchefei=" + zuchefei + "&xiuchefei=" + xiuchefei + "&youjifei=" + youjifei+"&shiid="+shiid+"&gaosutongxing="+gaosutongxing+"&qita="+qita+"&jieguo="+jieguo;
     if (confirm("是否修改？")) {
         $.get(url);
     }
