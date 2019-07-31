@@ -39,55 +39,55 @@
         </tr>
         <tr>
             <td>人数:</td>
-            <td><input class="easyui-textbox" type="text" name="renshu" id="renshu"></input></td>
+            <td><input class="easyui-textbox" type="text" name="renshu" id="renshu"></input>(个)</td>
         </tr>
         <tr>
             <td>税费:</td>
-            <td><input class="easyui-textbox" type="text" name="shuifei" id="shuifei"></input></td>
+            <td><input class="easyui-textbox" type="text" name="shuifei" id="shuifei"></input>(元/月)</td>
         </tr>
         <tr>
             <td>工资:</td>
-            <td><input class="easyui-textbox" type="text" name="gongzi" id="gongzi"></input></td>
+            <td><input class="easyui-textbox" type="text" name="gongzi" id="gongzi"></input>(元/月)</td>
         </tr>
         <tr>
             <td>时长:</td>
-            <td><input class="easyui-textbox" type="text" name="shichang" id="shichang"></input></td>
+            <td><input class="easyui-textbox" type="text" name="shichang" id="shichang"></input>(月)</td>
         </tr>
         <tr>
             <td>房租:</td>
-            <td><input class="easyui-textbox" type="text" name="fangzu" id="fangzu"></input></td>
+            <td><input class="easyui-textbox" type="text" name="fangzu" id="fangzu"></input>(元/月)</td>
         </tr>
         <tr>
-            <td>外包(总共):</td>
-            <td><input class="easyui-textbox" type="text" name="waibao" id="waibao"></input></td>
+            <td>外包:</td>
+            <td><input class="easyui-textbox" type="text" name="waibao" id="waibao"></input>(总共)</td>
         </tr>
         <tr>
             <td>招待费:</td>
-            <td><input class="easyui-textbox" type="text" name="zhaodaifei" id="zhaodaifei"></input></td>
+            <td><input class="easyui-textbox" type="text" name="zhaodaifei" id="zhaodaifei"></input>(元/月)</td>
         </tr>
         <tr>
             <td>通讯费:</td>
-            <td><input class="easyui-textbox" type="text" name="tongxunfei" id="tongxunfei"></input></td>
+            <td><input class="easyui-textbox" type="text" name="tongxunfei" id="tongxunfei"></input>(元/月)</td>
         </tr>
         <tr>
             <td>日用品:</td>
-            <td><input class="easyui-textbox" type="text" name="riyongpin" id="riyongpin"></input></td>
+            <td><input class="easyui-textbox" type="text" name="riyongpin" id="riyongpin"></input>(元/月)</td>
         </tr>
         <tr>
             <td>邮寄费:</td>
-            <td><input class="easyui-textbox" type="text" name="youjifei" id="youjifei"></input></td>
+            <td><input class="easyui-textbox" type="text" name="youjifei" id="youjifei"></input>(元/月)</td>
         </tr>
         <tr>
             <td>租车费:</td>
-            <td><input class="easyui-textbox" type="text" name="zuchefei" id="zuchefei"></input></td>
+            <td><input class="easyui-textbox" type="text" name="zuchefei" id="zuchefei"></input>(元/月)</td>
         </tr>
         <tr>
             <td>设备修理费:</td>
-            <td><input class="easyui-textbox" type="text" name="shebeixiuli" id="shebeixiuli"></input></td>
+            <td><input class="easyui-textbox" type="text" name="shebeixiuli" id="shebeixiuli"></input>(元/月)</td>
         </tr>
         <tr>
             <td>(火/汽)车/飞机票:</td>
-            <td><input class="easyui-textbox" type="text" name="chepiao" id="chepiao"></input></td>
+            <td><input class="easyui-textbox" type="text" name="chepiao" id="chepiao"></input>(元/月)</td>
         </tr>
         <tr>
         <tr>
@@ -98,51 +98,51 @@
     <table cellpadding="5" style="position: absolute; top:7%; left:60%;">
         <tr>
             <td>高速通行费:</td>
-            <td><input class="easyui-textbox" type="text" name="gaosutongxing" id="gaosutongxing"></input></td>
+            <td><input class="easyui-textbox" type="text" name="gaosutongxing" id="gaosutongxing"></input>(元/月)</td>
         </tr>
         <tr>
             <td>出差加油费:</td>
-            <td><input class="easyui-textbox" type="text" name="chuchaijiayou" id="chuchaijiayou"></input></td>
+            <td><input class="easyui-textbox" type="text" name="chuchaijiayou" id="chuchaijiayou"></input>(元/月)</td>
         </tr>
         <tr>
             <td>市内公交出租费:</td>
-            <td><input class="easyui-textbox" type="text" name="shineigongjiao" id="shineigongjiao"></input></td>
+            <td><input class="easyui-textbox" type="text" name="shineigongjiao" id="shineigongjiao"></input>(元/月)</td>
         </tr>
         <tr>
             <td>(修/洗)车费:</td>
-            <td><input class="easyui-textbox" type="text" name="xiuchefei" id="xiuchefei"></input></td>
+            <td><input class="easyui-textbox" type="text" name="xiuchefei" id="xiuchefei"></input>(元/月)</td>
         </tr>
         <tr>
             <td>人工费:</td>
-            <td><input class="easyui-textbox" type="text" name="rengong" id="rengong"></input></td>
+            <td><input class="easyui-textbox" type="text" name="rengong" id="rengong"></input>(元/月)</td>
         </tr>
         <tr>
             <td>(水/电)费:</td>
-            <td><input class="easyui-textbox" type="text" name="shuidian" id="shuidian"></input></td>
+            <td><input class="easyui-textbox" type="text" name="shuidian" id="shuidian"></input>(元/月)</td>
         </tr>
         <tr>
             <td>其他:</td>
-            <td><input class="easyui-textbox" type="text" name="qita" id="qita"></input></td>
+            <td><input class="easyui-textbox" type="text" name="qita" id="qita"></input>(元/月)</td>
         </tr>
         <tr>
             <td>养老保险:</td>
-            <td><input class="easyui-textbox" type="text" name="yanglao" id="yanglao"></input></td>
+            <td><input class="easyui-textbox" type="text" name="yanglao" id="yanglao"></input>(元/月)</td>
         </tr>
         <tr>
             <td>医疗保险:</td>
-            <td><input class="easyui-textbox" type="text" name="yiliao" id="yiliao"></input></td>
+            <td><input class="easyui-textbox" type="text" name="yiliao" id="yiliao"></input>(元/月)</td>
         </tr>
         <tr>
             <td>工伤保险:</td>
-            <td><input class="easyui-textbox" type="text" name="gongshang" id="gongshang"></input></td>
+            <td><input class="easyui-textbox" type="text" name="gongshang" id="gongshang"></input>(元/月)</td>
         </tr>
         <tr>
             <td>失业保险:</td>
-            <td><input class="easyui-textbox" type="text" name="shiye" id="shiye"></input></td>
+            <td><input class="easyui-textbox" type="text" name="shiye" id="shiye"></input>(元/月)</td>
         </tr>
         <tr>
             <td>生育保险:</td>
-            <td><input class="easyui-textbox" type="text" name="shengyu" id="shengyu"></input></td>
+            <td><input class="easyui-textbox" type="text" name="shengyu" id="shengyu"></input>(元/月)</td>
         </tr>
         <tr>
             <td>中队选择:</td>

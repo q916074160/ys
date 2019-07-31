@@ -55,6 +55,12 @@ public class Shisuan {
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date time;
 
+    private String beizhu;
+
+    public String getBeizhu(){return beizhu;}
+
+    public void setBeizhu(String beizhu){this.beizhu=beizhu;}
+
     public Integer getShiid() {
         return shiid;
     }
