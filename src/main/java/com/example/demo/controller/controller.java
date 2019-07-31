@@ -87,7 +87,6 @@ public class controller {
     }
     @RequestMapping("/update")
     public String  updateShiSuan(Shisuan shisuan,HttpServletRequest request){
-
         shisuanMapper.updateShiSuan(shisuan);
         return "ys";
     }

@@ -81,7 +81,6 @@ function shisuan () {
     var shiid = document.getElementById("shiid").value;
     var xiangmuname = document.getElementById("xiangmuname").value;
     var renshu = document.getElementById("renshu").value;
-    var shichang = document.getElementById("shichang").value;
     var shuifei = document.getElementById("shuifei").value;
     var fangzu = document.getElementById("fangzu").value;
     var waibao = document.getElementById("waibao").value;
@@ -101,7 +100,7 @@ function shisuan () {
     var qita = document.getElementById("qita").value;
     var shineigongjiao = document.getElementById("shineigongjiao").value;
 
-    var url = "update?xiangmuname=" + xiangmuname + "&renshu=" + renshu + "&shichang=" + shichang + "&chepiao=" + chepiao + "&chuchaijiayou=" + chuchaijiayou + "&fangzu=" + fangzu +
+    var url = "update?xiangmuname=" + xiangmuname + "&renshu=" + renshu + "&chepiao=" + chepiao + "&chuchaijiayou=" + chuchaijiayou + "&fangzu=" + fangzu +
         "&tongxunfei=" + tongxunfei + "&gongzi=" + gongzi+ "&rengong=" + rengong + "&riyongpin=" + riyongpin + "&shebeixiuli=" + shebeixiuli + "&shuidian=" + shuidian + "&shuifei=" + shuifei + "&tongxunfei=" + tongxunfei + "&waibao=" + waibao +
         "&shineigongjiao=" + shineigongjiao + "&zhaodaifei=" + zhaodaifei + "&zuchefei=" + zuchefei + "&xiuchefei=" + xiuchefei + "&youjifei=" + youjifei+"&shiid="+shiid+"&gaosutongxing="+gaosutongxing+"&qita="+qita;
     if (confirm("是否修改？")) {
