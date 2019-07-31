@@ -74,6 +74,7 @@ public class controller {
     public String findYs1() {
         return "ys1";
     }
+
     //预算导入
     @RequestMapping("/ysdr")
     public String ysdr() {
@@ -85,18 +86,19 @@ public class controller {
     public String ssdr() {
         return "ss";
     }
+
     @RequestMapping("/update")
-    public String  updateShiSuan(Shisuan shisuan,HttpServletRequest request){
+    public String updateShiSuan(Shisuan shisuan, HttpServletRequest request) {
         shisuanMapper.updateShiSuan(shisuan);
         return "ys";
     }
 
     @RequestMapping("/querySs")
-    public String queryShiSuan(@DateTimeFormat(pattern="yyyy-MM-dd") Date date,Shisuan shisuan, Yusuan yusuan, HttpServletRequest request, HttpServletResponse response,Integer shiid,HttpSession session) {
+    public String queryShiSuan(@DateTimeFormat(pattern = "yyyy-MM-dd") Date date, Shisuan shisuan, Yusuan yusuan, HttpServletRequest request, HttpServletResponse response, Integer shiid, HttpSession session) {
         DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-        String  xiangmuname = request.getParameter("xiangmuname");
-        if(xiangmuname==null||xiangmuname.equals("")){
-            xiangmuname="死";
+        String xiangmuname = request.getParameter("xiangmuname");
+        if (xiangmuname == null || xiangmuname.equals("")) {
+            xiangmuname = "死";
         }
         String bidstr = request.getParameter("bid");
         Integer bid = null;
@@ -113,14 +115,14 @@ public class controller {
 //        System.out.println(yusuan.getXiangmuname());
 
         //shisuan.setBid(bid);
-        if(xiangmuname!=null||!xiangmuname.equals("")) {
-        shisuan.setXiangmuname(xiangmuname);
-        yusuan.setXiangmuname(xiangmuname);
+        if (xiangmuname != null || !xiangmuname.equals("")) {
+            shisuan.setXiangmuname(xiangmuname);
+            yusuan.setXiangmuname(xiangmuname);
 
-        List<Shisuan> list = shisuanMapper.queryShiSuan(shisuan);
-        List<Bumen> bumenList = bumenMapper.queryAll();
+            List<Shisuan> list = shisuanMapper.queryShiSuan(shisuan);
+            List<Bumen> bumenList = bumenMapper.queryAll();
 
-        List<Yusuan> yulist = yu.queryYuSuan(yusuan);
+            List<Yusuan> yulist = yu.queryYuSuan(yusuan);
 
             List<Shisuan> sumShiSuan = shisuanMapper.sumShiSuan(shisuan);
             List<Yusuan> sumyulist = yu.sumYuSuan(yusuan);
@@ -131,8 +133,8 @@ public class controller {
             List<Shisuan> shisuanList = new ArrayList<>();
 
             for (int i = 0; i < sumyulist.size(); i++) {
-                yusuan=new Yusuan();
-            yusuan.setXiangmuname(sumyulist.get(i).getXiangmuname());
+                yusuan = new Yusuan();
+                yusuan.setXiangmuname(sumyulist.get(i).getXiangmuname());
                 yusuan.setJieguo(sumyulist.get(i).getJieguo());
                 yusuan.setChepiao(sumyulist.get(i).getChepiao());
                 yusuan.setRenshu(sumyulist.get(i).getRenshu());
@@ -159,7 +161,7 @@ public class controller {
 
             }
             for (int j = 0; j < sumShiSuan.size(); j++) {
-                shisuan=new Shisuan();
+                shisuan = new Shisuan();
                 shisuan.setXiangmuname(sumShiSuan.get(j).getXiangmuname());
                 shisuan.setJieguo(sumShiSuan.get(j).getJieguo());
                 shisuan.setChepiao(sumShiSuan.get(j).getChepiao());
@@ -178,55 +180,55 @@ public class controller {
                 shisuan.setChuchaijiayou(sumShiSuan.get(j).getChuchaijiayou());
                 shisuan.setShineigongjiao(sumShiSuan.get(j).getShineigongjiao());
                 shisuan.setXiuchefei(sumShiSuan.get(j).getXiuchefei());
-                shisuan.setRengong(sumShiSuan.get(j).getShuidian());
-                shisuan.setShuidian(sumShiSuan.get(j).getQita());
-                shisuan.setQita(sumShiSuan.get(j).getRengong());
+                shisuan.setRengong(sumShiSuan.get(j).getRengong());
+                shisuan.setShuidian(sumShiSuan.get(j).getShuidian());
+                shisuan.setQita(sumShiSuan.get(j).getQita());
 
                 shisuanList.add(shisuan);
 
             }
-            if(yusuanList.size()==0) {
-                request.setAttribute("list1", shisuanList);
+            for (int k = 0; k < yusuanList.size(); k++) {
+                        yusuan = new Yusuan();
+                        if(shisuanList.size()==0){
+                            continue;
+                        }
+                        for (int s = 0; s < shisuanList.size(); s++) {
+                            if (yusuanList.get(k).getXiangmuname().equals(shisuanList.get(s).getXiangmuname())) {
+
+                                yusuan.setXiangmuname(yusuanList.get(k).getXiangmuname());
+                                yusuan.setJieguo(yusuanList.get(k).getJieguo() - shisuanList.get(s).getJieguo());
+                                yusuan.setChepiao(yusuanList.get(k).getChepiao() - shisuanList.get(s).getChepiao());
+                                yusuan.setRenshu(yusuanList.get(k).getRenshu() - shisuanList.get(s).getRenshu());
+                                yusuan.setGongzi(yusuanList.get(k).getGongzi() - shisuanList.get(s).getGongzi());
+                                yusuan.setShuifei(yusuanList.get(k).getShuifei() - shisuanList.get(s).getShuifei());
+                                yusuan.setFangzu(yusuanList.get(k).getFangzu() - shisuanList.get(s).getFangzu());
+                                yusuan.setWaibao(yusuanList.get(k).getWaibao() - shisuanList.get(s).getWaibao());
+                                yusuan.setZhaodaifei(yusuanList.get(k).getZhaodaifei() - shisuanList.get(s).getZhaodaifei());
+                                yusuan.setTongxunfei(yusuanList.get(k).getTongxunfei() - shisuanList.get(s).getTongxunfei());
+                                yusuan.setRiyongpin(yusuanList.get(k).getRiyongpin() - shisuanList.get(s).getRiyongpin());
+                                yusuan.setYoujifei(yusuanList.get(k).getYoujifei() - shisuanList.get(s).getYoujifei());
+                                yusuan.setZuchefei(yusuanList.get(k).getZuchefei() - shisuanList.get(s).getZuchefei());
+                                yusuan.setShebeixiuli(yusuanList.get(k).getShebeixiuli() - shisuanList.get(s).getShebeixiuli());
+                                yusuan.setGaosutongxing(yusuanList.get(k).getGaosutongxing() - shisuanList.get(s).getGaosutongxing());
+                                yusuan.setChuchaijiayou(yusuanList.get(k).getChuchaijiayou() - shisuanList.get(s).getChuchaijiayou());
+                                yusuan.setShineigongjiao(yusuanList.get(k).getShineigongjiao() - shisuanList.get(s).getShineigongjiao());
+                                yusuan.setXiuchefei(yusuanList.get(k).getXiuchefei() - shisuanList.get(s).getXiuchefei());
+                                yusuan.setShuidian(yusuanList.get(k).getShuidian() - shisuanList.get(s).getShuidian());
+                                yusuan.setQita(yusuanList.get(k).getQita() - shisuanList.get(s).getQita());
+                                yusuan.setRengong(yusuanList.get(k).getRengong() - shisuanList.get(s).getRengong());
+
+                            }
+                        }
+                        list1.add(yusuan);
+
             }
-for (int k=0;k<yusuanList.size();k++) {
-if(shisuanList.size()==0){
-    request.setAttribute("list1",yusuanList);
-
-}else if(yusuanList.get(k).getXiangmuname().equals(shisuanList.get(k).getXiangmuname())) {
-    yusuan.setJieguo(yusuanList.get(k).getJieguo() - shisuanList.get(k).getJieguo());
-    yusuan.setChepiao(yusuanList.get(k).getChepiao() - shisuanList.get(k).getChepiao());
-    yusuan.setRenshu(yusuanList.get(k).getRenshu() - shisuanList.get(k).getRenshu());
-    yusuan.setGongzi(yusuanList.get(k).getGongzi() - shisuanList.get(k).getGongzi());
-    yusuan.setShuifei(yusuanList.get(k).getShuifei() - shisuanList.get(k).getShuifei());
-    yusuan.setFangzu(yusuanList.get(k).getFangzu() - shisuanList.get(k).getFangzu());
-    yusuan.setWaibao(yusuanList.get(k).getWaibao() - shisuanList.get(k).getWaibao());
-    yusuan.setZhaodaifei(yusuanList.get(k).getZhaodaifei() - shisuanList.get(k).getZhaodaifei());
-    yusuan.setTongxunfei(yusuanList.get(k).getTongxunfei() - shisuanList.get(k).getTongxunfei());
-    yusuan.setRiyongpin(yusuanList.get(k).getRiyongpin() - shisuanList.get(k).getRiyongpin());
-    yusuan.setYoujifei(yusuanList.get(k).getYoujifei() - shisuanList.get(k).getYoujifei());
-    yusuan.setZuchefei(yusuanList.get(k).getZuchefei() - shisuanList.get(k).getZuchefei());
-    yusuan.setShebeixiuli(yusuanList.get(k).getShebeixiuli() - shisuanList.get(k).getShebeixiuli());
-    yusuan.setGaosutongxing(yusuanList.get(k).getGaosutongxing() - shisuanList.get(k).getGaosutongxing());
-    yusuan.setChuchaijiayou(yusuanList.get(k).getChuchaijiayou() - shisuanList.get(k).getChuchaijiayou());
-    yusuan.setShineigongjiao(yusuanList.get(k).getShineigongjiao() - shisuanList.get(k).getShineigongjiao());
-    yusuan.setXiuchefei(yusuanList.get(k).getXiuchefei() - shisuanList.get(k).getXiuchefei());
-    yusuan.setShuidian(yusuanList.get(k).getShuidian() - shisuanList.get(k).getShuidian());
-    yusuan.setQita(yusuanList.get(k).getQita() - shisuanList.get(k).getQita());
-    yusuan.setRengong(yusuanList.get(k).getRengong() - shisuanList.get(k).getRengong());
-
-    list1.add(yusuan);
-    request.setAttribute("list1",list1);
-}
-}
-
-
+            request.setAttribute("list1", list1);
             request.setAttribute("sumShiSuan", sumShiSuan);
-            request.setAttribute("sumyulist",sumyulist);
-        request.setAttribute("bid", bid);
-        request.setAttribute("xiangmuname", xiangmuname);
-        request.setAttribute("list", list);
-        request.setAttribute("bumenList", bumenList);
-        request.setAttribute("yulist", yulist);
+            request.setAttribute("bid", bid);
+            request.setAttribute("xiangmuname", xiangmuname);
+            request.setAttribute("list", list);
+            request.setAttribute("bumenList", bumenList);
+            request.setAttribute("yulist", yusuanList);
         }
 
         return "ys";
@@ -237,12 +239,6 @@ if(shisuanList.size()==0){
     public String rydr() {
         return "rydr";
     }
-
-
-
-
-
-
 
 
 }
