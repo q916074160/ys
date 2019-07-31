@@ -36,7 +36,7 @@
     </div>
     <div class="content,easyui-layout" data-options="region:'center'" style="height: 100%">
         <!--搜索输入框及查询、重置按钮-->
-        <form method="get" action="#" id="form">
+        <form method="get" action="querySs" id="form">
             <div class="container content_width">
                 <div class="person_search">
                     <div class="search_input">
@@ -69,7 +69,7 @@
                     </div>
                     <div class="search_input" style="margin-left:80px">
                         <%--onclick="showqueryBill()"--%>
-                        <button class="btn btn-primary search_btn" type="submit" id="search_btn" >查询</button>
+                        <button class="btn btn-primary search_btn" type="button" id="search_btn1" >查询</button>
                     </div>
 
                     <div class="search_input">

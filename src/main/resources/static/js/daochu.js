@@ -14,7 +14,7 @@ $("#dc_btn").click(function () {
 });
 
 
-$("#search_btn").click(function () {
+$("#search_btn1").click(function () {
     var name = document.getElementById("Ktext").value;
     var boolean = true;
     if (name == '' || name == null) {
