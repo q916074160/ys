@@ -576,6 +576,7 @@
                         <td>${list1.rengong}</td>
                         <td>${list1.shuidian}</td>
                         <td>${list1.chepiao}</td>
+                        <td>${list1.qita}</td>
                         <td>
                             <fmt:formatNumber value='${list1.jieguo}' pattern='#,#00.00#'></fmt:formatNumber>
                         </td>
