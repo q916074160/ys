@@ -116,7 +116,7 @@ $(function(){
         //列的定义
         columns:[[
             {field:'xiangmuname',title:'名称',width:50},
-            {field:'renshu',title:'人数',width:50},
+            // {field:'renshu',title:'人数',width:50},
             {field:'gongzi',title:'工资',width:50},
             {field:'shuifei',title:'税',width:50},
             {field:'fangzu',title:'房租',width:50},

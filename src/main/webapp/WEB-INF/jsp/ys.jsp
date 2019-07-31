@@ -69,7 +69,7 @@
                     </div>
                     <div class="search_input" style="margin-left:80px">
                         <%--onclick="showqueryBill()"--%>
-                        <button class="btn btn-primary search_btn" type="button" id="search_btn">查询</button>
+                        <button class="btn btn-primary search_btn" type="submit" id="search_btn" >查询</button>
                     </div>
 
                     <div class="search_input">
@@ -556,7 +556,7 @@
 
                     <tr>
                         <td>${list1.xiangmuname}</td>
-                        <td>${list1.renshu}</td>
+                        <%--<td>${list1.renshu}</td>--%>
                         <td>${list1.gongzi}</td>
                         <td>${list1.shuifei}</td>
                         <td>${list1.fangzu}</td>
