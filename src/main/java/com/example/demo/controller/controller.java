@@ -135,6 +135,8 @@ public class controller {
             for (int i = 0; i < sumyulist.size(); i++) {
                 yusuan = new Yusuan();
                 yusuan.setXiangmuname(sumyulist.get(i).getXiangmuname());
+                yusuan.setBid(sumyulist.get(i).getBid());
+                yusuan.setShichang(sumyulist.get(i).getShichang());
                 yusuan.setJieguo(sumyulist.get(i).getJieguo());
                 yusuan.setChepiao(sumyulist.get(i).getChepiao());
                 yusuan.setRenshu(sumyulist.get(i).getRenshu());
@@ -163,6 +165,7 @@ public class controller {
             for (int j = 0; j < sumShiSuan.size(); j++) {
                 shisuan = new Shisuan();
                 shisuan.setXiangmuname(sumShiSuan.get(j).getXiangmuname());
+                shisuan.setBid(sumShiSuan.get(j).getBid());
                 shisuan.setJieguo(sumShiSuan.get(j).getJieguo());
                 shisuan.setChepiao(sumShiSuan.get(j).getChepiao());
                 shisuan.setRenshu(sumShiSuan.get(j).getRenshu());
@@ -196,6 +199,8 @@ public class controller {
                             if (yusuanList.get(k).getXiangmuname().equals(shisuanList.get(s).getXiangmuname())) {
 
                                 yusuan.setXiangmuname(yusuanList.get(k).getXiangmuname());
+                                yusuan.setBid(yusuanList.get(k).getBid());
+                                yusuan.setShichang(sumyulist.get(k).getShichang());
                                 yusuan.setJieguo(yusuanList.get(k).getJieguo() - shisuanList.get(s).getJieguo());
                                 yusuan.setChepiao(yusuanList.get(k).getChepiao() - shisuanList.get(s).getChepiao());
                                 yusuan.setRenshu(yusuanList.get(k).getRenshu() - shisuanList.get(s).getRenshu());
