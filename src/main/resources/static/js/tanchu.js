@@ -77,6 +77,7 @@ $(function () {
         }
     });
 });
+
 function shisuan () {
     var shiid = document.getElementById("shiid").value;
     var xiangmuname = document.getElementById("xiangmuname").value;
